@@ -228,6 +228,7 @@ function chooseCountry(c){
  document.body.dataset.country=c;
  document.body.classList.toggle('is-malaysia',c==='Malaysia');
  updateCountryUI();
+ updateCountryUI();
  if(c==='Malaysia') showMalaysiaHome(); else showThailandHome();
 }
 function showCountryGate(){document.getElementById('countryGate').classList.add('show')}
@@ -241,7 +242,8 @@ function showMalaysiaHome(){
  let m=document.getElementById('malaysiaPage'); if(m)m.classList.add('active');
 }
 function updateCountryUI(){
- let sw=document.getElementById('countrySwitch'); if(sw)sw.innerHTML=ACTIVE_COUNTRY==='Malaysia'?'🇲🇾 Malasia⌄':'🇹🇭 Tailandia⌄';
+ const html=ACTIVE_COUNTRY==='Malaysia'?'🇲🇾 Malasia⌄':'🇹🇭 Tailandia⌄';
+ ['countrySwitch','countrySwitch2'].forEach(id=>{let sw=document.getElementById(id);if(sw)sw.innerHTML=html;});
 }
 function openTranslator(){
  let mal=ACTIVE_COUNTRY==='Malaysia', title=mal?'Malayo ↔ Castellano':'Tailandés ↔ Castellano';
@@ -316,9 +318,27 @@ function speakTravel(text,lang){
 }
 </script><style>
 .quickphrase{display:grid;grid-template-columns:1fr auto;gap:5px;align-items:stretch}.quickphrase>button:first-child{width:100%}.quickphrase .speakbtn{margin:0;padding:7px}.quickphrase em{display:block}.translator-help{font-size:9px;line-height:1.4;color:#7b8987;margin:9px 4px}
+</style>
+<style id="v14-fixes">
+/* Ayutthaya, último destino de Descubre, ocupa todo el ancho */
+#descubre .dest-grid > *:last-child,
+#descubre .discover-grid > *:last-child,
+#descubre .destination-grid > *:last-child {grid-column:1 / -1!important;width:100%!important}
+
+/* Inicio desaparece de verdad, no solo visualmente */
+.bottom button[data-page="ruta"], .bottom a[data-page="ruta"],
+.bottom button:first-child, .bottom a:first-child {display:none!important}
+.bottom {grid-template-columns:repeat(4,1fr)!important}
+
+/* Si existe un contenedor de 5 columnas heredado */
+nav.bottom {grid-template-columns:repeat(4,1fr)!important}
+</style>
+<style>
+#descubre .dest:has(*:is(h2,h3,b,strong):not(.never)){ }
+#descubre .dest-card[data-dest="Ayutthaya"]{grid-column:1/-1!important;width:100%!important}
 </style></head><body><div class="v12toptools"><button id="countrySwitch2" onclick="showCountryGate()">🇹🇭 Tailandia⌄</button><button onclick="openTranslator()">💬 Traductor</button></div>
 <div class="scene"><img id="scenePhoto" alt=""></div><main class="app">
-<section class="page active" id="inicio">
+<section class="page active" id="ruta">
 <header><div class="ey">ALBERTO'S ASIA ESCAPE · 2026</div><h1>Malaysia<br>& Thailand</h1><div class="sub">6 NOV — 7 DIC · 32 días para recordar</div></header>
 <div class="glass hero"><img id="heroPhoto" alt="Asia 2026"><div class="hero-copy"><div class="ey">32 DÍAS · 2 PAÍSES</div><h2>Two countries.<br>One big adventure.</h2><div>Kuala Lumpur · islas · buceo · templos · Bangkok</div><div class="hero-dots"><i class="on"></i><i></i><i></i><i></i></div></div></div>
 <div class="card flight"><div class="ey">VIE 6 NOV · EMPIEZA EL VIAJE</div><h2>Madrid → Doha</h2><div class="route-line"><span class="airport">MAD</span><span class="line"></span><span class="airport">DOH</span></div><div class="row"><b>08:05</b><span class="muted">6h35 · Qatar Airways</span><b>16:40</b></div><p class="muted">IB6192 · Boeing 787-9</p></div>
@@ -397,7 +417,7 @@ function speakTravel(text,lang){
  </div>
 </section>
 <nav>
-<button class="active" data-page="inicio"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M9.5 20v-6h5v6"/></svg>Inicio</button>
+<button class="active" data-page="ruta"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M9.5 20v-6h5v6"/></svg>Ruta</button>
 <button data-page="itinerario"><svg viewBox="0 0 24 24"><path d="M7 3v3M17 3v3M4 9h16"/><rect x="4" y="5" width="16" height="16" rx="3"/><path d="m8 14 2 2 5-5"/></svg>Ruta</button>
 <button data-page="mapa"><svg viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg>Mapa</button>
 <button data-page="recomendaciones"><svg viewBox="0 0 24 24"><path d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11z"/><path d="m12 7 .9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1-1.5-1.5 2.1-.3z"/></svg>Descubre</button>
@@ -617,4 +637,18 @@ document.addEventListener('error',function(e){
 <p class="translator-help">Las frases rápidas incluyen <b>cómo se pronuncian</b> y botón 🔊. Para texto libre, “Traducir” abre Google Translate, donde también puedes escucharlo.</p>
  <div class="phrasebox"><b>Frases rápidas</b><div id="quickPhrases"></div></div></div>
 </div>
-</body></html>
+<script>
+window.addEventListener('load',()=>{
+  updateCountryUI();
+  if(ACTIVE_COUNTRY==='Malaysia'){showMalaysiaHome();}
+  else if(ACTIVE_COUNTRY==='Thailand'){showThailandHome();}
+  // Ayutthaya card: force full-width regardless of legacy class names
+  document.querySelectorAll('#descubre *').forEach(el=>{
+    const txt=(el.textContent||'').trim();
+    if(txt.startsWith('Ayutthaya') && el.parentElement){
+      let card=el.closest('.dest,.dest-card,.destination-card,.zone-card')||el.parentElement;
+      if(card) card.style.gridColumn='1 / -1';
+    }
+  });
+});
+</script></body></html>

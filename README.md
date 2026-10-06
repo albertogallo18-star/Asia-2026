@@ -1,10 +1,20 @@
-# Asia 2026 · V6 — Functional Edition
+# Asia 2026 · V7 — Stay & Eat
 
-V6 se centra en hacer funcionales los controles de V5:
-- Conversor THB → EUR y MYR → EUR con dos campos independientes.
-- Presupuesto tipo Splitwise: añadir/eliminar gastos, pagador, reparto y totales; persistencia local.
-- Reservas, Checklist, Emergencias, Información útil y Documentos ya abren sus propias pantallas.
-- Checklist editable y persistente.
-- Botones Dormir / Comer / Ver / Hacer / Noche / Fotos llevan a su sección dentro de cada destino.
-- Filtros del mapa Hoteles / Comer / Ver ya filtran la lista de sitios.
-- Mantiene el diseño Travel Edition y el itinerario.
+Añade recomendaciones concretas dentro de Descubre para cada parada de Tailandia.
+
+## Hoteles
+Tres niveles por destino, con 3 opciones en cada uno:
+- 🎒 Mochilero
+- 🌴 Relax
+- ✨ Elegante
+
+Cada hotel incluye perfil, nivel de precio, explicación breve, Apple Maps y botón Guardar.
+
+## Restaurantes
+Selección concreta por destino con distintos niveles de precio y estilos, también con Apple Maps y Guardar.
+
+Destinos incluidos: Phi Phi, Koh Phangan, Koh Tao, Chiang Mai, Chiang Rai, Bangkok y Ayutthaya.
+
+Los símbolos €, €€, €€€ y €€€€ indican nivel relativo de precio, no una tarifa garantizada. Los precios y disponibilidad reales cambian y conviene comprobarlos al llegar.
+
+La ruta de Malasia sigue abierta: añadiremos sus hoteles/restaurantes cuando el grupo cierre las paradas.

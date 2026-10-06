@@ -209,7 +209,7 @@ body{background:#f6efe4!important}
 <style id="v11-polish">
 #mapFilters,.v11-hide-maplegacy{display:none!important}
 #mapa{padding-top:0!important}
-.travel-hero{margin-top:0!important;height:365px!important;background-image:linear-gradient(180deg,rgba(3,35,42,.02),rgba(3,35,42,.12) 55%,rgba(3,35,42,.42)),url("koh-tao-hero.jpg")!important;background-position:center!important}
+.travel-hero{margin-top:0!important;height:365px!important;background-image:linear-gradient(180deg,rgba(3,35,42,.02),rgba(3,35,42,.12) 55%,rgba(3,35,42,.42)),url("koh-tao-clean.jpg")!important;background-position:center!important}
 .trip-brand{font-size:42px!important}.gm-search{margin-top:-32px!important}
 .zone-grid{padding-bottom:105px}
 .info-rec{position:relative}.info-rec b{font-size:17px}.info-rec .muted{line-height:1.48;margin:8px 0 12px}
@@ -226,13 +226,15 @@ function chooseCountry(c){
  ACTIVE_COUNTRY=c; localStorage.setItem('asiaCountry',c);
  document.getElementById('countryGate').classList.remove('show');
  document.body.dataset.country=c;
+ document.body.classList.toggle('is-malaysia',c==='Malaysia');
  updateCountryUI();
  if(c==='Malaysia') showMalaysiaHome(); else showThailandHome();
 }
 function showCountryGate(){document.getElementById('countryGate').classList.add('show')}
 function showThailandHome(){
  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
- (document.getElementById('inicio')||document.querySelector('.page')).classList.add('active');
+ (document.getElementById('ruta')||document.querySelector('.page')).classList.add('active');
+ document.querySelectorAll('.bottom button,.bottom a').forEach(x=>x.classList.remove('active'));
 }
 function showMalaysiaHome(){
  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
@@ -249,7 +251,8 @@ function openTranslator(){
  document.getElementById('translatorModal').classList.add('show');
  let phrases=mal?[['Hola','Helo'],['Gracias','Terima kasih'],['¿Cuánto cuesta?','Berapa harganya?'],['Sin picante','Tidak pedas'],['¿Dónde está…?','Di mana…?']]:
  [['Hola','สวัสดี'],['Gracias','ขอบคุณ'],['¿Cuánto cuesta?','ราคาเท่าไหร่'],['Sin picante','ไม่เผ็ด'],['¿Dónde está…?','อยู่ที่ไหน']];
- document.getElementById('quickPhrases').innerHTML=phrases.map(p=>`<button onclick="document.getElementById('translateText').value='${p[0]}'"><b>${p[0]}</b><small>${p[1]}</small></button>`).join('');
+ let code=mal?'ms':'th';
+ document.getElementById('quickPhrases').innerHTML=phrases.map(p=>`<div class="quickphrase"><button onclick="document.getElementById('translateText').value='${p[0]}';setTranslateLink()"><b>${p[0]}</b><small>${p[1]}</small><em class="pronounce">🗣 ${ROMAN[code][p[0]]||''}</em></button><button class="speakbtn" onclick="speakTravel('${p[1].replaceAll("'","\\'")}','${code}')">🔊 Oír</button></div>`).join('');
  setTranslateLink();
 }
 function closeTranslator(){document.getElementById('translatorModal').classList.remove('show')}
@@ -279,7 +282,7 @@ function openCountryCurrency(cur){
 }
 </script>
 <style id="v12-country">
-.country-gate{position:fixed;inset:0;z-index:9999;display:none;background:#052f33}.country-gate.show{display:block}.country-cover{min-height:100%;padding:58px 22px 30px;box-sizing:border-box;background:linear-gradient(180deg,rgba(2,31,35,.08),rgba(2,31,35,.82)),url("koh-tao-hero.jpg") center/cover;color:white;display:flex;flex-direction:column;justify-content:flex-end}
+.country-gate{position:fixed;inset:0;z-index:9999;display:none;background:#052f33}.country-gate.show{display:block}.country-cover{min-height:100%;padding:58px 22px 30px;box-sizing:border-box;background:linear-gradient(180deg,rgba(2,31,35,.10),rgba(2,31,35,.78)),url("https://images.unsplash.com/photo-1598970605070-a38a6ccd3a2d?auto=format&fit=crop&w=1400&q=88") center/cover, url("koh-tao-hero.jpg") center/cover;color:white;display:flex;flex-direction:column;justify-content:flex-end}
 .country-copy{margin-bottom:22px}.eyebrow{font-size:10px;letter-spacing:2px;font-weight:900}.country-copy h1{font:500 45px Georgia,serif;margin:7px 0}.country-copy p{margin:0;opacity:.9}.country-options{display:grid;gap:10px}
 .country-option{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.94);color:#123f40;border-radius:23px;padding:17px;display:flex;align-items:center;text-align:left;gap:12px;box-shadow:0 10px 25px rgba(0,0,0,.12)}.country-option>span{font-size:29px}.country-option div{flex:1}.country-option b,.country-option small{display:block}.country-option b{font-size:18px}.country-option small{font-size:11px;margin-top:3px;color:#718282}.country-option i{font-size:28px;font-style:normal}
 .v12toptools{position:fixed;z-index:90;top:max(12px,env(safe-area-inset-top));left:14px;right:14px;display:flex;justify-content:space-between;pointer-events:none}.v12toptools button{pointer-events:auto;border:1px solid rgba(255,255,255,.35);background:rgba(5,63,66,.86);color:white;border-radius:999px;padding:9px 12px;font-size:11px;font-weight:900;backdrop-filter:blur(12px)}
@@ -287,7 +290,33 @@ function openCountryCurrency(cur){
 .v12modal{position:fixed;inset:0;z-index:10000;background:rgba(3,28,30,.5);display:none;align-items:flex-end}.v12modal.show{display:flex}.v12sheet{width:100%;background:#fffaf2;border-radius:28px 28px 0 0;padding:25px 20px max(30px,env(safe-area-inset-bottom));position:relative}.sheetclose{position:absolute;right:16px;top:12px;border:0;background:#eee5d8;border-radius:50%;width:34px;height:34px;font-size:22px}.v12sheet h2{font:500 27px Georgia,serif;color:#153f40}.langrow{display:flex;align-items:center;gap:8px}.langrow button{flex:1;border:0;border-radius:15px;padding:11px;background:#efe8dc;font-weight:800}.v12sheet textarea{width:100%;box-sizing:border-box;min-height:120px;margin:12px 0;border:1px solid #ddd2c2;border-radius:17px;padding:13px;font:inherit}.translatego{display:block;text-align:center;background:#087f7d;color:white;padding:13px;border-radius:999px;text-decoration:none;font-weight:900}.phrasebox{margin-top:18px}.phrasebox>div{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}.phrasebox button{text-align:left;border:0;background:#f0e8dc;border-radius:13px;padding:9px}.phrasebox b,.phrasebox small{display:block}.phrasebox small{margin-top:3px;color:#6b7977}
 .logical-card{margin-top:14px;padding:16px;border-radius:21px;background:#fffaf2;border:1px solid #eadfce}.logical-title{display:flex;gap:9px;align-items:center}.logical-title>span{font-size:25px}.logical-title small{display:block;font-size:9px;letter-spacing:1.4px;color:#9a7250}.logical-title b{font-size:15px;color:#123f40}.logical-steps{margin-top:12px;display:grid;gap:7px}.logical-steps div{display:flex;gap:9px;align-items:center;font-size:11px;color:#405c5b}.logical-steps i{font-style:normal;flex:0 0 23px;height:23px;border-radius:50%;background:#0b8986;color:white;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900}.logical-card>p{font-size:9px;color:#84908f;margin:10px 0 0}
 </style>
-</head><body><div class="v12toptools"><button id="countrySwitch2" onclick="showCountryGate()">🇹🇭 Tailandia⌄</button><button onclick="openTranslator()">💬 Traductor</button></div>
+
+<style id="v13-final">
+.bottom button:first-child,.bottom a:first-child{display:none!important}
+.bottom{grid-template-columns:repeat(4,1fr)!important}
+.v12toptools{top:max(12px,env(safe-area-inset-top))!important}
+.country-copy h1{font-size:43px!important;line-height:1.02}
+.country-copy p{font-size:18px!important}
+.country-cover{background-position:center!important}
+#mapa .travel-hero{background-image:linear-gradient(180deg,rgba(3,35,42,.02),rgba(3,35,42,.14) 55%,rgba(3,35,42,.44)),url("koh-tao-clean.jpg")!important}
+.speakbtn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;background:#0b8583;color:#fff;padding:8px 11px;font-weight:900;font-size:11px;margin-top:5px}
+.pronounce{font-size:11px;color:#8a6c50;margin-top:4px;font-style:italic}
+.country-route-note{margin:10px 16px;padding:10px 13px;border-radius:15px;background:#fff5e8;color:#75583d;font-size:10px}
+</style>
+<script>
+const ROMAN={
+"th":{"Hola":"sawát-dii","Gracias":"khòp khun","¿Cuánto cuesta?":"raa-khaa thâo-rài","Sin picante":"mâi phèt","¿Dónde está…?":"yùu thîi nǎi"},
+"ms":{"Hola":"helo","Gracias":"terima kasih","¿Cuánto cuesta?":"berapa harganya?","Sin picante":"tidak pedas","¿Dónde está…?":"di mana…?"}
+};
+function speakTravel(text,lang){
+ if(!('speechSynthesis' in window)){alert('El navegador no permite audio aquí.');return}
+ speechSynthesis.cancel();
+ let u=new SpeechSynthesisUtterance(text);u.lang=lang==='th'?'th-TH':lang==='ms'?'ms-MY':'es-ES';u.rate=.82;
+ speechSynthesis.speak(u);
+}
+</script><style>
+.quickphrase{display:grid;grid-template-columns:1fr auto;gap:5px;align-items:stretch}.quickphrase>button:first-child{width:100%}.quickphrase .speakbtn{margin:0;padding:7px}.quickphrase em{display:block}.translator-help{font-size:9px;line-height:1.4;color:#7b8987;margin:9px 4px}
+</style></head><body><div class="v12toptools"><button id="countrySwitch2" onclick="showCountryGate()">🇹🇭 Tailandia⌄</button><button onclick="openTranslator()">💬 Traductor</button></div>
 <div class="scene"><img id="scenePhoto" alt=""></div><main class="app">
 <section class="page active" id="inicio">
 <header><div class="ey">ALBERTO'S ASIA ESCAPE · 2026</div><h1>Malaysia<br>& Thailand</h1><div class="sub">6 NOV — 7 DIC · 32 días para recordar</div></header>
@@ -573,7 +602,7 @@ document.addEventListener('error',function(e){
 
 <div id="countryGate" class="country-gate">
  <div class="country-cover">
-  <div class="country-copy"><span class="eyebrow">ASIA 2026</span><h1>¿Dónde estamos?</h1><p>Tu viaje, dividido por países.</p></div>
+  <div class="country-copy"><span class="eyebrow">ASIA 2026</span><h1>Viajazo de Gallo</h1><p>Noviembre 2026</p></div>
   <div class="country-options">
    <button onclick="chooseCountry('Malaysia')" class="country-option malaysia"><span>🇲🇾</span><div><b>Malasia</b><small>7–21 noviembre · Ruta por definir</small></div><i>›</i></button>
    <button onclick="chooseCountry('Thailand')" class="country-option thailand"><span>🇹🇭</span><div><b>Tailandia</b><small>21 noviembre–7 diciembre · Ver viaje</small></div><i>›</i></button>
@@ -585,6 +614,7 @@ document.addEventListener('error',function(e){
  <div class="langrow"><button id="langA" onclick="swapLang()">🇹🇭 Tailandés</button><span>⇄</span><button id="langB" onclick="swapLang()">🇪🇸 Castellano</button></div>
  <textarea id="translateText" placeholder="Escribe lo que quieras traducir…"></textarea>
  <a id="translateGo" class="translatego" target="_blank">Traducir ↗</a>
+<p class="translator-help">Las frases rápidas incluyen <b>cómo se pronuncian</b> y botón 🔊. Para texto libre, “Traducir” abre Google Translate, donde también puedes escucharlo.</p>
  <div class="phrasebox"><b>Frases rápidas</b><div id="quickPhrases"></div></div></div>
 </div>
 </body></html>

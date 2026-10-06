@@ -1,8 +1,8 @@
-# Asia 2026 · V12
-- Portada inicial para elegir Malasia o Tailandia.
-- Tailandia conserva el viaje completo.
-- Malasia queda preparada como espacio independiente, ruta por definir.
-- Gastos separados por país.
-- Cambio de moneda específico: MYR/EUR o THB/EUR.
-- Traductor de viaje: malayo/español o tailandés/español, con frases rápidas y Google Translate.
-- Ruta: orden lógico de visitas por día + tarjetas de transporte/compra de billetes de V11.
+# Asia 2026 · V13
+Cambios finales solicitados:
+- Portada: “Viajazo de Gallo · Noviembre 2026” y nuevo fondo.
+- Se elimina Inicio de la navegación: cada país entra directamente en su contenido.
+- Malasia y Tailandia quedan separadas; Malasia no muestra la ruta tailandesa.
+- Mapa: nueva imagen de playa limpia, sin el collage/textos duplicados anterior.
+- Traductor: frases rápidas con escritura local, pronunciación aproximada y botón 🔊 con voz del dispositivo.
+- Mantiene V12: ruta lógica diaria, transportes, Google Maps, enlaces de billetes, Descubre, noche, gastos y cambio por país.

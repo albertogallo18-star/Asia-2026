@@ -1,9 +1,8 @@
-# Asia 2026 · V10
-
-Diseño basado en la maqueta aprobada:
-- fondos fotográficos por pestaña;
-- Mapa pasa a ser “Zonas del viaje”, no una lista infinita;
-- gran hero de Koh Tao y buscador directo de Google Maps;
-- tarjetas fotográficas por destino;
-- Google Maps se abre con la cuenta del usuario mediante URLs oficiales;
-- se conserva Descubre, favoritos, hoteles/restaurantes, presupuesto, checklist y conversor.
+# Asia 2026 · V12
+- Portada inicial para elegir Malasia o Tailandia.
+- Tailandia conserva el viaje completo.
+- Malasia queda preparada como espacio independiente, ruta por definir.
+- Gastos separados por país.
+- Cambio de moneda específico: MYR/EUR o THB/EUR.
+- Traductor de viaje: malayo/español o tailandés/español, con frases rápidas y Google Translate.
+- Ruta: orden lógico de visitas por día + tarjetas de transporte/compra de billetes de V11.

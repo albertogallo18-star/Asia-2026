@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>Asia 2026</title>
+<style>
+:root{--bg:#07101d;--card:#111c2c;--muted:#9eabc0;--text:#f6f8fc;--accent:#7dd3fc;--gold:#fbbf24}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(#07101d,#0b1424);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",system-ui,sans-serif}
+header{padding:calc(22px + env(safe-area-inset-top)) 20px 16px;position:sticky;top:0;background:#07101ddd;backdrop-filter:blur(18px);z-index:5}
+h1{font-size:30px;margin:0}header p{margin:5px 0 0;color:var(--muted)}
+main{padding:8px 16px 110px;max-width:760px;margin:auto}.hero{padding:22px;border-radius:26px;background:linear-gradient(135deg,#18324b,#16233c);margin:8px 0 18px}
+.hero .big{font-size:28px;font-weight:750}.hero small{color:var(--muted)}
+.tabs{display:flex;gap:8px;overflow:auto;padding-bottom:12px}.tab{border:0;border-radius:999px;padding:10px 14px;background:#172235;color:#ccd5e4;font-weight:650}.tab.active{background:#e9f7ff;color:#07101d}
+section{display:none}section.active{display:block}.card{background:var(--card);border:1px solid #20314a;border-radius:22px;padding:17px;margin:11px 0}.date{font-size:12px;letter-spacing:.08em;color:var(--accent);font-weight:750}.title{font-size:20px;font-weight:750;margin:5px 0}.meta{color:var(--muted);line-height:1.5}.tag{display:inline-block;padding:5px 9px;border-radius:999px;background:#20314a;margin:8px 5px 0 0;font-size:12px}
+.flight{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;text-align:center}.flight strong{font-size:23px}.flight .line{padding:0 12px;color:var(--muted)}
+a.btn,button.btn{display:inline-block;border:0;text-decoration:none;color:#07101d;background:#e9f7ff;padding:10px 13px;border-radius:12px;font-weight:700;margin-top:10px}
+.map{height:52vh;min-height:410px;border-radius:22px;overflow:hidden;border:1px solid #20314a}.map iframe{width:100%;height:100%;border:0}
+.note{border-left:3px solid var(--gold);padding-left:12px;color:#d7deea}.check label{display:block;padding:9px 0;border-bottom:1px solid #20314a}.check input{margin-right:9px}
+nav{position:fixed;bottom:0;left:0;right:0;background:#08111eee;backdrop-filter:blur(20px);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:space-around;border-top:1px solid #1b2b42;z-index:10}
+nav button{background:none;border:0;color:#9eabc0;font-size:12px}nav button b{display:block;font-size:20px;margin-bottom:3px}nav button.on{color:#fff}
+</style>
+</head>
+<body>
+<header><h1>ASIA 2026 🌏</h1><p>Malasia 🇲🇾 + Tailandia 🇹🇭 · 6 nov — 7 dic</p></header>
+<main>
+<div class="hero"><small>PRÓXIMO GRAN VIAJE</small><div class="big">Madrid → Kuala Lumpur</div><p>Empieza con amigos. Termina recorriendo Tailandia.</p></div>
+
+<section id="home" class="active">
+<div class="card"><div class="date">VIE 6 NOV · VUELO</div><div class="title">Madrid → Doha</div>
+<div class="flight"><div><strong>08:05</strong><br>MAD · T4S</div><div class="line">✈︎<br>6h 35</div><div><strong>16:40</strong><br>DOH</div></div>
+<p class="meta">IB6192 · operado por Qatar Airways · Boeing 787-9</p></div>
+<div class="card"><div class="date">SÁB 7 NOV · VUELO</div><div class="title">Doha → Kuala Lumpur</div>
+<div class="flight"><div><strong>02:20</strong><br>DOH</div><div class="line">✈︎<br>7h 20</div><div><strong>14:40</strong><br>KUL · T1</div></div>
+<p class="meta">IB6349 · operado por Qatar Airways · aquí te juntas con tus amigos.</p></div>
+<div class="card"><div class="date">7–21 NOV · MALASIA</div><div class="title">Ruta abierta 🇲🇾</div>
+<p class="meta">La parte con amigos queda deliberadamente flexible. Candidatos: Kuala Lumpur, Malaca, Cameron Highlands, Penang y Langkawi.</p>
+<span class="tag">Kuala Lumpur</span><span class="tag">Penang</span><span class="tag">Langkawi</span><span class="tag">Por decidir</span></div>
+</section>
+
+<section id="route">
+<div class="card"><div class="date">21–23 NOV</div><div class="title">Phi Phi 🏝️</div><p class="meta">Entrada en Tailandia y comienzo del tramo en solitario. Phuket solo como conexión si hace falta.</p></div>
+<div class="card"><div class="date">23–26 NOV</div><div class="title">Koh Phangan 🌕</div><p class="meta">Llegar el 23. Full Moon Party en Haad Rin prevista para el 24; confirmar calendario oficial antes de cerrar reservas.</p></div>
+<div class="card"><div class="date">26–29 NOV</div><div class="title">Koh Tao 🤿</div><p class="meta">Snorkel / buceo recreativo y Koh Nang Yuan. Sin curso PADI.</p></div>
+<div class="card"><div class="date">29 NOV–2 DIC</div><div class="title">Chiang Mai 🛕</div><p class="meta">Vuelo desde Koh Samui cuando cerremos horarios de ferry + avión.</p></div>
+<div class="card"><div class="date">2–4 DIC</div><div class="title">Chiang Rai · Golden Triangle</div><p class="meta">Templo Blanco, Templo Azul y excursión al Triángulo de Oro/Mekong.</p></div>
+<div class="card"><div class="date">4–7 DIC</div><div class="title">Bangkok + Ayutthaya</div><p class="meta">5 dic: Ayutthaya. 6 dic: Bangkok. 7 dic: regreso a Madrid.</p></div>
+</section>
+
+<section id="map">
+<div class="card"><div class="title">Mapa general 🗺️</div><p class="meta">Mapa navegable. Pulsa y desplázate; los botones de cada destino abren navegación completa.</p></div>
+<div class="map"><iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=95.0%2C0.0%2C105.8%2C21.5&layer=mapnik"></iframe></div>
+<div class="card">
+<a class="btn" href="https://maps.apple.com/?q=Kuala+Lumpur" target="_blank">Kuala Lumpur</a>
+<a class="btn" href="https://maps.apple.com/?q=Koh+Phi+Phi" target="_blank">Phi Phi</a>
+<a class="btn" href="https://maps.apple.com/?q=Koh+Phangan" target="_blank">Koh Phangan</a>
+<a class="btn" href="https://maps.apple.com/?q=Koh+Tao" target="_blank">Koh Tao</a>
+<a class="btn" href="https://maps.apple.com/?q=Chiang+Mai" target="_blank">Chiang Mai</a>
+<a class="btn" href="https://maps.apple.com/?q=Chiang+Rai" target="_blank">Chiang Rai</a>
+<a class="btn" href="https://maps.apple.com/?q=Bangkok" target="_blank">Bangkok</a>
+</div></section>
+
+<section id="wallet">
+<div class="card"><div class="title">Reservas 🎫</div><p class="meta">Aquí iremos metiendo vuelos, hoteles, ferris y excursiones. No guardes pasaporte completo, tarjetas ni datos sensibles si publicas la app en una URL pública.</p></div>
+<div class="card"><div class="date">CONFIRMADO / LOCALIZADO</div><div class="title">MAD → DOH → KUL</div><p class="meta">IB6192 · 6 nov · 08:05<br>Escala Doha: 9h 40m<br>IB6349 · 7 nov · 02:20 → 14:40</p></div>
+</section>
+
+<section id="tools">
+<div class="card"><div class="title">Checklist 🎒</div><div class="check">
+<label><input type="checkbox"> Pasaporte</label><label><input type="checkbox"> Seguro de viaje</label><label><input type="checkbox"> eSIM</label><label><input type="checkbox"> Tarjetas + algo de efectivo</label><label><input type="checkbox"> Adaptador / cargadores</label><label><input type="checkbox"> Reservas offline</label></div></div>
+<div class="card"><div class="title">Accesos rápidos</div>
+<a class="btn" href="https://maps.apple.com/" target="_blank">Mapas</a>
+<a class="btn" href="https://www.xe.com/currencyconverter/" target="_blank">Divisas</a>
+<p class="note">La app base funciona sin cuentas ni servidor. El mapa y enlaces externos necesitan conexión.</p></div>
+</section>
+</main>
+<nav>
+<button class="on" data-go="home"><b>⌂</b>Inicio</button><button data-go="route"><b>⌖</b>Ruta</button><button data-go="map"><b>◉</b>Mapa</button><button data-go="wallet"><b>▣</b>Reservas</button><button data-go="tools"><b>☰</b>Viaje</button>
+</nav>
+<script>
+const show=id=>{document.querySelectorAll('section').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x.dataset.go===id));scrollTo(0,0)}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.go));
+document.querySelectorAll('.check input').forEach((x,i)=>{x.checked=localStorage['c'+i]==='1';x.onchange=()=>localStorage['c'+i]=x.checked?'1':'0'});
+if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
+</script></body></html>

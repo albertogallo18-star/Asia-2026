@@ -1,7 +1,7 @@
-# Asia 2026 · V14
-- Ayutthaya ocupa todo el ancho en Descubre.
-- El selector superior refleja correctamente Malasia o Tailandia.
-- Se elimina Inicio de la navegación.
-- Al entrar en Tailandia, Ruta es la sección principal.
-- Al entrar en Malasia, permanece la portada/espacio propio de Malasia.
-- Mantiene todos los cambios de V13.
+# Asia 2026 · V15
+Correcciones sobre V14:
+- Recupera la primera pestaña “Viajazo”, que abre “Viajazo de Gallo · Noviembre 2026” y selector Malasia/Tailandia.
+- Mantiene Ruta como segunda pestaña.
+- Traductor abre por defecto Castellano → Tailandés o Castellano → Malayo.
+- Ayutthaya se fuerza a ocupar una fila completa en Descubre, incluso tras render dinámico.
+- Mantiene audio/pronunciación, rutas, transportes, gastos y contenido de versiones anteriores.

@@ -139,7 +139,7 @@ body:before{display:none!important}
 .bottom{position:fixed!important;z-index:100!important;left:50%!important;transform:translateX(-50%)!important;bottom:10px!important;width:min(calc(100% - 22px),498px)!important;padding:6px!important;background:rgba(255,250,243,.96)!important;border:1px solid rgba(25,60,55,.08)!important;border-radius:24px!important;box-shadow:0 12px 32px rgba(25,50,45,.17)!important;backdrop-filter:blur(18px)!important}
 .bottom button{min-width:0!important;min-height:56px!important;padding:5px 3px!important;background:transparent!important;color:#73817f!important;border-radius:17px!important;font-size:10px!important;font-weight:800!important;transform:none!important}
 .bottom button svg{width:21px!important;height:21px!important}.bottom button.active{background:var(--teal)!important;color:white!important;box-shadow:none!important}.bottom button.active svg{stroke:white!important}
-</style></head><body>
+</style><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></head><body>
 <div class="scene"><img id="scenePhoto" alt=""></div><main class="app">
 <section class="page active" id="inicio">
 <header><div class="ey">ALBERTO'S ASIA ESCAPE · 2026</div><h1>Malaysia<br>& Thailand</h1><div class="sub">6 NOV — 7 DIC · 32 días para recordar</div></header>
@@ -152,7 +152,7 @@ body:before{display:none!important}
 
 <section class="page" id="mapa"><header><h1>Mapa</h1><div class="sub">Tu ruta y sitios útiles</div></header>
 <div class="chips" id="mapFilters"><button class="chip active" data-map="all">Todo</button><button class="chip" data-map="hotel">🏨 Hoteles</button><button class="chip" data-map="food">🍜 Comer</button><button class="chip" data-map="see">📸 Ver</button></div>
-<div class="map"><iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=97%2C5%2C103%2C21&layer=mapnik"></iframe></div>
+<div class="map"><div id="travelMap" style="width:100%;height:390px;border-radius:22px;overflow:hidden"></div></div>
 <div class="card"><b>📍 Sitios por categoría</b><div class="map-legend" id="mapPlaces">
 <span class="map-pin" data-type="hotel">🏨 Sairee · Koh Tao</span><span class="map-pin" data-type="hotel">🏨 Old City · Chiang Mai</span><span class="map-pin" data-type="hotel">🏨 Riverside · Bangkok</span>
 <span class="map-pin" data-type="food">🍜 Yaowarat · Bangkok</span><span class="map-pin" data-type="food">🍜 Night Market · Chiang Mai</span><span class="map-pin" data-type="food">🍜 Tonsai · Phi Phi</span>
@@ -321,4 +321,54 @@ function applySavedFilter(){document.querySelectorAll('.saved-map-item').forEach
 document.querySelectorAll('#mapFilters .chip').forEach(b=>b.onclick=()=>{document.querySelectorAll('#mapFilters .chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');let t=b.dataset.map;currentMapFilter=t;document.querySelectorAll('#mapPlaces .map-pin').forEach(p=>p.classList.toggle('hidden',t!=='all'&&p.dataset.type!==t));applySavedFilter()});
 setTimeout(renderSavedMap,250);
 if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js');
+</script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
+function initTravelMap(){
+  const el=document.getElementById('travelMap');
+  if(!el || !window.L || el.dataset.ready) return;
+  el.dataset.ready='1';
+  const map=L.map(el,{zoomControl:true,scrollWheelZoom:false}).setView([12.6,101.2],5);
+
+  // Clean base layer; Spanish labels are overlaid explicitly below.
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    maxZoom:18, attribution:'© OpenStreetMap'
+  }).addTo(map);
+
+  const labels=[
+    ['TAILANDIA',15.4,101.0,true],['MALASIA',4.5,102.0,true],
+    ['LAOS',18.2,103.4,true],['CAMBOYA',12.7,104.8,true],['VIETNAM',16.2,107.7,true],
+    ['Bangkok',13.7563,100.5018,false],['Chiang Mai',18.7883,98.9853,false],
+    ['Chiang Rai',19.9105,99.8406,false],['Kuala Lumpur',3.1390,101.6869,false]
+  ];
+  labels.forEach(([name,lat,lng,country])=>{
+    L.marker([lat,lng],{interactive:false,icon:L.divIcon({
+      className:'es-map-label',
+      html:`<span class="${country?'country':'city'}">${name}</span>`,
+      iconSize:[130,26],iconAnchor:[65,13]
+    })}).addTo(map);
+  });
+
+  const stops=[
+    ['Kuala Lumpur',3.1390,101.6869],['Phi Phi',7.7407,98.7784],
+    ['Koh Phangan',9.7319,100.0136],['Koh Tao',10.0956,99.8404],
+    ['Chiang Mai',18.7883,98.9853],['Chiang Rai',19.9105,99.8406],
+    ['Bangkok',13.7563,100.5018],['Ayutthaya',14.3532,100.5689]
+  ];
+  const line=[];
+  stops.forEach(([name,lat,lng])=>{
+    line.push([lat,lng]);
+    L.marker([lat,lng],{icon:L.divIcon({
+      className:'trip-marker',
+      html:'<div class="trip-dot route">✦</div>',
+      iconSize:[29,29],iconAnchor:[14,14]
+    })}).bindTooltip(name,{direction:'top',offset:[0,-10]}).addTo(map);
+  });
+  L.polyline(line,{color:'#0b8f8a',weight:3,dashArray:'6 7',opacity:.85}).addTo(map);
+  setTimeout(()=>map.invalidateSize(),150);
+}
+function ensureTravelMap(){ setTimeout(initTravelMap,120); }
+window.addEventListener('load',ensureTravelMap);
+document.addEventListener('click',e=>{
+  const b=e.target.closest('button');
+  if(b && ((b.dataset&&b.dataset.page==='mapa') || /mapa/i.test(b.textContent||''))) ensureTravelMap();
+});
 </script></body></html>

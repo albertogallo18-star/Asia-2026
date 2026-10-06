@@ -1,7 +1,8 @@
-# Asia 2026 · V8 MAPA ES
+# Asia 2026 · V8 MAPA ES FIX
 
-Versión basada en V8 FINAL CORREGIDA:
-- conserva Descubre y el resto de funciones ya corregidas;
-- mapa más compacto;
-- superpone etiquetas propias en castellano para los países y ciudades importantes de la ruta;
-- mantiene OpenStreetMap + Leaflet, la ruta y los favoritos.
+Corrección del mapa:
+- eliminado el iframe antiguo de OpenStreetMap;
+- mapa Leaflet real insertado en su lugar;
+- etiquetas superpuestas en castellano;
+- ruta y destinos principales;
+- conserva Descubre y las funciones de la V8 corregida.

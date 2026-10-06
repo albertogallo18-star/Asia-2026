@@ -1,7 +1,14 @@
-# Asia 2026
-PWA móvil para el viaje Malasia + Tailandia, 6 nov–7 dic 2026.
+# Asia 2026 V3
+Versión visual para iPhone.
 
-## Publicar
-Sube todos los archivos de esta carpeta a la raíz de un repositorio GitHub.
-En Settings > Pages selecciona Deploy from a branch, `main`, carpeta `/ (root)`.
-Después abre la URL publicada en Safari del iPhone > Compartir > Añadir a Inicio > Abrir como app web.
+Incluye:
+- Malasia intacta como ruta con amigos por decidir.
+- Tailandia día a día (mañana/tarde/noche).
+- Galerías fotográficas automáticas de monumentos y lugares mediante Wikimedia Commons.
+- Recomendaciones por destino con Dormir / Comer / Ver / Hacer / Noche / Fotos.
+- Botones Apple Maps y favoritos.
+- Conversor EUR/THB/MYR.
+- Fondo tropical/templo y nuevo icono iOS.
+- Caché V3 para sustituir la versión anterior.
+
+Nota: las fotos se cargan desde Wikimedia Commons y necesitan conexión la primera vez.

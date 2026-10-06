@@ -697,4 +697,27 @@ window.addEventListener('load',()=>{
 });
 </script><script>
 setTimeout(()=>{updateCountryUI();fixBottomNavV15();forceAyutthayaFullWidth();},1000);
+</script><script>
+(function(){
+  function openViajazoOnStart(){
+    const gate=document.getElementById('countryGate');
+    if(gate){
+      gate.classList.add('show');
+      gate.style.display='block';
+    }
+    // Keep saved country for content/preferences, but never bypass the cover on a fresh launch.
+    if(typeof fixBottomNavV15==='function') fixBottomNavV15();
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',openViajazoOnStart);
+  } else {
+    openViajazoOnStart();
+  }
+  window.addEventListener('pageshow',openViajazoOnStart);
+})();
+</script><script>
+setTimeout(()=>{
+ const gate=document.getElementById('countryGate');
+ if(gate){gate.classList.add('show');gate.style.display='block';}
+},350);
 </script></body></html>

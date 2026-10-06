@@ -1,7 +1,5 @@
-# Asia 2026 · V15
-Correcciones sobre V14:
-- Recupera la primera pestaña “Viajazo”, que abre “Viajazo de Gallo · Noviembre 2026” y selector Malasia/Tailandia.
-- Mantiene Ruta como segunda pestaña.
-- Traductor abre por defecto Castellano → Tailandés o Castellano → Malayo.
-- Ayutthaya se fuerza a ocupar una fila completa en Descubre, incluso tras render dinámico.
-- Mantiene audio/pronunciación, rutas, transportes, gastos y contenido de versiones anteriores.
+# Asia 2026 · V16
+- La app SIEMPRE abre en la portada “Viajazo de Gallo · Noviembre 2026”.
+- Desde esa portada se elige Malasia o Tailandia.
+- Se conserva el país elegido para sus datos, pero nunca se salta la portada al iniciar.
+- Mantiene todas las funciones y correcciones de V15.

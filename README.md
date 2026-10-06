@@ -1,5 +1,7 @@
-# Asia 2026 · V16
-- La app SIEMPRE abre en la portada “Viajazo de Gallo · Noviembre 2026”.
-- Desde esa portada se elige Malasia o Tailandia.
-- Se conserva el país elegido para sus datos, pero nunca se salta la portada al iniciar.
-- Mantiene todas las funciones y correcciones de V15.
+# Asia 2026 · V17
+Corrección global de fotografías de Koh Tao:
+- Las fotos de Koh Tao dejan de depender de Wikimedia/consultas dinámicas.
+- Sairee, snorkel/buceo y Koh Nang Yuan usan archivos locales incluidos en la app.
+- Se corrige Koh Tao en Ruta, Mapa, Descubre y detalle del destino.
+- Si una imagen de Koh Tao falla, se sustituye automáticamente por una imagen local.
+- Mantiene V16 y la portada Viajazo de Gallo.

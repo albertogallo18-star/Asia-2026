@@ -41,6 +41,68 @@ nav button{border:0;background:transparent;color:#718180;min-width:58px;height:5
 .rec-card{background:#f7f1e6;color:#173f40;border-radius:24px;padding:16px;margin:10px 0;box-shadow:0 12px 28px rgba(0,0,0,.14)}
 .rec-card .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.rec-card h4{font-size:18px;margin:0 0 4px}.rec-card .price{white-space:nowrap;font-weight:950;color:#b56d25}.rec-card p{color:#647777;margin:7px 0 11px;font-size:13px;line-height:1.35}.rec-card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:11px}.rec-card .tag{font-size:10px;font-weight:850;background:#e1ece7;padding:5px 8px;border-radius:999px}.rec-actions{display:flex;gap:7px}.rec-actions button{border:0;border-radius:999px;padding:9px 12px;font-weight:850}.mapsbtn{background:#173f40;color:white}.savebtn{background:#e9dfcf;color:#173f40}.savebtn.on{background:#e96f58;color:white}
 .foodtype{display:inline-block;font-size:10px;font-weight:900;letter-spacing:.5px;color:#a45e1c;margin-bottom:5px}
+</style>
+<style id="v8-redesign">
+:root{--ink:#123f42;--teal:#0b8f8a;--aqua:#29bfc0;--cream:#f8f1e5;--paper:#fffaf2;--coral:#f2765d;--sun:#ffb13b;--leaf:#6c9b61}
+*{box-sizing:border-box}
+body{background:#f7efe2;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Arial,sans-serif}
+body:before{display:none!important}
+.app{max-width:520px;margin:auto;background:var(--cream);min-height:100vh;box-shadow:0 0 45px rgba(20,50,45,.12)}
+.page{padding:0 18px 112px;background:linear-gradient(#fffaf2,#f7efe2);min-height:100vh}
+.page>header{padding-top:38px;margin-bottom:18px}
+.page>header h1{font-family:Georgia,serif;font-size:46px;line-height:.95;font-weight:500;color:#173c3d;margin:0 0 8px}
+.page>header .sub{color:#675f54}
+#inicio{padding:0 0 110px;background:#f8f1e5}
+#inicio>header{display:none}
+.hero{height:76vh;min-height:610px;max-height:780px;margin:0;border-radius:0 0 34px 34px;overflow:hidden;position:relative;background:#168f99}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,25,35,.06) 18%,rgba(0,28,31,.05) 45%,rgba(0,30,30,.55) 100%);pointer-events:none}
+.hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .hero-copy{position:absolute;z-index:3;left:26px;right:26px;top:58px;color:#fff;text-shadow:0 2px 15px rgba(0,0,0,.25)}
+.hero .hero-copy .ey{font-size:12px;letter-spacing:2.2px;font-weight:800}
+.hero .hero-copy h1{font-family:Georgia,serif;font-size:55px;line-height:.91;font-weight:500;margin:11px 0 12px;color:#fff}
+.hero .hero-copy p{font-size:14px;font-weight:800;letter-spacing:.6px}
+.hero .hero-inner{position:absolute!important;z-index:4!important;left:22px!important;right:22px!important;bottom:28px!important;top:auto!important;height:auto!important;min-height:0!important;border:0!important;background:rgba(255,250,242,.94)!important;color:#153f40!important;border-radius:23px!important;padding:14px!important;backdrop-filter:blur(16px)}
+.hero .hero-inner .ey{color:#7a6c5d!important;font-size:10px!important}
+.hero .hero-inner h2{font-family:Georgia,serif!important;font-size:26px!important;line-height:1!important;margin:4px 0!important;color:#173f40!important}
+.hero .hero-inner p{color:#6f716a!important;font-size:12px!important;margin:4px 0 0!important}
+.hero .hero-inner:before{content:"✈️  Próximo destino";display:block;font-size:10px;font-weight:900;color:#0b8f8a;margin-bottom:5px;letter-spacing:.6px}
+#inicio>.section,#inicio>.card,#inicio>.flight,#inicio>.glass,#inicio>.chips,#inicio>.gallery,#inicio>h2,#inicio>p{margin-left:18px;margin-right:18px}
+.section{font-family:Georgia,serif;font-size:30px;font-weight:500;color:#173f40;margin-top:27px}
+.card,.glass,.flight{background:rgba(255,250,242,.96)!important;color:#173f40!important;border:1px solid rgba(25,70,68,.07)!important;border-radius:22px!important;box-shadow:0 8px 25px rgba(35,56,49,.07)!important}
+.muted,.sub{color:#6f7a75!important}
+.primary{background:var(--teal)!important;color:#fff!important;border:0!important;border-radius:999px!important}
+.chips{gap:8px}.chip{background:#fffaf2!important;color:#173f40!important;border:1px solid #e8ddcc!important;box-shadow:none!important}.chip.active{background:var(--teal)!important;color:white!important;border-color:var(--teal)!important}
+#destList header{padding-top:38px}
+.destgrid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important}
+.dest{height:176px!important;border-radius:18px!important;overflow:hidden!important;position:relative!important;box-shadow:none!important;border:0!important}
+.dest:nth-child(5n){grid-column:span 2;height:190px!important}
+.dest:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(0,28,31,.72))}
+.dest img{width:100%;height:100%;object-fit:cover}
+.dest .dc{position:absolute!important;z-index:2!important;left:13px!important;right:10px!important;bottom:12px!important;color:white!important;padding:0!important;background:none!important}
+.dest .dc b{font-family:Georgia,serif;font-size:21px!important;color:white!important}.dest .dc small{color:white!important;opacity:.9}
+#destDetail{margin:0 -18px;padding:0 18px 110px}
+#destDetail>header{height:320px;margin:0 -18px 14px;padding:24px 20px;position:relative;overflow:hidden;background:linear-gradient(135deg,#157c82,#f2765d);color:white}
+#destDetail>header:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,32,35,.48));pointer-events:none}
+#destDetail>header .back,#destDetail>header h1,#destDetail>header .sub{position:relative;z-index:2}
+#destDetail>header h1{font-family:Georgia,serif;font-size:46px;color:white;margin-top:150px!important;text-shadow:0 2px 12px rgba(0,0,0,.25)}
+#destDetail>header .sub{color:white!important}
+.back{background:rgba(255,250,242,.92)!important;color:#173f40!important;border:0!important;border-radius:999px!important;padding:10px 14px!important}
+.catgrid{display:flex!important;overflow-x:auto!important;gap:7px!important;padding:4px 0 9px!important;scrollbar-width:none}.catgrid::-webkit-scrollbar{display:none}
+.cat{min-width:auto!important;width:auto!important;height:auto!important;display:inline-flex!important;flex-direction:row!important;gap:5px!important;align-items:center!important;padding:9px 12px!important;border-radius:999px!important;background:#fffaf2!important;color:#173f40!important;border:1px solid #e8ddcc!important;font-size:12px!important;box-shadow:none!important}.cat span{font-size:15px!important;background:none!important;width:auto!important;height:auto!important}
+.rec-card{background:#fffaf2!important;border:1px solid #e7ddcd!important;box-shadow:none!important;border-radius:18px!important;padding:13px!important}.rec-card h4{font-size:16px!important}.recgroup h3{font-size:22px!important}.recgroup>p{color:#6c7772!important}
+.gallery{gap:8px!important}.photo{border-radius:18px!important;overflow:hidden!important}
+#mapa{background:#f8f1e5}
+#mapa .map{border-radius:24px!important;overflow:hidden!important;border:3px solid #fffaf2!important;box-shadow:0 12px 30px rgba(30,60,55,.12)!important}
+#mapa .card{background:#fffaf2!important}
+#mas{background:#f8f1e5}
+.menu{border-bottom:1px solid #e7ddcf!important}.menu .ico{background:#e5f1ed!important;border-radius:50%!important}
+.bottom{position:fixed!important;left:50%!important;transform:translateX(-50%)!important;bottom:12px!important;width:min(calc(100% - 24px),496px)!important;background:rgba(255,250,242,.95)!important;border:1px solid rgba(25,65,62,.08)!important;border-radius:25px!important;padding:7px 8px!important;box-shadow:0 12px 35px rgba(20,50,45,.18)!important;backdrop-filter:blur(20px)!important;z-index:99!important}
+.bottom button{color:#70807e!important;background:transparent!important;border-radius:17px!important;min-height:56px!important;font-size:10px!important;font-weight:800!important;transition:.2s!important}
+.bottom button svg{width:22px!important;height:22px!important;stroke-width:1.8!important}.bottom button.active{background:#0e7775!important;color:#fff!important;transform:none!important;box-shadow:none!important}
+.bottom button.active svg{stroke:white!important}
+.fav,.savebtn.on{background:var(--coral)!important;color:white!important}
+.price{color:#c46d22!important}
+.currency-box{background:#fffaf2!important}.budget-total{background:linear-gradient(135deg,#0e7775,#20a8a3)!important}
 </style></head><body>
 <div class="scene"><img id="scenePhoto" alt=""></div><main class="app">
 <section class="page active" id="inicio">
@@ -58,7 +120,7 @@ nav button{border:0;background:transparent;color:#718180;min-width:58px;height:5
 <div class="card"><b>📍 Sitios por categoría</b><div class="map-legend" id="mapPlaces">
 <span class="map-pin" data-type="hotel">🏨 Sairee · Koh Tao</span><span class="map-pin" data-type="hotel">🏨 Old City · Chiang Mai</span><span class="map-pin" data-type="hotel">🏨 Riverside · Bangkok</span>
 <span class="map-pin" data-type="food">🍜 Yaowarat · Bangkok</span><span class="map-pin" data-type="food">🍜 Night Market · Chiang Mai</span><span class="map-pin" data-type="food">🍜 Tonsai · Phi Phi</span>
-<span class="map-pin" data-type="see">📸 Maya Bay</span><span class="map-pin" data-type="see">📸 White Temple</span><span class="map-pin" data-type="see">📸 Wat Arun</span></div><p class="muted">Los filtros muestran u ocultan las categorías de tu lista. Iremos añadiendo hoteles y restaurantes concretos cuando los reserves.</p></div></section>
+<span class="map-pin" data-type="see">📸 Maya Bay</span><span class="map-pin" data-type="see">📸 White Temple</span><span class="map-pin" data-type="see">📸 Wat Arun</span></div><p class="muted">Los filtros muestran u ocultan las categorías de tu lista.</p></div><div class="card" id="savedMapCard"><b>❤️ Mis guardados en el mapa</b><p class="muted">Todo lo que marques en Descubre aparecerá aquí automáticamente.</p><div id="savedMapPlaces"></div></div></section>
 
 <section class="page" id="recomendaciones"><div id="destList"><header><h1>Recomendaciones</h1><div class="sub">Tus mejores sitios, organizados por destino</div></header><div class="chips"><button class="chip active">Destinos</button><button class="chip">❤️ Mis sitios</button><button class="chip">⭐ Imprescindibles</button></div><div class="dest" id="destGrid"></div></div><div id="destDetail" class="hidden"></div></section>
 
@@ -158,7 +220,7 @@ setTimeout(()=>Object.keys(DEST).forEach((k,i)=>commonsImage(destQueries[k],docu
 
 function mapButton(name,place){return `<button class="mapsbtn" onclick="window.open('https://maps.apple.com/?q=${encodeURIComponent(name+' '+place)}')">📍 Maps</button>`}
 function saveRecButton(name,place){let key='rec|'+place+'|'+name, on=favs.includes(key);return `<button class="savebtn ${on?'on':''}" onclick="toggleRec('${place.replaceAll("'","")}','${name.replaceAll("'","")}',this)">${on?'♥ Guardado':'♡ Guardar'}</button>`}
-function toggleRec(place,name,b){let key='rec|'+place+'|'+name,i=favs.indexOf(key);if(i>=0)favs.splice(i,1);else favs.push(key);localStorage.setItem('asia26favs',JSON.stringify(favs));b.classList.toggle('on',i<0);b.textContent=i<0?'♥ Guardado':'♡ Guardar'}
+function toggleRec(place,name,b){let key='rec|'+place+'|'+name,i=favs.indexOf(key);if(i>=0)favs.splice(i,1);else favs.push(key);localStorage.setItem('asia26favs',JSON.stringify(favs));b.classList.toggle('on',i<0);b.textContent=i<0?'♥ Guardado':'♡ Guardar';renderSavedMap()}
 function hotelHTML(place){
  let h=HOTEL_RECS[place]; if(!h)return '<div class="card">Hoteles por añadir.</div>';
  let groups=[['backpacker','🎒 Mochilero','Prioridad: precio, ubicación y ambiente.'],['relax','🌴 Relax','Un poco mejor: habitación cómoda, piscina/playa o más tranquilidad.'],['elegant','✨ Elegante','Para darte un capricho y convertir el hotel en parte del viaje.']];
@@ -175,7 +237,7 @@ function openDest(k){let v=DEST[k], photos=D.filter(x=>x.place===k).flatMap(x=>x
 <h2 class="section anchor" id="${sid}-do">✨ Hacer</h2>${v.do.map(x=>`<div class="card"><b>${x}</b><p class="muted">Plan recomendado en ${k}.</p></div>`).join('')}
 <h2 class="section anchor" id="${sid}-night">🍸 Noche</h2><div class="card"><b>${k==='Koh Phangan'?'Full Moon / Haad Rin':k==='Bangkok'?'Rooftop + Yaowarat':k==='Koh Tao'?'Sairee Beach':'Mercados, bares y paseo nocturno'}</b><p class="muted">Ideas para la noche según el destino.</p></div>
 <h2 class="section anchor" id="${sid}-eat">🍜 Comer</h2>${foodHTML(k)}
-<h2 class="section anchor" id="${sid}-stay">🏨 Dormir</h2>${hotelHTML(k)}`;restoreFavButtons();}
+<h2 class="section anchor" id="${sid}-stay">🏨 Dormir</h2>${hotelHTML(k)}`;restoreFavButtons();setTimeout(()=>{let h=document.querySelector('#destDetail>header');if(h){let q=({ 'Phi Phi':'Maya Bay Phi Phi Thailand','Koh Phangan':'Koh Phangan beach Thailand','Koh Tao':'Koh Tao Thailand beach','Chiang Mai':'Doi Suthep Chiang Mai Thailand','Chiang Rai':'Wat Rong Khun Chiang Rai','Bangkok':'Wat Arun Bangkok sunset','Ayutthaya':'Ayutthaya temple Thailand'})[k]||k+' Thailand';let im=new Image();commonsImage(q,im).then(()=>{if(im.src)h.style.background=`linear-gradient(transparent,rgba(0,32,35,.42)),url('${im.src}') center/cover`})}} ,80);}
 function goDest(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}
 function closeDest(){document.getElementById('destDetail').classList.add('hidden');document.getElementById('destList').classList.remove('hidden')}
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(b.dataset.page).classList.add('active');window.scrollTo(0,0)});
@@ -198,9 +260,46 @@ function renderChecks(){checkList.innerHTML=checks.map((x,i)=>`<label class="che
 function addCheck(){let t=newCheck.value.trim();if(!t)return;checks.push({t,d:false});newCheck.value='';saveChecks();renderChecks()}
 
 let favs=JSON.parse(localStorage.getItem('asia26favs')||'[]');
-function toggleFav(k,x,b){let key=k+'|'+x.trim(),i=favs.indexOf(key);if(i>=0)favs.splice(i,1);else favs.push(key);localStorage.setItem('asia26favs',JSON.stringify(favs));b.classList.toggle('on',i<0);b.textContent=i<0?'♥':'♡'}
+function toggleFav(k,x,b){let key=k+'|'+x.trim(),i=favs.indexOf(key);if(i>=0)favs.splice(i,1);else favs.push(key);localStorage.setItem('asia26favs',JSON.stringify(favs));b.classList.toggle('on',i<0);b.textContent=i<0?'♥':'♡';renderSavedMap()}
 function restoreFavButtons(){}
 
-document.querySelectorAll('#mapFilters .chip').forEach(b=>b.onclick=()=>{document.querySelectorAll('#mapFilters .chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');let t=b.dataset.map;document.querySelectorAll('#mapPlaces .map-pin').forEach(p=>p.classList.toggle('hidden',t!=='all'&&p.dataset.type!==t))});
+
+function renderSavedMap(){
+ let box=document.getElementById('savedMapPlaces');if(!box)return;
+ let rows=favs.map(key=>{
+   let parts=key.split('|'),isRec=parts[0]==='rec',place=isRec?parts[1]:parts[0],name=isRec?parts.slice(2).join('|'):parts.slice(1).join('|').trim();
+   let type='see',ico='📸';
+   if(isRec){
+      let h=HOTEL_RECS[place], isHotel=h&&Object.values(h).flat().some(x=>x[0]===name);
+      type=isHotel?'hotel':'food';ico=isHotel?'🏨':'🍜';
+   }
+   return `<div class="rec-card saved-map-item" data-type="${type}"><div class="top"><div><h4>${ico} ${name}</h4><span class="foodtype">${place}</span></div></div><div class="rec-actions">${mapButton(name,place)}</div></div>`;
+ });
+ box.innerHTML=rows.length?rows.join(''):'<p class="muted">Aún no has guardado ningún sitio.</p>';
+ applyMapFilter();
+}
+let currentMapFilter='all';
+function applyMapFilter(){document.querySelectorAll('.saved-map-item').forEach(p=>p.style.display=currentMapFilter==='all'||p.dataset.type===currentMapFilter?'block':'none')}
+
+document.querySelectorAll('#mapFilters .chip').forEach(b=>b.onclick=()=>{
+function renderSavedMap(){
+ let box=document.getElementById('savedMapPlaces');if(!box)return;
+ let rows=favs.map(key=>{
+   let parts=key.split('|'),isRec=parts[0]==='rec',place=isRec?parts[1]:parts[0],name=isRec?parts.slice(2).join('|'):parts.slice(1).join('|').trim();
+   let type='see',ico='📸';
+   if(isRec){
+      let h=HOTEL_RECS[place], isHotel=h&&Object.values(h).flat().some(x=>x[0]===name);
+      type=isHotel?'hotel':'food';ico=isHotel?'🏨':'🍜';
+   }
+   return `<div class="rec-card saved-map-item" data-type="${type}"><div class="top"><div><h4>${ico} ${name}</h4><span class="foodtype">${place}</span></div></div><div class="rec-actions">${mapButton(name,place)}</div></div>`;
+ });
+ box.innerHTML=rows.length?rows.join(''):'<p class="muted">Aún no has guardado ningún sitio.</p>';
+ applyMapFilter();
+}
+let currentMapFilter='all';
+function applyMapFilter(){document.querySelectorAll('.saved-map-item').forEach(p=>p.style.display=currentMapFilter==='all'||p.dataset.type===currentMapFilter?'block':'none')}
+
+document.querySelectorAll('#mapFilters .chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');let t=b.dataset.map;currentMapFilter=t;document.querySelectorAll('#mapPlaces .map-pin').forEach(p=>p.classList.toggle('hidden',t!=='all'&&p.dataset.type!==t));applyMapFilter()});
+setTimeout(renderSavedMap,300);
 if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js');
 </script></body></html>

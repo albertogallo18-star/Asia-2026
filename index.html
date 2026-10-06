@@ -224,14 +224,14 @@ body{background:#f6efe4!important}
 let ACTIVE_COUNTRY=localStorage.getItem('asiaCountry')||'';
 function chooseCountry(c){
  ACTIVE_COUNTRY=c; localStorage.setItem('asiaCountry',c);
- document.getElementById('countryGate').classList.remove('show');
+ const gate=document.getElementById('countryGate'); gate.classList.remove('show'); gate.style.display='none';
  document.body.dataset.country=c;
  document.body.classList.toggle('is-malaysia',c==='Malaysia');
  updateCountryUI();
  updateCountryUI();
  if(c==='Malaysia') showMalaysiaHome(); else showThailandHome();
 }
-function showCountryGate(){document.getElementById('countryGate').classList.add('show')}
+function showCountryGate(){const gate=document.getElementById('countryGate');gate.style.display='block';gate.classList.add('show')}
 function showThailandHome(){
  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
  (document.getElementById('ruta')||document.querySelector('.page')).classList.add('active');
@@ -677,8 +677,8 @@ document.addEventListener('error',function(e){
  <div class="country-cover">
   <div class="country-copy"><span class="eyebrow">ASIA 2026</span><h1>Viajazo de Gallo</h1><p>Noviembre 2026</p></div>
   <div class="country-options">
-   <button onclick="chooseCountry('Malaysia')" class="country-option malaysia"><span>🇲🇾</span><div><b>Malasia</b><small>7–21 noviembre · Ruta por definir</small></div><i>›</i></button>
-   <button onclick="chooseCountry('Thailand')" class="country-option thailand"><span>🇹🇭</span><div><b>Tailandia</b><small>21 noviembre–7 diciembre · Ver viaje</small></div><i>›</i></button>
+   <button type="button" onclick="chooseCountry('Malaysia');return false;" class="country-option malaysia"><span>🇲🇾</span><div><b>Malasia</b><small>7–21 noviembre · Ruta por definir</small></div><i>›</i></button>
+   <button type="button" onclick="chooseCountry('Thailand');return false;" class="country-option thailand"><span>🇹🇭</span><div><b>Tailandia</b><small>21 noviembre–7 diciembre · Ver viaje</small></div><i>›</i></button>
   </div>
  </div>
 </div>
@@ -720,8 +720,8 @@ setTimeout(()=>{updateCountryUI();fixBottomNavV15();forceAyutthayaFullWidth();},
   function openViajazoOnStart(){
     const gate=document.getElementById('countryGate');
     if(gate){
-      gate.classList.add('show');
       gate.style.display='block';
+      gate.classList.add('show');
     }
     // Keep saved country for content/preferences, but never bypass the cover on a fresh launch.
     if(typeof fixBottomNavV15==='function') fixBottomNavV15();
@@ -731,13 +731,8 @@ setTimeout(()=>{updateCountryUI();fixBottomNavV15();forceAyutthayaFullWidth();},
   } else {
     openViajazoOnStart();
   }
-  window.addEventListener('pageshow',openViajazoOnStart);
+  // Do not reopen the cover after the user has selected a country in this session.
 })();
-</script><script>
-setTimeout(()=>{
- const gate=document.getElementById('countryGate');
- if(gate){gate.classList.add('show');gate.style.display='block';}
-},350);
 </script><script>
 document.addEventListener('error',function(e){
  const im=e.target;

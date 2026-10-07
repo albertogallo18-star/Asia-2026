@@ -1,8 +1,9 @@
-# Asia 2026 · V31
+# Asia 2026 · V32
 
-## Fix Malasia
-- Corrige el render en blanco al entrar en Malasia.
-- La navegación de Malasia controla directamente Viajazo, Ruta, Mapa, Descubre y Más.
-- Fuerza la vista activa para evitar conflictos con los manejadores antiguos de Tailandia.
-- Portada: “Ruta orientativa”.
-- Mantiene el contenido completo de Malasia de V30 y toda la parte de Tailandia.
+## Malasia reconstruida desde V29
+- Base estable V29.
+- Malasia integrada en las mismas cinco pestañas: Viajazo, Ruta, Mapa, Descubre y Más.
+- Ruta orientativa 7–22 noviembre: Kuala Lumpur, Cameron Highlands, Penang, Langkawi y Melaka.
+- Kuala Lumpur inicial: 2 noches.
+- Fichas completas por destino con dormir, comer, ver, hacer, noche y Google Maps.
+- Tailandia y Viaje inteligente conservados desde V29.

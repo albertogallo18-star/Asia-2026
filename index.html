@@ -1293,6 +1293,76 @@ const V43_openDest=openDest;openDest=function(k){V43_openDest(k);setTimeout(()=>
 const V43_my38Dest=my38Dest;my38Dest=function(k){let h=document.getElementById('my38DiscoverHome'),x=document.getElementById('my38DiscoverDetail');h.style.display='none';x.style.display='block';setTimeout(()=>v43Malaysia(k),20)};
 </script>
 
+
+<style id="v43-final-fix-css">
+/* V43 FINAL: Descubre compacto en ambos países */
+.v43-final-label{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:900;margin:4px 5px 6px 0;background:#eef5ef;color:#174d4b}.v43-final-label.es{background:#fff0bf;color:#694d00}.v43-final-label.req{background:#fff7df;color:#725600}.v43-section-body .rec-card,.v43-section-body .hotel-card,.v43-section-body .food-card{margin:9px 0!important}.v43-section>button{cursor:pointer}.v43-section>button:after{content:"Tocar para abrir";margin-left:5px;font-size:8px;font-weight:700;color:#879794}.v43-section.open>button:after{content:"Cerrar"}.v43-mal-card .v43-place-thumb{width:100%;height:130px;object-fit:cover;border-radius:14px;margin:7px 0 10px;background:#e8e0d5}.v43-country-note{background:#e8f3ef;border-radius:18px;padding:12px 14px;font-size:11px;line-height:1.45;color:#496664;margin:10px 0 14px}
+</style>
+<script id="v43-final-fix-js">
+/* This script is deliberately LAST: V42 legacy wrappers previously overwrote V43. */
+const V43_FINAL_LANG={
+ 'Phi Phi':{tour:['🇬🇧','Inglés habitual'],boat:['🇬🇧','Inglés habitual'],dive:['🇬🇧','Inglés habitual']},
+ 'Koh Phangan':{tour:['🇬🇧','Inglés habitual'],boat:['🇬🇧','Inglés habitual'],dive:['🇬🇧','Inglés habitual']},
+ 'Koh Tao':{tour:['🇪🇸','Español disponible'],boat:['🇬🇧','Inglés habitual'],dive:['🇪🇸','Español confirmado']},
+ 'Chiang Mai':{tour:['🇪🇸','Español confirmado'],boat:['🇬🇧','Inglés habitual']},
+ 'Chiang Rai':{tour:['🇪🇸','Español confirmado'],boat:['🇬🇧','Inglés habitual']},
+ 'Bangkok':{tour:['🇪🇸','Español confirmado'],boat:['🇬🇧','Inglés habitual']},
+ 'Ayutthaya':{tour:['🇪🇸','Español confirmado'],boat:['🇬🇧','Inglés habitual']},
+ 'Kuala Lumpur':{tour:['🇪🇸','Español confirmado']},
+ 'Cameron Highlands':{tour:['🇪🇸','Español disponible']},
+ 'Penang · George Town':{tour:['🇪🇸','Español confirmado']},
+ 'Langkawi':{tour:['🇪🇸','Español confirmado'],boat:['🇬🇧','Inglés habitual']},
+ 'Melaka':{tour:['🇪🇸','Español disponible']}
+};
+const V43_FINAL_WEB={
+ 'Koh Tao':{dive:'https://ihasiadivingkohtao.com/'},
+ 'Bangkok':{tour:'https://tuguiaentailandia.com/'},'Ayutthaya':{tour:'https://tuguiaentailandia.com/'},'Chiang Mai':{tour:'https://tuguiaentailandia.com/'},'Chiang Rai':{tour:'https://tuguiaentailandia.com/'},
+ 'Kuala Lumpur':{tour:'https://readyviajes.com/malasia/'},'Cameron Highlands':{tour:'https://readyviajes.com/malasia/'},'Penang · George Town':{tour:'https://readyviajes.com/malasia/'},'Langkawi':{tour:'https://readyviajes.com/malasia/'},'Melaka':{tour:'https://www.vivemalasia.es/viajes-a-malasia/esencial-malasia-peninsula-con-guia-en-espanol/'}
+};
+function v43FinalBadge(place,type){let z=V43_FINAL_LANG[place]?.[type];if(!z)return'';return `<span class="v43-final-label ${z[0]==='🇪🇸'?'es':''}">${z[0]} ${z[1]}</span>`}
+function v43FinalGroup(icon,title,items,place,type){if(!items||!items.length)return'';let web=V43_FINAL_WEB[place]?.[type];return `<div class="v43-section"><button type="button" onclick="this.parentElement.classList.toggle('open')"><span>${icon}</span><span>${title}</span><span class="v43-plus">＋</span></button><div class="v43-section-body">${v43FinalBadge(place,type)}${items.map(x=>{let na=/No aplica|No recomendada|No necesaria|No prioritario|No alquilar/.test(x[0]);return `<div class="v42-item"><b>${x[0]}</b><small>${x[1]}</small>${na?'':`<div class="v43-actions"><a class="v43-link" target="_blank" rel="noopener" href="${v42Maps(x[0],place)}">📍 Google Maps</a>${web?`<a class="v43-link" target="_blank" rel="noopener" href="${web}">${(V43_FINAL_LANG[place]?.[type]?.[0]==='🇪🇸')?'🇪🇸 Web en español':'🌐 Web'}</a>`:''}</div>`}</div>`}).join('')}</div></div>`}
+function v43FinalServices(place){let d=V42_SERVICES[v42Key(place)];if(!d)return'';return `<div class="v43-country-note"><b>Idiomas:</b> priorizo opciones en español. 🇪🇸 solo aparece cuando he encontrado español confirmado/disponible; 🇬🇧 indica que la operativa habitual es en inglés. Conviene reconfirmarlo al reservar.</div>${v43FinalGroup('🛵','Alquiler de moto',d.moto,place,'moto')}${v43FinalGroup('🤿','Buceo & snorkel',d.dive,place,'dive')}${v43FinalGroup('🚤','Barcos',d.boat,place,'boat')}${v43FinalGroup('🎟️','Excursiones & tours',d.tour,place,'tour')}${v43FinalGroup('⚡','Aventura & experiencias',d.adventure,place,'adventure')}${v43FinalMove(place)}`}
+function v43FinalMove(place){const m={
+'Phi Phi':'A pie por Phi Phi Don; longtail para playas y bahías. No hay carreteras útiles para moto.',
+'Koh Phangan':'Moto si conduces legalmente y con experiencia; si no, songthaew/taxi. Para Full Moon, evita conducir tras beber.',
+'Koh Tao':'Moto es muy práctica, pero algunas carreteras tienen fuertes pendientes; taxi pickup y longtail son alternativas.',
+'Chiang Mai':'Grab/songthaew para ciudad; moto solo si tienes permiso y experiencia. GreenBus para Chiang Rai.',
+'Chiang Rai':'Grab/taxi y moto para templos; excursión organizada para Golden Triangle si queréis simplificar.',
+'Bangkok':'BTS + MRT + Chao Phraya + Grab. No alquilaría moto.',
+'Ayutthaya':'Bici o tuk-tuk entre templos; tren desde Bangkok.',
+'Kuala Lumpur':'MRT/LRT + Grab. Para dos noches no alquilaría moto.',
+'Cameron Highlands':'Taxi/tour/4x4; scooter solo con experiencia por curvas, lluvia y niebla.',
+'Penang · George Town':'A pie + Grab dentro de George Town; scooter solo para recorrer la isla.',
+'Langkawi':'Aquí sí compensa scooter/coche para moverse con libertad; Grab como alternativa.',
+'Melaka':'Centro histórico andando; Grab para distancias mayores.'};let t=m[place];return t?v43Accordion('🚕','Moverse',`<div class="v42-item"><b>Recomendación práctica</b><small>${t}</small><a class="v43-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}">📍 Google Maps</a></div>`):''}
+function v43FinalThai(place){
+ let el=document.getElementById('destDetail'); if(!el)return;
+ let sid='s'+place.replaceAll(' ','');
+ // Remove any legacy service block injected by V42.
+ el.querySelectorAll('.v42-services,.v43-wrap').forEach(n=>n.remove());
+ let heads=['see','do','night','eat','stay'].map(x=>el.querySelector('#'+sid+'-'+x));
+ function grab(h){if(!h)return'';let out='',n=h.nextElementSibling;while(n&&!(n.tagName==='H2'&&n.classList.contains('section'))){let nx=n.nextElementSibling;out+=n.outerHTML;n=nx}return out}
+ let labels=[['⭐','Ver'],['✨','Hacer'],['🍸','Noche'],['🍜','Comer'],['🏨','Dormir']]; let blocks='';
+ heads.forEach((h,i)=>{if(h)blocks+=v43Accordion(labels[i][0],labels[i][1],grab(h))});
+ heads.forEach(h=>{if(!h)return;let n=h.nextElementSibling;while(n&&!(n.tagName==='H2'&&n.classList.contains('section'))){let nx=n.nextElementSibling;n.remove();n=nx}h.remove()});
+ let gallery=el.querySelector('#'+sid+'-photos'); let wrap=document.createElement('div');wrap.className='v43-wrap';wrap.innerHTML=`<h3>🧭 Explora ${place}</h3><p class="v43-note">Todo agrupado para que abras solo lo que necesites.</p>${blocks}<h3 style="margin-top:18px">🧭 Servicios & experiencias</h3>${v43FinalServices(place)}`;
+ if(gallery) el.insertBefore(wrap,gallery); else el.appendChild(wrap);
+}
+function v43FinalMalCards(items,place,kind){return (items||[]).map((x,i)=>{let name=x[0],desc=(kind==='eat'||kind==='stay')?x[3]:x[1],tag=(kind==='eat'||kind==='stay')?`<span class="foodtype">${x[2]} · ${x[1]}</span>`:'';return `<div class="v43-mal-card"><h4>${name}</h4>${tag}<p>${desc}</p><div class="v43-actions"><a class="v43-link" target="_blank" rel="noopener" href="${v42Maps(name,place)}">📍 Google Maps</a></div></div>`}).join('')}
+function v43FinalMalaysia(k){
+ let base=MY38_DEST[k],d=V43_MAL[k],x=document.getElementById('my38DiscoverDetail');if(!x||!d)return;
+ document.getElementById('my38DiscoverHome').style.display='none';x.style.display='block';
+ let names={kl:'Kuala Lumpur',cam:'Cameron Highlands',pen:'Penang · George Town',lan:'Langkawi',mel:'Melaka'},p=names[k];
+ x.innerHTML=`<button class="my38-back" onclick="my38CloseDest()">← Destinos</button><div class="my39-detailhero" style="background-image:url('${V43_MAL_PHOTO[k]}')"><div class="txt"><h1>${base.name}</h1><p>${base.sub}</p></div></div><p class="my39-intro">${MY39_DESC[k]}</p>${my39Order(k)}<div class="v43-wrap"><h3>🧭 Explora ${base.name}</h3><p class="v43-note">Fotos, explicaciones y Google Maps, con el mismo sistema compacto que Tailandia.</p>${v43Accordion('⭐','Ver',v43FinalMalCards(d.see,p,'see'))}${v43Accordion('✨','Hacer',v43FinalMalCards(d.do,p,'do'))}${v43Accordion('🍜','Comer',v43FinalMalCards(d.eat,p,'eat'))}${v43Accordion('🏨','Dormir',v43FinalMalCards(d.stay,p,'stay'))}${v43Accordion('🍸','Noche',v43FinalMalCards(d.night,p,'night'))}<h3 style="margin-top:18px">🧭 Servicios & experiencias</h3>${v43FinalServices(p)}</div><a class="my37-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p+' Malaysia')}">📍 Abrir ${base.name} en Google Maps</a>`;
+ document.getElementById('my37').scrollTo(0,0);
+}
+// Override AFTER every legacy V42/V43 wrapper.
+const V43_FINAL_OPEN_DEST=openDest;
+openDest=function(k){V43_FINAL_OPEN_DEST(k);setTimeout(()=>v43FinalThai(k),120)};
+const V43_FINAL_MY_DEST=my38Dest;
+my38Dest=function(k){V43_FINAL_MY_DEST(k);setTimeout(()=>v43FinalMalaysia(k),120)};
+</script>
+
 </body></html>
 <style id="v42-services-css">
 .v42-services{margin:16px 0 20px}.v42-services>h3{font:600 25px Georgia,serif;color:#103f40;margin:0 0 5px}.v42-services>.v42-lead{font-size:12px;color:#71817f;line-height:1.45;margin:0 0 12px}.v42-acc{background:#fffaf4;border:1px solid #e4dacf;border-radius:20px;margin:9px 0;overflow:hidden}.v42-acc>button{width:100%;border:0;background:transparent;padding:15px 16px;display:flex;align-items:center;gap:10px;text-align:left;color:#123f40;font-weight:900;font-size:14px}.v42-acc>button span:first-child{font-size:21px}.v42-acc>button i{margin-left:auto;font-style:normal;font-size:18px;transition:.2s}.v42-acc.open>button i{transform:rotate(45deg)}.v42-body{display:none;padding:0 14px 14px}.v42-acc.open .v42-body{display:block}.v42-item{background:#f4f7f2;border-radius:15px;padding:12px;margin:8px 0}.v42-item b{display:block;color:#123f40;font-size:13px}.v42-item small{display:block;color:#6c7c79;line-height:1.45;margin:4px 0 9px}.v42-actions{display:flex;gap:7px;flex-wrap:wrap}.v42-actions a{display:inline-block;text-decoration:none;background:#0b7775;color:white!important;border-radius:999px;padding:8px 10px;font-size:10px;font-weight:900}.v42-tip{background:#eaf4ef;border-radius:15px;padding:11px 12px;font-size:11px;line-height:1.45;color:#506663;margin-top:10px}.v42-na{color:#71817f;font-size:12px;line-height:1.5;padding:4px 2px 8px}

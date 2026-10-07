@@ -1,27 +1,6 @@
-# Asia 2026 · V49 VUELTA CONFIRMADA
+# Asia 2026 · V50 · VUELTA 8 DIC
 
-- Viaje: 6 noviembre – 8 diciembre de 2026.
-- Vuelta confirmada: Bangkok (BKK) → Madrid (MAD), 8 dic, 09:45–20:45, Qatar Airways, 1 escala, 17 h.
-- Llegada: Madrid T4S.
-- Equipaje mostrado en la reserva: mano 7 kg + facturado 25 kg.
-- Se mantiene el resto de V48 sin cambios.
-
-# Asia 2026 · V45 FOTOS FIABLES
-
-- Sin fotos genéricas de relleno.
-- Si una imagen no carga, la tarjeta queda limpia y sin foto.
-- Restaurantes y hoteles no muestran imágenes automáticas de Wikimedia para evitar fotos incorrectas; conservan Google Maps/Fotos.
-- Lugares y actividades mantienen fotos cuando existe una imagen válida.
-- Mantiene desplegables, favoritos, Maps, servicios e idiomas.
-
-## V46 · MALASIA + HORA + CLIMA
-- Roadmap inteligente ampliado con la ruta de Malasia: Kuala Lumpur → Cameron Highlands → Penang → Langkawi → Melaka → Kuala Lumpur.
-- El selector de clima cambia también el reloj entre Malasia y Tailandia según el destino elegido.
-- Si ambos países coincidieran en hora, el reloj muestra 🇲🇾🇹🇭.
-- Clima orientativo desglosado para Kuala Lumpur, Cameron Highlands, Penang, Langkawi y Melaka.
-- Selector de tiempo real ampliado a todas las etapas de Malasia.
-
-## Asia 2026 · V48 MAPAS
-- Rediseño exclusivo del mapa de Recorrido y su versión ampliada.
-- El mapa ampliado incluye toda Malasia + toda Tailandia.
-- Añadida ruta completa de Tailandia en Google Maps dentro de la pestaña Mapa.
+- Fecha final: 8 diciembre 2026.
+- Viajazo: vuelta separada en Bangkok → Doha y Doha → Madrid, con el mismo diseño que la ida.
+- Reserva confirmada Qatar Airways: BKK 09:45 → MAD 20:45, 1 escala, 17 h.
+- QR839 BKK→DOH según horario publicado; QR151 DOH→MAD 15:15–20:45.

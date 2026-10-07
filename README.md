@@ -12,3 +12,8 @@
 - Si ambos países coincidieran en hora, el reloj muestra 🇲🇾🇹🇭.
 - Clima orientativo desglosado para Kuala Lumpur, Cameron Highlands, Penang, Langkawi y Melaka.
 - Selector de tiempo real ampliado a todas las etapas de Malasia.
+
+## Asia 2026 · V48 MAPAS
+- Rediseño exclusivo del mapa de Recorrido y su versión ampliada.
+- El mapa ampliado incluye toda Malasia + toda Tailandia.
+- Añadida ruta completa de Tailandia en Google Maps dentro de la pestaña Mapa.

@@ -1524,3 +1524,41 @@ openDest=function(k){let v=DEST[k],photos=D.filter(x=>x.place===k).flatMap(x=>x.
 my38Dest=function(k){v43MalaysiaCorrect(k)};
 </script>
 
+<style id="v48-route-beauty">
+.roadmap-map{height:500px!important;background:linear-gradient(165deg,#d8eee9 0%,#b9ddd7 48%,#8fc9c4 100%)!important;border:1px solid rgba(7,91,92,.12);box-shadow:inset 0 0 45px rgba(255,255,255,.35)}
+.roadmap-map:before{background:radial-gradient(ellipse at 21% 65%,rgba(247,235,207,.95) 0 16%,transparent 16.5%),radial-gradient(ellipse at 51% 48%,rgba(247,235,207,.9) 0 12%,transparent 12.5%)!important;opacity:.85}
+.roadmap-map:after{content:'🇲🇾  MALASIA                                      🇹🇭  TAILANDIA';white-space:pre;position:absolute;left:18px;right:18px;top:16px;font-size:10px;font-weight:950;letter-spacing:1.2px;color:#356a68;display:flex;justify-content:space-between;pointer-events:none}
+.trip-map-line{stroke:#087f78!important;stroke-width:2.2!important;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 2px 2px rgba(0,70,70,.18))}
+.roadmap-map .trip-point i{width:30px!important;height:30px!important;font-size:11px!important}.roadmap-map .trip-point b{font-size:9px!important;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.roadmap-expand{background:#075b5c!important;color:#fff!important;border:0!important;box-shadow:0 6px 16px rgba(7,91,92,.25)}
+.route-zoom-wrap{background:linear-gradient(165deg,#d8eee9,#8fc9c4)!important}.route-zoom-canvas{width:900px!important;height:1050px!important;background:radial-gradient(ellipse at 20% 66%,#f3ead8 0 17%,transparent 17.5%),radial-gradient(ellipse at 52% 48%,#f3ead8 0 13%,transparent 13.5%)!important}
+.route-country-label{position:absolute;top:30px;padding:9px 13px;border-radius:999px;background:rgba(255,250,242,.9);font-weight:950;color:#14504e;box-shadow:0 4px 14px rgba(0,0,0,.08);z-index:4}.route-country-label.my{left:80px}.route-country-label.th{right:110px}
+.route-modal-tip{font-weight:750!important}.full-route-card{margin:18px 0;padding:18px;border-radius:22px;background:#fffaf2;border:1px solid #e5d9c8}.full-route-card h3{margin:0 0 5px;color:#123f3e}.full-route-card p{margin:0 0 13px;color:#6e7d7b;font-size:13px}.full-route-card a{display:block;text-align:center;text-decoration:none;background:#079c91;color:#fff;font-weight:900;padding:13px 15px;border-radius:999px}.full-route-card.th a{background:#075b5c}
+</style>
+<script id="v48-route-patch">
+(function(){
+ const routePts=()=>ROADMAP_STOPS;
+ roadmapMapInner=function(){
+  const pts=routePts(), main=pts.filter(p=>!p.exc), path=main.map(p=>`${p.x},${p.y}`).join(' ');
+  return `<div class="roadmap-map"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><polyline class="trip-map-line" points="${path}"/><polyline class="trip-map-line" style="stroke:#d18b49!important;stroke-dasharray:3 2" points="55,42 52,36 55,42"/></svg>${pts.map(p=>`<div class="trip-point ${p.exc?'exc':''}" style="left:${p.x}%;top:${p.y}%"><i>${p.n}</i><b>${p.name}</b></div>`).join('')}<button class="roadmap-expand" onclick="openRouteMap()">↗ Ver mapa ampliado</button></div>`;
+ };
+ openRouteMap=function(){
+  const pts=routePts(), main=pts.filter(p=>!p.exc), path=main.map(p=>`${p.x},${p.y}`).join(' ');
+  let old=document.getElementById('routeMapModal'); if(old)old.remove();
+  let modal=document.createElement('div');modal.id='routeMapModal';modal.className='route-modal';
+  modal.innerHTML=`<div class="route-modal-head"><div><div class="smart-kicker">ASIA 2026 · RUTA COMPLETA</div><h2>Malasia → Tailandia</h2></div><button class="route-modal-close" onclick="closeRouteMap()">×</button></div><div class="route-zoom-wrap"><div class="route-zoom-canvas"><div class="route-country-label my">🇲🇾 MALASIA</div><div class="route-country-label th">🇹🇭 TAILANDIA</div><svg viewBox="0 0 100 100" preserveAspectRatio="none"><polyline class="trip-map-line" points="${path}"/><polyline class="trip-map-line" style="stroke:#d18b49!important;stroke-dasharray:3 2" points="55,42 52,36 55,42"/></svg>${pts.map(p=>`<div class="trip-point ${p.exc?'exc':''}" style="left:${p.x}%;top:${p.y}%"><i>${p.n}</i><b>${p.name}</b></div>`).join('')}</div></div><div class="route-modal-tip">🟢 Ruta principal · 🟠 Ayutthaya, excursión desde Bangkok · ↔️ desliza para recorrerla</div>`;
+  document.body.appendChild(modal);modal.classList.add('open');document.body.style.overflow='hidden';
+  const w=modal.querySelector('.route-zoom-wrap');setTimeout(()=>{w.scrollLeft=50;w.scrollTop=80},30);
+ };
+ function addThailandFullRoute(){
+  const map=document.getElementById('mapa'); if(!map||map.querySelector('#thaiFullRoute'))return;
+  const grid=map.querySelector('.zone-grid'); if(!grid)return;
+  const card=document.createElement('div');card.id='thaiFullRoute';card.className='full-route-card th';
+  card.innerHTML=`<h3>🇹🇭 Ruta completa · Tailandia</h3><p>Phi Phi → Koh Phangan → Koh Tao → Chiang Mai → Chiang Rai → Bangkok. Abre el recorrido completo en Google Maps para consultar distancias y conexiones.</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=Phi+Phi+Islands+Thailand&destination=Bangkok+Thailand&waypoints=Koh+Phangan+Thailand%7CKoh+Tao+Thailand%7CChiang+Mai+Thailand%7CChiang+Rai+Thailand">🗺️ Abrir ruta completa de Tailandia</a>`;
+  grid.insertAdjacentElement('afterend',card);
+ }
+ addThailandFullRoute();
+ const oldRenderSmart=renderSmart; renderSmart=function(){oldRenderSmart();};
+ window.addEventListener('load',addThailandFullRoute);setTimeout(addThailandFullRoute,300);
+})();
+</script>

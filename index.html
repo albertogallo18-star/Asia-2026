@@ -1060,7 +1060,19 @@ function v32Boot(){
  document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');if(ACTIVE_COUNTRY==='Malaysia')renderMalaysia(b.dataset.page);else{document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(b.dataset.page)?.classList.add('active');window.scrollTo(0,0)}});
  if(c==='Malaysia'){document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));document.querySelector('nav button[data-page="ruta"]')?.classList.add('active');renderMalaysia('ruta')}
 }
-chooseCountry=function(c){localStorage.setItem('asiaCountry',c);location.reload()};
-window.addEventListener('load',()=>setTimeout(v32Boot,20));
+chooseCountry=function(c){
+ ACTIVE_COUNTRY=c; localStorage.setItem('asiaCountry',c);
+ const gate=document.getElementById('countryGate'); if(gate){gate.classList.remove('show');gate.style.display='none'}
+ document.body.dataset.country=c; document.body.classList.toggle('is-malaysia',c==='Malaysia'); updateCountryUI();
+ const nav=[...document.querySelectorAll('nav button')]; nav.forEach(x=>x.classList.remove('active'));
+ const first=nav[0]; if(first){first.style.display='';first.setAttribute('data-page','ruta');first.classList.add('active');first.onclick=()=>{nav.forEach(x=>x.classList.remove('active'));first.classList.add('active');if(ACTIVE_COUNTRY==='Malaysia')renderMalaysia('ruta');else{document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('ruta')?.classList.add('active');window.scrollTo(0,0)}}}
+ if(c==='Malaysia') renderMalaysia('ruta'); else showThailandHome();
+};
+function v33FixFirstNav(){
+ const nav=[...document.querySelectorAll('nav button')]; const first=nav[0]; if(!first)return;
+ first.setAttribute('data-page','ruta');
+ first.onclick=()=>{nav.forEach(x=>x.classList.remove('active'));first.classList.add('active');if(ACTIVE_COUNTRY==='Malaysia')renderMalaysia('ruta');else{document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('ruta')?.classList.add('active');window.scrollTo(0,0)}};
+}
+window.addEventListener('load',()=>setTimeout(()=>{v32Boot();v33FixFirstNav()},20));
 </script>
 </body></html>

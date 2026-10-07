@@ -1,10 +1,9 @@
-# Asia 2026 · V38
+# Asia 2026 · V39
 
-## Malasia al nivel de Tailandia
-- Ruta detallada con días, planes y bloques **Cómo llegar** entre destinos.
-- Enlaces de Google Maps con indicaciones entre cada parada.
-- Mapa de Malasia con cada destino pulsable y recorrido completo.
-- Descubre Malasia ahora es interactivo: Kuala Lumpur, Cameron Highlands, Penang, Langkawi y Melaka con Ver, Hacer, Comer, Dormir, Noche y Google Maps.
-- La pestaña **Más** pasa a ser común para Malasia + Tailandia: Viaje inteligente, reservas, presupuesto, checklist, emergencias, información y documentos.
-- Tailandia mantiene su contenido y sus traslados ahora enlazan a **Cómo ir · Google Maps**.
-- La navegación inferior grande/circular de Malasia se aplica también visualmente a Tailandia.
+## Malasia al nivel visual de Tailandia
+- Ruta de Malasia rehecha con fotos, descripción, orden recomendado y bloque “Cómo llegar” entre cada parada.
+- Cada traslado incluye enlace directo “Cómo llegar · Google Maps”.
+- Mapa de Malasia rehecho con tarjetas fotográficas y acceso a cada destino.
+- Descubre Malasia rehecho con fotos, descripción, orden recomendado, ver/hacer/comer/dormir/noche y Google Maps.
+- La barra inferior de Tailandia conserva su diseño y sus fotos/contenido no se modifican.
+- “Más” sigue siendo común a ambos países.

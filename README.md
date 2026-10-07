@@ -1,11 +1,8 @@
-# Asia 2026 · V21
-Cambios principales:
-- Malasia pasa a 7–22 noviembre.
-- Tailandia pasa a 22 noviembre–8 diciembre.
-- Todo el itinerario, traslados, roadmap y tarjetas se desplazan un día.
-- Nuevo sistema “Reservas del viaje” tipo checklist.
-- Solo Madrid → Doha → Kuala Lumpur aparece inicialmente confirmado.
-- Vuelos, ferris/transportes y hoteles restantes aparecen pendientes.
-- Barra de progreso de reservas persistente.
-- Las alertas de Viaje inteligente se generan automáticamente a partir de lo que siga pendiente.
-- Mantiene las fotos corregidas de Koh Tao y el resto de funciones de V20.
+# Asia 2026 · V23
+
+Corrección definitiva de fechas de Ruta:
+22 NOV, 23 NOV, 24 NOV, 25 NOV, 26 NOV, 27 NOV, 28 NOV, 29 NOV, 30 NOV,
+1 DIC, 2 DIC, 3 DIC, 4 DIC, 5 DIC, 6 DIC, 7 DIC, 8 DIC.
+
+Se añade una capa final autoritativa para impedir que scripts heredados vuelvan a convertir todos los días en 8 DIC.
+Mantiene la corrección de la foto principal de Koh Tao y todo V22.

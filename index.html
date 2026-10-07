@@ -422,6 +422,14 @@ function forceAyutthayaFullWidth(){
 .weather-selector{width:100%;border:0;border-radius:15px;background:rgba(255,255,255,.92);color:#0b5552;font-weight:900;font-size:13px;padding:11px 13px;margin:8px 0 4px;appearance:auto}
 .weather-loading{font-size:11px;opacity:.82;margin-top:12px}
 </style>
+
+<style id="v29-universal-heroes">
+.dest-photo-hero{position:relative!important;overflow:hidden!important;isolation:isolate;background:#0b7472!important;min-height:350px!important}
+.dest-photo-hero>.dest-hero-img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;z-index:0!important;display:block!important}
+.dest-photo-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,35,38,.06),rgba(0,35,38,.58));z-index:1}
+.dest-photo-hero>*:not(.dest-hero-img){position:relative!important;z-index:2!important}
+.dest-photo-hero h1,.dest-photo-hero .sub{color:#fff!important;text-shadow:0 2px 16px rgba(0,0,0,.5)}
+</style>
 </head><body><div class="v12toptools"><button id="countrySwitch2" onclick="showCountryGate()">🇹🇭 Tailandia⌄</button><button onclick="openTranslator()">💬 Traductor</button></div>
 <div class="scene"><img id="scenePhoto" alt=""></div><main class="app">
 <section class="page active" id="ruta">
@@ -650,14 +658,16 @@ const NIGHT_RECS={
 "Ayutthaya":[["Ayutthaya Night Market","Centro","Plan tranquilo para cenar y pasear; Ayutthaya no necesita una noche de fiesta para merecer la pena."]]
 };
 
-function openDest(k){let v=DEST[k], photos=D.filter(x=>x.place===k).flatMap(x=>x.photos).slice(0,6);document.getElementById('destList').classList.add('hidden');let el=document.getElementById('destDetail');el.classList.remove('hidden');let sid='s'+k.replaceAll(' ','');el.innerHTML=`<header class="${k==='Koh Tao'?'koh-tao-photo-header':''}"><button class="back" onclick="closeDest()">← Destinos</button>${k==='Koh Tao'?'<img class="koh-tao-bg-img" src="./koh-tao-sairee.jpg" alt="Koh Tao">':''}<h1 style="margin-top:18px">${v.emoji} ${k}</h1><div class="sub">${v.sub}</div></header>
+function openDest(k){let v=DEST[k], photos=D.filter(x=>x.place===k).flatMap(x=>x.photos).slice(0,6);document.getElementById('destList').classList.add('hidden');let el=document.getElementById('destDetail');el.classList.remove('hidden');let sid='s'+k.replaceAll(' ','');el.innerHTML=`<header class="dest-photo-hero"><button class="back" onclick="closeDest()">← Destinos</button><img id="destHeroImg" class="dest-hero-img" ${k==='Koh Tao'?'src="./koh-tao-sairee.jpg"':''} alt="${k}"><h1 style="margin-top:18px">${v.emoji} ${k}</h1><div class="sub">${v.sub}</div></header>
 <div class="catgrid"><button class="cat" onclick="goDest('${sid}-stay')"><span>🏨</span>Dormir</button><button class="cat" onclick="goDest('${sid}-eat')"><span>🍜</span>Comer</button><button class="cat" onclick="goDest('${sid}-see')"><span>🛕</span>Ver</button><button class="cat" onclick="goDest('${sid}-do')"><span>✨</span>Hacer</button><button class="cat" onclick="goDest('${sid}-night')"><span>🍸</span>Noche</button><button class="cat" onclick="goDest('${sid}-photos')"><span>📸</span>Fotos</button></div>
 <h2 class="section anchor" id="${sid}-photos">📸 No te pierdas esto</h2>${gallery(photos,'dest'+k.replaceAll(' ',''))}
 <h2 class="section anchor" id="${sid}-see">⭐ Imprescindibles</h2>${v.see.map(x=>`<div class="card info-rec"><button class="fav" onclick="toggleFav('${k}','${x.replaceAll("'","")} ',this)">♡</button><b>${x}</b><p class="muted">${SEE_DESC[k]?.[x]||'Un lugar que merece estar en tu ruta por '+k+'.'}</p><a class="v11link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x+' '+k+' Thailand')}" target="_blank">📍 Google Maps</a></div>`).join('')}
 <h2 class="section anchor" id="${sid}-do">✨ Hacer</h2>${v.do.map(x=>`<div class="card info-rec"><b>${x}</b><p class="muted">${DO_DESC[k]?.[x]||'Plan recomendado para aprovechar mejor '+k+'.'}</p></div>`).join('')}
 <h2 class="section anchor" id="${sid}-night">🍸 Noche</h2>${(NIGHT_RECS[k]||[]).map(x=>`<div class="card info-rec"><b>${x[0]}</b><span class="night-tag">${x[1]}</span><p class="muted">${x[2]}</p><a class="v11link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x[0]+' '+k+' Thailand')}" target="_blank">📍 Google Maps</a></div>`).join('')}
 <h2 class="section anchor" id="${sid}-eat">🍜 Comer</h2>${foodHTML(k)}
-<h2 class="section anchor" id="${sid}-stay">🏨 Dormir</h2>${hotelHTML(k)}`;restoreFavButtons();}
+<h2 class="section anchor" id="${sid}-stay">🏨 Dormir</h2>${hotelHTML(k)}`;
+if(k!=='Koh Tao' && photos.length){let hero=document.getElementById('destHeroImg');if(hero)commonsImage(photos[0][0],hero);}
+restoreFavButtons();}
 function goDest(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}
 function closeDest(){document.getElementById('destDetail').classList.add('hidden');document.getElementById('destList').classList.remove('hidden')}
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(b.dataset.page).classList.add('active');window.scrollTo(0,0)});

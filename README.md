@@ -1,5 +1,7 @@
-# Asia 2026 · V28
-- Corrige la rotura visual de todas las fichas de Descubre introducida en V27.
-- El código de Koh Tao ya no queda dentro del HTML visible.
-- Koh Tao usa una etiqueta IMG real dentro de su cabecera, con la foto local koh-tao-sairee.jpg.
-- Mantiene intacto Viaje inteligente V27: clima desplegable, Roadmap Línea/Gantt/Recorrido, reservas y maleta.
+# Asia 2026 · V29
+
+- Cabeceras fotográficas reales para TODOS los destinos de Descubre.
+- Reutiliza exactamente el mismo cargador de imágenes que ya funciona en “No te pierdas esto”.
+- Koh Tao usa el JPG local `koh-tao-sairee.jpg`.
+- Phi Phi, Koh Phangan, Chiang Mai, Chiang Rai, Bangkok y Ayutthaya usan la primera foto real de su propia galería.
+- No modifica Viaje inteligente, clima, roadmap, reservas, maleta ni el resto de funciones de V28.

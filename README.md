@@ -1,8 +1,7 @@
-# Asia 2026 · V23
-
-Corrección definitiva de fechas de Ruta:
-22 NOV, 23 NOV, 24 NOV, 25 NOV, 26 NOV, 27 NOV, 28 NOV, 29 NOV, 30 NOV,
-1 DIC, 2 DIC, 3 DIC, 4 DIC, 5 DIC, 6 DIC, 7 DIC, 8 DIC.
-
-Se añade una capa final autoritativa para impedir que scripts heredados vuelvan a convertir todos los días en 8 DIC.
-Mantiene la corrección de la foto principal de Koh Tao y todo V22.
+# Asia 2026 · V25
+Incluye todo V24 más:
+- Mapa visual del recorrido dentro de Viaje inteligente, justo debajo de Recorrido.
+- 1 Kuala Lumpur → 2 Phi Phi → 3 Koh Phangan → 4 Koh Tao → 5 Chiang Mai → 6 Chiang Rai → 7 Bangkok.
+- 8 Ayutthaya aparece como excursión ida/vuelta desde Bangkok.
+- Mapa propio sin Leaflet/OpenStreetMap ni dependencias externas.
+- Mantiene corrección Malasia 7–22 NOV y hero local de Koh Tao.

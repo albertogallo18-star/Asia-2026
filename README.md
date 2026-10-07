@@ -1,7 +1,8 @@
-# Asia 2026 · V25
-Incluye todo V24 más:
-- Mapa visual del recorrido dentro de Viaje inteligente, justo debajo de Recorrido.
-- 1 Kuala Lumpur → 2 Phi Phi → 3 Koh Phangan → 4 Koh Tao → 5 Chiang Mai → 6 Chiang Rai → 7 Bangkok.
-- 8 Ayutthaya aparece como excursión ida/vuelta desde Bangkok.
-- Mapa propio sin Leaflet/OpenStreetMap ni dependencias externas.
-- Mantiene corrección Malasia 7–22 NOV y hero local de Koh Tao.
+# Asia 2026 · V26
+- Mantiene todo lo anterior.
+- Viaje inteligente estrena Roadmap único con pestañas Línea / Gantt / Recorrido.
+- Recorrido contiene el mapa numerado y puede ampliarse a pantalla completa.
+- Nueva tarjeta Próximo destino con clima dinámico online; antes del viaje empieza en Kuala Lumpur.
+- El próximo destino cambia automáticamente según avance el calendario del viaje.
+- Foto principal de Koh Tao corregida directamente en el header real con koh-tao-sairee.jpg local.
+- Malasia 7–22 noviembre; Tailandia 22 noviembre–8 diciembre.

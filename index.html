@@ -1251,3 +1251,89 @@ document.addEventListener('DOMContentLoaded',v41ThailandNav);v41ThailandNav();
 </script>
 
 </body></html>
+<style id="v42-services-css">
+.v42-services{margin:16px 0 20px}.v42-services>h3{font:600 25px Georgia,serif;color:#103f40;margin:0 0 5px}.v42-services>.v42-lead{font-size:12px;color:#71817f;line-height:1.45;margin:0 0 12px}.v42-acc{background:#fffaf4;border:1px solid #e4dacf;border-radius:20px;margin:9px 0;overflow:hidden}.v42-acc>button{width:100%;border:0;background:transparent;padding:15px 16px;display:flex;align-items:center;gap:10px;text-align:left;color:#123f40;font-weight:900;font-size:14px}.v42-acc>button span:first-child{font-size:21px}.v42-acc>button i{margin-left:auto;font-style:normal;font-size:18px;transition:.2s}.v42-acc.open>button i{transform:rotate(45deg)}.v42-body{display:none;padding:0 14px 14px}.v42-acc.open .v42-body{display:block}.v42-item{background:#f4f7f2;border-radius:15px;padding:12px;margin:8px 0}.v42-item b{display:block;color:#123f40;font-size:13px}.v42-item small{display:block;color:#6c7c79;line-height:1.45;margin:4px 0 9px}.v42-actions{display:flex;gap:7px;flex-wrap:wrap}.v42-actions a{display:inline-block;text-decoration:none;background:#0b7775;color:white!important;border-radius:999px;padding:8px 10px;font-size:10px;font-weight:900}.v42-tip{background:#eaf4ef;border-radius:15px;padding:11px 12px;font-size:11px;line-height:1.45;color:#506663;margin-top:10px}.v42-na{color:#71817f;font-size:12px;line-height:1.5;padding:4px 2px 8px}
+</style>
+<script id="v42-services-js">
+const V42_SERVICES={
+'Phi Phi':{
+ moto:[['No alquilar moto en Phi Phi','Phi Phi Don se recorre a pie y en longtail; no es un destino para scooter turístico.']],
+ dive:[['PKT Diving','Centro PADI junto a Tonsai Pier; buena opción para inmersión recreativa y Discover Scuba.'],['Phi Phi Scuba Diving Center','Otra opción local para comparar salida, grupo y puntos de inmersión.']],
+ boat:[['TravelPirateTours Phi Phi','Longtail / boat tours para Maya Bay, Pileh Lagoon y snorkel.'],['Longtail privado en Tonsai','Muy útil para salir temprano y adaptar Maya Bay + Pileh + snorkel a tu ritmo.']],
+ tour:[['Tour de Maya Bay + Pileh Lagoon','La excursión esencial si no contratas longtail privado.'],['Sunset + plankton tour','Buena segunda opción si quieres una salida distinta al final del día.']],
+ adventure:[['Phi Phi Viewpoint','Subida por libre; mejor al final de la tarde.'],['Kayak desde Loh Dalum','Plan flexible para combinar mar y pequeñas calas.']]},
+'Koh Phangan':{
+ moto:[['Pukki’s Motorbike Rental','Busca esta tienda y compara depósito, casco y estado de la moto antes de firmar.'],['EasyBikes Koh Phangan','Segunda opción para comparar precio/depósito cerca de las zonas principales.']],
+ dive:[['Haad Yao Divers','Buceo y salidas hacia Sail Rock; opción a comparar si te apetece una inmersión.'],['Chaloklum Diving','Buena base en el norte para Sail Rock y snorkel.']],
+ boat:[['Ang Thong Marine Park day trip','Excursión de barco de día completo desde Phangan.'],['Koh Ma / Mae Haad snorkel','Para snorkel más sencillo sin dedicar un día entero.']],
+ tour:[['Sail Rock','La salida de buceo más interesante desde la isla si las condiciones acompañan.'],['Ang Thong National Marine Park','Kayak, miradores y playas; de las excursiones fuertes de Phangan.']],
+ adventure:[['Koh Ma + Mae Haad','Snorkel desde costa.'],['Than Sadet + costa este','Ruta de playas/cascada ideal si llevas scooter y tienes experiencia.']]},
+'Koh Tao':{
+ moto:[['Oli’s Motorbike Rentals','Muy conocida en la isla; compara depósito y revisa la moto con vídeo antes de salir.'],['RPM Koh Tao','Alternativa para comparar scooter, casco y condiciones de depósito.']],
+ dive:[['Black Turtle Dive','Centro PADI grande; buena opción para fun dives / Discover Scuba.'],['Siam Scuba Dive Center','Centro PADI con barco y alquiler de equipo; otra opción sólida para comparar.']],
+ boat:[['Oxygen Tours Koh Tao','Circuito de snorkel alrededor de la isla y Koh Nang Yuan.'],['Diamond Tour Koh Tao','Otra opción popular para vuelta de snorkel en barco.']],
+ tour:[['Koh Nang Yuan + snorkel loop','El tour clásico: Nang Yuan y varias bahías de Koh Tao.'],['Longtail privado','Más caro, pero permite escoger horas y calas evitando parte de los grupos.']],
+ adventure:[['John-Suwan Viewpoint','Mirador + Freedom Beach; buen plan por libre.'],['Shark Bay','Snorkel desde costa; posibilidad de tortugas/tiburón de arrecife sin garantía.']]},
+'Chiang Mai':{
+ moto:[['Bikago Chiang Mai','Política publicada sin pasaporte y condiciones claras; opción premium.'],['Mango Scooter Rentals','Gran volumen de reseñas y política de no retener pasaporte; confirma disponibilidad.']],
+ dive:[['No aplica','Aquí cambiaría el agua por montaña: Doi Inthanon, trekking, rafting o zipline.']],
+ boat:[['Mae Ping River cruise','Paseo fluvial relajado si quieres una tarde distinta.']],
+ tour:[['Chiang Mai Tours','Doi Inthanon, Doi Suthep, Chiang Rai/Golden Triangle y actividades.'],['Doi Inthanon day tour','Excursión que sí merece la pena contratar si no quieres conducir tantas horas.']],
+ adventure:[['Zipline / treetop','Muy buena categoría para añadir un día de aventura.'],['Samoeng Loop','Ruta escénica en moto solo si tienes experiencia real y permiso adecuado.']]},
+'Chiang Rai':{
+ moto:[['K Buddy Bike Rental','Opción conocida en Chiang Rai; compara 125cc, depósito y casco.'],['Byklo / tiendas Jetyod Road','Zona con varias opciones para comparar moto y condiciones in situ.']],
+ dive:[['No aplica','Destino de templos, montaña y Mekong; no reservaría actividades acuáticas aquí.']],
+ boat:[['Mekong / Golden Triangle boat','Paseo en barco en la zona del Triángulo de Oro; contrátalo como parte de la excursión o allí.']],
+ tour:[['Lanna Trek','Operador local para Golden Triangle, trekking, templos y norte de Chiang Rai.'],['Golden Triangle Tours / Coconuts Tours','Alternativa local para comparar ruta y precio al Triángulo de Oro.']],
+ adventure:[['Trekking norte de Chiang Rai','Mae Salong / aldeas / montaña según ruta.'],['Ruta en moto a templos','White Temple + Blue Temple + Huay Pla Kang; distancias cómodas si conduces legalmente.']]},
+'Bangkok':{
+ moto:[['No recomendada','Con tráfico, BTS/MRT, barcos y Grab, no compensa alquilar scooter para tu estancia.']],
+ dive:[['No aplica','Guarda el buceo y snorkel para las islas.']],
+ boat:[['Chao Phraya Tourist Boat','Muy práctico para Wat Arun, Wat Pho y ribera.'],['Longtail por los khlongs','Excursión por canales para ver otro Bangkok.']],
+ tour:[['Ayutthaya day tour','Alternativa organizada al tren; hay tours de grupo pequeño con guía y almuerzo.'],['Mercados + Bangkok / food tour','Buena opción si te sobra una tarde y quieres guía local.']],
+ adventure:[['Bang Krachao en bici','Escape verde de medio día.'],['Muay Thai','Clase o combate en directo si te apetece una experiencia diferente.']]},
+'Ayutthaya':{
+ moto:[['Mejor bici / tuk-tuk','Para tu excursión de un día no merece la pena alquilar moto.']],
+ dive:[['No aplica','Destino histórico; no hay actividad de buceo/snorkel relevante.']],
+ boat:[['Sunset river boat','Paseo alrededor de la isla histórica; buena opción al final de la tarde.']],
+ tour:[['Ayutthaya UNESCO small-group tour','Desde Bangkok con guía; útil si prefieres contexto histórico y logística resuelta.'],['Tour en bici por el parque histórico','Buena manera de enlazar templos sin depender de tuk-tuk.']],
+ adventure:[['Bicicleta','La alternativa activa para moverte entre ruinas.'],['Tuk-tuk por templos','Negocia ruta/precio y úsalo si hace demasiado calor.']]},
+'Kuala Lumpur':{
+ moto:[['No recomendada para tu plan','Tráfico intenso; para dos noches priorizaría MRT/LRT + Grab.']],
+ dive:[['No aplica','Guarda snorkel/buceo para Langkawi o Tailandia.']],
+ boat:[['No prioritario','No metería una excursión en barco en tus dos días de KL.']],
+ tour:[['MikeBikes Kuala Lumpur','Tours guiados por la ciudad; alternativa interesante para ver barrios de forma distinta.'],['Batu Caves + city tour','Solo si queréis llevar la logística cerrada; Batu Caves también es fácil por libre.']],
+ adventure:[['Vespa food tour / KL by night','Experiencia nocturna guiada para comida local y barrios menos obvios.']]},
+'Cameron Highlands':{
+ moto:[['Cameron RS Venture / Tokyo Town','Scooters automáticos 110–125cc desde Tanah Rata; incluye cascos.'],['MK Scooter & Bike Rental','Otra opción en Tanah Rata para comparar disponibilidad y precio.']],
+ dive:[['No aplica','Aquí el plan es montaña, té, bosque y trekking.']],
+ boat:[['No aplica','No reservaría barco en Cameron Highlands.']],
+ tour:[['Mossy Forest + BOH Tea Plantation','Excursión clásica si no queréis conducir por carreteras de montaña.'],['4x4 Mossy Forest tour','Buena opción para acceder con guía y simplificar la logística.']],
+ adventure:[['Trekking Cameron Highlands','Rutas por bosque y miradores; revisa barro/lluvia ese día.'],['Scooter por plantaciones','Solo con experiencia: carreteras sinuosas, niebla y humedad.']]},
+'Penang · George Town':{
+ moto:[['La Belle Vespa / scooter rental Penang','Busca opciones en George Town y compara depósito/seguro antes de alquilar.'],['Scooter rental Batu Ferringhi','Alternativa si queréis recorrer la isla completa.']],
+ dive:[['No prioritario','No gastaría uno de tus días de Penang en buceo; la fuerza del destino es George Town + comida + templos.']],
+ boat:[['No prioritario','Mejor dedicar el tiempo a la isla y reservar barcos para Langkawi.']],
+ tour:[['George Town heritage / food tour','Muy recomendable para entender la ciudad y probar hawker food.'],['Penang Hill + Kek Lok Si','Se puede hacer por libre o con conductor/tour si queréis optimizar tiempos.']],
+ adventure:[['The Habitat Penang Hill','Pasarelas, naturaleza y vistas.'],['Ruta de la isla en scooter','Solo si os apetece salir de George Town y tenéis experiencia.']]},
+'Langkawi':{
+ moto:[['Scooter rental Pantai Cenang','Hay mucha oferta; compara 2 tiendas allí y evita entregar pasaporte si existe alternativa de depósito.'],['Scooter rental Langkawi Airport','Práctico si queréis recoger/devolver junto al aeropuerto.']],
+ dive:[['Langkawi Scuba','Consulta inmersiones disponibles y visibilidad en tus fechas.'],['Pulau Payar Marine Park','Principal salida de snorkel/buceo de la zona; confirma operativa y condiciones.']],
+ boat:[['Kilim Geoforest mangrove tour','Barco por manglares, cuevas y paisaje kárstico.'],['Island hopping Langkawi','Dayang Bunting + islas/playas; opción clásica y fácil de contratar.']],
+ tour:[['Kilim Geoforest Park','De las excursiones que sí reservaría en Langkawi.'],['Sunset cruise','Buena opción para una tarde si queréis algo más de capricho.']],
+ adventure:[['SkyCab + Sky Bridge','Imprescindible por libre; ve temprano si el tiempo está despejado.'],['Jet ski island tour','Más caro pero muy divertido si queréis una actividad potente.']]},
+'Melaka':{
+ moto:[['No necesaria','El centro UNESCO se hace muy bien andando; para trayectos sueltos usa Grab.']],
+ dive:[['No aplica','No dedicaría tiempo de Melaka a buceo/snorkel.']],
+ boat:[['Melaka River Cruise','Plan fácil para ver el centro desde el río, especialmente al anochecer.']],
+ tour:[['Heritage walking tour','Dutch Square + St Paul’s + A Famosa + Jonker con contexto histórico.'],['Nyonya food tour','Buena forma de añadir gastronomía local si os encaja.']],
+ adventure:[['Beam e-scooter','Útil solo dentro de las zonas permitidas del centro; respeta geofencing y restricciones.'],['Bici por Kampong Morten','Alternativa tranquila para salir un poco del núcleo turístico.']]}
+};
+function v42Key(k){return k==='Penang · George Town'?'Penang · George Town':k}
+function v42Maps(name,place){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(name+' '+place)}
+function v42Group(icon,title,items,place){if(!items||!items.length)return'';return `<div class="v42-acc"><button onclick="this.parentElement.classList.toggle('open')"><span>${icon}</span><span>${title}</span><i>＋</i></button><div class="v42-body">${items.map(x=>{let na=/No aplica|No recomendada|No necesaria|No prioritario|No alquilar/.test(x[0]);return `<div class="v42-item"><b>${x[0]}</b><small>${x[1]}</small>${na?'':`<div class="v42-actions"><a target="_blank" href="${v42Maps(x[0],place)}">📍 Google Maps</a></div>`}</div>`}).join('')}</div></div>`}
+function v42Services(place){let d=V42_SERVICES[v42Key(place)];if(!d)return'';return `<section class="v42-services"><h3>🧭 Servicios & experiencias</h3><p class="v42-lead">Despliega solo lo que necesites en ese momento. He dejado 1–2 opciones útiles por categoría para que no tengas que buscar desde cero.</p>${v42Group('🛵','Alquiler de moto',d.moto,place)}${v42Group('🤿','Buceo & snorkel',d.dive,place)}${v42Group('🚤','Barcos',d.boat,place)}${v42Group('🎟️','Excursiones & tours',d.tour,place)}${v42Group('⚡','Aventura & experiencias',d.adventure,place)}<div class="v42-tip">🪪 <b>Moto:</b> permiso válido para motocicleta + permiso internacional cuando corresponda, casco siempre y vídeo completo de la moto al recogerla. Comprueba depósito, seguro y franquicia antes de pagar. 🌊 <b>Mar:</b> confirma el día anterior oleaje, visibilidad y cancelación por meteorología.</div></section>`}
+function v42InjectThai(place){let el=document.getElementById('destDetail');if(!el||el.querySelector('.v42-services'))return;let anchor=el.querySelector('.mapsbtn,.mapbtn,a[href*="google.com/maps"]');if(anchor)anchor.insertAdjacentHTML('beforebegin',v42Services(place));else el.insertAdjacentHTML('beforeend',v42Services(place))}
+const V42_openDest=openDest;openDest=function(k){V42_openDest(k);setTimeout(()=>v42InjectThai(k),40)};
+const V42_my38Dest=my38Dest;my38Dest=function(k){V42_my38Dest(k);let names={kl:'Kuala Lumpur',cam:'Cameron Highlands',pen:'Penang · George Town',lan:'Langkawi',mel:'Melaka'};setTimeout(()=>{let el=document.getElementById('my38DiscoverDetail');if(!el||el.querySelector('.v42-services'))return;let a=el.querySelector('a.my37-btn');if(a)a.insertAdjacentHTML('beforebegin',v42Services(names[k]));else el.insertAdjacentHTML('beforeend',v42Services(names[k]))},40)};
+</script>

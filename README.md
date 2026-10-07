@@ -1,15 +1,9 @@
-# Asia 2026 · V42
+# Asia 2026 · V43
 
-## Descubre: servicios y experiencias
-- Nuevo desplegable por destino para que la pantalla no se haga kilométrica.
-- 🛵 Alquiler de moto
-- 🤿 Buceo & snorkel
-- 🚤 Barcos
-- 🎟️ Excursiones & tours
-- ⚡ Aventura & experiencias
-- 1–2 opciones útiles por categoría, con acceso directo a Google Maps.
-- Cuando una actividad no compensa en un destino, la app lo indica en lugar de rellenar por rellenar.
-- Avisos prácticos de licencia, casco, depósito, seguro, fotos de la moto y condiciones del mar.
-- Añadido tanto a Tailandia como a Malasia.
+Descubre reorganizado en Tailandia y Malasia.
 
-Se mantienen los cambios de V41: navegación y rutas de Tailandia.
+- Ver, Hacer, Comer, Dormir y Noche en desplegables.
+- Motos, buceo/snorkel, barcos, excursiones y experiencias en desplegables.
+- Prioridad a excursiones en español: 🇪🇸 cuando está confirmado/disponible; 🇬🇧 cuando la opción habitual es inglés.
+- Malasia enriquecida con fichas, explicaciones y Google Maps para lugares, restaurantes y hoteles.
+- Mantiene la ruta y el resto de funciones anteriores.

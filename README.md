@@ -1,7 +1,10 @@
-# Asia 2026 · V29
+# Asia 2026 · V30
 
-- Cabeceras fotográficas reales para TODOS los destinos de Descubre.
-- Reutiliza exactamente el mismo cargador de imágenes que ya funciona en “No te pierdas esto”.
-- Koh Tao usa el JPG local `koh-tao-sairee.jpg`.
-- Phi Phi, Koh Phangan, Chiang Mai, Chiang Rai, Bangkok y Ayutthaya usan la primera foto real de su propia galería.
-- No modifica Viaje inteligente, clima, roadmap, reservas, maleta ni el resto de funciones de V28.
+## Malasia completa
+- Nueva ruta orientativa 7–22 noviembre: Kuala Lumpur → Cameron Highlands → Penang → Langkawi → Melaka → Kuala Lumpur.
+- Kuala Lumpur queda como base inicial de 2 noches; el resto aparece marcado como orientativo / por definir.
+- Las cinco pestañas funcionan también en modo Malasia: Viajazo, Ruta, Mapa, Descubre y Más.
+- Descubre Malasia incluye Dormir, Comer, Ver, Hacer y Noche para Kuala Lumpur, Cameron Highlands, Penang, Langkawi y Melaka.
+- Mapa de Malasia con accesos directos a Google Maps y recorrido completo.
+- Más Malasia incluye traductor, MYR→EUR, gastos, documentos, emergencias, apps y maleta.
+- Tailandia y Viaje inteligente se mantienen sin cambios funcionales.

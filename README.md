@@ -5,3 +5,10 @@
 - Restaurantes y hoteles no muestran imágenes automáticas de Wikimedia para evitar fotos incorrectas; conservan Google Maps/Fotos.
 - Lugares y actividades mantienen fotos cuando existe una imagen válida.
 - Mantiene desplegables, favoritos, Maps, servicios e idiomas.
+
+## V46 · MALASIA + HORA + CLIMA
+- Roadmap inteligente ampliado con la ruta de Malasia: Kuala Lumpur → Cameron Highlands → Penang → Langkawi → Melaka → Kuala Lumpur.
+- El selector de clima cambia también el reloj entre Malasia y Tailandia según el destino elegido.
+- Si ambos países coincidieran en hora, el reloj muestra 🇲🇾🇹🇭.
+- Clima orientativo desglosado para Kuala Lumpur, Cameron Highlands, Penang, Langkawi y Melaka.
+- Selector de tiempo real ampliado a todas las etapas de Malasia.

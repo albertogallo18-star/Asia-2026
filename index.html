@@ -736,11 +736,13 @@ function bookingAlerts(){
  return p.slice(0,6).map(i=>`<div class="booking-alert">⬜ <b>${i.title}</b><br><span style="color:#72807d">${i.date} · ${i.type.replace(/^.. /,'')}</span></div>`).join('')+(p.length>6?`<div class="booking-alert">+ ${p.length-6} reservas pendientes más</div>`:'');
 }
 
-const SMART_ROUTE=[['🇲🇾','Malasia','7–22 nov'],['🏝️','Phi Phi','22–24 nov'],['🌕','Koh Phangan','24–27 nov'],['🤿','Koh Tao','27–30 nov'],['🛕','Chiang Mai','30 nov–3 dic'],['✨','Chiang Rai','3–5 dic'],['🌆','Bangkok','5–8 dic']];
-const CLIMATE_GUIDE={'Malasia':['30–32°','24–25°','🌦️ Calor húmedo · chaparrones frecuentes'],'Phi Phi':['30–31°','24–25°','🌤️ Tropical · lluvia posible'],'Koh Phangan':['29–30°','24–25°','🌦️ Fin de monzón · revisar ferris'],'Koh Tao':['29–30°','24–25°','🌦️ Mar y lluvia variables'],'Chiang Mai':['28–30°','17–19°','☀️ Más seco · noches agradables'],'Chiang Rai':['27–29°','15–18°','☀️ Más fresco mañana/noche'],'Bangkok':['31–32°','23–25°','🌤️ Calor · menos lluvia']};
+const SMART_ROUTE=[['🏙️','Kuala Lumpur','7–9 nov'],['🌿','Cameron Highlands','9–11 nov'],['🎨','Penang','11–14 nov'],['🏝️','Langkawi','14–18 nov'],['🏮','Melaka','18–20 nov'],['🏙️','Kuala Lumpur','20–22 nov'],['🏝️','Phi Phi','22–24 nov'],['🌕','Koh Phangan','24–27 nov'],['🤿','Koh Tao','27–30 nov'],['🛕','Chiang Mai','30 nov–3 dic'],['✨','Chiang Rai','3–5 dic'],['🌆','Bangkok','5–8 dic']];
+const CLIMATE_GUIDE={'Kuala Lumpur':['31–32°','24–25°','🌦️ Calor húmedo · tormentas y chaparrones frecuentes'],'Cameron Highlands':['21–24°','14–17°','🌧️ Montaña húmeda · fresco y lluvia frecuente'],'Penang':['30–32°','24–25°','🌦️ Tropical húmedo · chubascos posibles'],'Langkawi':['30–32°','25–26°','🌤️ Tropical · mejora tras el monzón, lluvia posible'],'Melaka':['30–32°','24–25°','🌦️ Calor húmedo · tormentas de tarde posibles'],'Phi Phi':['30–31°','24–25°','🌤️ Tropical · lluvia posible'],'Koh Phangan':['29–30°','24–25°','🌦️ Fin de monzón · revisar ferris'],'Koh Tao':['29–30°','24–25°','🌦️ Mar y lluvia variables'],'Chiang Mai':['28–30°','17–19°','☀️ Más seco · noches agradables'],'Chiang Rai':['27–29°','15–18°','☀️ Más fresco mañana/noche'],'Bangkok':['31–32°','23–25°','🌤️ Calor · menos lluvia']};
 const SMART_ALERTS=[];
 function madridNow(){return new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',hour:'2-digit',minute:'2-digit'}).format(new Date())}
-function asiaNow(){let tz=ACTIVE_COUNTRY==='Malaysia'?'Asia/Kuala_Lumpur':'Asia/Bangkok';return new Intl.DateTimeFormat('es-ES',{timeZone:tz,hour:'2-digit',minute:'2-digit'}).format(new Date())}
+function asiaNow(tz){tz=tz||(ACTIVE_COUNTRY==='Malaysia'?'Asia/Kuala_Lumpur':'Asia/Bangkok');return new Intl.DateTimeFormat('es-ES',{timeZone:tz,hour:'2-digit',minute:'2-digit'}).format(new Date())}
+function selectedClock(){let d=weatherSelected(),my=asiaNow('Asia/Kuala_Lumpur'),th=asiaNow('Asia/Bangkok'),both=my===th;return {time:asiaNow(d.tz),label:both?'🇲🇾🇹🇭 Asia':(d.country==='Malaysia'?'🇲🇾 Malasia':'🇹🇭 Tailandia')}}
+function updateSmartClock(){let c=selectedClock(),l=document.getElementById('asiaClockLabel'),t=document.getElementById('asiaClockTime');if(l)l.textContent=c.label;if(t)t.textContent=c.time}
 function smartPacking(){const base=[['👕','Camisetas ligeras','Calor y humedad'],['🩳','Pantalón corto / bañador','Islas'],['🛕','Pantalón ligero largo','Templos'],['🧥','Capa fina','Chiang Mai / Chiang Rai'],['🌧️','Chubasquero compacto','Malasia + islas'],['👟','Calzado cómodo','Ciudades / templos'],['🩴','Chanclas','Playas'],['🧴','Protector solar','Islas'],['🔌','Adaptador universal','Todo el viaje']];let saved=JSON.parse(localStorage.getItem('asia26smartpack')||'{}'),done=base.filter((x,i)=>saved[i]).length;return{base,saved,done,pct:Math.round(done/base.length*100)}}
 function toggleSmartPack(i,v){let x=JSON.parse(localStorage.getItem('asia26smartpack')||'{}');x[i]=v;localStorage.setItem('asia26smartpack',JSON.stringify(x));renderSmart()}
 function tomorrowCard(){let n=new Date(),m=n.getMonth()+1,d=n.getDate(),txt='Antes del viaje',detail='Cerrar vuelos, ferris y hoteles pendientes y avanzar la maleta.';if(n.getFullYear()===2026&&(m===11||m===12)){let k=m*100+d;if(k<=1122){txt='Malasia';detail='Ruta flexible con amigos · el 22 comienza Tailandia.'}else if(k<=1124){txt='Phi Phi';detail='Maya Bay → Pileh Lagoon → snorkel → viewpoint.'}else if(k<=1127){txt='Koh Phangan';detail='Playa → sunset → Full Moon.'}else if(k<=1130){txt='Koh Tao';detail='Koh Nang Yuan → viewpoint → snorkel → Sairee.'}else if(k<=1203){txt='Chiang Mai';detail='Old City → Doi Suthep → mercados.'}else if(k<=1205){txt='Chiang Rai';detail='Templo Blanco → Triángulo Dorado → Mekong.'}else{txt='Bangkok';detail='Templos → río → Chinatown / Ayutthaya.'}}return[txt,detail]}
@@ -770,23 +772,33 @@ function tripRouteMap(){
 
 
 const ROADMAP_STOPS=[
- {n:1,name:'Kuala Lumpur',dates:'7–22 nov',nights:15,x:28,y:78},
- {n:2,name:'Phi Phi',dates:'22–24 nov',nights:2,x:42,y:72},
- {n:3,name:'Koh Phangan',dates:'24–27 nov',nights:3,x:54,y:65},
- {n:4,name:'Koh Tao',dates:'27–30 nov',nights:3,x:55,y:57},
- {n:5,name:'Chiang Mai',dates:'30 nov–3 dic',nights:3,x:48,y:25},
- {n:6,name:'Chiang Rai',dates:'3–5 dic',nights:2,x:54,y:17},
- {n:7,name:'Bangkok',dates:'5–8 dic',nights:3,x:55,y:42},
- {n:8,name:'Ayutthaya',dates:'6 dic',nights:0,x:52,y:36,exc:true}
+ {n:1,name:'Kuala Lumpur',dates:'7–9 nov',nights:2,x:20,y:78},
+ {n:2,name:'Cameron Highlands',dates:'9–11 nov',nights:2,x:25,y:63},
+ {n:3,name:'Penang',dates:'11–14 nov',nights:3,x:18,y:51},
+ {n:4,name:'Langkawi',dates:'14–18 nov',nights:4,x:16,y:38},
+ {n:5,name:'Melaka',dates:'18–20 nov',nights:2,x:28,y:86},
+ {n:6,name:'Kuala Lumpur',dates:'20–22 nov',nights:2,x:20,y:78},
+ {n:7,name:'Phi Phi',dates:'22–24 nov',nights:2,x:42,y:72},
+ {n:8,name:'Koh Phangan',dates:'24–27 nov',nights:3,x:54,y:65},
+ {n:9,name:'Koh Tao',dates:'27–30 nov',nights:3,x:55,y:57},
+ {n:10,name:'Chiang Mai',dates:'30 nov–3 dic',nights:3,x:48,y:25},
+ {n:11,name:'Chiang Rai',dates:'3–5 dic',nights:2,x:54,y:17},
+ {n:12,name:'Bangkok',dates:'5–8 dic',nights:3,x:55,y:42},
+ {n:13,name:'Ayutthaya',dates:'6 dic',nights:0,x:52,y:36,exc:true}
 ];
 const NEXT_DESTS=[
- {name:'Kuala Lumpur',start:'2026-11-07',end:'2026-11-22',lat:3.139,long:101.687,flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=80',climate:'31° / 24°'},
- {name:'Phi Phi',start:'2026-11-22',end:'2026-11-24',lat:7.7407,long:98.7784,flag:'🏝️',photo:'./koh-tao-sairee.jpg',climate:'30° / 25°'},
- {name:'Koh Phangan',start:'2026-11-24',end:'2026-11-27',lat:9.7319,long:100.0136,flag:'🌕',photo:'./koh-tao-sairee.jpg',climate:'29° / 25°'},
- {name:'Koh Tao',start:'2026-11-27',end:'2026-11-30',lat:10.0956,long:99.8404,flag:'🤿',photo:'./koh-tao-sairee.jpg',climate:'29° / 25°'},
- {name:'Chiang Mai',start:'2026-11-30',end:'2026-12-03',lat:18.7883,long:98.9853,flag:'🛕',photo:'https://images.unsplash.com/photo-1598970605070-a38a6ccd3a2d?auto=format&fit=crop&w=1200&q=80',climate:'29° / 18°'},
- {name:'Chiang Rai',start:'2026-12-03',end:'2026-12-05',lat:19.9105,long:99.8406,flag:'✨',photo:'https://images.unsplash.com/photo-1583491470869-ca0b9fa0b122?auto=format&fit=crop&w=1200&q=80',climate:'28° / 17°'},
- {name:'Bangkok',start:'2026-12-05',end:'2026-12-08',lat:13.7563,long:100.5018,flag:'🌆',photo:'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1200&q=80',climate:'32° / 24°'}
+ {name:'Kuala Lumpur',start:'2026-11-07',end:'2026-11-09',lat:3.139,long:101.687,country:'Malaysia',tz:'Asia/Kuala_Lumpur',flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=80',climate:'31° / 25°'},
+ {name:'Cameron Highlands',start:'2026-11-09',end:'2026-11-11',lat:4.471,long:101.377,country:'Malaysia',tz:'Asia/Kuala_Lumpur',flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1536599018102-9f803c140fc1?auto=format&fit=crop&w=1200&q=80',climate:'23° / 16°'},
+ {name:'Penang',start:'2026-11-11',end:'2026-11-14',lat:5.4141,long:100.3288,country:'Malaysia',tz:'Asia/Kuala_Lumpur',flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=1200&q=80',climate:'31° / 25°'},
+ {name:'Langkawi',start:'2026-11-14',end:'2026-11-18',lat:6.35,long:99.8,country:'Malaysia',tz:'Asia/Kuala_Lumpur',flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80',climate:'31° / 25°'},
+ {name:'Melaka',start:'2026-11-18',end:'2026-11-20',lat:2.1896,long:102.2501,country:'Malaysia',tz:'Asia/Kuala_Lumpur',flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=80',climate:'31° / 25°'},
+ {name:'Kuala Lumpur · regreso',start:'2026-11-20',end:'2026-11-22',lat:3.139,long:101.687,country:'Malaysia',tz:'Asia/Kuala_Lumpur',flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=80',climate:'31° / 25°'},
+ {name:'Phi Phi',start:'2026-11-22',end:'2026-11-24',lat:7.7407,long:98.7784,country:'Thailand',tz:'Asia/Bangkok',flag:'🇹🇭',photo:'./koh-tao-sairee.jpg',climate:'30° / 25°'},
+ {name:'Koh Phangan',start:'2026-11-24',end:'2026-11-27',lat:9.7319,long:100.0136,country:'Thailand',tz:'Asia/Bangkok',flag:'🇹🇭',photo:'./koh-tao-sairee.jpg',climate:'29° / 25°'},
+ {name:'Koh Tao',start:'2026-11-27',end:'2026-11-30',lat:10.0956,long:99.8404,country:'Thailand',tz:'Asia/Bangkok',flag:'🇹🇭',photo:'./koh-tao-sairee.jpg',climate:'29° / 25°'},
+ {name:'Chiang Mai',start:'2026-11-30',end:'2026-12-03',lat:18.7883,long:98.9853,country:'Thailand',tz:'Asia/Bangkok',flag:'🇹🇭',photo:'https://images.unsplash.com/photo-1598970605070-a38a6ccd3a2d?auto=format&fit=crop&w=1200&q=80',climate:'29° / 18°'},
+ {name:'Chiang Rai',start:'2026-12-03',end:'2026-12-05',lat:19.9105,long:99.8406,country:'Thailand',tz:'Asia/Bangkok',flag:'🇹🇭',photo:'https://images.unsplash.com/photo-1583491470869-ca0b9fa0b122?auto=format&fit=crop&w=1200&q=80',climate:'28° / 17°'},
+ {name:'Bangkok',start:'2026-12-05',end:'2026-12-08',lat:13.7563,long:100.5018,country:'Thailand',tz:'Asia/Bangkok',flag:'🇹🇭',photo:'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1200&q=80',climate:'32° / 24°'}
 ];
 function nextDestination(){
  const now=new Date(), today=now.toISOString().slice(0,10);
@@ -809,6 +821,7 @@ function nextDestinationCard(){
 }
 async function loadWeatherDestination(name){
  let d=NEXT_DESTS.find(x=>x.name===name)||nextDestination(), box=document.getElementById('nextWeather');
+ setTimeout(updateSmartClock,0);
  if(!box)return;
  let title=document.getElementById('weatherTitle'),bg=document.getElementById('weatherHeroBg'),sub=document.getElementById('weatherSub');
  if(title)title.textContent=`${d.flag} ${d.name}`;
@@ -831,20 +844,20 @@ function setRoadTab(tab,btn){
  btn.classList.add('on');document.getElementById('road-'+tab).classList.add('on');
 }
 function roadmapMapInner(){
- const pts=ROADMAP_STOPS,path=pts.slice(0,7).map(p=>`${p.x},${p.y}`).join(' ');
+ const pts=ROADMAP_STOPS,path=pts.filter(p=>!p.exc).map(p=>`${p.x},${p.y}`).join(' ');
  return `<div class="roadmap-map"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><polyline class="trip-map-line" points="${path}"/><polyline class="trip-map-line" style="stroke:#d18b49" points="55,42 52,36 55,42"/></svg>${pts.map(p=>`<div class="trip-point ${p.exc?'exc':''}" style="left:${p.x}%;top:${p.y}%"><i>${p.n}</i><b>${p.name}</b></div>`).join('')}<button class="roadmap-expand" onclick="openRouteMap()">🔍 Ampliar</button></div>`;
 }
 function roadmapCard(){
- let max=Math.max(...ROADMAP_STOPS.slice(0,7).map(x=>x.nights));
+ let main=ROADMAP_STOPS.filter(x=>!x.exc),max=Math.max(...main.map(x=>x.nights));
  return `<div class="roadmap-card"><div class="smart-kicker">🗓️ ROADMAP DEL VIAJE</div><h3>Malasia + Tailandia</h3><div class="road-tabs"><button class="on" onclick="setRoadTab('linea',this)">Línea</button><button onclick="setRoadTab('gantt',this)">Gantt</button><button onclick="setRoadTab('mapa',this)">Recorrido</button></div>
- <div id="road-linea" class="road-pane on"><div class="timeline-scroll"><div class="timeline">${ROADMAP_STOPS.slice(0,7).map(p=>`<div class="tl-stop"><div class="tl-dot"></div><b>${p.name}</b><small>${p.dates} · ${p.nights}🌙</small></div>`).join('')}</div></div><p class="muted">Desliza horizontalmente para ver todo el recorrido.</p></div>
- <div id="road-gantt" class="road-pane"><div class="gantt">${ROADMAP_STOPS.slice(0,7).map(p=>`<div class="gantt-row"><b>${p.name}</b><div class="gantt-track"><div class="gantt-fill" style="width:${Math.max(14,p.nights/max*100)}%"></div></div><span>${p.nights} noches</span></div>`).join('')}</div></div>
+ <div id="road-linea" class="road-pane on"><div class="timeline-scroll"><div class="timeline">${main.map(p=>`<div class="tl-stop"><div class="tl-dot"></div><b>${p.name}</b><small>${p.dates} · ${p.nights}🌙</small></div>`).join('')}</div></div><p class="muted">Desliza horizontalmente para ver todo el recorrido.</p></div>
+ <div id="road-gantt" class="road-pane"><div class="gantt">${main.map(p=>`<div class="gantt-row"><b>${p.name}</b><div class="gantt-track"><div class="gantt-fill" style="width:${Math.max(14,p.nights/max*100)}%"></div></div><span>${p.nights} noches</span></div>`).join('')}</div></div>
  <div id="road-mapa" class="road-pane">${roadmapMapInner()}</div></div>`;
 }
 
 function renderSmart(){const box=document.getElementById('smartDashboard');if(!box)return;const pk=smartPacking(),tm=tomorrowCard();box.innerHTML=`<div class="smart-grid">
 ${nextDestinationCard()}
-<div class="smart-card"><div class="smart-kicker">HORA</div><div class="clockrow"><div class="clockbox"><small>🇪🇸 Madrid</small><b>${madridNow()}</b></div><div class="clockbox"><small>${ACTIVE_COUNTRY==='Malaysia'?'🇲🇾 Malasia':'🇹🇭 Tailandia'}</small><b>${asiaNow()}</b></div></div></div>
+<div class="smart-card"><div class="smart-kicker">HORA</div><div class="clockrow"><div class="clockbox"><small>🇪🇸 Madrid</small><b>${madridNow()}</b></div><div class="clockbox"><small id="asiaClockLabel">${selectedClock().label}</small><b id="asiaClockTime">${selectedClock().time}</b></div></div></div>
 <div class="smart-card"><div class="smart-kicker">MALETA</div><div class="smart-big">${pk.done}/${pk.base.length}</div><div class="pack-progress"><i style="width:${pk.pct}%"></i></div><p>${pk.pct}% preparado</p></div>
 ${roadmapCard()}
 <div class="smart-card wide"><div class="smart-kicker">🎫 RESERVAS DEL VIAJE</div>${(()=>{let q=bookingStats();return `<div class="smart-big">${q.done}/${q.total}</div><div class="pack-progress"><i style="width:${q.pct}%"></i></div><p>${q.pct}% reservado · ${q.total-q.done} pendientes</p>`})()}<button class="primary" onclick="openMore('reservas')">Ver vuelos, ferris y hoteles →</button></div><div class="smart-card wide"><div class="smart-kicker">🔔 ALERTAS AUTOMÁTICAS</div>${bookingAlerts()}</div>

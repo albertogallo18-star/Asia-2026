@@ -1,7 +1,6 @@
-# Asia 2026 · V40
+# Asia 2026 · V41
 
-## Navegación y rutas
-- Barra inferior grande y circular también en Tailandia, igual que en Malasia.
-- En “Cómo organizar este día”, cada parada muestra debajo cómo llegar a la siguiente.
-- Botón directo “Google Maps” entre los puntos 1→2, 2→3, etc.
-- Se mantiene el contenido/fotografías existentes de Tailandia.
+## Correcciones
+- Barra inferior de Tailandia igual a la de Malasia: iconos y círculo activo grande.
+- En “Cómo organizar este día”, cada punto incluye cómo llegar al siguiente, medio recomendado, tiempo aproximado y enlace a Google Maps.
+- Sin cambios en fotografías ni contenido visual existente de Tailandia.

@@ -1155,4 +1155,99 @@ const _my38DestV39=my38Dest;my38Dest=function(k){let d=MY38_DEST[k],h=document.g
 window.addEventListener('load',()=>{my39Route();my39Map();my39Discover()});
 </script>
 
+
+<style id="v41-final-fixes">
+/* V41 — navegación Tailandia idéntica a la miniapp de Malasia */
+body:not(.is-malaysia) nav.bottom, body:not(.is-malaysia) nav{
+ height:78px!important;border-radius:39px!important;padding:6px 8px!important;
+ width:min(calc(100% - 36px),620px)!important;background:rgba(255,252,246,.96)!important;
+}
+body:not(.is-malaysia) nav button{
+ height:auto!important;min-height:0!important;min-width:0!important;flex:1!important;
+ border-radius:0!important;transform:none!important;font-size:11px!important;font-weight:800!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;
+}
+body:not(.is-malaysia) nav button.active{
+ width:66px!important;max-width:66px!important;flex:0 0 66px!important;height:66px!important;
+ border-radius:50%!important;transform:none!important;background:#075357!important;color:#fff!important;
+}
+body:not(.is-malaysia) nav button .v41ico{display:block;font-size:23px;line-height:24px;font-weight:500}
+.logical-hop{margin:7px 0 9px 51px!important;padding:10px 11px!important;border-left:2px dashed #86beb6!important;background:#edf6f2!important;border-radius:0 14px 14px 0!important;display:block!important;color:#536d69!important;font-size:11px!important}
+.logical-hop strong{display:block;color:#0b5552;font-size:11px;margin-bottom:3px}.logical-hop em{display:block;font-style:normal;line-height:1.35}.logical-hop a{display:inline-block!important;margin:7px 0 0!important;text-decoration:none!important;background:#0b7775!important;color:#fff!important;font-weight:900!important;padding:8px 11px!important;border-radius:999px!important}
+</style>
+<script id="v41-final-js">
+const V41_HOPS={
+"23 NOV":[
+ ["🚤 Longtail · 10–15 min aprox.","De Maya Bay a Pileh Lagoon se hace en la misma barca; no hay trayecto a pie.","Maya Bay Phi Phi","Pileh Lagoon Phi Phi"],
+ ["🚤 Longtail · 5–10 min aprox.","Continúa en longtail hacia la zona de Viking Cave / punto de snorkel.","Pileh Lagoon Phi Phi","Viking Cave Phi Phi"],
+ ["🚤 Longtail · 10–20 min aprox.","Sigue en barca hacia Monkey Beach; el acceso depende de mar y marea.","Viking Cave Phi Phi","Monkey Beach Phi Phi"],
+ ["🚤 + 🚶 · regreso a Tonsai y subida 20–30 min", "Vuelve en longtail a Tonsai y desde allí sube andando al Phi Phi Viewpoint.","Monkey Beach Phi Phi","Phi Phi Viewpoint 1"]
+],
+"25 NOV":[
+ ["🚶 / taxi local · según alojamiento","Ve hacia Haad Rin; si duermes cerca, hazlo andando. Desde otras zonas conviene taxi/songthaew.","Haad Rin Beach Koh Phangan","Haad Rin Koh Phangan restaurants"],
+ ["🚶 · 5–15 min","Comida y descanso por Haad Rin; prácticamente todo queda a pie.","Haad Rin Koh Phangan restaurants","Haad Rin Beach Koh Phangan"],
+ ["🚶 · pocos minutos","Quédate por la zona para el sunset y evita desplazamientos largos antes de la fiesta.","Haad Rin Beach Koh Phangan","Haad Rin Sunset Beach"],
+ ["🚶 · 5–15 min","Desde Haad Rin ve andando al área de Full Moon Party en la playa.","Haad Rin Sunset Beach","Full Moon Party Haad Rin"]
+],
+"28 NOV":[
+ ["🚤 Taxi boat · 15–20 min aprox.","Desde Sairee/Mae Haad toma taxi boat a Koh Nang Yuan.","Sairee Beach Koh Tao","Koh Nang Yuan"],
+ ["🚶 · 15–20 min de subida","Desde el embarcadero de Nang Yuan sigue el sendero señalizado hasta el viewpoint.","Koh Nang Yuan Pier","Koh Nang Yuan Viewpoint"],
+ ["🚶 · 10–15 min","Baja del viewpoint y ve andando a las zonas de snorkel de Nang Yuan.","Koh Nang Yuan Viewpoint","Japanese Garden Koh Nang Yuan"],
+ ["🚤 + 🚶 · 15–20 min de barca","Taxi boat de vuelta a Sairee y paseo por la playa para el atardecer.","Koh Nang Yuan","Sairee Beach Koh Tao"],
+ ["🚶 · 5–15 min","Los bares principales de Sairee están a pie desde la playa.","Sairee Beach Koh Tao","Fishbowl Beach Bar Koh Tao"]
+],
+"1 DIC":[
+ ["🚶 · 10–15 min","Wat Phra Singh y Wat Chedi Luang están dentro de Old City y se enlazan bien andando.","Wat Phra Singh Chiang Mai","Wat Chedi Luang Chiang Mai"],
+ ["🚶 · 5–15 min","Sal del templo y continúa andando hacia la zona de restaurantes de Old City.","Wat Chedi Luang Chiang Mai","Old City Chiang Mai restaurants"],
+ ["🚶 · 5–10 min","Después de comer, recorre a pie los cafés y calles de Old City.","Old City Chiang Mai restaurants","Old City Chiang Mai cafes"],
+ ["🚶 / Grab · 15–25 min","Según el mercado de esa noche, ve andando o pide Grab.","Old City Chiang Mai","Chiang Mai Night Bazaar"]
+],
+"2 DIC":[
+ ["🚕 Grab / songthaew · 25–35 min","Sube desde Old City a Doi Suthep en Grab o songthaew rojo; no compensa ir andando.","Chiang Mai Old City","Wat Phra That Doi Suthep"],
+ ["🚕 Grab / songthaew · 25–35 min","Baja de Doi Suthep a Old City para masaje y tarde libre.","Wat Phra That Doi Suthep","Chiang Mai Old City massage"],
+ ["🚶 / Grab · 10–20 min","Desde Old City, paseo o Grab al mercado nocturno según dónde estéis.","Chiang Mai Old City","Chiang Mai Night Bazaar"]
+],
+"3 DIC":[
+ ["🚕 Grab · 10–20 min","Desde la estación/hotel de Chiang Rai, ve en Grab al Blue Temple.","Chiang Rai Bus Terminal 1","Wat Rong Suea Ten"],
+ ["🚕 Grab · 10–15 min","Blue Temple → Wat Huay Pla Kang: lo práctico es Grab/taxi.","Wat Rong Suea Ten","Wat Huay Pla Kang"],
+ ["🚕 Grab · 15–20 min","Regresa al centro para Clock Tower y Night Bazaar.","Wat Huay Pla Kang","Chiang Rai Clock Tower"]
+],
+"4 DIC":[
+ ["🚕 Coche/Grab · 20–30 min","Sal temprano desde Chiang Rai hacia el White Temple.","Chiang Rai Clock Tower","Wat Rong Khun"],
+ ["🚗 Excursión/coche · 1 h 20–1 h 40","Para el Golden Triangle lo mejor es conductor, coche o excursión organizada.","Wat Rong Khun","Golden Triangle Thailand"],
+ ["🚶 / 🚤 · 5–15 min","En el Golden Triangle baja al embarcadero; el paseo por el Mekong se contrata allí.","Golden Triangle Thailand","Golden Triangle Boat Pier"],
+ ["🚗 · 1 h 15–1 h 30","Regreso por carretera a Chiang Rai.","Golden Triangle Thailand","Chiang Rai Clock Tower"]
+],
+"5 DIC":[
+ ["✈️ Vuelo + 🚆/taxi","Vuela Chiang Rai → Bangkok y desde el aeropuerto enlaza con Airport Rail Link/taxi según aeropuerto y hotel.","Chiang Rai International Airport","Bangkok city center"],
+ ["🚶 / BTS/MRT","Tras el check-in, muévete en transporte público o taxi según la zona del hotel.","Bangkok city center","Yaowarat Road Bangkok"]
+],
+"6 DIC":[
+ ["🚆 Tren · 1–1,5 h aprox.","Toma un tren temprano desde Bangkok a Ayutthaya; después tuk-tuk/bici hasta el parque histórico.","Krung Thep Aphiwat Central Terminal","Ayutthaya Railway Station"],
+ ["🚲 / tuk-tuk · 10–15 min","Desde la estación cruza hacia la zona histórica y ve a Wat Mahathat.","Ayutthaya Railway Station","Wat Mahathat Ayutthaya"],
+ ["🚲 / 🚶 · 5–15 min","Recorre el Historical Park en bici, andando o tuk-tuk.","Wat Mahathat Ayutthaya","Ayutthaya Historical Park"],
+ ["🚲 / tuk-tuk · 10–15 min","Ve a Wat Chaiwatthanaram para el atardecer.","Ayutthaya Historical Park","Wat Chaiwatthanaram"],
+ ["🚕 + 🚆 · 1–1,5 h","Tuk-tuk a la estación y tren de regreso a Bangkok.","Wat Chaiwatthanaram","Ayutthaya Railway Station"]
+],
+"7 DIC":[
+ ["🚶 / taxi · según hotel","Llega temprano al Grand Palace; desde zona río/Old Town puede hacerse andando o taxi.","Bangkok city center","The Grand Palace Bangkok"],
+ ["🚶 · 10 min","Grand Palace → Wat Pho se hace andando.","The Grand Palace Bangkok","Wat Pho Bangkok"],
+ ["🚶 + ⛴️ · 10–15 min","Camina a Tha Tien Pier y cruza el Chao Phraya en ferry.","Wat Pho Bangkok","Tha Tien Pier"],
+ ["⛴️ + 🚶 · pocos minutos","El ferry te deja junto a Wat Arun.","Tha Tien Pier","Wat Arun Bangkok"],
+ ["🚕 / MRT · 20–40 min","Después de Wat Arun, taxi/Grab o MRT hacia rooftop o Chinatown.","Wat Arun Bangkok","Yaowarat Road Bangkok"]
+]};
+function v41MapUrl(a,b){return 'https://www.google.com/maps/dir/?api=1&origin='+encodeURIComponent(a)+'&destination='+encodeURIComponent(b)}
+function logicalRouteCard(d){
+ let r=LOGICAL_ROUTE[d.date]; if(!r)return''; let hs=V41_HOPS[d.date]||[];
+ let steps=r.map((x,i)=>{let hop=''; if(i<r.length-1){let h=hs[i]||['🧭 Ver trayecto','Abre Google Maps para comprobar la mejor opción en ese momento',d.place,d.place];hop=`<div class="logical-hop"><strong>↳ Cómo llegar al ${i+2} · ${h[0]}</strong><em>${h[1]}</em><a href="${v41MapUrl(h[2],h[3])}" target="_blank" rel="noopener">🧭 Cómo llegar · Google Maps</a></div>`}return `<div><i>${i+1}</i><span>${x}</span></div>${hop}`}).join('');
+ return `<div class="logical-card"><div class="logical-title"><span>🧭</span><div><small>ORDEN RECOMENDADO</small><b>Cómo organizar este día</b></div></div><div class="logical-steps">${steps}</div><p>Orden orientativo. Entre cada parada tienes el transporte recomendado, tiempo aproximado y el acceso a Google Maps.</p></div>`;
+}
+function v41ThailandNav(){
+ const nav=document.querySelector('nav'); if(!nav)return;
+ const icons=['⌂','▣','🗺','⌖','⋮'];
+ [...nav.querySelectorAll('button')].forEach((b,i)=>{const svg=b.querySelector('svg');if(svg)svg.remove();if(!b.querySelector('.v41ico'))b.insertAdjacentHTML('afterbegin',`<span class="v41ico">${icons[i]||'•'}</span>`)});
+}
+document.addEventListener('DOMContentLoaded',v41ThailandNav);v41ThailandNav();
+</script>
+
 </body></html>

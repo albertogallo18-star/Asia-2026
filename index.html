@@ -430,6 +430,16 @@ function forceAyutthayaFullWidth(){
 .dest-photo-hero>*:not(.dest-hero-img){position:relative!important;z-index:2!important}
 .dest-photo-hero h1,.dest-photo-hero .sub{color:#fff!important;text-shadow:0 2px 16px rgba(0,0,0,.5)}
 </style>
+
+<style id="v40-nav-route">
+/* V40 — same large bottom navigation in both countries */
+.bottom, nav.bottom{height:84px!important;border-radius:42px!important;padding:7px 8px!important;width:min(calc(100% - 24px),620px)!important}
+.bottom button, nav.bottom button{height:70px!important;min-height:70px!important;border-radius:35px!important;font-size:11px!important;flex:1!important}
+.bottom button svg, nav.bottom button svg{width:25px!important;height:25px!important;margin-bottom:4px!important}
+.bottom button.active, nav.bottom button.active{transform:none!important;background:#075b5c!important;color:#fff!important;border-radius:35px!important;box-shadow:none!important}
+.logical-hop{margin:4px 0 7px 51px;padding:8px 10px;border-left:2px dashed #9bc9c2;display:flex;align-items:center;gap:8px;color:#637977;font-size:11px}
+.logical-hop a{margin-left:auto;white-space:nowrap;text-decoration:none;background:#e1f0eb;color:#075b5c;font-weight:900;padding:7px 9px;border-radius:999px}
+</style>
 </head><body><div class="v12toptools"><button id="countrySwitch2" onclick="showCountryGate()">🇹🇭 Tailandia⌄</button><button onclick="openTranslator()">💬 Traductor</button></div>
 <div class="scene"><img id="scenePhoto" alt=""></div><main class="app">
 <section class="page active" id="ruta">
@@ -595,7 +605,17 @@ function gallery(items,id){if(!items.length)return'';setTimeout(()=>items.forEac
 const LOGICAL_ROUTE={"23 NOV": ["🌅 Temprano · Longtail hacia Maya Bay", "💎 Pileh Lagoon", "🤿 Snorkel / Viking Cave", "🏖️ Monkey Beach si encaja con mar y tiempo", "🌇 Phi Phi Viewpoint para terminar"], "25 NOV": ["🏖️ Mañana tranquila en Haad Rin / playa", "🍜 Comer y descansar", "🌅 Sunset", "🎉 Noche · Full Moon Party en Haad Rin"], "28 NOV": ["🌊 Mañana · Koh Nang Yuan", "📸 Viewpoint de Nang Yuan", "🤿 Snorkel", "🌅 Regreso a Sairee para sunset", "🍸 Noche por Sairee si apetece"], "1 DIC": ["🛕 Wat Phra Singh", "🏯 Wat Chedi Luang", "🍜 Comer por Old City", "☕ Cafés / paseo Old City", "🌙 Night Market por la noche"], "2 DIC": ["🌄 Doi Suthep por la mañana", "🌿 Tarde libre / masaje", "🛍️ Mercado nocturno y cena"], "3 DIC": ["🚌 Llegada a Chiang Rai", "🔵 Blue Temple", "🙏 Wat Huay Pla Kang", "🌙 Clock Tower / Night Bazaar"], "4 DIC": ["⚪ White Temple temprano", "🌏 Golden Triangle", "🚤 Mekong si os apetece", "🌇 Regreso a Chiang Rai"], "5 DIC": ["✈️ Vuelo a Bangkok", "🏨 Check-in", "🏮 Yaowarat / Chinatown por la tarde-noche"], "6 DIC": ["🚆 Tren temprano a Ayutthaya", "🌳 Wat Mahathat", "🏛️ Historical Park", "🌅 Wat Chaiwatthanaram al atardecer", "🚆 Regreso a Bangkok"], "7 DIC": ["👑 Grand Palace temprano", "🛕 Wat Pho", "⛴️ Cruzar el Chao Phraya", "🌅 Wat Arun", "🍸 Rooftop o Chinatown para despedir el viaje"]};
 function logicalRouteCard(d){
  let r=LOGICAL_ROUTE[d.date];if(!r)return'';
- return `<div class="logical-card"><div class="logical-title"><span>🧭</span><div><small>ORDEN RECOMENDADO</small><b>Cómo organizar este día</b></div></div><div class="logical-steps">${r.map((x,i)=>`<div><i>${i+1}</i><span>${x}</span></div>`).join('')}</div><p>Orden orientativo para evitar idas y vueltas innecesarias. Puedes adaptarlo sobre la marcha.</p></div>`;
+ const clean=x=>x.replace(/^[^A-Za-zÀ-ÿ0-9]+/,'').replace(/·/g,' ').trim();
+ let steps=r.map((x,i)=>{
+   let hop='';
+   if(i<r.length-1){
+     let a=clean(x), b=clean(r[i+1]);
+     let url='https://www.google.com/maps/dir/?api=1&origin='+encodeURIComponent(a+' '+d.place)+'&destination='+encodeURIComponent(b+' '+d.place);
+     hop=`<div class="logical-hop"><span>↳ Cómo llegar al ${i+2}</span><a href="${url}" target="_blank">🧭 Google Maps</a></div>`;
+   }
+   return `<div><i>${i+1}</i><span>${x}</span></div>${hop}`;
+ }).join('');
+ return `<div class="logical-card"><div class="logical-title"><span>🧭</span><div><small>ORDEN RECOMENDADO</small><b>Cómo organizar este día</b></div></div><div class="logical-steps">${steps}</div><p>Orden orientativo para evitar idas y vueltas innecesarias. Debajo de cada parada tienes cómo llegar a la siguiente.</p></div>`;
 }
 
 const TRANSFER={

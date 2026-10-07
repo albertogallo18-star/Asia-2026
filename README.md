@@ -1,9 +1,7 @@
-# Asia 2026 · V39
+# Asia 2026 · V40
 
-## Malasia al nivel visual de Tailandia
-- Ruta de Malasia rehecha con fotos, descripción, orden recomendado y bloque “Cómo llegar” entre cada parada.
-- Cada traslado incluye enlace directo “Cómo llegar · Google Maps”.
-- Mapa de Malasia rehecho con tarjetas fotográficas y acceso a cada destino.
-- Descubre Malasia rehecho con fotos, descripción, orden recomendado, ver/hacer/comer/dormir/noche y Google Maps.
-- La barra inferior de Tailandia conserva su diseño y sus fotos/contenido no se modifican.
-- “Más” sigue siendo común a ambos países.
+## Navegación y rutas
+- Barra inferior grande y circular también en Tailandia, igual que en Malasia.
+- En “Cómo organizar este día”, cada parada muestra debajo cómo llegar a la siguiente.
+- Botón directo “Google Maps” entre los puntos 1→2, 2→3, etc.
+- Se mantiene el contenido/fotografías existentes de Tailandia.

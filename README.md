@@ -1,6 +1,8 @@
-# Asia 2026 · V18
-Corrección crítica de la portada:
-- Malasia y Tailandia vuelven a ser pulsables.
-- La portada se muestra al arrancar la app.
-- Al elegir un país, la portada se oculta de verdad y no se vuelve a superponer.
-- Mantiene las fotos locales de Koh Tao de V17.
+# Asia 2026 · V19
+Sin quitar nada de V18, añade un panel “Viaje inteligente” en Más:
+- Mañana / siguiente paso
+- Hora Madrid ↔ país activo
+- Maleta inteligente con progreso persistente
+- Alertas importantes
+- Línea visual del recorrido
+- Clima orientativo por destino

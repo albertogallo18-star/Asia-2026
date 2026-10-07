@@ -1,6 +1,5 @@
-# Asia 2026 · V27
-- Clima del viaje con desplegable para consultar en tiempo real Kuala Lumpur, Phi Phi, Koh Phangan, Koh Tao, Chiang Mai, Chiang Rai y Bangkok.
-- Muestra temperatura actual, máxima/mínima, lluvia, humedad, viento y sensación térmica.
-- Mantiene selección automática del próximo destino al abrir.
-- Koh Tao: solución definitiva mediante una etiqueta IMG real dentro de la cabecera, usando koh-tao-sairee.jpg local.
-- Mantiene Roadmap Línea / Gantt / Recorrido, reservas inteligentes y todo V26.
+# Asia 2026 · V28
+- Corrige la rotura visual de todas las fichas de Descubre introducida en V27.
+- El código de Koh Tao ya no queda dentro del HTML visible.
+- Koh Tao usa una etiqueta IMG real dentro de su cabecera, con la foto local koh-tao-sairee.jpg.
+- Mantiene intacto Viaje inteligente V27: clima desplegable, Roadmap Línea/Gantt/Recorrido, reservas y maleta.

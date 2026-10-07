@@ -415,8 +415,8 @@ function forceAyutthayaFullWidth(){
 
 <style id="v27-final">
 .koh-tao-photo-header{position:relative!important;overflow:hidden!important;isolation:isolate;background:#0b7472!important}
-.koh-tao-photo-header>.koh-tao-bg-img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 55%!important;z-index:-2!important;display:block!important}
-.koh-tao-photo-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,38,40,.04),rgba(0,38,40,.48));z-index:-1}
+.koh-tao-photo-header>.koh-tao-bg-img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 55%!important;z-index:0!important;display:block!important}
+.koh-tao-photo-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,38,40,.04),rgba(0,38,40,.48));z-index:1}
 .koh-tao-photo-header>*:not(.koh-tao-bg-img){position:relative;z-index:2}
 .koh-tao-photo-header h1,.koh-tao-photo-header .sub{color:#fff!important;text-shadow:0 2px 14px rgba(0,0,0,.4)}
 .weather-selector{width:100%;border:0;border-radius:15px;background:rgba(255,255,255,.92);color:#0b5552;font-weight:900;font-size:13px;padding:11px 13px;margin:8px 0 4px;appearance:auto}
@@ -650,14 +650,7 @@ const NIGHT_RECS={
 "Ayutthaya":[["Ayutthaya Night Market","Centro","Plan tranquilo para cenar y pasear; Ayutthaya no necesita una noche de fiesta para merecer la pena."]]
 };
 
-function openDest(k){let v=DEST[k], photos=D.filter(x=>x.place===k).flatMap(x=>x.photos).slice(0,6);document.getElementById('destList').classList.add('hidden');let el=document.getElementById('destDetail');el.classList.remove('hidden');let sid='s'+k.replaceAll(' ','');el.innerHTML=`<header class="${k==='Koh Tao'?'koh-tao-real-hero':''}" style="${k==='Koh Tao'?'background-image:linear-gradient(to bottom,rgba(0,45,48,.08),rgba(0,45,48,.52)),url(\'./koh-tao-sairee.jpg\');background-size:cover;background-position:center 55%;':''}"><button class="back" onclick="closeDest()">← Destinos</button><h1 style="margin-top:18px">${v.emoji} ${k}</h1><div class="sub">${v.sub}</div></header>;
-if(k==='Koh Tao'){
- const h=el.querySelector('header');
- h.classList.add('koh-tao-photo-header');
- const im=document.createElement('img');
- im.className='koh-tao-bg-img'; im.src='./koh-tao-sairee.jpg'; im.alt='Koh Tao';
- h.prepend(im);
-}
+function openDest(k){let v=DEST[k], photos=D.filter(x=>x.place===k).flatMap(x=>x.photos).slice(0,6);document.getElementById('destList').classList.add('hidden');let el=document.getElementById('destDetail');el.classList.remove('hidden');let sid='s'+k.replaceAll(' ','');el.innerHTML=`<header class="${k==='Koh Tao'?'koh-tao-photo-header':''}"><button class="back" onclick="closeDest()">← Destinos</button>${k==='Koh Tao'?'<img class="koh-tao-bg-img" src="./koh-tao-sairee.jpg" alt="Koh Tao">':''}<h1 style="margin-top:18px">${v.emoji} ${k}</h1><div class="sub">${v.sub}</div></header>
 <div class="catgrid"><button class="cat" onclick="goDest('${sid}-stay')"><span>🏨</span>Dormir</button><button class="cat" onclick="goDest('${sid}-eat')"><span>🍜</span>Comer</button><button class="cat" onclick="goDest('${sid}-see')"><span>🛕</span>Ver</button><button class="cat" onclick="goDest('${sid}-do')"><span>✨</span>Hacer</button><button class="cat" onclick="goDest('${sid}-night')"><span>🍸</span>Noche</button><button class="cat" onclick="goDest('${sid}-photos')"><span>📸</span>Fotos</button></div>
 <h2 class="section anchor" id="${sid}-photos">📸 No te pierdas esto</h2>${gallery(photos,'dest'+k.replaceAll(' ',''))}
 <h2 class="section anchor" id="${sid}-see">⭐ Imprescindibles</h2>${v.see.map(x=>`<div class="card info-rec"><button class="fav" onclick="toggleFav('${k}','${x.replaceAll("'","")} ',this)">♡</button><b>${x}</b><p class="muted">${SEE_DESC[k]?.[x]||'Un lugar que merece estar en tu ruta por '+k+'.'}</p><a class="v11link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x+' '+k+' Thailand')}" target="_blank">📍 Google Maps</a></div>`).join('')}

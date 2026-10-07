@@ -1,10 +1,10 @@
-# Asia 2026 · V37
+# Asia 2026 · V38
 
-## Malasia reconstruida como app independiente
-
-- Parte de V29, la versión estable de Tailandia.
-- Malasia es ahora una capa autónoma completa: Viajazo, Ruta, Mapa, Descubre y Más.
-- No reutiliza las páginas ni la navegación interna de Tailandia.
-- Kuala Lumpur incluye 2 noches, visitas, comida, noche y hoteles.
-- Resto de Malasia marcado como ruta orientativa.
-- Cambiar de país abre/cierra la capa, sin mezclar contenidos.
+## Malasia al nivel de Tailandia
+- Ruta detallada con días, planes y bloques **Cómo llegar** entre destinos.
+- Enlaces de Google Maps con indicaciones entre cada parada.
+- Mapa de Malasia con cada destino pulsable y recorrido completo.
+- Descubre Malasia ahora es interactivo: Kuala Lumpur, Cameron Highlands, Penang, Langkawi y Melaka con Ver, Hacer, Comer, Dormir, Noche y Google Maps.
+- La pestaña **Más** pasa a ser común para Malasia + Tailandia: Viaje inteligente, reservas, presupuesto, checklist, emergencias, información y documentos.
+- Tailandia mantiene su contenido y sus traslados ahora enlazan a **Cómo ir · Google Maps**.
+- La navegación inferior grande/circular de Malasia se aplica también visualmente a Tailandia.

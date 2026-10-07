@@ -4,3 +4,7 @@ Descubre restaurado y agrupado: Ver, Hacer, Comer, Dormir y Noche + servicios. I
 
 
 - Fotos dentro de desplegables Ver/Hacer/Comer/Dormir/Noche en Tailandia y Malasia.
+
+
+## V43 FOTOS FIX
+Corrección real: fotos cargadas dentro de Ver, Hacer, Comer, Dormir y Noche en Tailandia y Malasia.

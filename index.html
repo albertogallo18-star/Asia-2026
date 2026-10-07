@@ -412,6 +412,16 @@ function forceAyutthayaFullWidth(){
 .roadmap-map svg{position:absolute;inset:0;width:100%;height:100%}.roadmap-map .trip-point i{width:25px;height:25px}.roadmap-map .trip-point b{font-size:8px}
 .roadmap-expand{position:absolute;right:11px;bottom:11px;z-index:6;border:0;background:#fffaf2;color:#0b625e;border-radius:14px;padding:9px 11px;font-weight:900;font-size:10px}
 </style>
+
+<style id="v27-final">
+.koh-tao-photo-header{position:relative!important;overflow:hidden!important;isolation:isolate;background:#0b7472!important}
+.koh-tao-photo-header>.koh-tao-bg-img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 55%!important;z-index:-2!important;display:block!important}
+.koh-tao-photo-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,38,40,.04),rgba(0,38,40,.48));z-index:-1}
+.koh-tao-photo-header>*:not(.koh-tao-bg-img){position:relative;z-index:2}
+.koh-tao-photo-header h1,.koh-tao-photo-header .sub{color:#fff!important;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+.weather-selector{width:100%;border:0;border-radius:15px;background:rgba(255,255,255,.92);color:#0b5552;font-weight:900;font-size:13px;padding:11px 13px;margin:8px 0 4px;appearance:auto}
+.weather-loading{font-size:11px;opacity:.82;margin-top:12px}
+</style>
 </head><body><div class="v12toptools"><button id="countrySwitch2" onclick="showCountryGate()">🇹🇭 Tailandia⌄</button><button onclick="openTranslator()">💬 Traductor</button></div>
 <div class="scene"><img id="scenePhoto" alt=""></div><main class="app">
 <section class="page active" id="ruta">
@@ -640,7 +650,14 @@ const NIGHT_RECS={
 "Ayutthaya":[["Ayutthaya Night Market","Centro","Plan tranquilo para cenar y pasear; Ayutthaya no necesita una noche de fiesta para merecer la pena."]]
 };
 
-function openDest(k){let v=DEST[k], photos=D.filter(x=>x.place===k).flatMap(x=>x.photos).slice(0,6);document.getElementById('destList').classList.add('hidden');let el=document.getElementById('destDetail');el.classList.remove('hidden');let sid='s'+k.replaceAll(' ','');el.innerHTML=`<header class="${k==='Koh Tao'?'koh-tao-real-hero':''}" style="${k==='Koh Tao'?'background-image:linear-gradient(to bottom,rgba(0,45,48,.08),rgba(0,45,48,.52)),url(\'./koh-tao-sairee.jpg\');background-size:cover;background-position:center 55%;':''}"><button class="back" onclick="closeDest()">← Destinos</button><h1 style="margin-top:18px">${v.emoji} ${k}</h1><div class="sub">${v.sub}</div></header>
+function openDest(k){let v=DEST[k], photos=D.filter(x=>x.place===k).flatMap(x=>x.photos).slice(0,6);document.getElementById('destList').classList.add('hidden');let el=document.getElementById('destDetail');el.classList.remove('hidden');let sid='s'+k.replaceAll(' ','');el.innerHTML=`<header class="${k==='Koh Tao'?'koh-tao-real-hero':''}" style="${k==='Koh Tao'?'background-image:linear-gradient(to bottom,rgba(0,45,48,.08),rgba(0,45,48,.52)),url(\'./koh-tao-sairee.jpg\');background-size:cover;background-position:center 55%;':''}"><button class="back" onclick="closeDest()">← Destinos</button><h1 style="margin-top:18px">${v.emoji} ${k}</h1><div class="sub">${v.sub}</div></header>;
+if(k==='Koh Tao'){
+ const h=el.querySelector('header');
+ h.classList.add('koh-tao-photo-header');
+ const im=document.createElement('img');
+ im.className='koh-tao-bg-img'; im.src='./koh-tao-sairee.jpg'; im.alt='Koh Tao';
+ h.prepend(im);
+}
 <div class="catgrid"><button class="cat" onclick="goDest('${sid}-stay')"><span>🏨</span>Dormir</button><button class="cat" onclick="goDest('${sid}-eat')"><span>🍜</span>Comer</button><button class="cat" onclick="goDest('${sid}-see')"><span>🛕</span>Ver</button><button class="cat" onclick="goDest('${sid}-do')"><span>✨</span>Hacer</button><button class="cat" onclick="goDest('${sid}-night')"><span>🍸</span>Noche</button><button class="cat" onclick="goDest('${sid}-photos')"><span>📸</span>Fotos</button></div>
 <h2 class="section anchor" id="${sid}-photos">📸 No te pierdas esto</h2>${gallery(photos,'dest'+k.replaceAll(' ',''))}
 <h2 class="section anchor" id="${sid}-see">⭐ Imprescindibles</h2>${v.see.map(x=>`<div class="card info-rec"><button class="fav" onclick="toggleFav('${k}','${x.replaceAll("'","")} ',this)">♡</button><b>${x}</b><p class="muted">${SEE_DESC[k]?.[x]||'Un lugar que merece estar en tu ruta por '+k+'.'}</p><a class="v11link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x+' '+k+' Thailand')}" target="_blank">📍 Google Maps</a></div>`).join('')}
@@ -757,20 +774,34 @@ function nextDestination(){
  }
  return NEXT_DESTS[NEXT_DESTS.length-1];
 }
+
+function weatherSelected(){
+ const sel=document.getElementById('weatherDestSelect');
+ return NEXT_DESTS.find(x=>x.name===(sel&&sel.value)) || nextDestination();
+}
 function nextDestinationCard(){
  let d=nextDestination();
- setTimeout(()=>loadNextWeather(d),80);
- return `<div class="smart-card wide next-dest"><div class="next-dest-bg" style="background-image:url('${d.photo}')"></div><div class="next-dest-shade"></div><div class="next-dest-content"><div class="smart-kicker">PRÓXIMO DESTINO</div><h3>${d.flag} ${d.name}</h3><p>${d.start.split('-').reverse().slice(0,2).join('/')} · siguiente etapa del viaje</p><div id="nextWeather"><div class="weather-main"><strong>${d.climate.split(' / ')[0]}</strong><span>máx. habitual · mín. ${d.climate.split(' / ')[1]}</span></div><div class="weather-status">Clima habitual · la previsión real aparecerá cuando esté disponible.</div></div></div></div>`;
+ setTimeout(()=>loadWeatherDestination(d.name),80);
+ return `<div class="smart-card wide next-dest"><div id="weatherHeroBg" class="next-dest-bg" style="background-image:url('${d.photo}')"></div><div class="next-dest-shade"></div><div class="next-dest-content"><div class="smart-kicker">CLIMA DEL VIAJE · TIEMPO REAL</div><select id="weatherDestSelect" class="weather-selector" onchange="loadWeatherDestination(this.value)">${NEXT_DESTS.map(x=>`<option value="${x.name}" ${x.name===d.name?'selected':''}>${x.flag} ${x.name}</option>`).join('')}</select><h3 id="weatherTitle">${d.flag} ${d.name}</h3><p id="weatherSub">Próximo destino · consulta cualquier etapa</p><div id="nextWeather"><div class="weather-loading">Consultando tiempo actual…</div></div></div></div>`;
 }
-async function loadNextWeather(d){
- let box=document.getElementById('nextWeather'); if(!box)return;
+async function loadWeatherDestination(name){
+ let d=NEXT_DESTS.find(x=>x.name===name)||nextDestination(), box=document.getElementById('nextWeather');
+ if(!box)return;
+ let title=document.getElementById('weatherTitle'),bg=document.getElementById('weatherHeroBg'),sub=document.getElementById('weatherSub');
+ if(title)title.textContent=`${d.flag} ${d.name}`;
+ if(bg)bg.style.backgroundImage=`url('${d.photo}')`;
+ if(sub)sub.textContent=(d.name===nextDestination().name?'Próximo destino':'Etapa del viaje')+' · tiempo actual';
+ box.innerHTML='<div class="weather-loading">Consultando tiempo actual…</div>';
  try{
-  let url=`https://api.open-meteo.com/v1/forecast?latitude=${d.lat}&longitude=${d.long}&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=auto&forecast_days=7`;
+  let url=`https://api.open-meteo.com/v1/forecast?latitude=${d.lat}&longitude=${d.long}&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,weather_code&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=auto&forecast_days=7`;
   let j=await (await fetch(url)).json();
-  let max=Math.round(j.daily.temperature_2m_max[0]),min=Math.round(j.daily.temperature_2m_min[0]),rain=j.daily.precipitation_probability_max[0]??0,cur=Math.round(j.current.temperature_2m);
-  box.innerHTML=`<div class="weather-main"><strong>${cur}°</strong><span>ahora · ↑${max}° ↓${min}°</span></div><div class="weather-meta"><i>🌧️ ${rain}% lluvia</i><i>📍 ${d.name}</i></div><div class="weather-status">Tiempo actual del próximo destino · se actualiza online.</div>`;
- }catch(e){}
+  let max=Math.round(j.daily.temperature_2m_max[0]),min=Math.round(j.daily.temperature_2m_min[0]),rain=j.daily.precipitation_probability_max[0]??0,cur=Math.round(j.current.temperature_2m),feel=Math.round(j.current.apparent_temperature),hum=j.current.relative_humidity_2m,wind=Math.round(j.current.wind_speed_10m);
+  box.innerHTML=`<div class="weather-main"><strong>${cur}°</strong><span>ahora · ↑${max}° ↓${min}°</span></div><div class="weather-meta"><i>🌧️ ${rain}% lluvia</i><i>💧 ${hum}% humedad</i><i>🌬️ ${wind} km/h</i><i>🌡️ sensación ${feel}°</i></div><div class="weather-status">Tiempo actual en ${d.name} · se actualiza online.</div>`;
+ }catch(e){
+  box.innerHTML=`<div class="weather-main"><strong>${d.climate.split(' / ')[0]}</strong><span>máx. habitual · mín. ${d.climate.split(' / ')[1]}</span></div><div class="weather-status">Sin conexión al tiempo en directo · mostrando clima habitual.</div>`;
+ }
 }
+
 function setRoadTab(tab,btn){
  document.querySelectorAll('.road-tabs button').forEach(x=>x.classList.remove('on'));
  document.querySelectorAll('.road-pane').forEach(x=>x.classList.remove('on'));

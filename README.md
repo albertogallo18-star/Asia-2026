@@ -1,3 +1,11 @@
+# Asia 2026 · V49 VUELTA CONFIRMADA
+
+- Viaje: 6 noviembre – 8 diciembre de 2026.
+- Vuelta confirmada: Bangkok (BKK) → Madrid (MAD), 8 dic, 09:45–20:45, Qatar Airways, 1 escala, 17 h.
+- Llegada: Madrid T4S.
+- Equipaje mostrado en la reserva: mano 7 kg + facturado 25 kg.
+- Se mantiene el resto de V48 sin cambios.
+
 # Asia 2026 · V45 FOTOS FIABLES
 
 - Sin fotos genéricas de relleno.

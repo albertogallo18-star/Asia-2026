@@ -1379,6 +1379,34 @@ v43MalaysiaCorrect=function(k){let base=MY38_DEST[k],d=V43_MAL[k],x=document.get
 my38Dest=function(k){v43MalaysiaCorrect(k)};
 </script>
 
+<!-- V44 IMAGE AUDIT: robust photo loader with aliases + guaranteed fallback -->
+<script id="v44-image-audit-js">
+const V44_FALLBACKS={
+ 'phi phi':'https://images.unsplash.com/photo-1534008897995-27a23e859048?auto=format&fit=crop&w=1000&q=82',
+ 'koh phangan':'https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1000&q=82',
+ 'koh tao':'./koh-tao-sairee.jpg',
+ 'chiang mai':'https://images.unsplash.com/photo-1598970605070-a38a6ccd3a2d?auto=format&fit=crop&w=1000&q=82',
+ 'chiang rai':'https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=1000&q=82',
+ 'bangkok':'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1000&q=82',
+ 'ayutthaya':'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1000&q=82',
+ 'kuala lumpur':'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1000&q=82',
+ 'cameron highlands':'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1000&q=82',
+ 'penang':'https://images.unsplash.com/photo-1583491470869-ca0b9fa0b122?auto=format&fit=crop&w=1000&q=82',
+ 'langkawi':'https://images.unsplash.com/photo-1536599018102-9f803c140fc1?auto=format&fit=crop&w=1000&q=82',
+ 'melaka':'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1000&q=82',
+ 'default':'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1000&q=82'
+};
+function v44Fallback(q){q=(q||'').toLowerCase();for(const k of Object.keys(V44_FALLBACKS)){if(k!=='default'&&q.includes(k))return V44_FALLBACKS[k]}return V44_FALLBACKS.default}
+function v44CleanQuery(q){return String(q||'').replace(/\b(travel|food|restaurant|hotel|see|stay|night|do)\b/gi,' ').replace(/Longtail privado/gi,'longtail boat').replace(/\s+/g,' ').trim()}
+function v44SetImage(img,src,fallback){let done=false;const ok=()=>{if(done)return;done=true;img.style.display='block';img.closest('.photo')?.classList.remove('placeholder')};const fail=()=>{if(done)return;done=true;img.onerror=null;img.onload=null;img.src=fallback;img.style.display='block';img.closest('.photo')?.classList.remove('placeholder')};img.onload=ok;img.onerror=fail;img.src=src;setTimeout(()=>{if(!done && (!img.complete || !img.naturalWidth))fail()},5500)}
+async function commonsImage(query,img){if(!img)return;let fallback=v44Fallback(query);let local=typeof localTravelPhoto==='function'?localTravelPhoto(query):null;if(local){v44SetImage(img,local,fallback);return}try{let q=v44CleanQuery(query);let u='https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch='+encodeURIComponent(q)+'&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url&iiurlwidth=1000&format=json&origin=*';let res=await fetch(u,{cache:'force-cache'});if(!res.ok)throw new Error('commons '+res.status);let j=await res.json();let pages=Object.values(j.query?.pages||{});let candidates=pages.map(p=>p?.imageinfo?.[0]?.thumburl||p?.imageinfo?.[0]?.url).filter(Boolean).filter(x=>!/(\.svg|\.gif|\.webm|\.pdf)(\?|$)/i.test(x));if(!candidates.length)throw new Error('no photo');v44SetImage(img,candidates[0],fallback)}catch(e){v44SetImage(img,fallback,fallback)}}
+// Retry every dynamic Discover photo through the robust loader.
+function v44AuditPhotos(root=document){root.querySelectorAll('img[data-v43q]').forEach(img=>{img.dataset.loaded='v44';commonsImage(img.dataset.v43q,img)});root.querySelectorAll('.photo img').forEach(img=>{if(!img.getAttribute('src')&&img.alt)commonsImage(img.alt,img)})}
+const V44_openDest=openDest;openDest=function(k){V44_openDest(k);setTimeout(()=>v44AuditPhotos(document.getElementById('destDetail')),180)};
+const V44_my38Dest=my38Dest;my38Dest=function(k){V44_my38Dest(k);setTimeout(()=>v44AuditPhotos(document.getElementById('my38DiscoverDetail')),180)};
+</script>
+<style id="v44-image-audit-css">.v43-card-photo{min-height:145px}.v43-card-photo:not([src]){visibility:hidden}.v43-section.open .v43-card-photo{visibility:visible}.photo img{background:#e8eee9}</style>
+
 </body></html>
 <style id="v42-services-css">
 .v42-services{margin:16px 0 20px}.v42-services>h3{font:600 25px Georgia,serif;color:#103f40;margin:0 0 5px}.v42-services>.v42-lead{font-size:12px;color:#71817f;line-height:1.45;margin:0 0 12px}.v42-acc{background:#fffaf4;border:1px solid #e4dacf;border-radius:20px;margin:9px 0;overflow:hidden}.v42-acc>button{width:100%;border:0;background:transparent;padding:15px 16px;display:flex;align-items:center;gap:10px;text-align:left;color:#123f40;font-weight:900;font-size:14px}.v42-acc>button span:first-child{font-size:21px}.v42-acc>button i{margin-left:auto;font-style:normal;font-size:18px;transition:.2s}.v42-acc.open>button i{transform:rotate(45deg)}.v42-body{display:none;padding:0 14px 14px}.v42-acc.open .v42-body{display:block}.v42-item{background:#f4f7f2;border-radius:15px;padding:12px;margin:8px 0}.v42-item b{display:block;color:#123f40;font-size:13px}.v42-item small{display:block;color:#6c7c79;line-height:1.45;margin:4px 0 9px}.v42-actions{display:flex;gap:7px;flex-wrap:wrap}.v42-actions a{display:inline-block;text-decoration:none;background:#0b7775;color:white!important;border-radius:999px;padding:8px 10px;font-size:10px;font-weight:900}.v42-tip{background:#eaf4ef;border-radius:15px;padding:11px 12px;font-size:11px;line-height:1.45;color:#506663;margin-top:10px}.v42-na{color:#71817f;font-size:12px;line-height:1.5;padding:4px 2px 8px}
@@ -1491,3 +1519,4 @@ function v43MalaysiaCorrect(k){let base=MY38_DEST[k],d=V43_MAL[k],x=document.get
 openDest=function(k){let v=DEST[k],photos=D.filter(x=>x.place===k).flatMap(x=>x.photos).slice(0,6);document.getElementById('destList').classList.add('hidden');let el=document.getElementById('destDetail');el.classList.remove('hidden');let sid='s'+k.replaceAll(' ','');el.innerHTML=`<header class="dest-photo-hero"><button class="back" onclick="closeDest()">← Destinos</button><img id="destHeroImg" class="dest-hero-img" ${k==='Koh Tao'?'src="./koh-tao-sairee.jpg"':''} alt="${k}"><h1 style="margin-top:18px">${v.emoji} ${k}</h1><div class="sub">${v.sub}</div></header><div class="catgrid"><button class="cat" onclick="goDest('${sid}-stay')"><span>🏨</span>Dormir</button><button class="cat" onclick="goDest('${sid}-eat')"><span>🍜</span>Comer</button><button class="cat" onclick="goDest('${sid}-see')"><span>🛕</span>Ver</button><button class="cat" onclick="goDest('${sid}-do')"><span>✨</span>Hacer</button></div>`;v43ThaiFromData(k)};
 my38Dest=function(k){v43MalaysiaCorrect(k)};
 </script>
+

@@ -1,10 +1,10 @@
-# Asia 2026 · V43 FOTOS
+# Asia 2026 · V44 FOTOS AUDITADAS
 
-Descubre restaurado y agrupado: Ver, Hacer, Comer, Dormir y Noche + servicios. Idiomas por operador/categoría, prioridad español, aviso cuando no se ha encontrado español. Google Maps + acceso a fotos para hoteles/restaurantes/servicios. Malasia equiparada a Tailandia.
+Revisión global del cargador de fotos de Descubre.
 
-
-- Fotos dentro de desplegables Ver/Hacer/Comer/Dormir/Noche en Tailandia y Malasia.
-
-
-## V43 FOTOS FIX
-Corrección real: fotos cargadas dentro de Ver, Hacer, Comer, Dormir y Noche en Tailandia y Malasia.
+- Corrige imágenes rotas o vacías en todos los desplegables.
+- Busca hasta 8 resultados fotográficos válidos en Wikimedia Commons.
+- Descarta SVG/GIF/WebM/PDF.
+- Si una foto remota falla o tarda demasiado, usa una imagen de respaldo del destino: nunca deja una tarjeta rota.
+- Corrige búsquedas ambiguas como “Longtail privado”.
+- Mantiene Tailandia, Malasia, desplegables, Maps, Guardar, servicios e idiomas.

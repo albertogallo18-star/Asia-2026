@@ -1,2 +1,3 @@
-Asia 2026 · V53 CULTURILLA
-Añade un desplegable de cultura e historia en Descubre para cada destino de Malasia y Tailandia. Incluye historia de la ciudad, lugares principales y enlaces a Wikipedia o su buscador. Conserva la V52.
+Asia 2026 · V54 CULTURILLA VISIBLE
+
+Corrección del orden de los renderizadores de Descubre: Culturilla se inserta después de Noche y antes de Servicios & experiencias, en 12 destinos. Resto de V53 sin cambios.

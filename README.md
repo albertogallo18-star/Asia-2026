@@ -1,6 +1,2 @@
-# Asia 2026 · V50 · VUELTA 8 DIC
-
-- Fecha final: 8 diciembre 2026.
-- Viajazo: vuelta separada en Bangkok → Doha y Doha → Madrid, con el mismo diseño que la ida.
-- Reserva confirmada Qatar Airways: BKK 09:45 → MAD 20:45, 1 escala, 17 h.
-- QR839 BKK→DOH según horario publicado; QR151 DOH→MAD 15:15–20:45.
+Asia 2026 · V53 CULTURILLA
+Añade un desplegable de cultura e historia en Descubre para cada destino de Malasia y Tailandia. Incluye historia de la ciudad, lugares principales y enlaces a Wikipedia o su buscador. Conserva la V52.

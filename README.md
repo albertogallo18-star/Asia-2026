@@ -1,5 +1,6 @@
-Asia 2026 · V57 HOY · TAXI · TRICOUNT · TRÁMITES · OFFLINE
+Asia 2026 · V58 DISEÑO
 
-Añade la tarjeta «Hoy» en el inicio (según la fecha), tarjetas para enseñar al conductor (tailandés/malayo), gastos con Tricount (enlace del grupo + apuntes sin conexión), trámites MDAC/TDAC con plazos y modo offline real (service worker). La foto principal carga en paralelo y se cachea.
-
-Corrige el error «v43ThaiFromData is not defined»: la ficha de Chiang Mai vuelve a mostrar la ruta Michelin y los elefantes.
+Nuevo diseño: fondo atardecer-mar con olas sutiles, tarjetas de cristal, tipografía serif, botones degradados, héroe con zoom suave y rotación de tus fotos (koh-tao-sairee.jpg, koh-nang-yuan.jpg, koh-tao-snorkel.jpg).
+12 ilustraciones propias (Phi Phi, Koh Phangan, Koh Tao, Chiang Mai, Chiang Rai, Bangkok, Ayutthaya, KL, Cameron, Penang, Langkawi, Melaka) que se ven si una foto no carga.
+Incluye V57: Hoy, taxi, Tricount, trámites, modo sin conexión.
+Archivos a subir: index.html, v58-art.js, sw.js, README.md

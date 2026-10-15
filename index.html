@@ -1932,7 +1932,7 @@ function mount(){
   const hero=$('#ruta .hero');
   if(hero&&!$('#v57hoy')){const c=document.createElement('div');c.id='v57hoy';c.className='card v57-hoy';hero.insertAdjacentElement('afterend',c)}
   // Cabecera de versión
-  document.querySelectorAll('#ruta header .ey').forEach(e=>{e.textContent=e.textContent.replace(/V\d+/,'V57')});
+  document.querySelectorAll('#ruta header .ey').forEach(e=>{e.textContent=e.textContent.replace(/V\d+/,'V58')});
   // Mover las subpáginas nuevas dentro de «Más»
   const mas=$('#mas');
   ['more-tricount','more-taxi','more-tramites'].forEach(id=>{const e=document.getElementById(id);if(e&&mas&&e.parentNode!==mas)mas.appendChild(e)});
@@ -1971,5 +1971,83 @@ try{
 mount();renderHoy();
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)renderHoy()});
 setInterval(renderHoy,60*60*1000);
+})();
+</script>
+
+<style id="v58-style">
+:root{--v58-ink:#0f3b3f;--v58-gold:#e9b44c;--v58-coral:#ff7a59;--v58-sea:#0e8f93}
+html{background:#0f3b3f}
+body{background:
+ radial-gradient(1200px 700px at 100% -10%,rgba(255,150,100,.42),transparent 60%),
+ radial-gradient(900px 700px at -10% 30%,rgba(40,200,200,.35),transparent 60%),
+ radial-gradient(900px 600px at 110% 85%,rgba(255,205,120,.35),transparent 60%),
+ linear-gradient(180deg,#fff3e2 0%,#e9f6f2 45%,#fdf0dc 100%) fixed!important;
+ background-attachment:fixed!important}
+body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><g fill='none' stroke='%230e8f93' stroke-opacity='.10' stroke-width='1.2'><path d='M0 30q15-10 30 0t30 0t30 0t30 0'/><path d='M0 75q15-10 30 0t30 0t30 0t30 0'/><path d='M0 120q15-10 30 0t30 0t30 0t30 0'/></g></svg>")}
+.scene{opacity:.0!important;pointer-events:none}
+.app,.page{background:none!important;background-color:transparent!important;position:relative;z-index:1}
+.page>header h1,.card h2,.section,.hero h2,.panel-head h2{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif!important;letter-spacing:-.4px}
+.section{color:var(--v58-ink)!important;text-shadow:none!important;position:relative;padding-left:2px}
+.section:after{content:"";display:block;width:54px;height:3px;border-radius:3px;margin-top:7px;background:linear-gradient(90deg,var(--v58-coral),var(--v58-gold))}
+.glass,.card{background:rgba(255,252,246,.86)!important;border:1px solid rgba(255,255,255,.9)!important;box-shadow:0 14px 38px rgba(15,59,63,.12),0 2px 0 rgba(255,255,255,.8) inset!important;backdrop-filter:blur(16px) saturate(1.2)}
+.hero{box-shadow:0 30px 70px rgba(15,59,63,.38)!important;border:0!important}
+.hero>img{animation:v58kb 22s ease-in-out infinite alternate;transform-origin:60% 40%}
+@keyframes v58kb{from{transform:scale(1.02)}to{transform:scale(1.14) translate(-1.5%,-1%)}}
+.hero:after{background:linear-gradient(180deg,rgba(255,170,110,.12),rgba(0,0,0,.05) 38%,rgba(6,34,37,.88) 100%)!important}
+.hero h2{font-size:40px!important;text-shadow:0 3px 22px rgba(0,0,0,.4)}
+.hero-dots i{transition:width .4s,background .4s}
+.zone-card{border-radius:24px!important;box-shadow:0 14px 30px rgba(15,59,63,.22)!important;transition:transform .25s}
+.zone-card:active{transform:scale(.97)}
+.zone-card .zbg{transition:transform 1.2s}
+.zone-card:hover .zbg{transform:scale(1.08)}
+.zone-card:after{background:linear-gradient(transparent 30%,rgba(8,26,40,.78))!important}
+.zone-card .ztxt b{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:20px;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+nav{background:rgba(255,250,240,.88)!important;border:1px solid rgba(255,255,255,.9);box-shadow:0 18px 45px rgba(15,59,63,.28)!important}
+nav button.active{background:linear-gradient(135deg,var(--v58-sea),#0b5f6a)!important;box-shadow:0 10px 22px rgba(14,143,147,.45)!important}
+.primary,button.primary{background:linear-gradient(135deg,var(--v58-coral),#ff9d4d)!important;color:#fff!important;border:0!important;box-shadow:0 10px 22px rgba(255,122,89,.38)!important}
+.chip{border-radius:999px}
+.dest-photo-hero,.dest-hero-img{background-color:#16484c}
+.v58-ill{background-size:cover!important;background-position:center!important}
+.panel-head,.menu{font-family:inherit}
+.subpage>header,.page>header{color:var(--v58-ink)}
+</style>
+<script src="v58-art.js"></script>
+<script id="v58-script">
+(function(){
+'use strict';
+const ART=window.V58ART;if(!ART)return;
+/* nombre de destino -> ilustración */
+const MAP=[[/phi\s?phi/i,'phi'],[/phangan|pha\b/i,'pha'],[/koh\s?tao|\btao\b|nang\s?yuan|sairee|chalok/i,'tao'],[/chiang\s?mai|\bcm\b/i,'cm'],[/chiang\s?rai|\bcr\b/i,'cr'],[/bangkok|bkk/i,'bkk'],[/ayutthaya/i,'ayu'],[/kuala|\bkl\b/i,'kl'],[/cameron/i,'cam'],[/penang|george\s?town/i,'pen'],[/langkawi/i,'lan'],[/melaka|malacca/i,'mel']];
+const ZMAP={'z-phi':'phi','z-pha':'pha','z-tao':'tao','z-cm':'cm','z-cr':'cr','z-bkk':'bkk','z-mal':'kl'};
+const art=k=>ART.url(k);
+function key(t){t=t||'';for(const m of MAP)if(m[0].test(t))return m[1];return null}
+/* 1 · tarjetas de zona: ilustración bajo la foto */
+function zones(){document.querySelectorAll('.zbg').forEach(z=>{if(z.dataset.v58)return;z.dataset.v58=1;const k=Object.keys(ZMAP).find(c=>z.classList.contains(c));if(!k)return;
+ const cur=getComputedStyle(z).backgroundImage;z.style.backgroundImage=(cur&&cur!=='none'?cur+',':'')+art(ZMAP[k]);z.style.backgroundSize='cover';z.style.backgroundPosition='center'})}
+/* 2 · cabeceras de destino: ilustración de fondo si la foto tarda */
+function dest(){document.querySelectorAll('.dest-photo-hero').forEach(h=>{if(h.dataset.v58)return;const t=(h.closest('.page,.subpage')||document).querySelector('h1')?.textContent||h.textContent;const k=key(t);if(!k)return;h.dataset.v58=1;h.style.backgroundImage=art(k);h.style.backgroundSize='cover';h.style.backgroundPosition='center'});
+ document.querySelectorAll('.photo.placeholder,.my37-card.my37-place').forEach(c=>{if(c.dataset.v58)return;const k=key(c.textContent);if(!k)return;c.dataset.v58=1;const cur=c.style.backgroundImage;if(c.classList.contains('placeholder')){c.style.backgroundImage=art(k);c.style.backgroundSize='cover'}else if(cur&&cur!=='none'){c.style.backgroundImage=cur+','+art(k)}})}
+function grid(){document.querySelectorAll('#destGrid>button').forEach(b=>{if(b.dataset.v58)return;const k=key(b.textContent);if(!k)return;b.dataset.v58=1;b.style.setProperty('background-image','linear-gradient(transparent 40%,rgba(6,24,34,.72)),'+art(k),'important');b.style.setProperty('background-size','cover','important');b.style.setProperty('background-position','center','important');b.querySelectorAll('img').forEach(i=>{i.addEventListener('error',()=>{i.style.display='none'});if(i.complete&&!i.naturalWidth)i.style.display='none'})})}
+/* 3 · portada de país: ilustraciones */
+function gate(){const g=document.getElementById('countryGate');if(!g||g.dataset.v58)return;g.dataset.v58=1;const bs=g.querySelectorAll('button,a');bs.forEach((b,i)=>{const k=/malay|malas/i.test(b.textContent)?'kl':/thai|tailan/i.test(b.textContent)?'phi':null;if(!k)return;b.style.backgroundImage='linear-gradient(transparent 30%,rgba(0,0,0,.55)),'+art(k);b.style.backgroundSize='cover';b.style.backgroundPosition='center';b.style.color='#fff';b.style.border='1px solid rgba(255,255,255,.5)'})}
+/* 4 · héroe: tus fotos del repo primero, luego Wikimedia; ilustración si no hay nada */
+function hero(){const h=document.getElementById('heroPhoto');if(!h||h.dataset.v58)return;h.dataset.v58=1;
+ const loc=['koh-tao-sairee.jpg','koh-nang-yuan.jpg','koh-tao-snorkel.jpg'];
+ const ok=[];let pend=loc.length;
+ loc.forEach(u=>{const i=new Image();i.onload=()=>{ok.push(u);if(!--pend)start()};i.onerror=()=>{if(!--pend)start()};i.src=u});
+ function start(){const hs=h.parentElement;if(!ok.length){hs.style.backgroundImage=art('tao');hs.style.backgroundSize='cover';return}
+  const sc=document.getElementById('scenePhoto');
+  let n=0;const dots=hs.querySelectorAll('.hero-dots i');
+  const set=i=>{n=i;h.style.opacity=0;setTimeout(()=>{h.src=ok[i];h.style.opacity=1},350);dots.forEach((d,k)=>d.classList.toggle('on',k===i%dots.length))};
+  h.style.transition='opacity .6s';
+  /* tomamos el control del carrusel de fotos locales si la red no ha dado fotos mejores */
+  setTimeout(()=>{if(typeof heroUrls==='undefined'||!heroUrls.length){h.src=ok[0];setInterval(()=>set((n+1)%ok.length),6500)}},2500)}}
+function broken(){document.querySelectorAll('#destGrid img,.dest-hero-img').forEach(i=>{if(i.complete&&!i.naturalWidth&&i.getAttribute('src'))i.style.visibility='hidden'})}
+function run(){zones();dest();grid();hero();broken()}
+setInterval(broken,2500);
+document.addEventListener('DOMContentLoaded',run);
+new MutationObserver(()=>{clearTimeout(run.t);run.t=setTimeout(run,120)}).observe(document.documentElement,{childList:true,subtree:true});
+setTimeout(run,300);
 })();
 </script>

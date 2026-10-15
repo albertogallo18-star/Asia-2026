@@ -1,13 +1,13 @@
-/* Asia 2026 · service worker · V57
+/* Asia 2026 · service worker · V58
    - La app (HTML, iconos, foto local) se guarda al instalar y funciona sin conexión.
    - Fotos externas (Unsplash, Wikimedia): se guardan al verlas y se reutilizan offline.
    - Cambio de moneda y API de Wikimedia: red primero, y si no hay conexión, lo último guardado. */
-const VERSION = 'v57';
+const VERSION = 'v58';
 const SHELL = 'asia26-shell-' + VERSION;
 const IMGS = 'asia26-img-' + VERSION;
 const DATA = 'asia26-data-' + VERSION;
 const MAX_IMGS = 150;
-const SHELL_FILES = ['./', 'index.html', 'manifest.json', 'icon-180.png', 'koh-tao-sairee.jpg'];
+const SHELL_FILES = ['./', 'index.html', 'v58-art.js', 'manifest.json', 'icon-180.png', 'koh-tao-sairee.jpg'];
 
 self.addEventListener('install', event => {
   event.waitUntil((async () => {

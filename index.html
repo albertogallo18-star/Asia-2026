@@ -1932,7 +1932,7 @@ function mount(){
   const hero=$('#ruta .hero');
   if(hero&&!$('#v57hoy')){const c=document.createElement('div');c.id='v57hoy';c.className='card v57-hoy';hero.insertAdjacentElement('afterend',c)}
   // Cabecera de versión
-  document.querySelectorAll('#ruta header .ey').forEach(e=>{e.textContent=e.textContent.replace(/V\d+/,'V58')});
+  document.querySelectorAll('#ruta header .ey').forEach(e=>{e.textContent=e.textContent.replace(/V\d+/,'V59')});
   // Mover las subpáginas nuevas dentro de «Más»
   const mas=$('#mas');
   ['more-tricount','more-taxi','more-tramites'].forEach(id=>{const e=document.getElementById(id);if(e&&mas&&e.parentNode!==mas)mas.appendChild(e)});
@@ -2018,7 +2018,7 @@ nav button.active{background:linear-gradient(135deg,var(--v58-sea),#0b5f6a)!impo
 'use strict';
 const ART=window.V58ART;if(!ART)return;
 /* nombre de destino -> ilustración */
-const MAP=[[/phi\s?phi/i,'phi'],[/phangan|pha\b/i,'pha'],[/koh\s?tao|\btao\b|nang\s?yuan|sairee|chalok/i,'tao'],[/chiang\s?mai|\bcm\b/i,'cm'],[/chiang\s?rai|\bcr\b/i,'cr'],[/bangkok|bkk/i,'bkk'],[/ayutthaya/i,'ayu'],[/kuala|\bkl\b/i,'kl'],[/cameron/i,'cam'],[/penang|george\s?town/i,'pen'],[/langkawi/i,'lan'],[/melaka|malacca/i,'mel']];
+const MAP=[[/phi\s?phi/i,'phi'],[/phangan|pha\b/i,'pha'],[/koh\s?tao|\btao\b|nang\s?yuan|sairee|chalok/i,'tao'],[/chiang\s?mai|\bcm\b/i,'cm'],[/chiang\s?rai|\bcr\b/i,'cr'],[/bangkok|bkk/i,'bkk'],[/ayutthaya/i,'ayu'],[/kuala|\bkl\b|petronas|batu caves|merdeka|jalan alor/i,'kl'],[/cameron|boh|mossy|tanah rata/i,'cam'],[/penang|george\s?town|clan jetties|kek lok/i,'pen'],[/langkawi|sky bridge|cenang|kilim/i,'lan'],[/melaka|malacca|dutch|jonker|famosa/i,'mel']];
 const ZMAP={'z-phi':'phi','z-pha':'pha','z-tao':'tao','z-cm':'cm','z-cr':'cr','z-bkk':'bkk','z-mal':'kl'};
 const art=k=>ART.url(k);
 function key(t){t=t||'';for(const m of MAP)if(m[0].test(t))return m[1];return null}
@@ -2029,6 +2029,8 @@ function zones(){document.querySelectorAll('.zbg').forEach(z=>{if(z.dataset.v58)
 function dest(){document.querySelectorAll('.dest-photo-hero').forEach(h=>{if(h.dataset.v58)return;const t=(h.closest('.page,.subpage')||document).querySelector('h1')?.textContent||h.textContent;const k=key(t);if(!k)return;h.dataset.v58=1;h.style.backgroundImage=art(k);h.style.backgroundSize='cover';h.style.backgroundPosition='center'});
  document.querySelectorAll('.photo.placeholder,.my37-card.my37-place').forEach(c=>{if(c.dataset.v58)return;const k=key(c.textContent);if(!k)return;c.dataset.v58=1;const cur=c.style.backgroundImage;if(c.classList.contains('placeholder')){c.style.backgroundImage=art(k);c.style.backgroundSize='cover'}else if(cur&&cur!=='none'){c.style.backgroundImage=cur+','+art(k)}})}
 function grid(){document.querySelectorAll('#destGrid>button').forEach(b=>{if(b.dataset.v58)return;const k=key(b.textContent);if(!k)return;b.dataset.v58=1;b.style.setProperty('background-image','linear-gradient(transparent 40%,rgba(6,24,34,.72)),'+art(k),'important');b.style.setProperty('background-size','cover','important');b.style.setProperty('background-position','center','important');b.querySelectorAll('img').forEach(i=>{i.addEventListener('error',()=>{i.style.display='none'});if(i.complete&&!i.naturalWidth)i.style.display='none'})})}
+function my(){document.querySelectorAll('.my39-detailhero,.my39-photo').forEach(c=>{if(c.dataset.v58)return;const k=key(c.textContent);if(!k)return;c.dataset.v58=1;const cur=c.style.backgroundImage;c.style.backgroundImage=(cur&&cur!=='none'?cur+',':'')+art(k);c.style.backgroundSize='cover';c.style.backgroundPosition='center'});
+ document.querySelectorAll('.v59-gal>div').forEach(d=>{if(d.dataset.v58)return;const k=key(d.textContent);d.dataset.v58=1;if(k){d.style.backgroundImage=art(k)}})}
 /* 3 · portada de país: ilustraciones */
 function gate(){const g=document.getElementById('countryGate');if(!g||g.dataset.v58)return;g.dataset.v58=1;const bs=g.querySelectorAll('button,a');bs.forEach((b,i)=>{const k=/malay|malas/i.test(b.textContent)?'kl':/thai|tailan/i.test(b.textContent)?'phi':null;if(!k)return;b.style.backgroundImage='linear-gradient(transparent 30%,rgba(0,0,0,.55)),'+art(k);b.style.backgroundSize='cover';b.style.backgroundPosition='center';b.style.color='#fff';b.style.border='1px solid rgba(255,255,255,.5)'})}
 /* 4 · héroe: tus fotos del repo primero, luego Wikimedia; ilustración si no hay nada */
@@ -2044,10 +2046,140 @@ function hero(){const h=document.getElementById('heroPhoto');if(!h||h.dataset.v5
   /* tomamos el control del carrusel de fotos locales si la red no ha dado fotos mejores */
   setTimeout(()=>{if(typeof heroUrls==='undefined'||!heroUrls.length){h.src=ok[0];setInterval(()=>set((n+1)%ok.length),6500)}},2500)}}
 function broken(){document.querySelectorAll('#destGrid img,.dest-hero-img').forEach(i=>{if(i.complete&&!i.naturalWidth&&i.getAttribute('src'))i.style.visibility='hidden'})}
-function run(){zones();dest();grid();hero();broken()}
+function run(){zones();dest();grid();my();hero();broken()}
 setInterval(broken,2500);
 document.addEventListener('DOMContentLoaded',run);
 new MutationObserver(()=>{clearTimeout(run.t);run.t=setTimeout(run,120)}).observe(document.documentElement,{childList:true,subtree:true});
 setTimeout(run,300);
+})();
+</script>
+
+<style id="v59-style">
+.v59-days{margin:10px 0 16px;border-radius:22px;background:rgba(255,252,246,.9);border:1px solid rgba(255,255,255,.9);box-shadow:0 10px 28px rgba(15,59,63,.1);overflow:hidden}
+.v59-days>summary{list-style:none;cursor:pointer;padding:15px 18px;font-weight:800;color:#0f3b3f;display:flex;align-items:center;gap:10px}
+.v59-days>summary::-webkit-details-marker{display:none}
+.v59-days>summary:after{content:"＋";margin-left:auto;color:#0e8f93;font-size:20px}
+.v59-days[open]>summary:after{content:"－"}
+.v59-day{padding:12px 18px 14px;border-top:1px solid rgba(15,59,63,.08)}
+.v59-day small{display:block;font-size:11px;letter-spacing:.12em;font-weight:800;color:#ff7a59;text-transform:uppercase}
+.v59-day h4{margin:3px 0 6px;font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:19px;color:#0f3b3f;font-weight:600}
+.v59-day p{margin:3px 0;font-size:14px;line-height:1.4;color:#4a5f60}.v59-day p b{color:#0f3b3f}
+.v59-gal{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 16px}
+.v59-gal div{position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;background-size:cover;background-position:center;box-shadow:0 8px 20px rgba(15,59,63,.18)}
+.v59-gal div:first-child{grid-column:1/-1;aspect-ratio:16/9}
+.v59-gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.v59-gal span{position:absolute;left:10px;bottom:8px;right:10px;color:#fff;font-weight:800;font-size:13px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.v59-gal div:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.45))}
+.v59-gal span{z-index:2}
+.v59-card{background:rgba(255,252,246,.9);border-radius:22px;padding:16px 18px;margin:12px 0;border:1px solid rgba(255,255,255,.9);box-shadow:0 10px 28px rgba(15,59,63,.1)}
+.v59-card h3{margin:0 0 8px;font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:22px;color:#0f3b3f}
+.v59-card p.n{font-size:12.5px;color:#6a7c7d;margin:0 0 8px}
+.v59-row{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px solid rgba(15,59,63,.08)}
+.v59-row:first-of-type{border-top:0}.v59-row i{font-style:normal;font-size:22px;line-height:1.1}
+.v59-row b{display:block;color:#0f3b3f}.v59-row span{font-size:13.5px;color:#516566;line-height:1.35}
+.v59-row a{font-size:12.5px;font-weight:800;color:#0e8f93;text-decoration:none;display:inline-block;margin-top:3px}
+.v59-tip{font-size:13.5px;line-height:1.4;color:#455b5c;padding:6px 0}
+</style>
+<script id="v59-malaysia">
+(function(){
+'use strict';
+const dir=(o,d,m)=>'https://www.google.com/maps/dir/?api=1&origin='+encodeURIComponent(o)+'&destination='+encodeURIComponent(d)+(m?'&travelmode='+m:'');
+const srch=(q)=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
+const FL='https://www.google.com/travel/flights?hl=es';
+/* ── Traslados con enlaces de compra (mismo formato que Tailandia) ── */
+const T=[
+ {date:'9 NOV',id:'my-kl-cam',icon:'🚌',title:'Kuala Lumpur → Cameron Highlands',summary:'Bus desde TBS (Terminal Bersepadu Selatan) a Tanah Rata · 4–5 h. Alternativa más cómoda: Grab/coche privado (más caro).',from:'TBS · Kuala Lumpur',to:'Tanah Rata · Cameron Highlands',maps:dir('Terminal Bersepadu Selatan Kuala Lumpur','Tanah Rata Cameron Highlands','transit'),buy:'https://12go.asia/es/travel/kuala-lumpur/cameron-highlands',buyText:'Buscar bus / van',how:'🚌 Bus',tip:'Billete offline · lleva sudadera (arriba hace fresco) · carretera con curvas'},
+ {date:'11 NOV',id:'my-cam-pen',icon:'🚌',title:'Cameron Highlands → Penang',summary:'Bus Tanah Rata → Penang (Butterworth o Sungai Nibong) · 4–5 h. Confirma en qué terminal te deja y el último tramo hasta George Town.',from:'Tanah Rata',to:'Penang · George Town',maps:dir('Tanah Rata Cameron Highlands','George Town Penang','transit'),buy:'https://12go.asia/es/travel/cameron-highlands/penang',buyText:'Buscar bus',how:'🚌 Bus',tip:'Billete offline · pregunta terminal de llegada · Grab hasta el hotel'},
+ {date:'14 NOV',id:'my-pen-lan',icon:'✈️⛴️',title:'Penang → Langkawi',summary:'Vuelo corto de unos 45 min (lo más cómodo) o ferry de unas 3 h. Compara precios y comprueba horarios para vuestras fechas.',from:'Penang International Airport · PEN',to:'Langkawi · LGK',maps:dir('George Town Penang','Penang International Airport','driving'),buy:FL,buyText:'Buscar vuelo',buy2:'https://12go.asia/es/travel/penang/langkawi',buyText2:'Ver ferry',how:'✈️ Vuelo o ⛴️ ferry',tip:'Equipaje en cabina si puedes · llega 2 h antes al aeropuerto'},
+ {date:'18 NOV',id:'my-lan-mel',icon:'✈️🚌',title:'Langkawi → Melaka',summary:'Es el salto menos directo: vuelo Langkawi → Kuala Lumpur (≈1 h) y bus de KL a Melaka (≈2 h). Deja margen entre ambos.',from:'Langkawi · LGK',to:'Melaka Sentral',maps:dir('Langkawi International Airport','Melaka Sentral','driving'),buy:FL,buyText:'Buscar vuelo LGK → KUL',buy2:'https://12go.asia/es/travel/kuala-lumpur/malacca',buyText2:'Bus KL → Melaka',how:'✈️ Vuelo + 🚌 bus',tip:'No cierres el bus hasta tener hora de aterrizaje · deja ≥3 h'},
+ {date:'20 NOV',id:'my-mel-kl',icon:'🚌',title:'Melaka → Kuala Lumpur',summary:'Bus directo Melaka Sentral → TBS o KL Sentral · 2–2,5 h. Salen con mucha frecuencia.',from:'Melaka Sentral',to:'TBS · Kuala Lumpur',maps:dir('Melaka Sentral','Terminal Bersepadu Selatan Kuala Lumpur','transit'),buy:'https://12go.asia/es/travel/malacca/kuala-lumpur',buyText:'Buscar bus',how:'🚌 Bus',tip:'Evita hora punta de la tarde al entrar en KL'},
+ {date:'22 NOV',id:'my-kl-th',icon:'✈️',title:'Kuala Lumpur → Tailandia',summary:'Vuelo a Phuket o Krabi para seguir hacia Phi Phi. Recuerda el TDAC de Tailandia unos 3 días antes.',from:'KLIA · KUL',to:'Phuket · HKT / Krabi · KBV',maps:dir('Kuala Lumpur International Airport','Phuket International Airport','driving'),buy:FL,buyText:'Buscar vuelo',how:'✈️ Vuelo',tip:'Llega a KLIA con 3 h · KLIA Ekspres desde KL Sentral'}
+];
+const tcard=t=>`<div class="transfer-card" data-v59="1"><div class="transfer-top"><span>${t.icon}</span><div><small>${t.date} · CÓMO LLEGAR</small><b>${t.title}</b></div></div><p>${t.summary}</p><div class="transfer-route"><span>${t.from}</span><i>→</i><span>${t.to}</span></div><div class="transfer-actions"><a href="${t.maps}" target="_blank" rel="noopener">🧭 Cómo ir · Google Maps</a><a href="${t.buy}" target="_blank" rel="noopener">🎟️ ${t.buyText}</a>${t.buy2?`<a href="${t.buy2}" target="_blank" rel="noopener">🎟️ ${t.buyText2}</a>`:''}</div></div>`;
+
+/* ── Plan día a día ── */
+const DAYS={
+ kl:[['SÁB 7 NOV','Llegada y primer paseo','Llegas a las 14:40: Grab desde KLIA y check-in.|<b>Tarde:</b> KLCC y Petronas al atardecer.|<b>Noche:</b> Jalan Alor para cenar.'],['DOM 8 NOV','Batu Caves y centro histórico','<b>Mañana:</b> Batu Caves temprano, antes del calor.|<b>Tarde:</b> Merdeka Square, Masjid Jamek y Chinatown.|<b>Noche:</b> Bukit Bintang o rooftop.']],
+ cam:[['LUN 9 NOV','Traslado y Tanah Rata','Bus desde KL por la mañana.|<b>Tarde:</b> paseo por Tanah Rata y cena de steamboat.'],['MAR 10 NOV','Té y Mossy Forest','<b>Mañana:</b> Mossy Forest (mejor con tour a primera hora).|<b>Tarde:</b> BOH Tea Centre con té y scones.|<b>Final:</b> granja de fresas o mercado.']],
+ pen:[['MIÉ 11 NOV','Llegada y Armenian Street','Llegada por la tarde y check-in en George Town.|<b>Tarde:</b> Armenian Street y primeros murales.|<b>Noche:</b> hawkers en Chulia Street.'],['JUE 12 NOV','Street art y food crawl','<b>Mañana:</b> ruta de street art y Clan Jetties.|<b>Tarde:</b> casas heritage y café.|<b>Noche:</b> char kway teow, cendol y laksa.'],['VIE 13 NOV','Templos y Penang Hill','<b>Mañana:</b> Kek Lok Si.|<b>Tarde:</b> Penang Hill (funicular) para el atardecer.']],
+ lan:[['SÁB 14 NOV','Llegada a la isla','Vuelo desde Penang y check-in.|<b>Tarde:</b> Pantai Cenang y sunset.'],['DOM 15 NOV','SkyCab y Sky Bridge','<b>Mañana:</b> SkyCab + Sky Bridge (con cielo despejado).|<b>Tarde:</b> piscina o playa.'],['LUN 16 NOV','Kilim Geoforest','<b>Día:</b> tour de manglares y Kilim Geoforest; elige operador responsable.'],['MAR 17 NOV','Island hopping o descanso','<b>Mañana:</b> islas cercanas o snorkel.|<b>Atardecer:</b> sunset cruise o chiringuito.']],
+ mel:[['MIÉ 18 NOV','Llegada a Melaka','Vuelo + bus desde Langkawi; llegada tarde.|<b>Noche:</b> paseo por el río iluminado y cena Nyonya.'],['JUE 19 NOV','Dutch Square y A Famosa','<b>Mañana:</b> Dutch Square, Christ Church y A Famosa.|<b>Tarde:</b> St Paul’s Hill y Jonker Walk. El mercado nocturno suele ser de vie a dom; compruébalo.']],
+ klb:[['VIE 20 NOV','Vuelta a Kuala Lumpur','Bus desde Melaka y check-in.|<b>Tarde:</b> compras o Central Market.|<b>Noche:</b> última cena fuerte en KL.'],['SÁB 21 NOV','Día colchón','Lavandería, maleta y compras de última hora.|Revisa el TDAC y los traslados del domingo.'],['DOM 22 NOV','Salida a Tailandia','Vuelo a Phuket o Krabi. Llega a KLIA con 3 h de margen.']]
+};
+const dayHTML=(k,label)=>`<details class="v59-days" data-v59="1"><summary>🗓️ Día a día · ${label}</summary>${DAYS[k].map(d=>`<div class="v59-day"><small>${d[0]}</small><h4>${d[1]}</h4>${d[2].split('|').map(x=>`<p>${x}</p>`).join('')}</div>`).join('')}</details>`;
+
+/* ── Gastronomía por destino ── */
+const FOOD={
+ kl:[['🍜','Jalan Alor','Street food · Bukit Bintang. Mucho ambiente por la noche.'],['🍛','Nasi lemak','El plato nacional; pídelo con pollo frito y sambal.'],['🫓','Roti canai en un mamak','Desayuno o cena tardía en un restaurante mamak 24 h.'],['🥘','Bak kut teh','Caldo de costilla y especias, típico en KL.']],
+ cam:[['🍲','Steamboat','La cena clásica de las tierras altas.'],['☕','Té y scones','En BOH Tea Centre con vistas.'],['🍓','Fresas','Granjas y mercados con fruta local.']],
+ pen:[['🍝','Char kway teow','El plato estrella de Penang; fideos salteados al wok.'],['🍜','Assam laksa','Sopa agridulce de pescado. Buena en Air Itam.'],['🍧','Cendol','Postre helado de coco, pandan y azúcar de palma.'],['🍛','Nasi kandar','Arroz con curries variados; probad Line Clear.']],
+ lan:[['🦐','Marisco en Kuah','Pescado y marisco fresco frente al mar.'],['🛍️','Mercado nocturno','Cambia de zona según el día de la semana; pregunta en el hotel.'],['🥥','Fruta y cocos','Perfecto para el calor en la playa.']],
+ mel:[['🐔','Chicken rice balls','El plato más típico de Melaka.'],['🥣','Laksa y cocina Nyonya','Mezcla chino-malaya con mucho sabor.'],['🍢','Satay celup','Brochetas en olla de salsa; muy local.']]
+};
+const foodHTML=(k,p)=>{const note=(k==='kl'||k==='pen')?'La Guía Michelin Malasia cubre KL y Penang. Mira la selección vigente antes de ir.':'Pregunta a los locales por sus favoritos del día.';return `<div class="v59-card" data-v59="1"><h3>🍜 Ruta gastronómica</h3><p class="n">${note}</p>${FOOD[k].map(f=>`<div class="v59-row"><i>${f[0]}</i><div><b>${f[1]}</b><span>${f[2]}</span><br><a target="_blank" rel="noopener" href="${srch(f[1]+' '+p)}">📍 Buscar en Maps</a></div></div>`).join('')}</div>`};
+
+/* ── Consejos locales ── */
+const TIPS={
+ kl:['Usa Grab: es lo normal y evita regateos.','Metro/LRT y monorraíl son rápidos entre KLCC, Bukit Bintang y KL Sentral.','Vestimenta cubierta en Batu Caves y mezquitas.'],
+ cam:['Hace fresco por la noche: lleva sudadera.','Reserva Mossy Forest con tour para no perderte la niebla.','Las carreteras tienen curvas: si te mareas, toma algo antes.'],
+ pen:['Muchos sitios de comida solo aceptan efectivo.','George Town se ve a pie; Grab para Kek Lok Si y Penang Hill.','Los murales son mejores a primera hora.'],
+ lan:['Alquilar scooter es habitual, pero revisa el seguro.','Compra con antelación SkyCab si vas en fin de semana.','Langkawi tiene precios de libre impuestos en alcohol y chocolate.'],
+ mel:['Todo el centro se ve a pie.','Fuera de Jonker, muchos locales cierran temprano.','El río de noche es lo más bonito.']
+};
+const tipsHTML=k=>`<div class="v59-card" data-v59="1"><h3>💡 Consejos locales</h3>${TIPS[k].map(t=>`<div class="v59-tip">• ${t}</div>`).join('')}</div>`;
+
+/* ── Galería ── */
+const GAL={
+ kl:['Petronas Towers Kuala Lumpur','Batu Caves Malaysia','Jalan Alor Kuala Lumpur','Merdeka Square Kuala Lumpur'],
+ cam:['BOH Tea Plantation Cameron Highlands','Mossy Forest Cameron Highlands','Tanah Rata Cameron Highlands','Cameron Highlands strawberry'],
+ pen:['George Town Penang street art','Clan Jetties Penang','Kek Lok Si Penang','Penang Hill'],
+ lan:['Langkawi Sky Bridge','Pantai Cenang Langkawi','Kilim Geoforest Park Langkawi','Langkawi sunset'],
+ mel:['Dutch Square Melaka','Jonker Street Melaka','A Famosa Melaka','Melaka River']
+};
+const NAMES={kl:'Kuala Lumpur',cam:'Cameron Highlands',pen:'Penang · George Town',lan:'Langkawi',mel:'Melaka'};
+const galHTML=k=>`<h3 class="v59-h" style="font-family:'Iowan Old Style',Palatino,Georgia,serif;font-size:24px;margin:16px 4px 6px;color:#0f3b3f" data-v59="1">📸 No te pierdas esto</h3><div class="v59-gal" data-v59="1">${GAL[k].map((q,i)=>`<div><img data-v43q="${q} Malaysia" alt="${q}"><span>${q.replace(/ Malaysia| Kuala Lumpur| Langkawi| Penang| Melaka| Cameron Highlands/,'')}</span></div>`).join('')}</div>`;
+
+/* ── Detalle de destino ── */
+function enhanceDetail(k){
+ const x=document.getElementById('my38DiscoverDetail');if(!x||x.style.display==='none'||x.dataset.v59k===k+x.querySelector('h1')?.textContent)return;
+ x.dataset.v59k=k+(x.querySelector('h1')?.textContent||'');
+ x.querySelectorAll('[data-v59]').forEach(e=>e.remove());
+ const p=NAMES[k],order=x.querySelector('.my39-order'),wrap=x.querySelector('.v43-wrap'),intro=x.querySelector('.my39-intro');
+ const before=(el,html)=>{if(el)el.insertAdjacentHTML('beforebegin',html)};
+ const lbl=k==='kl'?'Kuala Lumpur':p;
+ if(intro)intro.insertAdjacentHTML('afterend',galHTML(k)+(k==='kl'?dayHTML('kl','llegada (7–8 nov)')+dayHTML('klb','vuelta y salida (20–22 nov)'):dayHTML(k,lbl)));
+ else before(order,galHTML(k)+dayHTML(k==='kl'?'kl':k,lbl));
+ const tm={cam:0,pen:1,lan:2,mel:3};
+ if(order&&tm[k]!=null)order.insertAdjacentHTML('afterend',tcard(T[tm[k]]));
+ before(wrap,foodHTML(k,p)+tipsHTML(k));
+ if(typeof v43LoadCardPhotos==='function')setTimeout(()=>v43LoadCardPhotos(x),30);
+}
+const _prevDest=window.my38Dest;
+window.my38Dest=function(k){_prevDest.apply(this,arguments);[250,600,1200].forEach(ms=>setTimeout(()=>enhanceDetail(k),ms))};
+
+/* ── Ruta de Malasia: traslados con compra + día a día ── */
+function enhanceRoute(){
+ const sec=document.querySelector('#my37 [data-my37="1"]');if(!sec||sec.dataset.v59done&&sec.querySelector('.transfer-card'))return;
+ const note=sec.querySelector('.my37-note');if(note)note.textContent='🧭 Ruta orientativa hasta cerrarla los cuatro. Cada traslado trae enlaces para ver y comprar billetes.';
+ sec.querySelectorAll('.my39-transfer').forEach((el,i)=>{if(T[i])el.outerHTML=tcard(T[i])});
+ const stages=sec.querySelectorAll('.my39-photo'),keys=['kl','cam','pen','lan','mel','klb'],labels=['Kuala Lumpur','Cameron Highlands','Penang','Langkawi','Melaka','Kuala Lumpur'];
+ stages.forEach((st,i)=>{if(st.nextElementSibling?.classList.contains('v59-days'))return;const ord=st.nextElementSibling;if(ord&&ord.classList.contains('my39-order'))ord.insertAdjacentHTML('afterend',dayHTML(keys[i],labels[i]));else st.insertAdjacentHTML('afterend',dayHTML(keys[i],labels[i]))});
+ if(!sec.querySelector('[data-v59-last]')){sec.insertAdjacentHTML('beforeend',`<div data-v59-last="1">${tcard(T[5])}</div>`)}
+ sec.dataset.v59done=1;
+}
+function runRoute(){try{enhanceRoute()}catch(e){}}
+document.addEventListener('DOMContentLoaded',()=>{setTimeout(runRoute,400);const my=document.getElementById('my37');if(my)new MutationObserver(()=>{clearTimeout(runRoute.t);runRoute.t=setTimeout(runRoute,150)}).observe(my,{childList:true,subtree:true})});
+setTimeout(runRoute,600);
+
+/* ── Próximo traslado: opciones de Malasia ── */
+try{
+ const add={'my-kl-cam':['Kuala Lumpur → Cameron Highlands','🚌 Bus','TBS → Tanah Rata'],'my-cam-pen':['Cameron Highlands → Penang','🚌 Bus','Tanah Rata → George Town'],'my-pen-lan':['Penang → Langkawi','✈️ Vuelo o ⛴️ ferry','PEN → LGK'],'my-lan-mel':['Langkawi → Melaka','✈️ Vuelo + 🚌 bus','LGK → KUL → Melaka'],'my-mel-kl':['Melaka → Kuala Lumpur','🚌 Bus','Melaka Sentral → TBS'],'my-kl-th':['Kuala Lumpur → Tailandia','✈️ Vuelo','KUL → HKT / KBV']};
+ T.forEach(t=>{const a=add[t.id];TRANSFERS[t.id]=[a[0],a[1],a[2],t.tip]});
+ document.addEventListener('DOMContentLoaded',()=>{const sel=document.getElementById('transferPick');if(!sel||sel.querySelector('optgroup'))return;const th=[...sel.options].map(o=>o.outerHTML).join('');sel.innerHTML='<optgroup label="Malasia">'+T.map(t=>`<option value="${t.id}">${t.title}</option>`).join('')+'</optgroup><optgroup label="Tailandia">'+th+'</optgroup>'});
+ const _rt=window.renderTransfer;
+ window.renderTransfer=function(){_rt();const t=T.find(x=>x.id===document.getElementById('transferPick').value);const box=document.getElementById('transferBox');if(t&&box)box.insertAdjacentHTML('beforeend',tcard(t).replace('class="transfer-card"','class="transfer-card" style="margin-top:12px"'))};
+ const _om=window.openMore;
+ window.openMore=function(n){_om.apply(this,arguments);if(n==='manana'&&typeof ACTIVE_COUNTRY!=='undefined'&&ACTIVE_COUNTRY==='Malaysia'){const sel=document.getElementById('transferPick');if(sel&&!sel.dataset.v59){sel.dataset.v59=1;sel.value='my-kl-cam';renderTransfer()}}};
+}catch(e){}
 })();
 </script>

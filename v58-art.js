@@ -62,6 +62,9 @@ seed=41;A.lan=()=>sky([[0,'#ff7e5f'],[.4,'#feb47b'],[.7,'#ffe7b0'],[1,'#bfeaf0']
 /* Melaka · plaza roja holandesa */
 seed=43;A.mel=()=>sky([[0,'#2b3a8c'],[.5,'#e07a7a'],[.8,'#ffd29a'],[1,'#fff0cf']])+sun(330,150,24,'#fff3c8','#ffc27a')+rect(60,260,280,170,'#b3362b')+path('M60 260H340L320 236H80Z','#8e271f')+rect(150,196,100,70,'#c4463a')+path('M150 196L200 150L250 196Z','#ffffff')+'<circle cx="200" cy="222" r="15" fill="#ffffff"/><path d="M200 222V210M200 222L209 225" stroke="#222" stroke-width="2.2"/>'+[0,1,2,3,4].map(i=>`<path d="M${82+i*52} 330h20v-28a10 10 0 0 0 -20 0Z" fill="#ffffff"/>`).join('')+rect(60,420,280,10,'#ffffff')+rect(0,430,400,70,'#e8c9a0')+'<g stroke="#9a7b58" stroke-width="1" opacity=".6">'+Array.from({length:8},(_,i)=>`<path d="M0 ${440+i*8}H400"/>`).join('')+'</g>'+'<g fill="#1d2a44"><path d="M284 486h46l-8 -22h-30Z"/><circle cx="294" cy="490" r="8"/><circle cx="322" cy="490" r="8"/></g><path d="M286 464Q306 438 330 464Z" fill="#ff5d73"/>'+palm(30,440,150,16,'#26472f');
 
+
+/* Koh Lipe · laguna turquesa, arena blanca y longtail */
+seed=47;A.lip=()=>sky([[0,'#2f9bff'],[.45,'#8fe0ff'],[.75,'#fff1cf']])+sun(310,120,26,'#fffbe0','#fff0a8')+'<g fill="#fff" opacity=".9"><ellipse cx="90" cy="100" rx="48" ry="12"/><ellipse cx="124" cy="92" rx="30" ry="11"/><ellipse cx="250" cy="170" rx="40" ry="9"/></g>'+mount(285,[[70,10],[140,26],[230,14],[330,30]],'#3b9a6a')+sea(285,'#58f0e0','#0a8fbf')+waves(285,'#ffffff',6,.3)+'<path d="M0 396Q120 360 240 390T400 372V500H0Z" fill="#fbefd0"/><path d="M0 418Q140 392 260 414T400 402V500H0Z" fill="#f4e0b2" opacity=".85"/>'+boat(120,350,1.1,'#7d4a2a','#ff5f7a')+boat(300,330,.7,'#6b3d22','#ffb347')+palm(60,430,190,22,'#1f5a43')+palm(345,440,150,-24,'#1f5a43');
 A.gate=()=>A.tao();
 window.V58ART={keys:Object.keys(A),svg:k=>A[k]?wrap(A[k]()):'',url:k=>A[k]?uri(A[k]()):''};
 })();

@@ -1,7 +1,7 @@
-Asia 2026 · V59 MALASIA
+Asia 2026 · V60 RUTA NUEVA
 
-Nuevo diseño: fondo atardecer-mar con olas sutiles, tarjetas de cristal, tipografía serif, botones degradados, héroe con zoom suave y rotación de tus fotos (koh-tao-sairee.jpg, koh-nang-yuan.jpg, koh-tao-snorkel.jpg).
-12 ilustraciones propias (Phi Phi, Koh Phangan, Koh Tao, Chiang Mai, Chiang Rai, Bangkok, Ayutthaya, KL, Cameron, Penang, Langkawi, Melaka) que se ven si una foto no carga.
-Incluye V57: Hoy, taxi, Tricount, trámites, modo sin conexión.
-Malasia al nivel de Tailandia: traslados con enlaces de compra, día a día, galería, ruta gastronómica, consejos y Próximo traslado.
+Ruta de Malasia actualizada: KL 7–9 · Cameron 9–11 · Penang 11–13 (2 noches) · Langkawi 13–16 (3) · Koh Lipe 16–18 (2) · Melaka 18–20 · KL 20–22.
+Koh Lipe añadido como destino (página propia, ilustración, traslados, taxi, clima, mapa del Más y Gantt).
+Trámites: TDAC al entrar en Koh Lipe (16 nov), MDAC al volver a Malasia (18 nov) y TDAC otra vez el 22 nov.
+Incluye V57-V59: Hoy, taxi, Tricount, trámites, offline, diseño, Malasia con traslados/día a día.
 Archivos a subir: index.html, v58-art.js, sw.js, README.md

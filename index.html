@@ -750,8 +750,8 @@ function bookingAlerts(){
  return p.slice(0,6).map(i=>`<div class="booking-alert">⬜ <b>${i.title}</b><br><span style="color:#72807d">${i.date} · ${i.type.replace(/^.. /,'')}</span></div>`).join('')+(p.length>6?`<div class="booking-alert">+ ${p.length-6} reservas pendientes más</div>`:'');
 }
 
-const SMART_ROUTE=[['🏙️','Kuala Lumpur','7–9 nov'],['🌿','Cameron Highlands','9–11 nov'],['🎨','Penang','11–14 nov'],['🏝️','Langkawi','14–18 nov'],['🏮','Melaka','18–20 nov'],['🏙️','Kuala Lumpur','20–22 nov'],['🏝️','Phi Phi','22–24 nov'],['🌕','Koh Phangan','24–27 nov'],['🤿','Koh Tao','27–30 nov'],['🛕','Chiang Mai','30 nov–3 dic'],['✨','Chiang Rai','3–5 dic'],['🌆','Bangkok','5–8 dic']];
-const CLIMATE_GUIDE={'Kuala Lumpur':['31–32°','24–25°','🌦️ Calor húmedo · tormentas y chaparrones frecuentes'],'Cameron Highlands':['21–24°','14–17°','🌧️ Montaña húmeda · fresco y lluvia frecuente'],'Penang':['30–32°','24–25°','🌦️ Tropical húmedo · chubascos posibles'],'Langkawi':['30–32°','25–26°','🌤️ Tropical · mejora tras el monzón, lluvia posible'],'Melaka':['30–32°','24–25°','🌦️ Calor húmedo · tormentas de tarde posibles'],'Phi Phi':['30–31°','24–25°','🌤️ Tropical · lluvia posible'],'Koh Phangan':['29–30°','24–25°','🌦️ Fin de monzón · revisar ferris'],'Koh Tao':['29–30°','24–25°','🌦️ Mar y lluvia variables'],'Chiang Mai':['28–30°','17–19°','☀️ Más seco · noches agradables'],'Chiang Rai':['27–29°','15–18°','☀️ Más fresco mañana/noche'],'Bangkok':['31–32°','23–25°','🌤️ Calor · menos lluvia']};
+const SMART_ROUTE=[['🏙️','Kuala Lumpur','7–9 nov'],['🌿','Cameron Highlands','9–11 nov'],['🎨','Penang','11–13 nov'],['🏝️','Langkawi','13–16 nov'],['🐚','Koh Lipe','16–18 nov'],['🏮','Melaka','18–20 nov'],['🏙️','Kuala Lumpur','20–22 nov'],['🏝️','Phi Phi','22–24 nov'],['🌕','Koh Phangan','24–27 nov'],['🤿','Koh Tao','27–30 nov'],['🛕','Chiang Mai','30 nov–3 dic'],['✨','Chiang Rai','3–5 dic'],['🌆','Bangkok','5–8 dic']];
+const CLIMATE_GUIDE={'Kuala Lumpur':['31–32°','24–25°','🌦️ Calor húmedo · tormentas y chaparrones frecuentes'],'Cameron Highlands':['21–24°','14–17°','🌧️ Montaña húmeda · fresco y lluvia frecuente'],'Penang':['30–32°','24–25°','🌦️ Tropical húmedo · chubascos posibles'],'Langkawi':['30–32°','25–26°','🌤️ Tropical · mejora tras el monzón, lluvia posible'],'Koh Lipe':['30–31°','25–26°','🌤️ Tropical · temporada de ferris, mar variable'],'Melaka':['30–32°','24–25°','🌦️ Calor húmedo · tormentas de tarde posibles'],'Phi Phi':['30–31°','24–25°','🌤️ Tropical · lluvia posible'],'Koh Phangan':['29–30°','24–25°','🌦️ Fin de monzón · revisar ferris'],'Koh Tao':['29–30°','24–25°','🌦️ Mar y lluvia variables'],'Chiang Mai':['28–30°','17–19°','☀️ Más seco · noches agradables'],'Chiang Rai':['27–29°','15–18°','☀️ Más fresco mañana/noche'],'Bangkok':['31–32°','23–25°','🌤️ Calor · menos lluvia']};
 const SMART_ALERTS=[];
 function madridNow(){return new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',hour:'2-digit',minute:'2-digit'}).format(new Date())}
 function asiaNow(tz){tz=tz||(ACTIVE_COUNTRY==='Malaysia'?'Asia/Kuala_Lumpur':'Asia/Bangkok');return new Intl.DateTimeFormat('es-ES',{timeZone:tz,hour:'2-digit',minute:'2-digit'}).format(new Date())}
@@ -788,23 +788,25 @@ function tripRouteMap(){
 const ROADMAP_STOPS=[
  {n:1,name:'Kuala Lumpur',dates:'7–9 nov',nights:2,x:20,y:78},
  {n:2,name:'Cameron Highlands',dates:'9–11 nov',nights:2,x:25,y:63},
- {n:3,name:'Penang',dates:'11–14 nov',nights:3,x:18,y:51},
- {n:4,name:'Langkawi',dates:'14–18 nov',nights:4,x:16,y:38},
- {n:5,name:'Melaka',dates:'18–20 nov',nights:2,x:28,y:86},
- {n:6,name:'Kuala Lumpur',dates:'20–22 nov',nights:2,x:20,y:78},
- {n:7,name:'Phi Phi',dates:'22–24 nov',nights:2,x:42,y:72},
- {n:8,name:'Koh Phangan',dates:'24–27 nov',nights:3,x:54,y:65},
- {n:9,name:'Koh Tao',dates:'27–30 nov',nights:3,x:55,y:57},
- {n:10,name:'Chiang Mai',dates:'30 nov–3 dic',nights:3,x:48,y:25},
- {n:11,name:'Chiang Rai',dates:'3–5 dic',nights:2,x:54,y:17},
- {n:12,name:'Bangkok',dates:'5–8 dic',nights:3,x:55,y:42},
- {n:13,name:'Ayutthaya',dates:'6 dic',nights:0,x:52,y:36,exc:true}
+ {n:3,name:'Penang',dates:'11–13 nov',nights:2,x:18,y:51},
+ {n:4,name:'Langkawi',dates:'13–16 nov',nights:3,x:14,y:40},
+ {n:5,name:'Koh Lipe',dates:'16–18 nov',nights:2,x:28,y:34},
+ {n:6,name:'Melaka',dates:'18–20 nov',nights:2,x:28,y:86},
+ {n:7,name:'Kuala Lumpur',dates:'20–22 nov',nights:2,x:20,y:78},
+ {n:8,name:'Phi Phi',dates:'22–24 nov',nights:2,x:42,y:72},
+ {n:9,name:'Koh Phangan',dates:'24–27 nov',nights:3,x:54,y:65},
+ {n:10,name:'Koh Tao',dates:'27–30 nov',nights:3,x:55,y:57},
+ {n:11,name:'Chiang Mai',dates:'30 nov–3 dic',nights:3,x:48,y:25},
+ {n:12,name:'Chiang Rai',dates:'3–5 dic',nights:2,x:54,y:17},
+ {n:13,name:'Bangkok',dates:'5–8 dic',nights:3,x:55,y:42},
+ {n:14,name:'Ayutthaya',dates:'6 dic',nights:0,x:52,y:36,exc:true}
 ];
 const NEXT_DESTS=[
  {name:'Kuala Lumpur',start:'2026-11-07',end:'2026-11-09',lat:3.139,long:101.687,country:'Malaysia',tz:'Asia/Kuala_Lumpur',flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=80',climate:'31° / 25°'},
  {name:'Cameron Highlands',start:'2026-11-09',end:'2026-11-11',lat:4.471,long:101.377,country:'Malaysia',tz:'Asia/Kuala_Lumpur',flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1536599018102-9f803c140fc1?auto=format&fit=crop&w=1200&q=80',climate:'23° / 16°'},
- {name:'Penang',start:'2026-11-11',end:'2026-11-14',lat:5.4141,long:100.3288,country:'Malaysia',tz:'Asia/Kuala_Lumpur',flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=1200&q=80',climate:'31° / 25°'},
- {name:'Langkawi',start:'2026-11-14',end:'2026-11-18',lat:6.35,long:99.8,country:'Malaysia',tz:'Asia/Kuala_Lumpur',flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80',climate:'31° / 25°'},
+ {name:'Penang',start:'2026-11-11',end:'2026-11-13',lat:5.4141,long:100.3288,country:'Malaysia',tz:'Asia/Kuala_Lumpur',flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=1200&q=80',climate:'31° / 25°'},
+ {name:'Langkawi',start:'2026-11-13',end:'2026-11-16',lat:6.35,long:99.8,country:'Malaysia',tz:'Asia/Kuala_Lumpur',flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80',climate:'31° / 25°'},
+ {name:'Koh Lipe',start:'2026-11-16',end:'2026-11-18',lat:6.4897,long:99.3045,country:'Thailand',tz:'Asia/Bangkok',flag:'🇹🇭',photo:'./koh-tao-sairee.jpg',climate:'30° / 25°'},
  {name:'Melaka',start:'2026-11-18',end:'2026-11-20',lat:2.1896,long:102.2501,country:'Malaysia',tz:'Asia/Kuala_Lumpur',flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=80',climate:'31° / 25°'},
  {name:'Kuala Lumpur · regreso',start:'2026-11-20',end:'2026-11-22',lat:3.139,long:101.687,country:'Malaysia',tz:'Asia/Kuala_Lumpur',flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=80',climate:'31° / 25°'},
  {name:'Phi Phi',start:'2026-11-22',end:'2026-11-24',lat:7.7407,long:98.7784,country:'Thailand',tz:'Asia/Bangkok',flag:'🇹🇭',photo:'./koh-tao-sairee.jpg',climate:'30° / 25°'},
@@ -932,7 +934,7 @@ const TRANSFERS={
 'cr-bkk':['Chiang Rai → Bangkok','✈️ Vuelo','CEI → Bangkok','Confirma aeropuerto de llegada · documentos y batería cargada'],
 'bkk-ay':['Bangkok ↔ Ayutthaya','🚆 Tren','Bangkok → Ayutthaya → Bangkok','Sal temprano · agua · protector solar · billete/horario revisado']};
 function renderTransfer(){let x=TRANSFERS[transferPick.value];transferBox.innerHTML=`<div class="card"><div class="smart-kicker">PRÓXIMO MOVIMIENTO</div><h2>${x[0]}</h2><div class="inforow"><b>Cómo</b><span>${x[1]}</span></div><div class="inforow"><b>Ruta</b><span>${x[2]}</span></div><div class="inforow"><b>Antes de salir</b><span class="muted">${x[3]}</span></div><label class="checkitem"><input type="checkbox"><span>🎫 Billete / reserva descargada</span></label><label class="checkitem"><input type="checkbox"><span>🛂 Pasaporte conmigo</span></label><label class="checkitem"><input type="checkbox"><span>🔋 Móvil + powerbank cargados</span></label><label class="checkitem"><input type="checkbox"><span>💵 Algo de efectivo</span></label></div>`}
-const PASSPORT_PLACES=['Kuala Lumpur','Cameron Highlands','Penang','Langkawi','Melaka','Phi Phi','Koh Phangan','Koh Tao','Chiang Mai','Chiang Rai','Bangkok','Ayutthaya'];
+const PASSPORT_PLACES=['Kuala Lumpur','Cameron Highlands','Penang','Langkawi','Koh Lipe','Melaka','Phi Phi','Koh Phangan','Koh Tao','Chiang Mai','Chiang Rai','Bangkok','Ayutthaya'];
 let tripDiary=JSON.parse(localStorage.getItem('asia26diary')||'{}');
 function diarySet(i,k,v){tripDiary[PASSPORT_PLACES[i]]=tripDiary[PASSPORT_PLACES[i]]||{};tripDiary[PASSPORT_PLACES[i]][k]=v;localStorage.setItem('asia26diary',JSON.stringify(tripDiary));renderPassport()}
 function renderPassport(){let box=document.getElementById('tripPassport');if(!box)return;box.innerHTML=PASSPORT_PLACES.map((p,i)=>{let d=tripDiary[p]||{};return `<div class="diaryrow ${d.done?'done':''}"><label><input type="checkbox" ${d.done?'checked':''} onchange="diarySet(${i},'done',this.checked)"> <b>${d.done?'✅':'⬜'} ${p}</b></label><select onchange="diarySet(${i},'score',this.value)"><option value="">Nota</option>${[10,9,8,7,6,5].map(n=>`<option ${String(d.score)===String(n)?'selected':''}>${n}</option>`).join('')}</select><input value="${(d.note||'').replace(/"/g,'&quot;')}" placeholder="Una frase del día…" onchange="diarySet(${i},'note',this.value)"></div>`}).join('');let done=Object.values(tripDiary).filter(x=>x.done).length,scores=Object.values(tripDiary).map(x=>+x.score).filter(Boolean),avg=scores.length?(scores.reduce((a,b)=>a+b,0)/scores.length).toFixed(1):'—';tripStats.innerHTML=`<div class="budget-stats"><div class="budget-stat"><small>Destinos</small><b>${done}/${PASSPORT_PLACES.length}</b></div><div class="budget-stat"><small>Nota media</small><b>${avg}/10</b></div></div><p class="muted">33 días · 2 países · tus recuerdos se guardan en este dispositivo.</p>`}
@@ -1116,8 +1118,9 @@ function closeRouteMap(){let m=document.getElementById('routeMapModal');if(m)m.c
   <h2 class="my37-section">Ruta orientativa</h2>
   <div class="my37-card my37-route"><span class="my37-tag">7–9 NOV</span><h2>🏙️ Kuala Lumpur</h2><p>2 noches · inicio confirmado.</p></div>
   <div class="my37-card my37-route"><span class="my37-tag">9–11 NOV · ORIENTATIVO</span><h2>🌿 Cameron Highlands</h2><p>Plantaciones de té, Mossy Forest y montaña.</p></div>
-  <div class="my37-card my37-route"><span class="my37-tag">11–14 NOV · ORIENTATIVO</span><h2>🎨 Penang</h2><p>George Town, street art y una de las mejores paradas gastronómicas.</p></div>
-  <div class="my37-card my37-route"><span class="my37-tag">14–18 NOV · ORIENTATIVO</span><h2>🏝️ Langkawi</h2><p>Playas, Sky Bridge, manglares y sunsets.</p></div>
+  <div class="my37-card my37-route"><span class="my37-tag">11–13 NOV · 2 NOCHES</span><h2>🎨 Penang</h2><p>George Town, street art y una de las mejores paradas gastronómicas.</p></div>
+  <div class="my37-card my37-route"><span class="my37-tag">13–16 NOV · 3 NOCHES</span><h2>🏝️ Langkawi</h2><p>Playas, Sky Bridge, manglares y sunsets.</p></div>
+  <div class="my37-card my37-route"><span class="my37-tag">16–18 NOV · 2 NOCHES</span><h2>🐚 Koh Lipe</h2><p>Isla tailandesa de arena blanca: snorkel y atardeceres.</p></div>
   <div class="my37-card my37-route"><span class="my37-tag">18–20 NOV · ORIENTATIVO</span><h2>🏮 Melaka</h2><p>Centro histórico, río y Jonker Walk.</p></div>
   <div class="my37-card my37-route"><span class="my37-tag">20–22 NOV</span><h2>🏙️ Kuala Lumpur</h2><p>Regreso y conexión hacia Tailandia.</p></div>
  </section>
@@ -1141,7 +1144,7 @@ function closeRouteMap(){let m=document.getElementById('routeMapModal');if(m)m.c
   <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=George+Town+Penang+Malaysia"><b>3️⃣ Penang</b><small>George Town · Kek Lok Si · Penang Hill</small></a>
   <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Langkawi+Malaysia"><b>4️⃣ Langkawi</b><small>Sky Bridge · Kilim · playas</small></a>
   <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Melaka+Malaysia"><b>5️⃣ Melaka</b><small>Jonker Walk · Dutch Square · río</small></a>
- </div><a class="my37-btn" target="_blank" href="https://www.google.com/maps/dir/Kuala+Lumpur/Cameron+Highlands/George+Town+Penang/Langkawi/Melaka/Kuala+Lumpur">🗺️ Abrir recorrido completo</a></section> <section class="my37-page" data-my37="3"><div id="my38DiscoverHome"><h1>Descubre · Malasia</h1><div class="my37-note">Pulsa un destino: hoteles, restaurantes, qué ver, qué hacer, noche y mapas, igual que en Tailandia.</div>
+ </div><a class="my37-btn" target="_blank" href="https://www.google.com/maps/dir/Kuala+Lumpur/Cameron+Highlands/George+Town+Penang/Langkawi/Koh+Lipe/Melaka/Kuala+Lumpur">🗺️ Abrir recorrido completo</a></section> <section class="my37-page" data-my37="3"><div id="my38DiscoverHome"><h1>Descubre · Malasia</h1><div class="my37-note">Pulsa un destino: hoteles, restaurantes, qué ver, qué hacer, noche y mapas, igual que en Tailandia.</div>
   <div class="my37-grid">
    <button class="my37-card my37-place" onclick="my38Dest('kl')" style="background-image:url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=800&q=85')"><div><b>🏙️ Kuala Lumpur</b><small>Petronas · Batu Caves · comida · noche</small></div></button>
    <button class="my37-card my37-place" onclick="my38Dest('cam')" style="background-image:url('https://images.unsplash.com/photo-1536599018102-9f803c140fc1?auto=format&fit=crop&w=800&q=85')"><div><b>🌿 Cameron</b><small>Té · bosque · montaña</small></div></button>
@@ -1191,15 +1194,18 @@ mel:'Historia colonial, fachadas de colores, paseo junto al río y Jonker Walk c
 const MY39_ORDER={kl:['🌅 Batu Caves temprano','🏛️ Merdeka Square + centro histórico','🏮 Chinatown / Petaling Street','🌇 Petronas y KLCC al atardecer','🍜 Jalan Alor + copa si apetece'],cam:['🍃 BOH Tea Plantation temprano','🌫️ Mossy Forest / miradores','🍲 Comer en Tanah Rata','🥾 Paseo o trekking corto','🌙 Mercado nocturno si coincide'],pen:['🎨 Street art de George Town','🏘️ Clan Jetties + heritage','🍜 Food crawl / hawker','🛕 Kek Lok Si','🌇 Penang Hill para terminar'],lan:['🚠 SkyCab + Sky Bridge temprano','🌿 Kilim Geoforest / manglares','🏖️ Tarde de playa','🌅 Sunset en Pantai Cenang','🍸 Beach bar / night market'],mel:['🏛️ Dutch Square temprano','⛪ St Paul’s Hill + A Famosa','🍜 Comida Nyonya','🚶 Paseo junto al río','🏮 Jonker Walk al anochecer']};
 const MY39_TRANS=[
 ['Kuala Lumpur','Cameron Highlands','🚌','Bus directo desde TBS hasta Tanah Rata. Cuenta aproximadamente 4 h; coche privado es más flexible.','https://www.google.com/maps/dir/?api=1&origin=Kuala+Lumpur&destination=Tanah+Rata+Cameron+Highlands&travelmode=transit'],
-['Cameron Highlands','Penang · George Town','🚌','Salida desde Tanah Rata. En transporte público puede requerir conexión por Ipoh/Butterworth; confirma el servicio que mejor encaje al cerrar fechas.','https://www.google.com/maps/dir/?api=1&origin=Tanah+Rata+Cameron+Highlands&destination=George+Town+Penang&travelmode=transit'],
-['Penang · George Town','Langkawi','✈️','Para simplificar la ruta, prioriza vuelo corto desde Penang; revisaremos horarios reales cuando reservéis.','https://www.google.com/maps/dir/?api=1&origin=George+Town+Penang&destination=Langkawi'],
-['Langkawi','Melaka','✈️🚌','Es el salto menos directo: normalmente conviene volar hacia Kuala Lumpur y continuar por carretera a Melaka.','https://www.google.com/maps/dir/?api=1&origin=Langkawi&destination=Melaka'],
+['Cameron Highlands','Penang · George Town','🚌','Salida desde Tanah Rata. Puede requerir conexión por Ipoh/Butterworth; confirma el servicio al cerrar fechas.','https://www.google.com/maps/dir/?api=1&origin=Tanah+Rata+Cameron+Highlands&destination=George+Town+Penang&travelmode=transit'],
+['Penang · George Town','Langkawi','✈️','Vuelo corto desde Penang; revisaremos horarios reales cuando reservéis.','https://www.google.com/maps/dir/?api=1&origin=George+Town+Penang&destination=Langkawi'],
+['Langkawi','Koh Lipe','⛴️','Ferry desde Telaga Harbour a Koh Lipe. Pasaporte a mano y TDAC. Comprueba que el ferry opera en esas fechas.','https://www.google.com/maps/dir/?api=1&origin=Telaga+Harbour+Park+Langkawi&destination=Pattaya+Beach+Koh+Lipe'],
+['Koh Lipe','Melaka','⛴️✈️🚌','Ferry a Langkawi, vuelo a Kuala Lumpur y bus a Melaka. Es el día más largo de la ruta.','https://www.google.com/maps/dir/?api=1&origin=Koh+Lipe&destination=Melaka'],
 ['Melaka','Kuala Lumpur','🚌','Bus directo o coche hacia Kuala Lumpur; deja margen según tráfico.','https://www.google.com/maps/dir/?api=1&origin=Melaka&destination=Kuala+Lumpur&travelmode=transit']];
+
 function my39Transfer(i){let t=MY39_TRANS[i];return `<div class="my39-transfer"><small>${t[2]} CÓMO LLEGAR</small><h3>${t[0]} → ${t[1]}</h3><p>${t[3]}</p><div class="my39-actions"><a target="_blank" href="${t[4]}">🧭 Cómo llegar · Google Maps</a></div></div>`}
 function my39Order(k){return `<div class="my39-order"><h3>🧭 Cómo organizar este destino</h3>${MY39_ORDER[k].map((x,i)=>`<div class="my39-step"><i>${i+1}</i><span>${x}</span></div>`).join('')}</div>`}
-function my39Route(){let sec=document.querySelector('#my37 [data-my37="1"]');if(!sec)return;let stops=[['7–9 NOV · KUALA LUMPUR','Kuala Lumpur','kl','Llegada, skyline, Batu Caves, barrios históricos y primera toma de contacto.'],['9–11 NOV · CAMERON HIGHLANDS','Cameron Highlands','cam','Dos días entre plantaciones de té, bosque de montaña y temperaturas más frescas.'],['11–14 NOV · PENANG','Penang · George Town','pen','Heritage, templos, street art y ruta gastronómica.'],['14–18 NOV · LANGKAWI','Langkawi','lan','Playas, manglares, Sky Bridge y varios días con ritmo de isla.'],['18–20 NOV · MELAKA','Melaka','mel','Historia, río, arquitectura colonial y Jonker Walk.'],['20–22 NOV · KUALA LUMPUR','Kuala Lumpur + salida','kl','Regreso, día colchón y conexión con Tailandia el 22.']];sec.innerHTML=`<h1>Ruta · Malasia</h1><div class="my37-note">🧭 Sigue siendo orientativa hasta que la cerréis los cuatro. La estructura ya queda al mismo nivel visual que Tailandia.</div>`+stops.map((s,i)=>`<div class="my39-photo" style="background-image:url('${MY39_PHOTOS[s[2]]}')"><div class="txt"><small>${s[0]}</small><h2>${s[1]}</h2><p>${s[3]}</p></div></div>${my39Order(s[2])}${i<5?my39Transfer(i):''}`).join('')}
-function my39Map(){let sec=document.querySelector('#my37 [data-my37="2"]');if(!sec)return;let a=[['kl','1️⃣ Kuala Lumpur','Petronas · Batu Caves · Chinatown','Kuala+Lumpur+Malaysia'],['cam','2️⃣ Cameron Highlands','Tanah Rata · BOH · Mossy Forest','Cameron+Highlands+Malaysia'],['pen','3️⃣ Penang','George Town · Kek Lok Si · Penang Hill','George+Town+Penang+Malaysia'],['lan','4️⃣ Langkawi','Sky Bridge · Kilim · playas','Langkawi+Malaysia'],['mel','5️⃣ Melaka','Jonker Walk · Dutch Square · río','Melaka+Malaysia']];sec.innerHTML=`<h1>Mapa · Malasia</h1><div class="my37-note">Cada zona funciona como en Tailandia: foto + contexto + acceso directo a Google Maps.</div>`+a.map(x=>`<div class="my39-mapcard" onclick="window.open('https://www.google.com/maps/search/?api=1&query=${x[3]}','_blank')" style="background-image:url('${MY39_PHOTOS[x[0]]}')"><div class="txt"><b>${x[1]}</b><small>${x[2]} · Abrir en Maps →</small></div></div>`).join('')+`<a class="my37-btn" target="_blank" href="https://www.google.com/maps/dir/Kuala+Lumpur/Cameron+Highlands/George+Town+Penang/Langkawi/Melaka/Kuala+Lumpur">🗺️ Abrir recorrido completo</a>`}
-function my39Discover(){let h=document.getElementById('my38DiscoverHome');if(!h)return;let a=[['kl','🏙️ Kuala Lumpur'],['cam','🌿 Cameron Highlands'],['pen','🎨 Penang · George Town'],['lan','🏝️ Langkawi'],['mel','🏮 Melaka']];h.innerHTML=`<h1>Descubre · Malasia</h1><div class="my37-note">Qué ver, hacer, comer, dormir y noche. Pulsa cada destino para entrar.</div><div class="my37-grid">${a.map(x=>`<button class="my37-card my37-place" onclick="my38Dest('${x[0]}')" style="background-image:url('${MY39_PHOTOS[x[0]]}')"><div><b>${x[1]}</b><small>${MY39_DESC[x[0]]}</small></div></button>`).join('')}</div>`}
+MY39_PHOTOS.lip='';MY39_DESC.lip='Isla de arena blanca y aguas turquesa en el parque de Tarutao: snorkel, playas, atardeceres y vida de isla sin coches.';MY39_ORDER.lip=['🚤 Llegada en ferry a Pattaya Beach','🏝️ Sunrise Beach y baño','🤿 Snorkel en Ko Adang / Ko Rawi','🌅 Sunset Beach','🍤 Cena en Walking Street'];
+function my39Route(){let sec=document.querySelector('#my37 [data-my37="1"]');if(!sec)return;let stops=[['7–9 NOV · KUALA LUMPUR','Kuala Lumpur','kl','Llegada, skyline, Batu Caves, barrios históricos y primera toma de contacto.'],['9–11 NOV · CAMERON HIGHLANDS','Cameron Highlands','cam','Dos días entre plantaciones de té, bosque de montaña y temperaturas más frescas.'],['11–13 NOV · PENANG','Penang · George Town','pen','Heritage, templos, street art y ruta gastronómica.'],['13–16 NOV · LANGKAWI','Langkawi','lan','Playas, manglares, Sky Bridge y tres noches con ritmo de isla.'],['16–18 NOV · KOH LIPE','Koh Lipe','lip','Playas de arena blanca, snorkel y atardeceres en una isla tailandesa pequeña.'],['18–20 NOV · MELAKA','Melaka','mel','Historia, río, arquitectura colonial y Jonker Walk.'],['20–22 NOV · KUALA LUMPUR','Kuala Lumpur + salida','kl','Regreso, día colchón y conexión con Tailandia el 22.']];sec.innerHTML=`<h1>Ruta · Malasia</h1><div class="my37-note">🧭 Sigue siendo orientativa hasta que la cerréis los cuatro. La estructura ya queda al mismo nivel visual que Tailandia.</div>`+stops.map((s,i)=>`<div class="my39-photo" style="background-image:url('${MY39_PHOTOS[s[2]]}')"><div class="txt"><small>${s[0]}</small><h2>${s[1]}</h2><p>${s[3]}</p></div></div>${my39Order(s[2])}${i<6?my39Transfer(i):''}`).join('')}
+function my39Map(){let sec=document.querySelector('#my37 [data-my37="2"]');if(!sec)return;let a=[['kl','1️⃣ Kuala Lumpur','Petronas · Batu Caves · Chinatown','Kuala+Lumpur+Malaysia'],['cam','2️⃣ Cameron Highlands','Tanah Rata · BOH · Mossy Forest','Cameron+Highlands+Malaysia'],['pen','3️⃣ Penang','George Town · Kek Lok Si · Penang Hill','George+Town+Penang+Malaysia'],['lan','4️⃣ Langkawi','Sky Bridge · Kilim · playas','Langkawi+Malaysia'],['lip','5️⃣ Koh Lipe','Playas · snorkel · Walking Street','Koh+Lipe+Thailand'],['mel','6️⃣ Melaka','Jonker Walk · Dutch Square · río','Melaka+Malaysia']];sec.innerHTML=`<h1>Mapa · Malasia</h1><div class="my37-note">Cada zona funciona como en Tailandia: foto + contexto + acceso directo a Google Maps.</div>`+a.map(x=>`<div class="my39-mapcard" onclick="window.open('https://www.google.com/maps/search/?api=1&query=${x[3]}','_blank')" style="background-image:url('${MY39_PHOTOS[x[0]]}')"><div class="txt"><b>${x[1]}</b><small>${x[2]} · Abrir en Maps →</small></div></div>`).join('')+`<a class="my37-btn" target="_blank" href="https://www.google.com/maps/dir/Kuala+Lumpur/Cameron+Highlands/George+Town+Penang/Langkawi/Melaka/Kuala+Lumpur">🗺️ Abrir recorrido completo</a>`}
+function my39Discover(){let h=document.getElementById('my38DiscoverHome');if(!h)return;let a=[['kl','🏙️ Kuala Lumpur'],['cam','🌿 Cameron Highlands'],['pen','🎨 Penang · George Town'],['lan','🏝️ Langkawi'],['lip','🐚 Koh Lipe'],['mel','🏮 Melaka']];h.innerHTML=`<h1>Descubre · Malasia</h1><div class="my37-note">Qué ver, hacer, comer, dormir y noche. Pulsa cada destino para entrar.</div><div class="my37-grid">${a.map(x=>`<button class="my37-card my37-place" onclick="my38Dest('${x[0]}')" style="background-image:url('${MY39_PHOTOS[x[0]]}')"><div><b>${x[1]}</b><small>${MY39_DESC[x[0]]}</small></div></button>`).join('')}</div>`}
 const _my38DestV39=my38Dest;my38Dest=function(k){let d=MY38_DEST[k],h=document.getElementById('my38DiscoverHome'),x=document.getElementById('my38DiscoverDetail');h.style.display='none';x.style.display='block';x.innerHTML=`<button class="my38-back" onclick="my38CloseDest()">← Destinos</button><div class="my39-detailhero" style="background-image:url('${MY39_PHOTOS[k]}')"><div class="txt"><h1>${d.name}</h1><p>${d.sub}</p></div></div><p class="my39-intro">${MY39_DESC[k]}</p>${my39Order(k)}${[['⭐','Ver',d.ver],['✨','Hacer',d.hacer],['🍜','Comer',d.comer],['🏨','Dormir',d.dormir],['🍸','Noche',d.noche]].map(a=>`<div class="my39-reccard"><h3>${a[0]} ${a[1]}</h3><p>${a[2]}</p></div>`).join('')}<a class="my37-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=${d.map}">📍 Abrir ${d.name} en Google Maps</a>`;document.getElementById('my37').scrollTo(0,0)};
 window.addEventListener('load',()=>{my39Route();my39Map();my39Discover()});
 </script>
@@ -1720,16 +1726,18 @@ const MY=[
  ['2026-11-06','2026-11-07','✈️','Vuelo a Doha','Madrid → Doha · IB6192 · 08:05. Por la noche sales hacia Kuala Lumpur.','Doha'],
  ['2026-11-07','2026-11-09','🏙️','Kuala Lumpur','Llegada el 7 a las 14:40. Petronas, Batu Caves, Chinatown y Jalan Alor.','Kuala Lumpur'],
  ['2026-11-09','2026-11-11','🌿','Cameron Highlands','BOH Tea Plantation, Mossy Forest y miradores.','Cameron Highlands'],
- ['2026-11-11','2026-11-14','🎨','Penang','George Town, street art, Clan Jetties, Kek Lok Si y Penang Hill.','George Town Penang'],
- ['2026-11-14','2026-11-18','🏝️','Langkawi','SkyCab + Sky Bridge, Kilim Geoforest, island hopping y sunsets.','Langkawi'],
+ ['2026-11-11','2026-11-13','🎨','Penang','George Town, street art, Clan Jetties, Kek Lok Si y Penang Hill.','George Town Penang'],
+ ['2026-11-13','2026-11-16','🏝️','Langkawi','SkyCab + Sky Bridge, Kilim Geoforest, playa y sunsets.','Langkawi'],
+ ['2026-11-16','2026-11-18','🐚','Koh Lipe (Tailandia)','Playas de arena blanca, snorkel y Walking Street. Aquí se paga en baht y hay que entrar a Tailandia por mar.','Koh Lipe Thailand'],
  ['2026-11-18','2026-11-20','🏮','Melaka','Dutch Square, Jonker Walk y paseo por el río.','Melaka'],
  ['2026-11-20','2026-11-22','🏙️','Kuala Lumpur','Día colchón, compras y salida a Tailandia el 22.','Kuala Lumpur']
 ];
 const MYLEGS=[
  {d:'2026-11-09',t:'Kuala Lumpur → Cameron Highlands',s:'Bus desde TBS a Tanah Rata · 4–5 h. Alternativa: Grab/coche privado.',m:dir('Kuala Lumpur','Tanah Rata Cameron Highlands','transit')},
  {d:'2026-11-11',t:'Cameron Highlands → Penang',s:'Bus Tanah Rata → Butterworth/Penang · 4–5 h.',m:dir('Tanah Rata Cameron Highlands','George Town Penang','transit')},
- {d:'2026-11-14',t:'Penang → Langkawi',s:'Vuelo corto; reconfirma si hay ferry en vuestras fechas.',m:dir('George Town Penang','Langkawi','driving')},
- {d:'2026-11-18',t:'Langkawi → Melaka',s:'Orientativo: vuelo a KL + bus/coche. Es el salto menos directo.',m:dir('Langkawi','Melaka','driving')},
+ {d:'2026-11-13',t:'Penang → Langkawi',s:'Vuelo corto (≈45 min); reconfirma si hay ferry en vuestras fechas.',m:dir('George Town Penang','Langkawi','driving')},
+ {d:'2026-11-16',t:'Langkawi → Koh Lipe',s:'Ferry desde Telaga Harbour (≈1–1,5 h). Pasaporte a mano y TDAC hecho. Comprueba que el ferry opera esas fechas.',m:dir('Telaga Harbour Park Langkawi','Pattaya Beach Koh Lipe','driving')},
+ {d:'2026-11-18',t:'Koh Lipe → Melaka',s:'Ferry a Langkawi, vuelo a KL y bus a Melaka. Es el día más pesado de la ruta; deja margen.',m:dir('Koh Lipe','Melaka','driving')},
  {d:'2026-11-20',t:'Melaka → Kuala Lumpur',s:'Bus directo o coche · 2–2,5 h.',m:dir('Melaka','Kuala Lumpur','transit')}
 ];
 // Lugares para enseñar (th = tailandés, ms = malayo)
@@ -1746,12 +1754,16 @@ const PLACES=[
  ['th','Sitios','Ciudad Vieja (Chiang Mai)','เมืองเก่าเชียงใหม่'],
  ['th','Sitios','Night Bazaar (Chiang Mai)','ไนท์บาซาร์ เชียงใหม่'],
  ['th','Sitios','Playa Sairee (Koh Tao)','หาดทรายรี'],
+ ['th','Aeropuertos y puertos','Koh Lipe · playa Pattaya','หาดพัทยา เกาะหลีเป๊ะ'],
  ['ms','Aeropuertos y estaciones','Aeropuerto KLIA','Lapangan Terbang Antarabangsa Kuala Lumpur (KLIA)'],
  ['ms','Aeropuertos y estaciones','Estación de buses TBS (Kuala Lumpur)','Terminal Bersepadu Selatan (TBS)'],
  ['ms','Aeropuertos y estaciones','Tanah Rata (Cameron Highlands)','Tanah Rata, Cameron Highlands'],
  ['ms','Sitios','Torres Petronas','Menara Berkembar Petronas'],
  ['ms','Sitios','Batu Caves','Gua Batu (Batu Caves)'],
  ['ms','Sitios','Jalan Alor (comida)','Jalan Alor, Bukit Bintang'],
+ ['ms','Aeropuertos y estaciones','Aeropuerto de Penang','Lapangan Terbang Antarabangsa Pulau Pinang'],
+ ['ms','Aeropuertos y estaciones','Aeropuerto de Langkawi','Lapangan Terbang Antarabangsa Langkawi'],
+ ['ms','Aeropuertos y estaciones','Muelle Telaga Harbour (ferry a Koh Lipe)','Telaga Harbour Park, Langkawi'],
  ['ms','Sitios','George Town (Penang)','George Town, Pulau Pinang'],
  ['ms','Sitios','Jonker Walk (Melaka)','Jonker Walk, Melaka']
 ];
@@ -1760,8 +1772,10 @@ const LANG={
  ms:{name:'Malasia',flag:'🇲🇾',go:'Tolong bawa saya ke sini.',ph:'',es:'Lléveme aquí, por favor.',meter:'Tolong guna meter.',mph:'',mes:'Use el taxímetro, por favor.'}
 };
 const TRAM=[
- {id:'mdac',e:'🇲🇾',n:'MDAC · Malaysia Digital Arrival Card',arr:'2026-11-07',url:'https://imigresen-online.imi.gov.my/mdac/main',t:'Formulario digital de llegada a Malasia. Se rellena online unos 3 días antes de entrar. Suele ser gratuito: desconfía de webs que cobren.'},
- {id:'tdac',e:'🇹🇭',n:'TDAC · Thailand Digital Arrival Card',arr:'2026-11-22',url:'https://tdac.immigration.go.th',t:'Formulario digital de llegada a Tailandia. Se rellena online pocos días antes de entrar. Suele ser gratuito: desconfía de webs que cobren.'},
+ {id:'mdac',s:'MDAC',e:'🇲🇾',n:'MDAC · Malaysia Digital Arrival Card (entrada 1)',arr:'2026-11-07',url:'https://imigresen-online.imi.gov.my/mdac/main',t:'Formulario digital de llegada a Malasia. Se rellena online unos 3 días antes de entrar. Suele ser gratuito: desconfía de webs que cobren.'},
+ {id:'tdac',s:'TDAC 16 nov',e:'🇹🇭',n:'TDAC · Thailand Digital Arrival Card (entrada 1 · Koh Lipe)',arr:'2026-11-16',url:'https://tdac.immigration.go.th',t:'Entráis en Tailandia por Koh Lipe el 16 de noviembre, antes de lo previsto. Rellénalo online pocos días antes. Suele ser gratuito: desconfía de webs que cobren.'},
+ {id:'mdac2',s:'MDAC 18 nov',e:'🇲🇾',n:'MDAC · segunda entrada en Malasia (vuelta de Koh Lipe)',arr:'2026-11-18',url:'https://imigresen-online.imi.gov.my/mdac/main',t:'Al volver a Langkawi el 18 hay que entrar otra vez en Malasia. Comprueba en la web oficial si necesitas un MDAC nuevo para esta segunda entrada.'},
+ {id:'tdac2',s:'TDAC 22 nov',e:'🇹🇭',n:'TDAC · Thailand Digital Arrival Card (entrada 2 · Phuket/Krabi)',arr:'2026-11-22',url:'https://tdac.immigration.go.th',t:'Segunda entrada en Tailandia el 22 de noviembre. Comprueba si necesitas un TDAC nuevo para esta entrada.'},
  {id:'pas',e:'🛂',n:'Pasaporte con vigencia',t:'Los dos países suelen pedir al menos 6 meses de validez desde la entrada. Comprueba la fecha de caducidad y guarda copia offline.'},
  {id:'seg',e:'🩺',n:'Seguro de viaje',t:'Guarda la póliza y el teléfono de asistencia. Tienes un hueco para anotarlos en Emergencias.'},
  {id:'req',e:'📋',n:'Requisitos oficiales',t:'Reconfirma en las webs oficiales de inmigración de Malasia y Tailandia antes de salir: las normas y los plazos pueden cambiar.'}
@@ -1837,7 +1851,7 @@ function tramLines(t,tr){
   if(!items.length)return'';
   return `<div class="v57-warn"><b>📋 Trámites por hacer</b><br>${items.map(o=>{
     const ready=t>=o.o;
-    return `${o.x.e} ${o.x.id.toUpperCase()} · ${ready?'ya puedes rellenarlo (hasta el '+fmt(o.x.arr)+')':'rellénalo del '+fmt(o.o)+' al '+fmt(o.x.arr)}`;
+    return `${o.x.e} ${o.x.s||o.x.id.toUpperCase()} · ${ready?'ya puedes rellenarlo (hasta el '+fmt(o.x.arr)+')':'rellénalo del '+fmt(o.o)+' al '+fmt(o.x.arr)}`;
   }).join('<br>')} · <a href="#" onclick="v57Go('tramites');return false">abrir</a></div>`;
 }
 window.v57SetDate=function(v){jset(K.dov,v||'');renderHoy()};
@@ -1932,7 +1946,7 @@ function mount(){
   const hero=$('#ruta .hero');
   if(hero&&!$('#v57hoy')){const c=document.createElement('div');c.id='v57hoy';c.className='card v57-hoy';hero.insertAdjacentElement('afterend',c)}
   // Cabecera de versión
-  document.querySelectorAll('#ruta header .ey').forEach(e=>{e.textContent=e.textContent.replace(/V\d+/,'V59')});
+  document.querySelectorAll('#ruta header .ey').forEach(e=>{e.textContent=e.textContent.replace(/V\d+/,'V60')});
   // Mover las subpáginas nuevas dentro de «Más»
   const mas=$('#mas');
   ['more-tricount','more-taxi','more-tramites'].forEach(id=>{const e=document.getElementById(id);if(e&&mas&&e.parentNode!==mas)mas.appendChild(e)});
@@ -2018,7 +2032,7 @@ nav button.active{background:linear-gradient(135deg,var(--v58-sea),#0b5f6a)!impo
 'use strict';
 const ART=window.V58ART;if(!ART)return;
 /* nombre de destino -> ilustración */
-const MAP=[[/phi\s?phi/i,'phi'],[/phangan|pha\b/i,'pha'],[/koh\s?tao|\btao\b|nang\s?yuan|sairee|chalok/i,'tao'],[/chiang\s?mai|\bcm\b/i,'cm'],[/chiang\s?rai|\bcr\b/i,'cr'],[/bangkok|bkk/i,'bkk'],[/ayutthaya/i,'ayu'],[/kuala|\bkl\b|petronas|batu caves|merdeka|jalan alor/i,'kl'],[/cameron|boh|mossy|tanah rata/i,'cam'],[/penang|george\s?town|clan jetties|kek lok/i,'pen'],[/langkawi|sky bridge|cenang|kilim/i,'lan'],[/melaka|malacca|dutch|jonker|famosa/i,'mel']];
+const MAP=[[/lipe/i,'lip'],[/phi\s?phi/i,'phi'],[/phangan|pha\b/i,'pha'],[/koh\s?tao|\btao\b|nang\s?yuan|sairee|chalok/i,'tao'],[/chiang\s?mai|\bcm\b/i,'cm'],[/chiang\s?rai|\bcr\b/i,'cr'],[/bangkok|bkk/i,'bkk'],[/ayutthaya/i,'ayu'],[/kuala|\bkl\b|petronas|batu caves|merdeka|jalan alor/i,'kl'],[/cameron|boh|mossy|tanah rata/i,'cam'],[/penang|george\s?town|clan jetties|kek lok/i,'pen'],[/langkawi|sky bridge|cenang|kilim/i,'lan'],[/melaka|malacca|dutch|jonker|famosa/i,'mel']];
 const ZMAP={'z-phi':'phi','z-pha':'pha','z-tao':'tao','z-cm':'cm','z-cr':'cr','z-bkk':'bkk','z-mal':'kl'};
 const art=k=>ART.url(k);
 function key(t){t=t||'';for(const m of MAP)if(m[0].test(t))return m[1];return null}
@@ -2090,10 +2104,11 @@ const FL='https://www.google.com/travel/flights?hl=es';
 const T=[
  {date:'9 NOV',id:'my-kl-cam',icon:'🚌',title:'Kuala Lumpur → Cameron Highlands',summary:'Bus desde TBS (Terminal Bersepadu Selatan) a Tanah Rata · 4–5 h. Alternativa más cómoda: Grab/coche privado (más caro).',from:'TBS · Kuala Lumpur',to:'Tanah Rata · Cameron Highlands',maps:dir('Terminal Bersepadu Selatan Kuala Lumpur','Tanah Rata Cameron Highlands','transit'),buy:'https://12go.asia/es/travel/kuala-lumpur/cameron-highlands',buyText:'Buscar bus / van',how:'🚌 Bus',tip:'Billete offline · lleva sudadera (arriba hace fresco) · carretera con curvas'},
  {date:'11 NOV',id:'my-cam-pen',icon:'🚌',title:'Cameron Highlands → Penang',summary:'Bus Tanah Rata → Penang (Butterworth o Sungai Nibong) · 4–5 h. Confirma en qué terminal te deja y el último tramo hasta George Town.',from:'Tanah Rata',to:'Penang · George Town',maps:dir('Tanah Rata Cameron Highlands','George Town Penang','transit'),buy:'https://12go.asia/es/travel/cameron-highlands/penang',buyText:'Buscar bus',how:'🚌 Bus',tip:'Billete offline · pregunta terminal de llegada · Grab hasta el hotel'},
- {date:'14 NOV',id:'my-pen-lan',icon:'✈️⛴️',title:'Penang → Langkawi',summary:'Vuelo corto de unos 45 min (lo más cómodo) o ferry de unas 3 h. Compara precios y comprueba horarios para vuestras fechas.',from:'Penang International Airport · PEN',to:'Langkawi · LGK',maps:dir('George Town Penang','Penang International Airport','driving'),buy:FL,buyText:'Buscar vuelo',buy2:'https://12go.asia/es/travel/penang/langkawi',buyText2:'Ver ferry',how:'✈️ Vuelo o ⛴️ ferry',tip:'Equipaje en cabina si puedes · llega 2 h antes al aeropuerto'},
- {date:'18 NOV',id:'my-lan-mel',icon:'✈️🚌',title:'Langkawi → Melaka',summary:'Es el salto menos directo: vuelo Langkawi → Kuala Lumpur (≈1 h) y bus de KL a Melaka (≈2 h). Deja margen entre ambos.',from:'Langkawi · LGK',to:'Melaka Sentral',maps:dir('Langkawi International Airport','Melaka Sentral','driving'),buy:FL,buyText:'Buscar vuelo LGK → KUL',buy2:'https://12go.asia/es/travel/kuala-lumpur/malacca',buyText2:'Bus KL → Melaka',how:'✈️ Vuelo + 🚌 bus',tip:'No cierres el bus hasta tener hora de aterrizaje · deja ≥3 h'},
+ {date:'13 NOV',id:'my-pen-lan',icon:'✈️⛴️',title:'Penang → Langkawi',summary:'Vuelo corto de unos 45 min (lo más cómodo) o ferry de unas 3 h. Compara precios y comprueba horarios para vuestras fechas.',from:'Penang International Airport · PEN',to:'Langkawi · LGK',maps:dir('George Town Penang','Penang International Airport','driving'),buy:FL,buyText:'Buscar vuelo',buy2:'https://12go.asia/es/travel/penang/langkawi',buyText2:'Ver ferry',how:'✈️ Vuelo o ⛴️ ferry',tip:'Equipaje en cabina si puedes · llega 2 h antes al aeropuerto'},
+ {date:'16 NOV',id:'my-lan-lip',icon:'⛴️',title:'Langkawi → Koh Lipe',summary:'Ferry desde Telaga Harbour (Langkawi) a Pattaya Beach (Koh Lipe), de 1 a 1,5 h. Suele haber una o dos salidas al día (mañana y tarde) y solo en temporada, normalmente de mediados de octubre a finales de mayo: confirma que opera. Entráis en Tailandia, que va 1 h por detrás de Malasia.',from:'Telaga Harbour · Langkawi',to:'Pattaya Beach · Koh Lipe',maps:dir('Telaga Harbour Park Langkawi','Pattaya Beach Koh Lipe','driving'),buy:'https://12go.asia/es/travel/langkawi/koh-lipe',buyText:'Buscar ferry',buy2:'https://www.directferries.com/langkawi_telaga_harbour_marina_koh_lipe_pattaya_beach_ferry.htm',buyText2:'Comparar en Direct Ferries',how:'⛴️ Ferry',tip:'Pasaporte a mano (inmigración en el muelle) · TDAC hecho · lleva baht en efectivo · ferry de mañana mejor'},
+ {date:'18 NOV',id:'my-lip-mel',icon:'⛴️✈️🚌',title:'Koh Lipe → Melaka',summary:'Es el día más largo: ferry Koh Lipe → Langkawi, vuelo Langkawi → Kuala Lumpur y bus a Melaka. Entráis otra vez en Malasia. Deja mucho margen entre cada tramo; si va justo, valorad dormir en KL y llegar a Melaka el 19.',from:'Pattaya Beach · Koh Lipe',to:'Melaka Sentral',maps:dir('Koh Lipe','Melaka Sentral','driving'),buy:'https://12go.asia/es/travel/koh-lipe/langkawi',buyText:'Buscar ferry a Langkawi',buy2:FL,buyText2:'Buscar vuelo LGK → KUL',how:'⛴️ Ferry + ✈️ vuelo + 🚌 bus',tip:'No cierres el vuelo hasta tener hora real del ferry · deja ≥3 h · MDAC de la 2.ª entrada'},
  {date:'20 NOV',id:'my-mel-kl',icon:'🚌',title:'Melaka → Kuala Lumpur',summary:'Bus directo Melaka Sentral → TBS o KL Sentral · 2–2,5 h. Salen con mucha frecuencia.',from:'Melaka Sentral',to:'TBS · Kuala Lumpur',maps:dir('Melaka Sentral','Terminal Bersepadu Selatan Kuala Lumpur','transit'),buy:'https://12go.asia/es/travel/malacca/kuala-lumpur',buyText:'Buscar bus',how:'🚌 Bus',tip:'Evita hora punta de la tarde al entrar en KL'},
- {date:'22 NOV',id:'my-kl-th',icon:'✈️',title:'Kuala Lumpur → Tailandia',summary:'Vuelo a Phuket o Krabi para seguir hacia Phi Phi. Recuerda el TDAC de Tailandia unos 3 días antes.',from:'KLIA · KUL',to:'Phuket · HKT / Krabi · KBV',maps:dir('Kuala Lumpur International Airport','Phuket International Airport','driving'),buy:FL,buyText:'Buscar vuelo',how:'✈️ Vuelo',tip:'Llega a KLIA con 3 h · KLIA Ekspres desde KL Sentral'}
+ {date:'22 NOV',id:'my-kl-th',icon:'✈️',title:'Kuala Lumpur → Tailandia',summary:'Vuelo a Phuket o Krabi para seguir hacia Phi Phi. Recuerda el TDAC de esta segunda entrada en Tailandia.',from:'KLIA · KUL',to:'Phuket · HKT / Krabi · KBV',maps:dir('Kuala Lumpur International Airport','Phuket International Airport','driving'),buy:FL,buyText:'Buscar vuelo',how:'✈️ Vuelo',tip:'Llega a KLIA con 3 h · KLIA Ekspres desde KL Sentral'}
 ];
 const tcard=t=>`<div class="transfer-card" data-v59="1"><div class="transfer-top"><span>${t.icon}</span><div><small>${t.date} · CÓMO LLEGAR</small><b>${t.title}</b></div></div><p>${t.summary}</p><div class="transfer-route"><span>${t.from}</span><i>→</i><span>${t.to}</span></div><div class="transfer-actions"><a href="${t.maps}" target="_blank" rel="noopener">🧭 Cómo ir · Google Maps</a><a href="${t.buy}" target="_blank" rel="noopener">🎟️ ${t.buyText}</a>${t.buy2?`<a href="${t.buy2}" target="_blank" rel="noopener">🎟️ ${t.buyText2}</a>`:''}</div></div>`;
 
@@ -2101,9 +2116,10 @@ const tcard=t=>`<div class="transfer-card" data-v59="1"><div class="transfer-top
 const DAYS={
  kl:[['SÁB 7 NOV','Llegada y primer paseo','Llegas a las 14:40: Grab desde KLIA y check-in.|<b>Tarde:</b> KLCC y Petronas al atardecer.|<b>Noche:</b> Jalan Alor para cenar.'],['DOM 8 NOV','Batu Caves y centro histórico','<b>Mañana:</b> Batu Caves temprano, antes del calor.|<b>Tarde:</b> Merdeka Square, Masjid Jamek y Chinatown.|<b>Noche:</b> Bukit Bintang o rooftop.']],
  cam:[['LUN 9 NOV','Traslado y Tanah Rata','Bus desde KL por la mañana.|<b>Tarde:</b> paseo por Tanah Rata y cena de steamboat.'],['MAR 10 NOV','Té y Mossy Forest','<b>Mañana:</b> Mossy Forest (mejor con tour a primera hora).|<b>Tarde:</b> BOH Tea Centre con té y scones.|<b>Final:</b> granja de fresas o mercado.']],
- pen:[['MIÉ 11 NOV','Llegada y Armenian Street','Llegada por la tarde y check-in en George Town.|<b>Tarde:</b> Armenian Street y primeros murales.|<b>Noche:</b> hawkers en Chulia Street.'],['JUE 12 NOV','Street art y food crawl','<b>Mañana:</b> ruta de street art y Clan Jetties.|<b>Tarde:</b> casas heritage y café.|<b>Noche:</b> char kway teow, cendol y laksa.'],['VIE 13 NOV','Templos y Penang Hill','<b>Mañana:</b> Kek Lok Si.|<b>Tarde:</b> Penang Hill (funicular) para el atardecer.']],
- lan:[['SÁB 14 NOV','Llegada a la isla','Vuelo desde Penang y check-in.|<b>Tarde:</b> Pantai Cenang y sunset.'],['DOM 15 NOV','SkyCab y Sky Bridge','<b>Mañana:</b> SkyCab + Sky Bridge (con cielo despejado).|<b>Tarde:</b> piscina o playa.'],['LUN 16 NOV','Kilim Geoforest','<b>Día:</b> tour de manglares y Kilim Geoforest; elige operador responsable.'],['MAR 17 NOV','Island hopping o descanso','<b>Mañana:</b> islas cercanas o snorkel.|<b>Atardecer:</b> sunset cruise o chiringuito.']],
- mel:[['MIÉ 18 NOV','Llegada a Melaka','Vuelo + bus desde Langkawi; llegada tarde.|<b>Noche:</b> paseo por el río iluminado y cena Nyonya.'],['JUE 19 NOV','Dutch Square y A Famosa','<b>Mañana:</b> Dutch Square, Christ Church y A Famosa.|<b>Tarde:</b> St Paul’s Hill y Jonker Walk. El mercado nocturno suele ser de vie a dom; compruébalo.']],
+ pen:[['MIÉ 11 NOV','Llegada y Armenian Street','Llegada por la tarde y check-in en George Town.|<b>Tarde:</b> Armenian Street y primeros murales.|<b>Noche:</b> hawkers en Chulia Street.'],['JUE 12 NOV','Un día completo en Penang','<b>Mañana:</b> street art y Clan Jetties.|<b>Tarde:</b> Kek Lok Si o Penang Hill, mejor uno solo.|<b>Noche:</b> char kway teow, cendol y laksa.|Mañana vuelo a Langkawi: deja la maleta lista.']],
+ lan:[['VIE 13 NOV','Llegada a la isla','Vuelo desde Penang y check-in.|<b>Tarde:</b> Pantai Cenang y sunset.'],['SÁB 14 NOV','SkyCab y Sky Bridge','<b>Mañana:</b> SkyCab + Sky Bridge (con cielo despejado).|<b>Tarde:</b> piscina o playa.'],['DOM 15 NOV','Kilim Geoforest o islas','<b>Día:</b> manglares de Kilim o island hopping; elige un operador responsable.|Mañana ferry a Koh Lipe: prepara pasaporte, TDAC y baht.']],
+ lip:[['LUN 16 NOV','Ferry y llegada a Koh Lipe','<b>Mañana:</b> ferry desde Telaga Harbour (1–1,5 h) y entrada en Tailandia.|<b>Tarde:</b> check-in, Sunrise Beach y baño.|<b>Noche:</b> Walking Street para cenar.'],['MAR 17 NOV','Snorkel y atardecer','<b>Mañana:</b> tour de snorkel por Ko Adang / Ko Rawi.|<b>Tarde:</b> descanso en la playa.|<b>Atardecer:</b> Sunset Beach.|Mañana ferry de vuelta a Langkawi: pregunta horarios.']],
+ mel:[['MIÉ 18 NOV','Llegada a Melaka','Ferry, vuelo y bus; llegada probablemente tarde.|<b>Noche:</b> paseo por el río iluminado y cena Nyonya si da tiempo.'],['JUE 19 NOV','Dutch Square y A Famosa','<b>Mañana:</b> Dutch Square, Christ Church y A Famosa.|<b>Tarde:</b> St Paul’s Hill y Jonker Walk. El mercado nocturno suele ser de vie a dom; compruébalo.']],
  klb:[['VIE 20 NOV','Vuelta a Kuala Lumpur','Bus desde Melaka y check-in.|<b>Tarde:</b> compras o Central Market.|<b>Noche:</b> última cena fuerte en KL.'],['SÁB 21 NOV','Día colchón','Lavandería, maleta y compras de última hora.|Revisa el TDAC y los traslados del domingo.'],['DOM 22 NOV','Salida a Tailandia','Vuelo a Phuket o Krabi. Llega a KLIA con 3 h de margen.']]
 };
 const dayHTML=(k,label)=>`<details class="v59-days" data-v59="1"><summary>🗓️ Día a día · ${label}</summary>${DAYS[k].map(d=>`<div class="v59-day"><small>${d[0]}</small><h4>${d[1]}</h4>${d[2].split('|').map(x=>`<p>${x}</p>`).join('')}</div>`).join('')}</details>`;
@@ -2114,6 +2130,7 @@ const FOOD={
  cam:[['🍲','Steamboat','La cena clásica de las tierras altas.'],['☕','Té y scones','En BOH Tea Centre con vistas.'],['🍓','Fresas','Granjas y mercados con fruta local.']],
  pen:[['🍝','Char kway teow','El plato estrella de Penang; fideos salteados al wok.'],['🍜','Assam laksa','Sopa agridulce de pescado. Buena en Air Itam.'],['🍧','Cendol','Postre helado de coco, pandan y azúcar de palma.'],['🍛','Nasi kandar','Arroz con curries variados; probad Line Clear.']],
  lan:[['🦐','Marisco en Kuah','Pescado y marisco fresco frente al mar.'],['🛍️','Mercado nocturno','Cambia de zona según el día de la semana; pregunta en el hotel.'],['🥥','Fruta y cocos','Perfecto para el calor en la playa.']],
+ lip:[['🍤','Walking Street','El paseo de comida de la isla: marisco a la parrilla y puestos.'],['🥥','Fruta y batidos','Para el calor entre playa y playa.'],['🍛','Cocina tailandesa y de playa','Pad thai, curries y marisco con los pies casi en la arena.']],
  mel:[['🐔','Chicken rice balls','El plato más típico de Melaka.'],['🥣','Laksa y cocina Nyonya','Mezcla chino-malaya con mucho sabor.'],['🍢','Satay celup','Brochetas en olla de salsa; muy local.']]
 };
 const foodHTML=(k,p)=>{const note=(k==='kl'||k==='pen')?'La Guía Michelin Malasia cubre KL y Penang. Mira la selección vigente antes de ir.':'Pregunta a los locales por sus favoritos del día.';return `<div class="v59-card" data-v59="1"><h3>🍜 Ruta gastronómica</h3><p class="n">${note}</p>${FOOD[k].map(f=>`<div class="v59-row"><i>${f[0]}</i><div><b>${f[1]}</b><span>${f[2]}</span><br><a target="_blank" rel="noopener" href="${srch(f[1]+' '+p)}">📍 Buscar en Maps</a></div></div>`).join('')}</div>`};
@@ -2124,6 +2141,7 @@ const TIPS={
  cam:['Hace fresco por la noche: lleva sudadera.','Reserva Mossy Forest con tour para no perderte la niebla.','Las carreteras tienen curvas: si te mareas, toma algo antes.'],
  pen:['Muchos sitios de comida solo aceptan efectivo.','George Town se ve a pie; Grab para Kek Lok Si y Penang Hill.','Los murales son mejores a primera hora.'],
  lan:['Alquilar scooter es habitual, pero revisa el seguro.','Compra con antelación SkyCab si vas en fin de semana.','Langkawi tiene precios de libre impuestos en alcohol y chocolate.'],
+ lip:['Se paga en baht (THB). Lleva efectivo: los cajeros son pocos.','No hay coches; todo se hace andando o en barco.','Tailandia va 1 h por detrás de Malasia: ajusta alarmas y horarios del ferry.'],
  mel:['Todo el centro se ve a pie.','Fuera de Jonker, muchos locales cierran temprano.','El río de noche es lo más bonito.']
 };
 const tipsHTML=k=>`<div class="v59-card" data-v59="1"><h3>💡 Consejos locales</h3>${TIPS[k].map(t=>`<div class="v59-tip">• ${t}</div>`).join('')}</div>`;
@@ -2134,9 +2152,10 @@ const GAL={
  cam:['BOH Tea Plantation Cameron Highlands','Mossy Forest Cameron Highlands','Tanah Rata Cameron Highlands','Cameron Highlands strawberry'],
  pen:['George Town Penang street art','Clan Jetties Penang','Kek Lok Si Penang','Penang Hill'],
  lan:['Langkawi Sky Bridge','Pantai Cenang Langkawi','Kilim Geoforest Park Langkawi','Langkawi sunset'],
+ lip:['Koh Lipe Pattaya Beach','Koh Lipe Sunrise Beach','Koh Lipe Sunset Beach','Koh Lipe snorkeling'],
  mel:['Dutch Square Melaka','Jonker Street Melaka','A Famosa Melaka','Melaka River']
 };
-const NAMES={kl:'Kuala Lumpur',cam:'Cameron Highlands',pen:'Penang · George Town',lan:'Langkawi',mel:'Melaka'};
+const NAMES={kl:'Kuala Lumpur',cam:'Cameron Highlands',pen:'Penang · George Town',lan:'Langkawi',lip:'Koh Lipe',mel:'Melaka'};
 const galHTML=k=>`<h3 class="v59-h" style="font-family:'Iowan Old Style',Palatino,Georgia,serif;font-size:24px;margin:16px 4px 6px;color:#0f3b3f" data-v59="1">📸 No te pierdas esto</h3><div class="v59-gal" data-v59="1">${GAL[k].map((q,i)=>`<div><img data-v43q="${q} Malaysia" alt="${q}"><span>${q.replace(/ Malaysia| Kuala Lumpur| Langkawi| Penang| Melaka| Cameron Highlands/,'')}</span></div>`).join('')}</div>`;
 
 /* ── Detalle de destino ── */
@@ -2149,22 +2168,39 @@ function enhanceDetail(k){
  const lbl=k==='kl'?'Kuala Lumpur':p;
  if(intro)intro.insertAdjacentHTML('afterend',galHTML(k)+(k==='kl'?dayHTML('kl','llegada (7–8 nov)')+dayHTML('klb','vuelta y salida (20–22 nov)'):dayHTML(k,lbl)));
  else before(order,galHTML(k)+dayHTML(k==='kl'?'kl':k,lbl));
- const tm={cam:0,pen:1,lan:2,mel:3};
+ const tm={cam:0,pen:1,lan:2,lip:3,mel:4};
  if(order&&tm[k]!=null)order.insertAdjacentHTML('afterend',tcard(T[tm[k]]));
  before(wrap,foodHTML(k,p)+tipsHTML(k));
  if(typeof v43LoadCardPhotos==='function')setTimeout(()=>v43LoadCardPhotos(x),30);
 }
+/* ── Koh Lipe: página propia ── */
+const LIP={
+ see:[['Sunrise Beach','Playa de arena blanca y agua tranquila; muy bonita por la mañana.'],['Sunset Beach','La más tranquila para ver la puesta de sol.'],['Pattaya Beach','La playa principal, con ferris, restaurantes y ambiente.'],['Walking Street','Calle con restaurantes, tiendas y puestos; el centro de la vida de la isla.'],['Ko Adang y Ko Rawi','Islas cercanas para tour de snorkel y miradores.']],
+ do:[['Tour de snorkel','Suele incluir varias paradas en arrecifes de Ko Adang, Ko Rawi y alrededores. Compara operadores y precios.'],['Baño y playa','Sunrise Beach y Sunset Beach para nadar y descansar.'],['Paseo por la isla','Se recorre andando: no hay coches.']],
+ eat:[['Walking Street','Marisco a la parrilla, pad thai y puestos al caer la tarde.'],['Restaurantes de playa','Cena con los pies cerca de la arena en Sunrise o Pattaya Beach.']],
+ stay:[['Pattaya Beach','Vida y servicios a mano; la zona con más ambiente y más ruido.'],['Sunrise Beach','Más tranquila y con mejor playa para nadar.'],['Sunset Beach','La más relajada, algo más lejos del centro.']],
+ night:[['Walking Street','Bares y música tranquila; ambiente más relajado que en otras islas.'],['Pattaya Beach','Copas con vistas al mar.']]
+};
+function renderLip(){
+ const x=document.getElementById('my38DiscoverDetail'),h=document.getElementById('my38DiscoverHome');if(!x)return;
+ if(h)h.style.display='none';x.style.display='block';x.dataset.v59k='lip';
+ const p='Koh Lipe Thailand',list=(a,kind)=>a.map(i=>`<div class="v59-row"><i>${kind}</i><div><b>${i[0]}</b><span>${i[1]}</span><br><a target="_blank" rel="noopener" href="${srch(i[0]+' '+p)}">📍 Google Maps</a></div></div>`).join('');
+ const acc=(ic,t,html)=>typeof v43Accordion==='function'?v43Accordion(ic,t,html):`<div class="v59-card"><h3>${ic} ${t}</h3>${html}</div>`;
+ x.innerHTML=`<button class="my38-back" onclick="my38CloseDest()">← Destinos</button><div class="my39-detailhero" style="background-image:url('')"><div class="txt"><h1>Koh Lipe</h1><p>2 noches · isla tailandesa · snorkel</p></div></div><p class="my39-intro">${MY39_DESC.lip}</p><div class="v59-card" data-v59="1"><h3>🇹🇭 Aviso: es Tailandia</h3><p class="n">Koh Lipe es tailandesa aunque salgáis de Malasia. Hay que hacer inmigración en el muelle, rellenar el TDAC y pagar en baht (THB). Tailandia va 1 h por detrás de Malasia.</p></div>${galHTML('lip')}${dayHTML('lip','Koh Lipe')}${typeof my39Order==='function'?my39Order('lip'):''}${tcard(T[3])}${foodHTML('lip','Koh Lipe')}${tipsHTML('lip')}<div class="v43-wrap"><h3>🧭 Explora Koh Lipe</h3>${acc('⭐','Ver',list(LIP.see,'⭐'))}${acc('✨','Hacer',list(LIP.do,'✨'))}${acc('🍜','Comer',list(LIP.eat,'🍜'))}${acc('🏨','Dormir',list(LIP.stay,'🏨'))}${acc('🍸','Noche',list(LIP.night,'🍸'))}</div>`;
+ if(typeof v43LoadCardPhotos==='function')setTimeout(()=>v43LoadCardPhotos(x),30);
+ const m=document.getElementById('my37');if(m)m.scrollTo(0,0);
+}
 const _prevDest=window.my38Dest;
-window.my38Dest=function(k){_prevDest.apply(this,arguments);[250,600,1200].forEach(ms=>setTimeout(()=>enhanceDetail(k),ms))};
+window.my38Dest=function(k){if(k==='lip'){renderLip();return}_prevDest.apply(this,arguments);[250,600,1200].forEach(ms=>setTimeout(()=>enhanceDetail(k),ms))};
 
 /* ── Ruta de Malasia: traslados con compra + día a día ── */
 function enhanceRoute(){
  const sec=document.querySelector('#my37 [data-my37="1"]');if(!sec||sec.dataset.v59done&&sec.querySelector('.transfer-card'))return;
  const note=sec.querySelector('.my37-note');if(note)note.textContent='🧭 Ruta orientativa hasta cerrarla los cuatro. Cada traslado trae enlaces para ver y comprar billetes.';
  sec.querySelectorAll('.my39-transfer').forEach((el,i)=>{if(T[i])el.outerHTML=tcard(T[i])});
- const stages=sec.querySelectorAll('.my39-photo'),keys=['kl','cam','pen','lan','mel','klb'],labels=['Kuala Lumpur','Cameron Highlands','Penang','Langkawi','Melaka','Kuala Lumpur'];
+ const stages=sec.querySelectorAll('.my39-photo'),keys=['kl','cam','pen','lan','lip','mel','klb'],labels=['Kuala Lumpur','Cameron Highlands','Penang','Langkawi','Koh Lipe','Melaka','Kuala Lumpur'];
  stages.forEach((st,i)=>{if(st.nextElementSibling?.classList.contains('v59-days'))return;const ord=st.nextElementSibling;if(ord&&ord.classList.contains('my39-order'))ord.insertAdjacentHTML('afterend',dayHTML(keys[i],labels[i]));else st.insertAdjacentHTML('afterend',dayHTML(keys[i],labels[i]))});
- if(!sec.querySelector('[data-v59-last]')){sec.insertAdjacentHTML('beforeend',`<div data-v59-last="1">${tcard(T[5])}</div>`)}
+ if(!sec.querySelector('[data-v59-last]')){sec.insertAdjacentHTML('beforeend',`<div data-v59-last="1">${tcard(T[6])}</div>`)}
  sec.dataset.v59done=1;
 }
 function runRoute(){try{enhanceRoute()}catch(e){}}
@@ -2173,7 +2209,7 @@ setTimeout(runRoute,600);
 
 /* ── Próximo traslado: opciones de Malasia ── */
 try{
- const add={'my-kl-cam':['Kuala Lumpur → Cameron Highlands','🚌 Bus','TBS → Tanah Rata'],'my-cam-pen':['Cameron Highlands → Penang','🚌 Bus','Tanah Rata → George Town'],'my-pen-lan':['Penang → Langkawi','✈️ Vuelo o ⛴️ ferry','PEN → LGK'],'my-lan-mel':['Langkawi → Melaka','✈️ Vuelo + 🚌 bus','LGK → KUL → Melaka'],'my-mel-kl':['Melaka → Kuala Lumpur','🚌 Bus','Melaka Sentral → TBS'],'my-kl-th':['Kuala Lumpur → Tailandia','✈️ Vuelo','KUL → HKT / KBV']};
+ const add={'my-kl-cam':['Kuala Lumpur → Cameron Highlands','🚌 Bus','TBS → Tanah Rata'],'my-cam-pen':['Cameron Highlands → Penang','🚌 Bus','Tanah Rata → George Town'],'my-pen-lan':['Penang → Langkawi','✈️ Vuelo o ⛴️ ferry','PEN → LGK'],'my-lan-lip':['Langkawi → Koh Lipe','⛴️ Ferry','Telaga Harbour → Pattaya Beach'],'my-lip-mel':['Koh Lipe → Melaka','⛴️ Ferry + ✈️ vuelo + 🚌 bus','Koh Lipe → Langkawi → KUL → Melaka'],'my-mel-kl':['Melaka → Kuala Lumpur','🚌 Bus','Melaka Sentral → TBS'],'my-kl-th':['Kuala Lumpur → Tailandia','✈️ Vuelo','KUL → HKT / KBV']};
  T.forEach(t=>{const a=add[t.id];TRANSFERS[t.id]=[a[0],a[1],a[2],t.tip]});
  document.addEventListener('DOMContentLoaded',()=>{const sel=document.getElementById('transferPick');if(!sel||sel.querySelector('optgroup'))return;const th=[...sel.options].map(o=>o.outerHTML).join('');sel.innerHTML='<optgroup label="Malasia">'+T.map(t=>`<option value="${t.id}">${t.title}</option>`).join('')+'</optgroup><optgroup label="Tailandia">'+th+'</optgroup>'});
  const _rt=window.renderTransfer;

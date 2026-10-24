@@ -1946,7 +1946,7 @@ function mount(){
   const hero=$('#ruta .hero');
   if(hero&&!$('#v57hoy')){const c=document.createElement('div');c.id='v57hoy';c.className='card v57-hoy';hero.insertAdjacentElement('afterend',c)}
   // Cabecera de versión
-  document.querySelectorAll('#ruta header .ey').forEach(e=>{e.textContent=e.textContent.replace(/V\d+/,'V60')});
+  document.querySelectorAll('#ruta header .ey').forEach(e=>{e.textContent=e.textContent.replace(/V\d+/,'V61')});
   // Mover las subpáginas nuevas dentro de «Más»
   const mas=$('#mas');
   ['more-tricount','more-taxi','more-tramites'].forEach(id=>{const e=document.getElementById(id);if(e&&mas&&e.parentNode!==mas)mas.appendChild(e)});
@@ -2156,7 +2156,8 @@ const GAL={
  mel:['Dutch Square Melaka','Jonker Street Melaka','A Famosa Melaka','Melaka River']
 };
 const NAMES={kl:'Kuala Lumpur',cam:'Cameron Highlands',pen:'Penang · George Town',lan:'Langkawi',lip:'Koh Lipe',mel:'Melaka'};
-const galHTML=k=>`<h3 class="v59-h" style="font-family:'Iowan Old Style',Palatino,Georgia,serif;font-size:24px;margin:16px 4px 6px;color:#0f3b3f" data-v59="1">📸 No te pierdas esto</h3><div class="v59-gal" data-v59="1">${GAL[k].map((q,i)=>`<div><img data-v43q="${q} Malaysia" alt="${q}"><span>${q.replace(/ Malaysia| Kuala Lumpur| Langkawi| Penang| Melaka| Cameron Highlands/,'')}</span></div>`).join('')}</div>`;
+const LIPQ=['Pattaya Beach Ko Lipe|Ko Lipe Pattaya Beach|Ko Lipe beach longtail|Ko Lipe','Sunrise Beach Ko Lipe|Ko Lipe sunrise beach|Ko Lipe beach','Sunset Beach Ko Lipe|Ko Lipe sunset|Ko Lipe island','Ko Adang snorkeling|Ko Lipe coral reef|Ko Rawi|Tarutao National Park sea'];
+const galHTML=k=>`<h3 class="v59-h" style="font-family:'Iowan Old Style',Palatino,Georgia,serif;font-size:24px;margin:16px 4px 6px;color:#0f3b3f" data-v59="1">📸 No te pierdas esto</h3><div class="v59-gal" data-v59="1">${GAL[k].map((q,i)=>`<div><img ${k==='lip'?`data-v59q="${LIPQ[i]||LIPQ[0]}"`:`data-v43q="${q} Malaysia"`} alt="${q}"><span>${q.replace(/ Malaysia| Kuala Lumpur| Langkawi| Penang| Melaka| Cameron Highlands/,'')}</span></div>`).join('')}</div>`;
 
 /* ── Detalle de destino ── */
 function enhanceDetail(k){
@@ -2173,6 +2174,43 @@ function enhanceDetail(k){
  before(wrap,foodHTML(k,p)+tipsHTML(k));
  if(typeof v43LoadCardPhotos==='function')setTimeout(()=>v43LoadCardPhotos(x),30);
 }
+
+/* ── Fotos reales de Koh Lipe (Wikimedia Commons, con caché) ── */
+const LIPHERO='Ko Lipe beach|Koh Lipe Thailand|Ko Lipe Satun|Sunrise Beach Ko Lipe|Tarutao Ko Lipe';
+const usedLip=new Set();
+const okTitle=t=>!/map|logo|flag|diagram|chart|poster|plan|route|locator|coat|icon|stamp|sign/i.test(t||'');
+async function lipCands(q){
+ const key='asia26lipq:'+q;let c=null;
+ try{const j=JSON.parse(localStorage.getItem(key)||'null');if(j&&Date.now()-j.t<12096e5&&j.u&&j.u.length)return j.u}catch(e){}
+ try{
+  const u='https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch='+encodeURIComponent(q)+'&gsrnamespace=6&gsrlimit=15&prop=imageinfo&iiprop=url|size&iiurlwidth=1100&format=json&origin=*';
+  const r=await fetch(u);if(!r.ok)return[];const j=await r.json();
+  c=Object.values(j.query&&j.query.pages||{}).map(p=>{const i=p.imageinfo&&p.imageinfo[0];return i?{u:i.thumburl||i.url,w:i.width,h:i.height,t:p.title}:null}).filter(x=>x&&x.u&&okTitle(x.t)&&/\.(jpe?g|png|webp)(\?|$)/i.test(x.u)&&x.w>=900&&x.w>x.h*1.15).sort((a,b)=>b.w-a.w).map(x=>x.u);
+  try{localStorage.setItem(key,JSON.stringify({t:Date.now(),u:c}))}catch(e){}
+  return c;
+ }catch(e){return[]}
+}
+const loads=src=>new Promise(res=>{const t=new Image();let d=0;const f=v=>{if(!d){d=1;res(v)}};t.onload=()=>f(t.naturalWidth>400);t.onerror=()=>f(false);t.src=src;setTimeout(()=>f(false),6000)});
+async function lipPick(qs,unique,loc){
+ if(loc&&await loads(loc))return loc;
+ for(const q of qs.split('|')){
+  const c=await lipCands(q);
+  for(const src of c){if(unique){if(usedLip.has(src))continue;usedLip.add(src)}if(await loads(src))return src;if(unique)usedLip.delete(src)}
+ }
+ return '';
+}
+function lipArt(){return window.V58ART?V58ART.url('lip'):''}
+async function lipFill(el,qs,unique,loc){
+ const src=await lipPick(qs,unique,loc);if(!src)return;
+ if(el.tagName==='IMG'){el.src=src;el.style.display='block'}
+ else{el.style.backgroundImage="url('"+src+"')"+(lipArt()?','+lipArt():'');el.style.backgroundSize='cover';el.style.backgroundPosition='center'}
+}
+function lipRun(){
+ document.querySelectorAll('img[data-v59q]').forEach((i,n)=>{if(i.dataset.v59d)return;i.dataset.v59d=1;lipFill(i,i.dataset.v59q,true,'koh-lipe-'+(n+1)+'.jpg')});
+ document.querySelectorAll('.my39-detailhero,.my39-photo,.my37-place,.my39-mapcard').forEach(e=>{if(e.dataset.v59l)return;if(!/Koh Lipe/.test(e.textContent))return;if(e.closest('.v59-gal'))return;e.dataset.v59l=1;lipFill(e,LIPHERO,false,'koh-lipe-hero.jpg')});
+}
+document.addEventListener('DOMContentLoaded',()=>{setInterval(lipRun,1500);setTimeout(lipRun,500)});
+
 /* ── Koh Lipe: página propia ── */
 const LIP={
  see:[['Sunrise Beach','Playa de arena blanca y agua tranquila; muy bonita por la mañana.'],['Sunset Beach','La más tranquila para ver la puesta de sol.'],['Pattaya Beach','La playa principal, con ferris, restaurantes y ambiente.'],['Walking Street','Calle con restaurantes, tiendas y puestos; el centro de la vida de la isla.'],['Ko Adang y Ko Rawi','Islas cercanas para tour de snorkel y miradores.']],

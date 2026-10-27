@@ -65,6 +65,9 @@ seed=43;A.mel=()=>sky([[0,'#2b3a8c'],[.5,'#e07a7a'],[.8,'#ffd29a'],[1,'#fff0cf']
 
 /* Koh Lipe · laguna turquesa, arena blanca y longtail */
 seed=47;A.lip=()=>sky([[0,'#2f9bff'],[.45,'#8fe0ff'],[.75,'#fff1cf']])+sun(310,120,26,'#fffbe0','#fff0a8')+'<g fill="#fff" opacity=".9"><ellipse cx="90" cy="100" rx="48" ry="12"/><ellipse cx="124" cy="92" rx="30" ry="11"/><ellipse cx="250" cy="170" rx="40" ry="9"/></g>'+mount(285,[[70,10],[140,26],[230,14],[330,30]],'#3b9a6a')+sea(285,'#58f0e0','#0a8fbf')+waves(285,'#ffffff',6,.3)+'<path d="M0 396Q120 360 240 390T400 372V500H0Z" fill="#fbefd0"/><path d="M0 418Q140 392 260 414T400 402V500H0Z" fill="#f4e0b2" opacity=".85"/>'+boat(120,350,1.1,'#7d4a2a','#ff5f7a')+boat(300,330,.7,'#6b3d22','#ffb347')+palm(60,430,190,22,'#1f5a43')+palm(345,440,150,-24,'#1f5a43');
+
+/* Krabi · acantilados de Railay al atardecer */
+seed=53;A.krb=()=>sky([[0,'#3b3a8f'],[.35,'#c9567a'],[.65,'#ff9a5c'],[.85,'#ffe0a0']])+stars(18,120)+sun(250,265,26,'#fff3cf','#ffb36b')+karst(70,330,170,230,'#3a2a52')+karst(330,332,200,260,'#352650')+karst(190,336,70,90,'#4a3360')+sea(330,'#ff9d6c','#3a2f7a')+glitter(250,338,'#ffe2a8',8)+waves(330,'#ffffff',5,.14)+'<path d="M0 440Q130 410 250 436T400 418V500H0Z" fill="#e9c58f" opacity=".95"/>'+boat(150,392,1.2,'#1f1640','#ffb347')+boat(300,420,.8,'#150f33','#ff6b8b')+palm(40,452,170,20,'#1a1238')+palm(360,458,140,-22,'#1a1238');
 A.gate=()=>A.tao();
 window.V58ART={keys:Object.keys(A),svg:k=>A[k]?wrap(A[k]()):'',url:k=>A[k]?uri(A[k]()):''};
 })();

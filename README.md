@@ -1,8 +1,7 @@
-Asia 2026 · V61 FOTOS KOH LIPE
+Asia 2026 · V62 KRABI Y RESERVAS
 
-Ruta de Malasia actualizada: KL 7–9 · Cameron 9–11 · Penang 11–13 (2 noches) · Langkawi 13–16 (3) · Koh Lipe 16–18 (2) · Melaka 18–20 · KL 20–22.
-Koh Lipe añadido como destino (página propia, ilustración, traslados, taxi, clima, mapa del Más y Gantt).
-Trámites: TDAC al entrar en Koh Lipe (16 nov), MDAC al volver a Malasia (18 nov) y TDAC otra vez el 22 nov.
-Incluye V57-V59: Hoy, taxi, Tricount, trámites, offline, diseño, Malasia con traslados/día a día.
-Koh Lipe: fotos reales de Wikimedia (con caché). Si subes koh-lipe-hero.jpg y koh-lipe-1.jpg … koh-lipe-4.jpg al repo, se usan primero.
+Llegada a Tailandia el 21 nov: vuelo KUL → Krabi (AirAsia, 10:50–11:15) y noche en Ao Nang. KL pasa a 1 noche (20–21).
+Krabi añadido en todo: itinerario, traslados, destino, mapas del Más, Gantt, Hoy, clima y trámites (TDAC el 21).
+Hoteles reservados en Reservas, en cada día del itinerario y en cada destino: Alanta Aonang, Uphill Cottage, The Pier, Angkana Bungalows, Koh Tao Royal Resort y Big Fish Resort.
+Incluye V57-V61.
 Archivos a subir: index.html, v58-art.js, sw.js, README.md

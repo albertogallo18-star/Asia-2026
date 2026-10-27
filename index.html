@@ -475,8 +475,7 @@ function forceAyutthayaFullWidth(){
  <a class="zone-card" href="https://www.google.com/maps/search/?api=1&query=Phi+Phi+Islands" target="_blank"><div class="zbg z-phi"></div><div class="ztxt"><b>Phi Phi</b><small>22 – 24 nov</small></div><i>›</i></a>
  <a class="zone-card" href="https://www.google.com/maps/search/?api=1&query=Koh+Phangan" target="_blank"><div class="zbg z-pha"></div><div class="ztxt"><b>Koh Phangan</b><small>24 – 27 nov</small></div><i>›</i></a>
  <a class="zone-card" href="https://www.google.com/maps/search/?api=1&query=Koh+Tao" target="_blank"><div class="zbg z-tao"></div><div class="ztxt"><b>Koh Tao</b><small>27 – 30 nov</small></div><i>›</i></a>
- <a class="zone-card" href="https://www.google.com/maps/search/?api=1&query=Chiang+Mai" target="_blank"><div class="zbg z-cm"></div><div class="ztxt"><b>Chiang Mai</b><small>30 nov – 3 dic</small></div><i>›</i></a>
- <a class="zone-card wide" href="https://www.google.com/maps/search/?api=1&query=Chiang+Rai" target="_blank"><div class="zbg z-cr"></div><div class="ztxt"><b>Chiang Rai</b><small>3 – 5 dic</small></div><i>›</i></a>
+ <a class="zone-card" href="https://www.google.com/maps/search/?api=1&query=Chiang+Mai" target="_blank"><div class="zbg z-cm"></div><div class="ztxt"><b>Chiang Mai</b><small>1 – 5 dic</small></div><i>›</i></a>
  <a class="zone-card wide" href="https://www.google.com/maps/search/?api=1&query=Bangkok" target="_blank"><div class="zbg z-bkk"></div><div class="ztxt"><b>Bangkok</b><small>5 – 8 dic</small></div><i>›</i></a>
 </div>
 </div>
@@ -511,8 +510,8 @@ function forceAyutthayaFullWidth(){
 
 <div id="more-smart" class="subpage"><div class="panel-head"><button class="back" onclick="closeMore()">←</button><h2>Viaje inteligente</h2></div><div id="smartDashboard"></div></div><div id="more-checklist" class="subpage"><div class="panel-head"><button class="back" onclick="closeMore()">←</button><h2>Checklist</h2></div><div class="card" id="checkList"></div><div class="card"><div class="field"><label>Añadir algo</label><input id="newCheck" placeholder="Ej. adaptador"></div><button class="primary" onclick="addCheck()">＋ Añadir</button></div></div>
 
-<div id="more-ahora" class="subpage"><div class="panel-head"><button class="back" onclick="closeMore()">←</button><h2>📍 ¿Qué hago ahora?</h2></div><div class="card"><p class="muted">Elige dónde estás y cómo te apetece aprovechar las próximas horas.</p><div class="field"><label>Estoy en</label><select id="nowPlace"><option>Kuala Lumpur</option><option>Cameron Highlands</option><option>Penang</option><option>Langkawi</option><option>Melaka</option><option>Phi Phi</option><option>Koh Phangan</option><option>Koh Tao</option><option>Chiang Mai</option><option>Chiang Rai</option><option>Bangkok</option><option>Ayutthaya</option></select></div><div class="chips nowchips"><button class="chip active" onclick="quickPlan('2h',this)">⏱️ Tengo 2h</button><button class="chip" onclick="quickPlan('rain',this)">🌧️ Llueve</button><button class="chip" onclick="quickPlan('food',this)">🍜 Comer</button><button class="chip" onclick="quickPlan('drink',this)">🍸 Tomar algo</button><button class="chip" onclick="quickPlan('party',this)">🪩 Fiesta</button><button class="chip" onclick="quickPlan('chill',this)">😴 Estoy reventado</button></div></div><div class="card" id="quickPlanBox"><b>Selecciona un plan 👆</b></div></div>
-<div id="more-manana" class="subpage"><div class="panel-head"><button class="back" onclick="closeMore()">←</button><h2>🎒 Próximo traslado</h2></div><div class="card"><div class="field"><label>Trayecto</label><select id="transferPick" onchange="renderTransfer()"><option value="kbv-pp">Krabi → Phi Phi</option><option value="pp-kp">Phi Phi → Koh Phangan</option><option value="kp-kt">Koh Phangan → Koh Tao</option><option value="kt-cm">Koh Tao → Chiang Mai</option><option value="cm-cr">Chiang Mai → Chiang Rai</option><option value="cr-bkk">Chiang Rai → Bangkok</option><option value="bkk-ay">Bangkok ↔ Ayutthaya</option></select></div></div><div id="transferBox"></div></div>
+<div id="more-ahora" class="subpage"><div class="panel-head"><button class="back" onclick="closeMore()">←</button><h2>📍 ¿Qué hago ahora?</h2></div><div class="card"><p class="muted">Elige dónde estás y cómo te apetece aprovechar las próximas horas.</p><div class="field"><label>Estoy en</label><select id="nowPlace"><option>Kuala Lumpur</option><option>Cameron Highlands</option><option>Penang</option><option>Langkawi</option><option>Koh Lipe</option><option>Melaka</option><option>Krabi</option><option>Phi Phi</option><option>Koh Phangan</option><option>Koh Tao</option><option>Chiang Mai</option><option>Bangkok</option><option>Ayutthaya</option></select></div><div class="chips nowchips"><button class="chip active" onclick="quickPlan('2h',this)">⏱️ Tengo 2h</button><button class="chip" onclick="quickPlan('rain',this)">🌧️ Llueve</button><button class="chip" onclick="quickPlan('food',this)">🍜 Comer</button><button class="chip" onclick="quickPlan('drink',this)">🍸 Tomar algo</button><button class="chip" onclick="quickPlan('party',this)">🪩 Fiesta</button><button class="chip" onclick="quickPlan('chill',this)">😴 Estoy reventado</button></div></div><div class="card" id="quickPlanBox"><b>Selecciona un plan 👆</b></div></div>
+<div id="more-manana" class="subpage"><div class="panel-head"><button class="back" onclick="closeMore()">←</button><h2>🎒 Próximo traslado</h2></div><div class="card"><div class="field"><label>Trayecto</label><select id="transferPick" onchange="renderTransfer()"><option value="kbv-pp">Krabi → Phi Phi</option><option value="pp-kp">Phi Phi → Koh Phangan</option><option value="kp-kt">Koh Phangan → Koh Tao</option><option value="kt-cm">Koh Tao → Chiang Mai</option><option value="cm-bkk">Chiang Mai → Bangkok</option><option value="bkk-ay">Bangkok ↔ Ayutthaya</option></select></div></div><div id="transferBox"></div></div>
 <div id="more-diario" class="subpage"><div class="panel-head"><button class="back" onclick="closeMore()">←</button><h2>🏆 Pasaporte del viaje</h2></div><div class="card"><p class="muted">Marca destinos, puntúalos y deja una frase. Se guarda en tu iPhone.</p><div id="tripPassport"></div></div><div class="card"><b>✨ Asia 2026 en números</b><div id="tripStats" style="margin-top:12px"></div></div></div>
 <div id="more-emergencias" class="subpage"><div class="panel-head"><button class="back" onclick="closeMore()">←</button><h2>🆘 Emergencias</h2></div><div class="card"><div class="inforow"><b>🇹🇭 Tourist Police Thailand</b><span>1155</span></div><div class="inforow"><b>🇹🇭 Emergencias médicas</b><span>1669</span></div><div class="inforow"><b>🇲🇾 Emergencias</b><span>999</span></div><div class="inforow"><b>Seguro de viaje</b><span class="muted">Añade aquí tu póliza/teléfono cuando lo tengas.</span></div></div><div class="card"><b>🗣️ Enseñar en pantalla</b><button class="primary" onclick="emergencyPhrase('doctor')">Necesito un médico</button><button class="primary" onclick="emergencyPhrase('passport')">He perdido mi pasaporte</button><button class="primary" onclick="emergencyPhrase('ambulance')">Llame a una ambulancia</button><div id="emergencyPhraseBox" style="margin-top:14px"></div></div><div class="card"><b>📴 Preparado para offline</b><p class="muted">Guarda aquí póliza, contacto de emergencia y copias de documentos antes de salir. En una emergencia real, confirma números/localización si tienes conexión.</p></div></div>
 
@@ -548,12 +547,12 @@ const D=[
 {date:"27 NOV",place:"Koh Tao",title:"Koh Phangan → Koh Tao",desc:"Ferry y llegada",am:"Ferry",pm:"Sairee Beach · check-in",night:"Sunset y cena",photos:[["Sairee Beach Koh Tao","Sairee Beach","🌅 Sunset"]]},
 {date:"28 NOV",place:"Koh Tao",title:"Mar de Koh Tao",desc:"Snorkel / buceo recreativo",am:"🤿 Buceo o snorkel",pm:"Calas · playa",night:"Sairee",photos:[["Koh Tao snorkeling Thailand","Koh Tao","🤿 Fondo marino"]]},
 {date:"29 NOV",place:"Koh Tao",title:"Koh Nang Yuan",desc:"Islote, snorkel y miradores",am:"⭐ Koh Nang Yuan",pm:"Viewpoint · snorkel",night:"Última noche en Koh Tao",photos:[["Koh Nang Yuan Thailand","Koh Nang Yuan","⭐ IMPRESCINDIBLE"]]},
-{date:"30 NOV",place:"Chiang Mai",title:"Koh Tao → Chiang Mai",desc:"Koh Samui + vuelo · logística por cerrar",am:"Barco hacia Samui",pm:"Vuelo al norte",night:"Primer paseo Chiang Mai",photos:[["Chiang Mai old city temple","Chiang Mai","🛕 Norte de Tailandia"]]},
-{date:"1 DIC",place:"Chiang Mai",title:"Chiang Mai · ruta Michelin",desc:"Old City + ruta gastronómica por locales de la Guía Michelin",am:"⭐ Wat Chedi Luang · Wat Phra Singh · Khao Soi Mae Sai",pm:"Old City · Nam Ngiao Yong · cafés",night:"🍜 Kiti Panit / Huen Muan Jai · cocina Lanna",photos:[["Wat Chedi Luang Chiang Mai","Wat Chedi Luang","⭐ Templo histórico"],["Wat Phra Singh Chiang Mai","Wat Phra Singh","🛕 Lanna"]]},
+{date:"30 NOV",place:"Chiang Mai",title:"Koh Tao → Chiang Mai",desc:"Día de viaje: ferry, vuelo y tren cama",am:"⛴️ Ferry 09:15 · Mae Haad → Samui Airport",pm:"✈️ Bangkok Airways 14:15–15:50 · USM → BKK",night:"🚆 Tren cama 20:22 · Don Mueang → Chiang Mai",photos:[["Chiang Mai old city temple","Chiang Mai","🛕 Norte de Tailandia"]]},
+{date:"1 DIC",place:"Chiang Mai",title:"Chiang Mai · ruta Michelin",desc:"Llegada en tren cama + Old City y ruta gastronómica por locales de la Guía Michelin",am:"🚆 Llegada del tren cama · maletas al hotel · ⭐ Wat Chedi Luang · Wat Phra Singh · Khao Soi Mae Sai",pm:"Old City · Nam Ngiao Yong · cafés",night:"🍜 Kiti Panit / Huen Muan Jai · cocina Lanna",photos:[["Wat Chedi Luang Chiang Mai","Wat Chedi Luang","⭐ Templo histórico"],["Wat Phra Singh Chiang Mai","Wat Phra Singh","🛕 Lanna"]]},
 {date:"2 DIC",place:"Chiang Mai",title:"Elefantes + Doi Suthep",desc:"Elephant Nature Park · experiencia responsable + templo de montaña",am:"🐘 Elephant Nature Park · programa de observación (reservar)",pm:"⭐ Wat Phra That Doi Suthep · regreso a Chiang Mai",night:"Mercado · cena · descanso",photos:[["Doi Suthep Chiang Mai","Doi Suthep","⭐ IMPRESCINDIBLE"]]},
-{date:"3 DIC",place:"Chiang Rai",title:"Chiang Mai → Chiang Rai",desc:"Los templos más fotogénicos",am:"Traslado",pm:"⭐ White Temple · Blue Temple",night:"Clock Tower · Night Bazaar",photos:[["Wat Rong Khun Chiang Rai","White Temple","⭐ IMPRESCINDIBLE"],["Wat Rong Suea Ten Chiang Rai","Blue Temple","📸 IMPRESCINDIBLE"]]},
-{date:"4 DIC",place:"Chiang Rai",title:"Triángulo de Oro",desc:"Mekong y norte extremo",am:"Golden Triangle",pm:"Mekong · regreso",night:"Chiang Rai",photos:[["Golden Triangle Thailand Mekong","Golden Triangle","⭐ Mekong"]]},
-{date:"5 DIC",place:"Bangkok",title:"Chiang Rai → Bangkok",desc:"Vuelo y primera toma de contacto",am:"Vuelo",pm:"Check-in · paseo",night:"Yaowarat / rooftop",photos:[["Bangkok Wat Arun","Bangkok","🌃 Primera noche"]]},
+{date:"3 DIC",place:"Chiang Mai",exc:true,title:"Excursión a Chiang Rai",desc:"Tour de un día desde Chiang Mai · ya reservado",am:"♨️ Termas de Mae Kachan · 🏘️ aldea Karen (mujeres jirafa)",pm:"⚪ Templo Blanco · 🔵 Templo Azul · 🙏 Wat Huay Pla Kang",night:"Regreso a Chiang Mai · cena",photos:[["Wat Rong Khun Chiang Rai","White Temple","⭐ IMPRESCINDIBLE"],["Wat Rong Suea Ten Chiang Rai","Blue Temple","📸 IMPRESCINDIBLE"],["Wat Huay Pla Kang Chiang Rai","Wat Huay Pla Kang","🙏 Guan Yin"]]},
+{date:"4 DIC",place:"Chiang Mai",title:"Día libre en Chiang Mai",desc:"Último día en el norte · sin reservas, a tu ritmo",am:"☕ Desayuno tranquilo · cafés de Nimman",pm:"💆 Masaje · mercados y compras",night:"🍜 Cena de despedida · Night Bazaar",photos:[["Chiang Mai Night Bazaar","Night Bazaar","🌙 Mercado nocturno"]]},
+{date:"5 DIC",place:"Bangkok",title:"Chiang Mai → Bangkok",desc:"Traslado (aún por reservar) y primera toma de contacto",am:"Traslado a Bangkok · vuelo o tren",pm:"Check-in · paseo",night:"Yaowarat / rooftop",photos:[["Bangkok Wat Arun","Bangkok","🌃 Primera noche"]]},
 {date:"6 DIC",place:"Ayutthaya",title:"Ayutthaya",desc:"Excursión histórica desde Bangkok",am:"⭐ Historical Park",pm:"Wat Mahathat · Wat Chaiwatthanaram",night:"Regreso Bangkok",photos:[["Wat Mahathat Ayutthaya","Wat Mahathat","⭐ IMPRESCINDIBLE"],["Wat Chaiwatthanaram Ayutthaya","Wat Chaiwatthanaram","📸 Atardecer"]]},
 {date:"7 DIC",place:"Bangkok",title:"Bangkok",desc:"El gran día de la capital",am:"⭐ Grand Palace · Wat Pho",pm:"⭐ Wat Arun · Chao Phraya",night:"Yaowarat · rooftop",photos:[["Wat Arun Bangkok","Wat Arun","⭐ IMPRESCINDIBLE"],["Wat Pho Bangkok","Wat Pho","⭐ IMPRESCINDIBLE"],["Grand Palace Bangkok","Grand Palace","⭐ IMPRESCINDIBLE"],["Yaowarat Bangkok","Yaowarat","🍜 Noche"]]},
 {date:"8 DIC",place:"Bangkok",title:"Bangkok → Madrid",desc:"Regreso a casa",am:"Últimas horas",pm:"Aeropuerto",night:"✈️ Madrid",photos:[]}
@@ -619,7 +618,7 @@ loadHeroScenes();
 
 function gallery(items,id){if(!items.length)return'';setTimeout(()=>items.forEach((x,i)=>{let im=document.getElementById(id+'-'+i);if(im)commonsImage(x[0],im)}),30);return `<div class="photo-strip">${items.map((x,i)=>`<div class="photo placeholder">📸<img id="${id}-${i}" alt="${x[1]}" loading="lazy"><div class="cap"><b>${x[1]}</b><small>${x[2]}</small></div></div>`).join('')}</div>`}
 
-const LOGICAL_ROUTE={"21 NOV": ["✈️ Vuelo KUL → KBV", "🚐 Taxi/van a Ao Nang", "🏖️ Playa de Ao Nang", "🛶 Railay en longtail si da tiempo", "🌅 Sunset y cena"], "23 NOV": ["🌅 Temprano · Longtail hacia Maya Bay", "💎 Pileh Lagoon", "🤿 Snorkel / Viking Cave", "🏖️ Monkey Beach si encaja con mar y tiempo", "🌇 Phi Phi Viewpoint para terminar"], "25 NOV": ["🏖️ Mañana tranquila en Haad Rin / playa", "🍜 Comer y descansar", "🌅 Sunset", "🎉 Noche · Full Moon Party en Haad Rin"], "28 NOV": ["🌊 Mañana · Koh Nang Yuan", "📸 Viewpoint de Nang Yuan", "🤿 Snorkel", "🌅 Regreso a Sairee para sunset", "🍸 Noche por Sairee si apetece"], "1 DIC": ["🛕 Wat Phra Singh", "🏯 Wat Chedi Luang", "🍜 Comer por Old City", "☕ Cafés / paseo Old City", "🌙 Night Market por la noche"], "2 DIC": ["🌄 Doi Suthep por la mañana", "🌿 Tarde libre / masaje", "🛍️ Mercado nocturno y cena"], "3 DIC": ["🚌 Llegada a Chiang Rai", "🔵 Blue Temple", "🙏 Wat Huay Pla Kang", "🌙 Clock Tower / Night Bazaar"], "4 DIC": ["⚪ White Temple temprano", "🌏 Golden Triangle", "🚤 Mekong si os apetece", "🌇 Regreso a Chiang Rai"], "5 DIC": ["✈️ Vuelo a Bangkok", "🏨 Check-in", "🏮 Yaowarat / Chinatown por la tarde-noche"], "6 DIC": ["🚆 Tren temprano a Ayutthaya", "🌳 Wat Mahathat", "🏛️ Historical Park", "🌅 Wat Chaiwatthanaram al atardecer", "🚆 Regreso a Bangkok"], "7 DIC": ["👑 Grand Palace temprano", "🛕 Wat Pho", "⛴️ Cruzar el Chao Phraya", "🌅 Wat Arun", "🍸 Rooftop o Chinatown para despedir el viaje"]};
+const LOGICAL_ROUTE={"30 NOV": ["⛴️ Ferry 09:15 · Mae Haad → Samui Airport", "✈️ Vuelo 14:15 · USM → BKK", "🚕 Traslado a la estación de Don Mueang", "🚆 Tren cama 20:22 a Chiang Mai"], "21 NOV": ["✈️ Vuelo KUL → KBV", "🚐 Taxi/van a Ao Nang", "🏖️ Playa de Ao Nang", "🛶 Railay en longtail si da tiempo", "🌅 Sunset y cena"], "23 NOV": ["🌅 Temprano · Longtail hacia Maya Bay", "💎 Pileh Lagoon", "🤿 Snorkel / Viking Cave", "🏖️ Monkey Beach si encaja con mar y tiempo", "🌇 Phi Phi Viewpoint para terminar"], "25 NOV": ["🏖️ Mañana tranquila en Haad Rin / playa", "🍜 Comer y descansar", "🌅 Sunset", "🎉 Noche · Full Moon Party en Haad Rin"], "29 NOV": ["🌊 Mañana · Koh Nang Yuan", "📸 Viewpoint de Nang Yuan", "🤿 Snorkel", "🌅 Regreso a Sairee para sunset", "🍸 Noche por Sairee si apetece"], "1 DIC": ["🚆 Llegada del tren cama · maletas al hotel", "🛕 Wat Phra Singh", "🏯 Wat Chedi Luang", "🍜 Comer por Old City", "☕ Cafés / paseo Old City", "🌙 Night Market por la noche"], "2 DIC": ["🌄 Doi Suthep por la mañana", "🌿 Tarde libre / masaje", "🛍️ Mercado nocturno y cena"], "3 DIC": ["🚐 Recogida en el hotel", "♨️ Termas de Mae Kachan", "🏘️ Aldea Karen · mujeres jirafa", "⚪ Templo Blanco", "🔵 Templo Azul", "🙏 Wat Huay Pla Kang", "🌙 Regreso a Chiang Mai"], "4 DIC": ["☕ Desayuno tranquilo · Nimman", "💆 Masaje", "🛍️ Mercados y compras", "🍜 Cena de despedida · Night Bazaar"], "5 DIC": ["🧳 Check-out y traslado", "✈️ Chiang Mai → Bangkok (por reservar)", "🏨 Check-in", "🏮 Yaowarat / Chinatown por la tarde-noche"], "6 DIC": ["🚆 Tren temprano a Ayutthaya", "🌳 Wat Mahathat", "🏛️ Historical Park", "🌅 Wat Chaiwatthanaram al atardecer", "🚆 Regreso a Bangkok"], "7 DIC": ["👑 Grand Palace temprano", "🛕 Wat Pho", "⛴️ Cruzar el Chao Phraya", "🌅 Wat Arun", "🍸 Rooftop o Chinatown para despedir el viaje"]};
 function logicalRouteCard(d){
  let r=LOGICAL_ROUTE[d.date];if(!r)return'';
  const clean=x=>x.replace(/^[^A-Za-zÀ-ÿ0-9]+/,'').replace(/·/g,' ').trim();
@@ -635,19 +634,21 @@ function logicalRouteCard(d){
  return `<div class="logical-card"><div class="logical-title"><span>🧭</span><div><small>ORDEN RECOMENDADO</small><b>Cómo organizar este día</b></div></div><div class="logical-steps">${steps}</div><p>Orden orientativo para evitar idas y vueltas innecesarias. Debajo de cada parada tienes cómo llegar a la siguiente.</p></div>`;
 }
 
+const CR_PHOTOS=[["Wat Rong Khun Chiang Rai","White Temple","⭐ IMPRESCINDIBLE"],["Wat Rong Suea Ten Chiang Rai","Blue Temple","📸 IMPRESCINDIBLE"],["Wat Huay Pla Kang Chiang Rai","Wat Huay Pla Kang","🙏 Guan Yin"]];
+function DPH(p){return p==='Chiang Rai'?CR_PHOTOS.slice():D.filter(x=>x.place===p&&!x.exc).flatMap(x=>x.photos)}
 const TRANSFER={
 "21 NOV":{icon:"✈️🚐",title:"Kuala Lumpur → Krabi",summary:"Vuelo directo AirAsia KUL → KBV (10:50–11:15, hora local) y taxi/van al hotel en Ao Nang, unos 40 min. Reserva confirmada.",from:"KLIA2 · Kuala Lumpur",to:"Krabi Airport → Ao Nang",maps:"https://www.google.com/maps/dir/?api=1&origin=Krabi+International+Airport&destination=Ao+Nang+Krabi",buy:"https://www.airasia.com/",buyText:"Gestionar reserva · AirAsia"},
 "22 NOV":{icon:"⛴️",title:"Krabi → Phi Phi",summary:"Ferry desde Ao Nang (muelle de Nopparat Thara) a Tonsai Pier, de 1,5 a 2 h. Hay pocas salidas: confirma horario y compra con antelación.",from:"Ao Nang · Krabi",to:"Tonsai Pier · Phi Phi",maps:"https://www.google.com/maps/dir/?api=1&origin=Ao+Nang+Krabi&destination=Tonsai+Pier+Phi+Phi",buy:"https://12go.asia/es/travel/ao-nang/koh-phi-phi",buyText:"Buscar ferry"},
 "24 NOV":{icon:"🚤",title:"Phi Phi → Koh Phangan",summary:"Ferry + conexión terrestre/ferry; conviene reservarlo como traslado combinado.",from:"Tonsai Pier · Phi Phi",to:"Thong Sala Pier · Koh Phangan",maps:"https://www.google.com/maps/dir/?api=1&origin=Tonsai+Pier+Phi+Phi&destination=Thong+Sala+Pier+Koh+Phangan",buy:"https://12go.asia/es/travel/koh-phi-phi/koh-phangan",buyText:"Ver combinaciones y billetes"},
 "27 NOV":{icon:"⛴️",title:"Koh Phangan → Koh Tao",summary:"Ferry rápido hacia Mae Haad.",from:"Thong Sala Pier · Koh Phangan",to:"Mae Haad Pier · Koh Tao",maps:"https://www.google.com/maps/dir/?api=1&origin=Thong+Sala+Pier+Koh+Phangan&destination=Mae+Haad+Pier+Koh+Tao",buy:"https://www.lomprayah.com/booking",buyText:"Comprar ferry · Lomprayah"},
-"30 NOV":{icon:"⛴️✈️",title:"Koh Tao → Koh Samui → Chiang Mai",summary:"Ferry desde Mae Haad a Samui + traslado al aeropuerto + vuelo a Chiang Mai. Comprueba el vuelo antes de fijar el ferry.",from:"Mae Haad Pier · Koh Tao",to:"Samui Airport → Chiang Mai",maps:"https://www.google.com/maps/dir/?api=1&origin=Mae+Haad+Pier+Koh+Tao&destination=Samui+International+Airport",buy:"https://12go.asia/es/travel/koh-tao/koh-samui",buy2:"https://www.bangkokair.com/",buyText:"Ferry a Samui",buyText2:"Vuelo · Bangkok Airways"},
-"3 DIC":{icon:"🚌",title:"Chiang Mai → Chiang Rai",summary:"Bus Chiang Mai → Chiang Rai.",from:"Chiang Mai Bus Terminal 3",to:"Chiang Rai Bus Terminal",maps:"https://www.google.com/maps/dir/?api=1&origin=Chiang+Mai+Bus+Terminal+3&destination=Chiang+Rai+Bus+Terminal+1",buy:"https://12go.asia/es/bus/chiang-mai/chiang-rai",buyText:"Buscar bus"},
-"5 DIC":{icon:"✈️",title:"Chiang Rai → Bangkok",summary:"Vuelo doméstico. Revisa BKK o DMK según hotel y vuelo de regreso.",from:"Chiang Rai International Airport · CEI",to:"Bangkok · BKK / DMK",maps:"https://www.google.com/maps/dir/?api=1&origin=Chiang+Rai&destination=Chiang+Rai+International+Airport",buy:"https://www.google.com/travel/flights?hl=es",buyText:"Buscar vuelo"},
+"30 NOV":{icon:"⛴️✈️🚆",title:"Koh Tao → Samui → Bangkok → Chiang Mai",summary:"Día largo. 09:15 ferry Mae Haad → Samui Airport (reservado) · 14:15–15:50 vuelo Bangkok Airways USM → BKK (reservado) · de Suvarnabhumi a la estación de Don Mueang en taxi/Grab (cuenta 1–1,5 h con tráfico) · 20:22 tren cama a Chiang Mai (en 12go consta pendiente de confirmación).",from:"Mae Haad Pier · Koh Tao",to:"Don Mueang → Chiang Mai",maps:"https://www.google.com/maps/dir/?api=1&origin=Mae+Haad+Pier+Koh+Tao&destination=Samui+International+Airport",buy:"https://12go.asia/",buy2:"https://www.bangkokair.com/",buy3:"https://www.google.com/maps/dir/?api=1&origin=Suvarnabhumi+Airport&destination=Don+Mueang+Railway+Station",buyText:"Mis billetes · 12go",buyText2:"Vuelo · Bangkok Airways",buyText3:"Suvarnabhumi → Don Mueang"},
+"3 DIC":{icon:"🚐",title:"Chiang Mai → Chiang Rai (excursión)",summary:"Tour de un día con traslado de ida y vuelta desde Chiang Mai en vehículo con aire acondicionado y guía oficial. Confirma en tu reserva la hora y el punto de recogida. No incluye comida ni la entrada a la aldea de las mujeres jirafa (300 THB).",from:"Tu hotel · Chiang Mai",to:"Chiang Rai · templos",maps:"https://www.google.com/maps/dir/?api=1&origin=Chiang+Mai+Thailand&destination=Wat+Rong+Khun+Chiang+Rai"},
+"5 DIC":{icon:"✈️🚆",title:"Chiang Mai → Bangkok",summary:"Aún por reservar: vuelo (≈1 h 15 min) o tren. Revisa BKK o DMK según tu hotel y el vuelo de regreso del 8 dic.",from:"Chiang Mai · CNX / estación",to:"Bangkok · BKK / DMK",maps:"https://www.google.com/maps/dir/?api=1&origin=Chiang+Mai+International+Airport&destination=Bangkok+Thailand",buy:"https://www.google.com/travel/flights?hl=es",buy2:"https://12go.asia/es/travel/chiang-mai/bangkok",buyText:"Buscar vuelo",buyText2:"Ver tren / bus · 12go"},
 "6 DIC":{icon:"🚆",title:"Bangkok ↔ Ayutthaya",summary:"Excursión en tren.",from:"Bangkok",to:"Ayutthaya Railway Station",maps:"https://www.google.com/maps/dir/?api=1&origin=Bangkok&destination=Ayutthaya+Railway+Station&travelmode=transit",buy:"https://www.dticket.railway.co.th/",buyText:"Billetes oficiales SRT"}
 };
 function transferCard(d){
  let t=TRANSFER[d.date]; if(!t)return'';
- return `<div class="transfer-card"><div class="transfer-top"><span>${t.icon}</span><div><small>CÓMO LLEGAR</small><b>${t.title}</b></div></div><p>${t.summary}</p><div class="transfer-route"><span>${t.from}</span><i>→</i><span>${t.to}</span></div><div class="transfer-actions"><a href="${t.maps}" target="_blank">🧭 Cómo ir · Google Maps</a><a href="${t.buy}" target="_blank">🎟️ ${t.buyText}</a>${t.buy2?`<a href="${t.buy2}" target="_blank">✈️ ${t.buyText2}</a>`:''}</div></div>`;
+ return `<div class="transfer-card"><div class="transfer-top"><span>${t.icon}</span><div><small>CÓMO LLEGAR</small><b>${t.title}</b></div></div><p>${t.summary}</p><div class="transfer-route"><span>${t.from}</span><i>→</i><span>${t.to}</span></div><div class="transfer-actions"><a href="${t.maps}" target="_blank">🧭 Cómo ir · Google Maps</a>${t.buy?`<a href="${t.buy}" target="_blank">🎟️ ${t.buyText}</a>`:''}${t.buy2?`<a href="${t.buy2}" target="_blank">✈️ ${t.buyText2}</a>`:''}${t.buy3?`<a href="${t.buy3}" target="_blank">🚕 ${t.buyText3}</a>`:''}</div></div>`;
 }
 
 document.getElementById('days').innerHTML=D.map((d,i)=>`<div class="card day"><div class="row"><div><div class="ey">${d.date} · ${d.place}</div><h2>${d.title}</h2></div><span class="pill ${d.date.includes('NOV')?'':'gold'}">Día ${i+1}</span></div><p class="muted">${d.desc}</p><div class="time"><b>☀️ Mañana</b><span>${d.am}</span><b>🌤 Tarde</b><span>${d.pm}</span><b>🌙 Noche</b><span>${d.night}</span></div>${gallery(d.photos,'g'+i)}${logicalRouteCard(d)}${transferCard(d)}</div>`).join('');
@@ -698,7 +699,7 @@ const NIGHT_RECS={
 "Ayutthaya":[["Ayutthaya Night Market","Centro","Plan tranquilo para cenar y pasear; Ayutthaya no necesita una noche de fiesta para merecer la pena."]]
 };
 
-function openDest(k){let v=DEST[k], photos=D.filter(x=>x.place===k).flatMap(x=>x.photos).slice(0,6);document.getElementById('destList').classList.add('hidden');let el=document.getElementById('destDetail');el.classList.remove('hidden');let sid='s'+k.replaceAll(' ','');el.innerHTML=`<header class="dest-photo-hero"><button class="back" onclick="closeDest()">← Destinos</button><img id="destHeroImg" class="dest-hero-img" ${k==='Koh Tao'?'src="./koh-tao-sairee.jpg"':''} alt="${k}"><h1 style="margin-top:18px">${v.emoji} ${k}</h1><div class="sub">${v.sub}</div></header>
+function openDest(k){let v=DEST[k], photos=DPH(k).slice(0,6);document.getElementById('destList').classList.add('hidden');let el=document.getElementById('destDetail');el.classList.remove('hidden');let sid='s'+k.replaceAll(' ','');el.innerHTML=`<header class="dest-photo-hero"><button class="back" onclick="closeDest()">← Destinos</button><img id="destHeroImg" class="dest-hero-img" ${k==='Koh Tao'?'src="./koh-tao-sairee.jpg"':''} alt="${k}"><h1 style="margin-top:18px">${v.emoji} ${k}</h1><div class="sub">${v.sub}</div></header>
 <div class="catgrid"><button class="cat" onclick="goDest('${sid}-stay')"><span>🏨</span>Dormir</button><button class="cat" onclick="goDest('${sid}-eat')"><span>🍜</span>Comer</button><button class="cat" onclick="goDest('${sid}-see')"><span>🛕</span>Ver</button><button class="cat" onclick="goDest('${sid}-do')"><span>✨</span>Hacer</button><button class="cat" onclick="goDest('${sid}-night')"><span>🍸</span>Noche</button><button class="cat" onclick="goDest('${sid}-photos')"><span>📸</span>Fotos</button></div>
 <h2 class="section anchor" id="${sid}-photos">📸 No te pierdas esto</h2>${gallery(photos,'dest'+k.replaceAll(' ',''))}
 <h2 class="section anchor" id="${sid}-see">⭐ Imprescindibles</h2>${v.see.map(x=>`<div class="card info-rec"><button class="fav" onclick="toggleFav('${k}','${x.replaceAll("'","")} ',this)">♡</button><b>${x}</b><p class="muted">${SEE_DESC[k]?.[x]||'Un lugar que merece estar en tu ruta por '+k+'.'}</p><a class="v11link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x+' '+k+' Thailand')}" target="_blank">📍 Google Maps</a></div>`).join('')}
@@ -721,15 +722,16 @@ async function updateRates(){rate.textContent='Actualizando…';try{let j=await(
 const BOOKING_ITEMS=[
 {id:'f_madkul',type:'✈️ Vuelos',title:'Madrid → Doha → Kuala Lumpur',date:'6–7 nov',note:'IB6192 + IB6349 · Qatar Airways / Iberia',confirmed:true},
 {id:'f_malphi',type:'✈️ Vuelos',title:'Kuala Lumpur → Krabi',date:'21 nov',note:'AirAsia · directo · 10:50–11:15 · KUL → KBV',confirmed:true},
-{id:'f_usmcnx',type:'✈️ Vuelos',title:'Koh Samui → Chiang Mai',date:'30 nov',note:'Después del ferry desde Koh Tao',url:'https://www.google.com/travel/flights?hl=es'},
-{id:'f_ceibkk',type:'✈️ Vuelos',title:'Chiang Rai → Bangkok',date:'5 dic',note:'CEI → BKK/DMK',url:'https://www.google.com/travel/flights?hl=es'},
+{id:'f_usmbkk',type:'✈️ Vuelos',title:'Koh Samui → Bangkok',date:'30 nov',note:'Bangkok Airways · directo · 14:15–15:50 · USM → BKK',confirmed:true},
+{id:'f_cnxbkk',type:'✈️ Vuelos',title:'Chiang Mai → Bangkok',date:'5 dic',note:'Por reservar · vuelo o tren',url:'https://www.google.com/travel/flights?hl=es'},
 {id:'f_bkkmad',type:'✈️ Vuelos',title:'Bangkok → Madrid',date:'8 dic',note:'09:45–20:45 · Qatar Airways · 1 escala · 17 h · llegada MAD T4S · equipaje facturado 25 kg',confirmed:true},
 {id:'t_phiphi',type:'⛴️ Ferris y transportes',title:'Krabi (Ao Nang) → Phi Phi',date:'22 nov',note:'Ferry hasta Tonsai Pier',url:'https://12go.asia/es/travel/ao-nang/koh-phi-phi'},
 {id:'t_phangan',type:'⛴️ Ferris y transportes',title:'Phi Phi → Koh Phangan',date:'24 nov',note:'Traslado combinado hasta Thong Sala',url:'https://12go.asia/es/travel/koh-phi-phi/koh-phangan'},
 {id:'t_tao',type:'⛴️ Ferris y transportes',title:'Koh Phangan → Koh Tao',date:'27 nov',note:'Thong Sala → Mae Haad',url:'https://www.lomprayah.com/booking'},
-{id:'t_samui',type:'⛴️ Ferris y transportes',title:'Koh Tao → Koh Samui',date:'30 nov',note:'Ferry + conexión al aeropuerto',url:'https://12go.asia/es/travel/koh-tao/koh-samui'},
-{id:'t_cnxcei',type:'⛴️ Ferris y transportes',title:'Chiang Mai → Chiang Rai',date:'3 dic',note:'Bus',url:'https://12go.asia/es/bus/chiang-mai/chiang-rai'},
+{id:'t_samui',type:'⛴️ Ferris y transportes',title:'Koh Tao → Samui Airport',date:'30 nov',note:'Ferry 09:15 desde Mae Haad · reservado en 12go',url:'https://12go.asia/',confirmed:true},
+{id:'t_tren',type:'⛴️ Ferris y transportes',title:'Don Mueang → Chiang Mai · tren cama',date:'30 nov',note:'20:22 · en 12go figura pendiente de confirmación',url:'https://12go.asia/'},
 {id:'t_ayut',type:'⛴️ Ferris y transportes',title:'Bangkok ↔ Ayutthaya',date:'6 dic',note:'Tren ida y vuelta',url:'https://www.dticket.railway.co.th/'},
+{id:'a_cr',type:'🎟️ Excursiones',title:'Excursión a Chiang Rai desde Chiang Mai',date:'3 dic',note:'Templos Blanco, Azul y Huay Pla Kang · Mae Kachan · aldea Karen · traslado y guía incluidos · sin comida ni aldea jirafa (300 THB)',confirmed:true},
 {id:'h_mal',type:'🏨 Hoteles',title:'Malasia',date:'7–21 nov',note:'Ruta con amigos · alojamientos aún por definir'},
 {id:'h_kbv',type:'🏨 Hoteles',title:'Alanta Aonang Resort · Krabi',date:'21–22 nov',note:'1 noche · THB 1500',confirmed:true},
 {id:'h_phi',type:'🏨 Hoteles',title:'Uphill Cottage · Phi Phi',date:'22–24 nov',note:'2 noches · THB 5040',confirmed:true},
@@ -737,8 +739,7 @@ const BOOKING_ITEMS=[
 {id:'h_pha2',type:'🏨 Hoteles',title:'Angkana Bungalows (adults only) · Koh Phangan',date:'26–27 nov',note:'1 noche · THB 2100',confirmed:true},
 {id:'h_tao',type:'🏨 Hoteles',title:'Koh Tao Royal Resort',date:'27–29 nov',note:'2 noches · THB 1800',confirmed:true},
 {id:'h_tao2',type:'🏨 Hoteles',title:'Big Fish Resort · Koh Tao',date:'29–30 nov',note:'1 noche · THB 1800',confirmed:true},
-{id:'h_cnx',type:'🏨 Hoteles',title:'Chiang Mai',date:'30 nov–3 dic',note:'3 noches'},
-{id:'h_cei',type:'🏨 Hoteles',title:'Chiang Rai',date:'3–5 dic',note:'2 noches'},
+{id:'h_cnx',type:'🏨 Hoteles',title:'Manee Cool Mueang · Chiang Mai',date:'1–5 dic',note:'4 noches · US$ 124,44',confirmed:true},
 {id:'h_bkk',type:'🏨 Hoteles',title:'Bangkok',date:'5–8 dic',note:'3 noches'}
 ];
 function bookingState(){
@@ -759,16 +760,16 @@ function bookingAlerts(){
  return p.slice(0,6).map(i=>`<div class="booking-alert">⬜ <b>${i.title}</b><br><span style="color:#72807d">${i.date} · ${i.type.replace(/^.. /,'')}</span></div>`).join('')+(p.length>6?`<div class="booking-alert">+ ${p.length-6} reservas pendientes más</div>`:'');
 }
 
-const SMART_ROUTE=[['🏙️','Kuala Lumpur','7–9 nov'],['🌿','Cameron Highlands','9–11 nov'],['🎨','Penang','11–13 nov'],['🏝️','Langkawi','13–16 nov'],['🐚','Koh Lipe','16–18 nov'],['🏮','Melaka','18–20 nov'],['🏙️','Kuala Lumpur','20–21 nov'],['🌴','Krabi','21–22 nov'],['🏝️','Phi Phi','22–24 nov'],['🌕','Koh Phangan','24–27 nov'],['🤿','Koh Tao','27–30 nov'],['🛕','Chiang Mai','30 nov–3 dic'],['✨','Chiang Rai','3–5 dic'],['🌆','Bangkok','5–8 dic']];
-const CLIMATE_GUIDE={'Kuala Lumpur':['31–32°','24–25°','🌦️ Calor húmedo · tormentas y chaparrones frecuentes'],'Cameron Highlands':['21–24°','14–17°','🌧️ Montaña húmeda · fresco y lluvia frecuente'],'Penang':['30–32°','24–25°','🌦️ Tropical húmedo · chubascos posibles'],'Langkawi':['30–32°','25–26°','🌤️ Tropical · mejora tras el monzón, lluvia posible'],'Koh Lipe':['30–31°','25–26°','🌤️ Tropical · temporada de ferris, mar variable'],'Melaka':['30–32°','24–25°','🌦️ Calor húmedo · tormentas de tarde posibles'],'Krabi':['30–31°','24–25°','🌦️ Tropical · chubascos posibles'],'Phi Phi':['30–31°','24–25°','🌤️ Tropical · lluvia posible'],'Koh Phangan':['29–30°','24–25°','🌦️ Fin de monzón · revisar ferris'],'Koh Tao':['29–30°','24–25°','🌦️ Mar y lluvia variables'],'Chiang Mai':['28–30°','17–19°','☀️ Más seco · noches agradables'],'Chiang Rai':['27–29°','15–18°','☀️ Más fresco mañana/noche'],'Bangkok':['31–32°','23–25°','🌤️ Calor · menos lluvia']};
+const SMART_ROUTE=[['🏙️','Kuala Lumpur','7–9 nov'],['🌿','Cameron Highlands','9–11 nov'],['🎨','Penang','11–13 nov'],['🏝️','Langkawi','13–16 nov'],['🐚','Koh Lipe','16–18 nov'],['🏮','Melaka','18–20 nov'],['🏙️','Kuala Lumpur','20–21 nov'],['🌴','Krabi','21–22 nov'],['🏝️','Phi Phi','22–24 nov'],['🌕','Koh Phangan','24–27 nov'],['🤿','Koh Tao','27–30 nov'],['🛕','Chiang Mai','1–5 dic'],['🌆','Bangkok','5–8 dic']];
+const CLIMATE_GUIDE={'Kuala Lumpur':['31–32°','24–25°','🌦️ Calor húmedo · tormentas y chaparrones frecuentes'],'Cameron Highlands':['21–24°','14–17°','🌧️ Montaña húmeda · fresco y lluvia frecuente'],'Penang':['30–32°','24–25°','🌦️ Tropical húmedo · chubascos posibles'],'Langkawi':['30–32°','25–26°','🌤️ Tropical · mejora tras el monzón, lluvia posible'],'Koh Lipe':['30–31°','25–26°','🌤️ Tropical · temporada de ferris, mar variable'],'Melaka':['30–32°','24–25°','🌦️ Calor húmedo · tormentas de tarde posibles'],'Krabi':['30–31°','24–25°','🌦️ Tropical · chubascos posibles'],'Phi Phi':['30–31°','24–25°','🌤️ Tropical · lluvia posible'],'Koh Phangan':['29–30°','24–25°','🌦️ Fin de monzón · revisar ferris'],'Koh Tao':['29–30°','24–25°','🌦️ Mar y lluvia variables'],'Chiang Mai':['28–30°','17–19°','☀️ Más seco · noches agradables'],'Bangkok':['31–32°','23–25°','🌤️ Calor · menos lluvia']};
 const SMART_ALERTS=[];
 function madridNow(){return new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',hour:'2-digit',minute:'2-digit'}).format(new Date())}
 function asiaNow(tz){tz=tz||(ACTIVE_COUNTRY==='Malaysia'?'Asia/Kuala_Lumpur':'Asia/Bangkok');return new Intl.DateTimeFormat('es-ES',{timeZone:tz,hour:'2-digit',minute:'2-digit'}).format(new Date())}
 function selectedClock(){let d=weatherSelected(),my=asiaNow('Asia/Kuala_Lumpur'),th=asiaNow('Asia/Bangkok'),both=my===th;return {time:asiaNow(d.tz),label:both?'🇲🇾🇹🇭 Asia':(d.country==='Malaysia'?'🇲🇾 Malasia':'🇹🇭 Tailandia')}}
 function updateSmartClock(){let c=selectedClock(),l=document.getElementById('asiaClockLabel'),t=document.getElementById('asiaClockTime');if(l)l.textContent=c.label;if(t)t.textContent=c.time}
-function smartPacking(){const base=[['👕','Camisetas ligeras','Calor y humedad'],['🩳','Pantalón corto / bañador','Islas'],['🛕','Pantalón ligero largo','Templos'],['🧥','Capa fina','Chiang Mai / Chiang Rai'],['🌧️','Chubasquero compacto','Malasia + islas'],['👟','Calzado cómodo','Ciudades / templos'],['🩴','Chanclas','Playas'],['🧴','Protector solar','Islas'],['🔌','Adaptador universal','Todo el viaje']];let saved=JSON.parse(localStorage.getItem('asia26smartpack')||'{}'),done=base.filter((x,i)=>saved[i]).length;return{base,saved,done,pct:Math.round(done/base.length*100)}}
+function smartPacking(){const base=[['👕','Camisetas ligeras','Calor y humedad'],['🩳','Pantalón corto / bañador','Islas'],['🛕','Pantalón ligero largo','Templos'],['🧥','Capa fina','Chiang Mai · tren cama · excursión al norte'],['🌧️','Chubasquero compacto','Malasia + islas'],['👟','Calzado cómodo','Ciudades / templos'],['🩴','Chanclas','Playas'],['🧴','Protector solar','Islas'],['🔌','Adaptador universal','Todo el viaje']];let saved=JSON.parse(localStorage.getItem('asia26smartpack')||'{}'),done=base.filter((x,i)=>saved[i]).length;return{base,saved,done,pct:Math.round(done/base.length*100)}}
 function toggleSmartPack(i,v){let x=JSON.parse(localStorage.getItem('asia26smartpack')||'{}');x[i]=v;localStorage.setItem('asia26smartpack',JSON.stringify(x));renderSmart()}
-function tomorrowCard(){let n=new Date(),m=n.getMonth()+1,d=n.getDate(),txt='Antes del viaje',detail='Cerrar vuelos, ferris y hoteles pendientes y avanzar la maleta.';if(n.getFullYear()===2026&&(m===11||m===12)){let k=m*100+d;if(k<=1120){txt='Malasia';detail='Ruta flexible con amigos · el 21 vuelas a Krabi.'}else if(k<=1121){txt='Krabi';detail='Ao Nang → playa → Railay si da tiempo → sunset.'}else if(k<=1124){txt='Phi Phi';detail='Maya Bay → Pileh Lagoon → snorkel → viewpoint.'}else if(k<=1127){txt='Koh Phangan';detail='Playa → sunset → Full Moon.'}else if(k<=1130){txt='Koh Tao';detail='Koh Nang Yuan → viewpoint → snorkel → Sairee.'}else if(k<=1203){txt='Chiang Mai';detail='Old City → Doi Suthep → mercados.'}else if(k<=1205){txt='Chiang Rai';detail='Templo Blanco → Triángulo Dorado → Mekong.'}else{txt='Bangkok';detail='Templos → río → Chinatown / Ayutthaya.'}}return[txt,detail]}
+function tomorrowCard(){let n=new Date(),m=n.getMonth()+1,d=n.getDate(),txt='Antes del viaje',detail='Cerrar vuelos, ferris y hoteles pendientes y avanzar la maleta.';if(n.getFullYear()===2026&&(m===11||m===12)){let k=m*100+d;if(k<=1120){txt='Malasia';detail='Ruta flexible con amigos · el 21 vuelas a Krabi.'}else if(k<=1121){txt='Krabi';detail='Ao Nang → playa → Railay si da tiempo → sunset.'}else if(k<=1124){txt='Phi Phi';detail='Maya Bay → Pileh Lagoon → snorkel → viewpoint.'}else if(k<=1127){txt='Koh Phangan';detail='Playa → sunset → Full Moon.'}else if(k<=1130){txt='Koh Tao';detail='Koh Nang Yuan → viewpoint → snorkel → Sairee.'}else if(k<=1204){txt='Chiang Mai';detail='Old City → Doi Suthep → excursión a Chiang Rai el 3 dic.'}else{txt='Bangkok';detail='Templos → río → Chinatown / Ayutthaya.'}}return[txt,detail]}
 
 function tripRouteMap(){
  const pts=[
@@ -778,11 +779,10 @@ function tripRouteMap(){
   {n:4,name:'Koh Phangan',x:54,y:65},
   {n:5,name:'Koh Tao',x:55,y:57},
   {n:6,name:'Chiang Mai',x:48,y:25},
-  {n:7,name:'Chiang Rai',x:54,y:17},
-  {n:8,name:'Bangkok',x:55,y:42},
-  {n:9,name:'Ayutthaya',x:52,y:36,exc:true}
+  {n:7,name:'Bangkok',x:55,y:42},
+  {n:8,name:'Ayutthaya',x:52,y:36,exc:true}
  ];
- const path=pts.slice(0,8).map(p=>`${p.x},${p.y}`).join(' ');
+ const path=pts.slice(0,7).map(p=>`${p.x},${p.y}`).join(' ');
  const ay=`55,42 52,36 55,42`;
  return `<div class="trip-map">
    <div class="trip-map-head"><div class="smart-kicker">MAPA DEL RECORRIDO</div><h3>De Malasia al norte de Tailandia</h3><p>Etapas numeradas · Ayutthaya es excursión desde Bangkok</p></div>
@@ -807,10 +807,9 @@ const ROADMAP_STOPS=[
  {n:9,name:'Phi Phi',dates:'22–24 nov',nights:2,x:44,y:73},
  {n:10,name:'Koh Phangan',dates:'24–27 nov',nights:3,x:54,y:65},
  {n:11,name:'Koh Tao',dates:'27–30 nov',nights:3,x:55,y:57},
- {n:12,name:'Chiang Mai',dates:'30 nov–3 dic',nights:3,x:48,y:25},
- {n:13,name:'Chiang Rai',dates:'3–5 dic',nights:2,x:54,y:17},
- {n:14,name:'Bangkok',dates:'5–8 dic',nights:3,x:55,y:42},
- {n:15,name:'Ayutthaya',dates:'6 dic',nights:0,x:52,y:36,exc:true}
+ {n:12,name:'Chiang Mai',dates:'1–5 dic',nights:4,x:48,y:25},
+ {n:13,name:'Bangkok',dates:'5–8 dic',nights:3,x:55,y:42},
+ {n:14,name:'Ayutthaya',dates:'6 dic',nights:0,x:52,y:36,exc:true}
 ];
 const NEXT_DESTS=[
  {name:'Kuala Lumpur',start:'2026-11-07',end:'2026-11-09',lat:3.139,long:101.687,country:'Malaysia',tz:'Asia/Kuala_Lumpur',flag:'🇲🇾',photo:'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=80',climate:'31° / 25°'},
@@ -824,8 +823,7 @@ const NEXT_DESTS=[
  {name:'Phi Phi',start:'2026-11-22',end:'2026-11-24',lat:7.7407,long:98.7784,country:'Thailand',tz:'Asia/Bangkok',flag:'🇹🇭',photo:'./koh-tao-sairee.jpg',climate:'30° / 25°'},
  {name:'Koh Phangan',start:'2026-11-24',end:'2026-11-27',lat:9.7319,long:100.0136,country:'Thailand',tz:'Asia/Bangkok',flag:'🇹🇭',photo:'./koh-tao-sairee.jpg',climate:'29° / 25°'},
  {name:'Koh Tao',start:'2026-11-27',end:'2026-11-30',lat:10.0956,long:99.8404,country:'Thailand',tz:'Asia/Bangkok',flag:'🇹🇭',photo:'./koh-tao-sairee.jpg',climate:'29° / 25°'},
- {name:'Chiang Mai',start:'2026-11-30',end:'2026-12-03',lat:18.7883,long:98.9853,country:'Thailand',tz:'Asia/Bangkok',flag:'🇹🇭',photo:'https://images.unsplash.com/photo-1598970605070-a38a6ccd3a2d?auto=format&fit=crop&w=1200&q=80',climate:'29° / 18°'},
- {name:'Chiang Rai',start:'2026-12-03',end:'2026-12-05',lat:19.9105,long:99.8406,country:'Thailand',tz:'Asia/Bangkok',flag:'🇹🇭',photo:'https://images.unsplash.com/photo-1583491470869-ca0b9fa0b122?auto=format&fit=crop&w=1200&q=80',climate:'28° / 17°'},
+ {name:'Chiang Mai',start:'2026-11-30',end:'2026-12-05',lat:18.7883,long:98.9853,country:'Thailand',tz:'Asia/Bangkok',flag:'🇹🇭',photo:'https://images.unsplash.com/photo-1598970605070-a38a6ccd3a2d?auto=format&fit=crop&w=1200&q=80',climate:'29° / 18°'},
  {name:'Bangkok',start:'2026-12-05',end:'2026-12-08',lat:13.7563,long:100.5018,country:'Thailand',tz:'Asia/Bangkok',flag:'🇹🇭',photo:'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1200&q=80',climate:'32° / 24°'}
 ];
 function nextDestination(){
@@ -942,12 +940,11 @@ const TRANSFERS={
 'kbv-pp':['Krabi → Phi Phi','⛴️ Ferry','Ao Nang → Tonsai Pier','Confirma horario del ferry · billete offline · maleta lista para el barco'],
 'pp-kp':['Phi Phi → Koh Phangan','🚤 Ferry / traslado combinado','Tonsai Pier → Thong Sala','Lleva billete offline · llega con margen · agua y chubasquero accesibles'],
 'kp-kt':['Koh Phangan → Koh Tao','🚤 Ferry','Thong Sala → Mae Haad','Revisa estado del mar · billete offline · llega con margen'],
-'kt-cm':['Koh Tao → Chiang Mai','🚤 Ferry + ✈️ vuelo','Mae Haad → Koh Samui → Chiang Mai','No factures pasaporte · deja margen ferry-vuelo · ropa seca accesible'],
-'cm-cr':['Chiang Mai → Chiang Rai','🚌 GreenBus','Bus Terminal 3 → Chiang Rai','Billete offline · sudadera accesible · llega antes a la estación'],
-'cr-bkk':['Chiang Rai → Bangkok','✈️ Vuelo','CEI → Bangkok','Confirma aeropuerto de llegada · documentos y batería cargada'],
+'kt-cm':['Koh Tao → Chiang Mai','⛴️ Ferry + ✈️ vuelo + 🚆 tren cama','Mae Haad → Samui → Bangkok → Chiang Mai','Ferry 09:15 · vuelo 14:15 · tren 20:22 · billetes offline · algo de abrigo para el tren'],
+'cm-bkk':['Chiang Mai → Bangkok','✈️ Vuelo o 🚆 tren','CNX → BKK/DMK · o estación de tren','Aún sin reservar · confirma aeropuerto de llegada · documentos y batería cargada'],
 'bkk-ay':['Bangkok ↔ Ayutthaya','🚆 Tren','Bangkok → Ayutthaya → Bangkok','Sal temprano · agua · protector solar · billete/horario revisado']};
 function renderTransfer(){let x=TRANSFERS[transferPick.value];transferBox.innerHTML=`<div class="card"><div class="smart-kicker">PRÓXIMO MOVIMIENTO</div><h2>${x[0]}</h2><div class="inforow"><b>Cómo</b><span>${x[1]}</span></div><div class="inforow"><b>Ruta</b><span>${x[2]}</span></div><div class="inforow"><b>Antes de salir</b><span class="muted">${x[3]}</span></div><label class="checkitem"><input type="checkbox"><span>🎫 Billete / reserva descargada</span></label><label class="checkitem"><input type="checkbox"><span>🛂 Pasaporte conmigo</span></label><label class="checkitem"><input type="checkbox"><span>🔋 Móvil + powerbank cargados</span></label><label class="checkitem"><input type="checkbox"><span>💵 Algo de efectivo</span></label></div>`}
-const PASSPORT_PLACES=['Kuala Lumpur','Cameron Highlands','Penang','Langkawi','Koh Lipe','Melaka','Krabi','Phi Phi','Koh Phangan','Koh Tao','Chiang Mai','Chiang Rai','Bangkok','Ayutthaya'];
+const PASSPORT_PLACES=['Kuala Lumpur','Cameron Highlands','Penang','Langkawi','Koh Lipe','Melaka','Krabi','Phi Phi','Koh Phangan','Koh Tao','Chiang Mai','Bangkok','Ayutthaya'];
 let tripDiary=JSON.parse(localStorage.getItem('asia26diary')||'{}');
 function diarySet(i,k,v){tripDiary[PASSPORT_PLACES[i]]=tripDiary[PASSPORT_PLACES[i]]||{};tripDiary[PASSPORT_PLACES[i]][k]=v;localStorage.setItem('asia26diary',JSON.stringify(tripDiary));renderPassport()}
 function renderPassport(){let box=document.getElementById('tripPassport');if(!box)return;box.innerHTML=PASSPORT_PLACES.map((p,i)=>{let d=tripDiary[p]||{};return `<div class="diaryrow ${d.done?'done':''}"><label><input type="checkbox" ${d.done?'checked':''} onchange="diarySet(${i},'done',this.checked)"> <b>${d.done?'✅':'⬜'} ${p}</b></label><select onchange="diarySet(${i},'score',this.value)"><option value="">Nota</option>${[10,9,8,7,6,5].map(n=>`<option ${String(d.score)===String(n)?'selected':''}>${n}</option>`).join('')}</select><input value="${(d.note||'').replace(/"/g,'&quot;')}" placeholder="Una frase del día…" onchange="diarySet(${i},'note',this.value)"></div>`}).join('');let done=Object.values(tripDiary).filter(x=>x.done).length,scores=Object.values(tripDiary).map(x=>+x.score).filter(Boolean),avg=scores.length?(scores.reduce((a,b)=>a+b,0)/scores.length).toFixed(1):'—';tripStats.innerHTML=`<div class="budget-stats"><div class="budget-stat"><small>Destinos</small><b>${done}/${PASSPORT_PLACES.length}</b></div><div class="budget-stat"><small>Nota media</small><b>${avg}/10</b></div></div><p class="muted">33 días · 2 países · tus recuerdos se guardan en este dispositivo.</p>`}
@@ -1094,13 +1091,13 @@ function openRouteMap(){
   {n:1,name:'Kuala Lumpur',x:22,y:84},{n:2,name:'Krabi',x:33,y:79},
   {n:3,name:'Phi Phi',x:39,y:76},{n:4,name:'Koh Phangan',x:58,y:67},
   {n:5,name:'Koh Tao',x:61,y:57},{n:6,name:'Chiang Mai',x:43,y:28},
-  {n:7,name:'Chiang Rai',x:59,y:17},{n:8,name:'Bangkok',x:61,y:44},
-  {n:9,name:'Ayutthaya',x:48,y:38,exc:true}
+  {n:7,name:'Bangkok',x:61,y:44},
+  {n:8,name:'Ayutthaya',x:48,y:38,exc:true}
  ];
  let modal=document.getElementById('routeMapModal');
  if(!modal){
   modal=document.createElement('div');modal.id='routeMapModal';modal.className='route-modal';
-  const path=pts.slice(0,8).map(p=>`${p.x},${p.y}`).join(' ');
+  const path=pts.slice(0,7).map(p=>`${p.x},${p.y}`).join(' ');
   modal.innerHTML=`<div class="route-modal-head"><div><div class="smart-kicker">ASIA 2026</div><h2>Mapa del recorrido</h2></div><button class="route-modal-close" onclick="closeRouteMap()">×</button></div>
   <div class="route-zoom-wrap"><div class="route-zoom-canvas">
    <svg viewBox="0 0 100 100" preserveAspectRatio="none"><polyline class="trip-map-line" points="${path}"/><polyline class="trip-map-line" style="stroke:#d18b49" points="61,44 48,38 61,44"/></svg>
@@ -1258,14 +1255,20 @@ const V41_HOPS={
  ["🚶 · pocos minutos","Quédate por la zona para el sunset y evita desplazamientos largos antes de la fiesta.","Haad Rin Beach Koh Phangan","Haad Rin Sunset Beach"],
  ["🚶 · 5–15 min","Desde Haad Rin ve andando al área de Full Moon Party en la playa.","Haad Rin Sunset Beach","Full Moon Party Haad Rin"]
 ],
-"28 NOV":[
+"29 NOV":[
  ["🚤 Taxi boat · 15–20 min aprox.","Desde Sairee/Mae Haad toma taxi boat a Koh Nang Yuan.","Sairee Beach Koh Tao","Koh Nang Yuan"],
  ["🚶 · 15–20 min de subida","Desde el embarcadero de Nang Yuan sigue el sendero señalizado hasta el viewpoint.","Koh Nang Yuan Pier","Koh Nang Yuan Viewpoint"],
  ["🚶 · 10–15 min","Baja del viewpoint y ve andando a las zonas de snorkel de Nang Yuan.","Koh Nang Yuan Viewpoint","Japanese Garden Koh Nang Yuan"],
  ["🚤 + 🚶 · 15–20 min de barca","Taxi boat de vuelta a Sairee y paseo por la playa para el atardecer.","Koh Nang Yuan","Sairee Beach Koh Tao"],
  ["🚶 · 5–15 min","Los bares principales de Sairee están a pie desde la playa.","Sairee Beach Koh Tao","Fishbowl Beach Bar Koh Tao"]
 ],
+"30 NOV":[
+ ["⛴️ Ferry · unas 2 h","Tu billete de 12go llega hasta Samui Airport. Llega al mostrador del vuelo con margen.","Mae Haad Pier Koh Tao","Samui International Airport"],
+ ["✈️ Vuelo · 1 h 35","Bangkok Airways USM → BKK (Suvarnabhumi), 14:15–15:50. Desde allí a Don Mueang.","Samui International Airport","Suvarnabhumi Airport"],
+ ["🚕 Grab / taxi · 1–1,5 h con tráfico","Del aeropuerto a la estación de Don Mueang. El tren sale a las 20:22: no apures.","Suvarnabhumi Airport","Don Mueang Railway Station"]
+],
 "1 DIC":[
+ ["🚕 Grab · 15–20 min","De la estación al hotel para dejar maletas y a Old City.","Chiang Mai Railway Station","Wat Phra Singh Chiang Mai"],
  ["🚶 · 10–15 min","Wat Phra Singh y Wat Chedi Luang están dentro de Old City y se enlazan bien andando.","Wat Phra Singh Chiang Mai","Wat Chedi Luang Chiang Mai"],
  ["🚶 · 5–15 min","Sal del templo y continúa andando hacia la zona de restaurantes de Old City.","Wat Chedi Luang Chiang Mai","Old City Chiang Mai restaurants"],
  ["🚶 · 5–10 min","Después de comer, recorre a pie los cafés y calles de Old City.","Old City Chiang Mai restaurants","Old City Chiang Mai cafes"],
@@ -1277,18 +1280,21 @@ const V41_HOPS={
  ["🚶 / Grab · 10–20 min","Desde Old City, paseo o Grab al mercado nocturno según dónde estéis.","Chiang Mai Old City","Chiang Mai Night Bazaar"]
 ],
 "3 DIC":[
- ["🚕 Grab · 10–20 min","Desde la estación/hotel de Chiang Rai, ve en Grab al Blue Temple.","Chiang Rai Bus Terminal 1","Wat Rong Suea Ten"],
- ["🚕 Grab · 10–15 min","Blue Temple → Wat Huay Pla Kang: lo práctico es Grab/taxi.","Wat Rong Suea Ten","Wat Huay Pla Kang"],
- ["🚕 Grab · 15–20 min","Regresa al centro para Clock Tower y Night Bazaar.","Wat Huay Pla Kang","Chiang Rai Clock Tower"]
+ ["🚐 Furgoneta del tour · unas 3 h de carretera","El tour te recoge en el hotel; confirma hora y punto de encuentro en tu reserva. Día largo.","Chiang Mai Old City","Mae Kachan Hot Springs Chiang Rai"],
+ ["🚐 Traslado del tour","El guía organiza el traslado a la aldea Karen de Mae Kachan.","Mae Kachan Hot Springs Chiang Rai","Mae Kachan Long Neck Karen Village"],
+ ["🚐 Traslado del tour","Siguiente parada: el Templo Blanco.","Mae Kachan Long Neck Karen Village","Wat Rong Khun"],
+ ["🚐 Traslado del tour","Del Templo Blanco al Templo Azul.","Wat Rong Khun","Wat Rong Suea Ten"],
+ ["🚐 Traslado del tour","Última parada: Wat Huay Pla Kang con su pagoda de nueve niveles.","Wat Rong Suea Ten","Wat Huay Pla Kang"],
+ ["🚐 Regreso del tour · unas 3 h","Vuelta a Chiang Mai y cena tranquila.","Wat Huay Pla Kang","Chiang Mai Old City"]
 ],
 "4 DIC":[
- ["🚕 Coche/Grab · 20–30 min","Sal temprano desde Chiang Rai hacia el White Temple.","Chiang Rai Clock Tower","Wat Rong Khun"],
- ["🚗 Excursión/coche · 1 h 20–1 h 40","Para el Golden Triangle lo mejor es conductor, coche o excursión organizada.","Wat Rong Khun","Golden Triangle Thailand"],
- ["🚶 / 🚤 · 5–15 min","En el Golden Triangle baja al embarcadero; el paseo por el Mekong se contrata allí.","Golden Triangle Thailand","Golden Triangle Boat Pier"],
- ["🚗 · 1 h 15–1 h 30","Regreso por carretera a Chiang Rai.","Golden Triangle Thailand","Chiang Rai Clock Tower"]
+ ["🚶 / Grab · 10–20 min","De Old City a la zona de Nimman para cafés.","Chiang Mai Old City","Nimmanhaemin Road Chiang Mai"],
+ ["🚶 / Grab · 10–20 min","Masaje y tiendas por el centro.","Nimmanhaemin Road Chiang Mai","Chiang Mai Old City massage"],
+ ["🚶 / Grab · 10–25 min","Cena y Night Bazaar para despedirte de Chiang Mai.","Chiang Mai Old City","Chiang Mai Night Bazaar"]
 ],
 "5 DIC":[
- ["✈️ Vuelo + 🚆/taxi","Vuela Chiang Rai → Bangkok y desde el aeropuerto enlaza con Airport Rail Link/taxi según aeropuerto y hotel.","Chiang Rai International Airport","Bangkok city center"],
+ ["🚕 Grab · 15–25 min","Del hotel al aeropuerto de Chiang Mai (o a la estación si vas en tren).","Chiang Mai Old City","Chiang Mai International Airport"],
+ ["✈️ Vuelo · 1 h 15 aprox.","Al llegar, enlaza con Airport Rail Link/taxi según aeropuerto y hotel.","Chiang Mai International Airport","Bangkok city center"],
  ["🚶 / BTS/MRT","Tras el check-in, muévete en transporte público o taxi según la zona del hotel.","Bangkok city center","Yaowarat Road Bangkok"]
 ],
 "6 DIC":[
@@ -1395,7 +1401,7 @@ function v43FinalMove(place){const m={
 'Phi Phi':'A pie por Phi Phi Don; longtail para playas y bahías. No hay carreteras útiles para moto.',
 'Koh Phangan':'Moto si conduces legalmente y con experiencia; si no, songthaew/taxi. Para Full Moon, evita conducir tras beber.',
 'Koh Tao':'Moto es muy práctica, pero algunas carreteras tienen fuertes pendientes; taxi pickup y longtail son alternativas.',
-'Chiang Mai':'Grab/songthaew para ciudad; moto solo si tienes permiso y experiencia. GreenBus para Chiang Rai.',
+'Chiang Mai':'Grab/songthaew para ciudad; moto solo si tienes permiso y experiencia. El 3 dic vas a Chiang Rai en excursión organizada.',
 'Chiang Rai':'Grab/taxi y moto para templos; excursión organizada para Golden Triangle si queréis simplificar.',
 'Bangkok':'BTS + MRT + Chao Phraya + Grab. No alquilaría moto.',
 'Ayutthaya':'Bici o tuk-tuk entre templos; tren desde Bangkok.',
@@ -1442,7 +1448,7 @@ function v43LoadCardPhotos(root=document){root.querySelectorAll('img[data-v43q]'
 function v43FoodPhotoHTML(place){let f=FOOD_RECS[place]||[];return f.map(x=>`<div class="rec-card"><div class="top"><div><h4>${x[0]}</h4><span class="foodtype">${x[2]}</span></div><span class="price">${x[1]}</span></div><p>${x[3]}</p><div class="rec-actions"><a class="v11link" target="_blank" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x[0]+' '+place)}">📍 Google Maps</a>${saveRecButton(x[0],place)}</div></div>`).join('')}
 function v43HotelPhotoHTML(place){let h=HOTEL_RECS[place];if(!h)return '<div class="card">Hoteles por añadir.</div>';let groups=[['backpacker','🎒 Mochilero','Prioridad: precio, ubicación y ambiente.'],['relax','🌴 Relax','Un poco mejor: habitación cómoda, piscina/playa o más tranquilidad.'],['elegant','✨ Elegante','Para darte un capricho y convertir el hotel en parte del viaje.']];return groups.map(([k,t,d])=>`<div class="recgroup"><h3>${t}</h3><p>${d}</p>${h[k].map(x=>`<div class="rec-card"><div class="top"><div><h4>${x[0]}</h4><span class="foodtype">${x[2]}</span></div><span class="price">${x[1]}</span></div><p>${x[3]}</p><div class="rec-actions"><a class="v11link" target="_blank" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x[0]+' '+place)}">📍 Google Maps</a>${saveRecButton(x[0],place)}</div></div>`).join('')}</div>`).join('')}
 var V43_oldThaiFromData=typeof v43ThaiFromData==='function'?v43ThaiFromData:null;
-v43ThaiFromData=function(place){let el=document.getElementById('destDetail');if(!el||!DEST[place])return;let v=DEST[place],sid='s'+place.replaceAll(' ',''),photos=D.filter(x=>x.place===place).flatMap(x=>x.photos).slice(0,6);let hero=el.querySelector('.dest-photo-hero')?.outerHTML||'',cats=el.querySelector('.catgrid')?.outerHTML||'',gal=`<h2 class="section anchor" id="${sid}-photos">📸 No te pierdas esto</h2>${gallery(photos,'dest'+place.replaceAll(' ',''))}`;let see=v.see.map(x=>`<div class="card info-rec">${v43PhotoTag(x+' '+place+' Thailand')}<b>${x}</b><p class="muted">${SEE_DESC[place]?.[x]||''}</p><a class="v11link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x+' '+place+' Thailand')}" target="_blank">📍 Google Maps</a></div>`).join('');let doing=v.do.map(x=>`<div class="card info-rec">${v43PhotoTag(x+' '+place+' Thailand travel')}<b>${x}</b><p class="muted">${DO_DESC[place]?.[x]||''}</p></div>`).join('');let night=(NIGHT_RECS[place]||[]).map(x=>`<div class="card info-rec">${v43PhotoTag(x[0]+' '+place+' Thailand')}<b>${x[0]}</b><span class="night-tag">${x[1]}</span><p class="muted">${x[2]}</p><a class="v11link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x[0]+' '+place+' Thailand')}" target="_blank">📍 Google Maps</a></div>`).join('');el.innerHTML=hero+cats+gal+`<div class="v43-wrap"><h3>🧭 Explora ${place}</h3><p class="v43-note">Todo sigue aquí, ahora también con fotos dentro de los desplegables.</p>${v43Accordion('⭐','Ver',see)}${v43Accordion('✨','Hacer',doing)}${v43Accordion('🍜','Comer',v43FoodPhotoHTML(place))}${v43Accordion('🏨','Dormir',v43HotelPhotoHTML(place))}${v43Accordion('🍸','Noche',night)}<h3 style="margin-top:18px">🧭 Servicios & experiencias</h3>${v43FinalServices2(place)}</div>`;if(place!=='Koh Tao'&&photos.length){let im=document.getElementById('destHeroImg');if(im)commonsImage(photos[0][0],im)}restoreFavButtons();setTimeout(()=>v43LoadCardPhotos(el),20)}
+v43ThaiFromData=function(place){let el=document.getElementById('destDetail');if(!el||!DEST[place])return;let v=DEST[place],sid='s'+place.replaceAll(' ',''),photos=DPH(place).slice(0,6);let hero=el.querySelector('.dest-photo-hero')?.outerHTML||'',cats=el.querySelector('.catgrid')?.outerHTML||'',gal=`<h2 class="section anchor" id="${sid}-photos">📸 No te pierdas esto</h2>${gallery(photos,'dest'+place.replaceAll(' ',''))}`;let see=v.see.map(x=>`<div class="card info-rec">${v43PhotoTag(x+' '+place+' Thailand')}<b>${x}</b><p class="muted">${SEE_DESC[place]?.[x]||''}</p><a class="v11link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x+' '+place+' Thailand')}" target="_blank">📍 Google Maps</a></div>`).join('');let doing=v.do.map(x=>`<div class="card info-rec">${v43PhotoTag(x+' '+place+' Thailand travel')}<b>${x}</b><p class="muted">${DO_DESC[place]?.[x]||''}</p></div>`).join('');let night=(NIGHT_RECS[place]||[]).map(x=>`<div class="card info-rec">${v43PhotoTag(x[0]+' '+place+' Thailand')}<b>${x[0]}</b><span class="night-tag">${x[1]}</span><p class="muted">${x[2]}</p><a class="v11link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x[0]+' '+place+' Thailand')}" target="_blank">📍 Google Maps</a></div>`).join('');el.innerHTML=hero+cats+gal+`<div class="v43-wrap"><h3>🧭 Explora ${place}</h3><p class="v43-note">Todo sigue aquí, ahora también con fotos dentro de los desplegables.</p>${v43Accordion('⭐','Ver',see)}${v43Accordion('✨','Hacer',doing)}${v43Accordion('🍜','Comer',v43FoodPhotoHTML(place))}${v43Accordion('🏨','Dormir',v43HotelPhotoHTML(place))}${v43Accordion('🍸','Noche',night)}<h3 style="margin-top:18px">🧭 Servicios & experiencias</h3>${v43FinalServices2(place)}</div>`;if(place!=='Koh Tao'&&photos.length){let im=document.getElementById('destHeroImg');if(im)commonsImage(photos[0][0],im)}restoreFavButtons();setTimeout(()=>v43LoadCardPhotos(el),20)}
 function v43MalCardsPhotos(items,place,kind){return (items||[]).map(x=>{let name=x[0],desc=(kind==='eat'||kind==='stay')?x[3]:x[1],tag=(kind==='eat'||kind==='stay')?`<span class="foodtype">${x[2]} · ${x[1]}</span>`:'';let photo=(kind==='eat'||kind==='stay')?'':v43PhotoTag(name+' '+place+' Malaysia '+kind);return `<div class="v43-mal-card">${photo}<h4>${name}</h4>${tag}<p>${desc}</p><div class="v43-actions"><a class="v43-link" target="_blank" href="${v42Maps(name,place)}">📍 Google Maps</a><a class="v43-link" target="_blank" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name+' '+place)}">📸 Fotos</a></div></div>`}).join('')}
 v43MalaysiaCorrect=function(k){let base=MY38_DEST[k],d=V43_MAL[k],x=document.getElementById('my38DiscoverDetail');if(!x||!d)return;document.getElementById('my38DiscoverHome').style.display='none';x.style.display='block';let names={kl:'Kuala Lumpur',cam:'Cameron Highlands',pen:'Penang · George Town',lan:'Langkawi',mel:'Melaka'},p=names[k];x.innerHTML=`<button class="my38-back" onclick="my38CloseDest()">← Destinos</button><div class="my39-detailhero" style="background-image:url('${V43_MAL_PHOTO[k]}')"><div class="txt"><h1>${base.name}</h1><p>${base.sub}</p></div></div><p class="my39-intro">${MY39_DESC[k]}</p>${my39Order(k)}<div class="v43-wrap"><h3>🧭 Explora ${base.name}</h3><p class="v43-note">Mismo formato que Tailandia, ahora con fotos también dentro de cada desplegable.</p>${v43Accordion('⭐','Ver',v43MalCardsPhotos(d.see,p,'see'))}${v43Accordion('✨','Hacer',v43MalCardsPhotos(d.do,p,'do'))}${v43Accordion('🍜','Comer',v43MalCardsPhotos(d.eat,p,'eat'))}${v43Accordion('🏨','Dormir',v43MalCardsPhotos(d.stay,p,'stay'))}${v43Accordion('🍸','Noche',v43MalCardsPhotos(d.night,p,'night'))}<h3 style="margin-top:18px">🧭 Servicios & experiencias</h3>${v43FinalServices2(p)}</div>`;setTimeout(()=>v43LoadCardPhotos(x),20);document.getElementById('my37').scrollTo(0,0)}
 my38Dest=function(k){v43MalaysiaCorrect(k)};
@@ -1592,7 +1598,7 @@ const V43_NO_ES={
 function v43Status(place,type){let a=V43_FINAL_LANG[place]?.[type];if(a&&a[0]==='🇪🇸')return `<span class="v43-lang es">🇪🇸 ${a[1]}</span>`;if((V43_NO_ES[place]||[]).includes(type))return `<span class="v43-noes">🚫 No he encontrado guía en español</span><span class="v43-lang">🇬🇧 Inglés</span>`;return a?`<span class="v43-lang">${a[0]} ${a[1]}</span>`:''}
 function v43FinalGroup2(icon,title,items,place,type){if(!items||!items.length)return'';let web=V43_FINAL_WEB[place]?.[type];return `<div class="v43-section"><button type="button" onclick="this.parentElement.classList.toggle('open')"><span>${icon}</span><span>${title}</span><span class="v43-plus">＋</span></button><div class="v43-section-body">${v43Status(place,type)}${items.map(x=>{let na=/No aplica|No recomendada|No necesaria|No prioritario|No alquilar/.test(x[0]);return `<div class="v42-item"><b>${x[0]}</b><small>${x[1]}</small>${na?'':`<div class="v43-actions"><a class="v43-link" target="_blank" rel="noopener" href="${v42Maps(x[0],place)}">📍 Google Maps</a><a class="v43-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x[0]+' '+place)}">📸 Fotos</a>${web?`<a class="v43-link" target="_blank" rel="noopener" href="${web}">${(V43_FINAL_LANG[place]?.[type]?.[0]==='🇪🇸')?'🇪🇸 Web / reservar':'🌐 Web'}</a>`:''}</div>`}</div>`}).join('')}</div></div>`}
 function v43FinalServices2(place){let d=V42_SERVICES[v42Key(place)];if(!d)return'';return `<div class="v43-country-note"><b>Idiomas:</b> priorizo español. 🇪🇸 = español confirmado/disponible. Si no he localizado una opción fiable, lo indico expresamente como “🚫 No he encontrado guía en español” y dejo la mejor alternativa en inglés.</div>${v43FinalGroup2('🛵','Alquiler de moto',d.moto,place,'moto')}${v43FinalGroup2('🤿','Buceo & snorkel',d.dive,place,'dive')}${v43FinalGroup2('🚤','Barcos',d.boat,place,'boat')}${v43FinalGroup2('🎟️','Excursiones & tours',d.tour,place,'tour')}${v43FinalGroup2('⚡','Aventura & experiencias',d.adventure,place,'adventure')}${v43FinalMove(place)}`}
-function v43ThaiFromData(place){let el=document.getElementById('destDetail');if(!el||!DEST[place])return;let v=DEST[place],sid='s'+place.replaceAll(' ',''),photos=D.filter(x=>x.place===place).flatMap(x=>x.photos).slice(0,6);let hero=el.querySelector('.dest-photo-hero')?.outerHTML||'';let cats=el.querySelector('.catgrid')?.outerHTML||'';let gal=`<h2 class="section anchor" id="${sid}-photos">📸 No te pierdas esto</h2>${gallery(photos,'dest'+place.replaceAll(' ',''))}`;
+function v43ThaiFromData(place){let el=document.getElementById('destDetail');if(!el||!DEST[place])return;let v=DEST[place],sid='s'+place.replaceAll(' ',''),photos=DPH(place).slice(0,6);let hero=el.querySelector('.dest-photo-hero')?.outerHTML||'';let cats=el.querySelector('.catgrid')?.outerHTML||'';let gal=`<h2 class="section anchor" id="${sid}-photos">📸 No te pierdas esto</h2>${gallery(photos,'dest'+place.replaceAll(' ',''))}`;
 let see=v.see.map(x=>`<div class="card info-rec">${v43PhotoTag(x+' '+place+' Thailand')}<b>${x}</b><p class="muted">${SEE_DESC[place]?.[x]||''}</p><a class="v11link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x+' '+place+' Thailand')}" target="_blank">📍 Google Maps</a></div>`).join('');
 let doing=v.do.map(x=>`<div class="card info-rec">${v43PhotoTag(x+' '+place+' Thailand travel')}<b>${x}</b><p class="muted">${DO_DESC[place]?.[x]||''}</p></div>`).join('');
 let night=(NIGHT_RECS[place]||[]).map(x=>`<div class="card info-rec">${v43PhotoTag(x[0]+' '+place+' Thailand')}<b>${x[0]}</b><span class="night-tag">${x[1]}</span><p class="muted">${x[2]}</p><a class="v11link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x[0]+' '+place+' Thailand')}" target="_blank">📍 Google Maps</a></div>`).join('');
@@ -1602,7 +1608,7 @@ if(place!=='Koh Tao'&&photos.length){let im=document.getElementById('destHeroImg
 function v43MalCards2(items,place,kind){return (items||[]).map(x=>{let name=x[0],desc=(kind==='eat'||kind==='stay')?x[3]:x[1],tag=(kind==='eat'||kind==='stay')?`<span class="foodtype">${x[2]} · ${x[1]}</span>`:'';let photo=(kind==='eat'||kind==='stay')?'':v43PhotoTag(name+' '+place+' Malaysia '+kind);return `<div class="v43-mal-card">${photo}<h4>${name}</h4>${tag}<p>${desc}</p><div class="v43-actions"><a class="v43-link" target="_blank" href="${v42Maps(name,place)}">📍 Google Maps</a><a class="v43-link" target="_blank" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name+' '+place)}">📸 Fotos</a></div></div>`}).join('')}
 function v43MalaysiaCorrect(k){let base=MY38_DEST[k],d=V43_MAL[k],x=document.getElementById('my38DiscoverDetail');if(!x||!d)return;document.getElementById('my38DiscoverHome').style.display='none';x.style.display='block';let names={kl:'Kuala Lumpur',cam:'Cameron Highlands',pen:'Penang · George Town',lan:'Langkawi',mel:'Melaka'},p=names[k];x.innerHTML=`<button class="my38-back" onclick="my38CloseDest()">← Destinos</button><div class="my39-detailhero" style="background-image:url('${V43_MAL_PHOTO[k]}')"><div class="txt"><h1>${base.name}</h1><p>${base.sub}</p></div></div><p class="my39-intro">${MY39_DESC[k]}</p>${my39Order(k)}<div class="v43-wrap"><h3>🧭 Explora ${base.name}</h3><p class="v43-note">Mismo formato que Tailandia: lugares explicados, hoteles y restaurantes plegados, Google Maps y acceso directo a fotos.</p>${v43Accordion('⭐','Ver',v43MalCards2(d.see,p,'see'))}${v43Accordion('✨','Hacer',v43MalCards2(d.do,p,'do'))}${v43Accordion('🍜','Comer',v43MalCards2(d.eat,p,'eat'))}${v43Accordion('🏨','Dormir',v43MalCards2(d.stay,p,'stay'))}${v43Accordion('🍸','Noche',v43MalCards2(d.night,p,'night'))}<h3 style="margin-top:18px">🧭 Servicios & experiencias</h3>${v43FinalServices2(p)}</div>`;setTimeout(()=>v43LoadCardPhotos(x),30);document.getElementById('my37').scrollTo(0,0)}
 // definitive overrides: rebuild from data, never from already-mutated DOM
-openDest=function(k){let v=DEST[k],photos=D.filter(x=>x.place===k).flatMap(x=>x.photos).slice(0,6);document.getElementById('destList').classList.add('hidden');let el=document.getElementById('destDetail');el.classList.remove('hidden');let sid='s'+k.replaceAll(' ','');el.innerHTML=`<header class="dest-photo-hero"><button class="back" onclick="closeDest()">← Destinos</button><img id="destHeroImg" class="dest-hero-img" ${k==='Koh Tao'?'src="./koh-tao-sairee.jpg"':''} alt="${k}"><h1 style="margin-top:18px">${v.emoji} ${k}</h1><div class="sub">${v.sub}</div></header><div class="catgrid"><button class="cat" onclick="goDest('${sid}-stay')"><span>🏨</span>Dormir</button><button class="cat" onclick="goDest('${sid}-eat')"><span>🍜</span>Comer</button><button class="cat" onclick="goDest('${sid}-see')"><span>🛕</span>Ver</button><button class="cat" onclick="goDest('${sid}-do')"><span>✨</span>Hacer</button></div>`;v43ThaiFromData(k)};
+openDest=function(k){let v=DEST[k],photos=DPH(k).slice(0,6);document.getElementById('destList').classList.add('hidden');let el=document.getElementById('destDetail');el.classList.remove('hidden');let sid='s'+k.replaceAll(' ','');el.innerHTML=`<header class="dest-photo-hero"><button class="back" onclick="closeDest()">← Destinos</button><img id="destHeroImg" class="dest-hero-img" ${k==='Koh Tao'?'src="./koh-tao-sairee.jpg"':''} alt="${k}"><h1 style="margin-top:18px">${v.emoji} ${k}</h1><div class="sub">${v.sub}</div></header><div class="catgrid"><button class="cat" onclick="goDest('${sid}-stay')"><span>🏨</span>Dormir</button><button class="cat" onclick="goDest('${sid}-eat')"><span>🍜</span>Comer</button><button class="cat" onclick="goDest('${sid}-see')"><span>🛕</span>Ver</button><button class="cat" onclick="goDest('${sid}-do')"><span>✨</span>Hacer</button></div>`;v43ThaiFromData(k)};
 my38Dest=function(k){v43MalaysiaCorrect(k)};
 </script>
 
@@ -1636,7 +1642,7 @@ my38Dest=function(k){v43MalaysiaCorrect(k)};
   const map=document.getElementById('mapa'); if(!map||map.querySelector('#thaiFullRoute'))return;
   const grid=map.querySelector('.zone-grid'); if(!grid)return;
   const card=document.createElement('div');card.id='thaiFullRoute';card.className='full-route-card th';
-  card.innerHTML=`<h3>🇹🇭 Ruta completa · Tailandia</h3><p>Krabi → Phi Phi → Koh Phangan → Koh Tao → Chiang Mai → Chiang Rai → Bangkok. Abre el recorrido completo en Google Maps para consultar distancias y conexiones.</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=Ao+Nang+Krabi+Thailand&destination=Bangkok+Thailand&waypoints=Phi+Phi+Islands+Thailand%7CKoh+Phangan+Thailand%7CKoh+Tao+Thailand%7CChiang+Mai+Thailand%7CChiang+Rai+Thailand">🗺️ Abrir ruta completa de Tailandia</a>`;
+  card.innerHTML=`<h3>🇹🇭 Ruta completa · Tailandia</h3><p>Krabi → Phi Phi → Koh Phangan → Koh Tao → Chiang Mai → Bangkok. Abre el recorrido completo en Google Maps para consultar distancias y conexiones.</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=Ao+Nang+Krabi+Thailand&destination=Bangkok+Thailand&waypoints=Phi+Phi+Islands+Thailand%7CKoh+Phangan+Thailand%7CKoh+Tao+Thailand%7CChiang+Mai+Thailand">🗺️ Abrir ruta completa de Tailandia</a>`;
   grid.insertAdjacentElement('afterend',card);
  }
  addThailandFullRoute();
@@ -1659,7 +1665,7 @@ my38Dest=function(k){v43MalaysiaCorrect(k)};
 
 <script id="v56-laundry-final">
 (function(){
-const LAUNDRY_DATA={"Kuala Lumpur": [["CleinzStudio Xtra Laundry", "44 Jalan Berangan · Bukit Bintang", "CleinzStudio Xtra Laundry Kuala Lumpur"], ["SCG Laundromat 24 Hour", "Sun Complex · Bukit Bintang", "SCG LAUNDROMAT 24 HOUR Kuala Lumpur"], ["Lavanderías cercanas", "Buscar según tu hotel", "laundromat near Bukit Bintang Kuala Lumpur"]], "Cameron Highlands": [["Lavanderías en Tanah Rata", "Búsqueda actualizada", "laundry Tanah Rata Cameron Highlands"], ["Lavanderías en Brinchang", "Búsqueda actualizada", "self service laundry Brinchang"], ["Lavado en alojamiento", "Pregunta por recogida y entrega", "laundry service Cameron Highlands hotel"]], "Penang": [["Polar Bear Laundry", "Tropicana 218 Macalister · George Town", "Polar Bear Laundry Penang"], ["LaundryHub Penang", "731 Jalan Dato Keramat", "LaundryHub Penang Dato Keramat"], ["Lavanderías cerca de Armenian Street", "Búsqueda actualizada", "laundromat Armenian Street George Town Penang"]], "Langkawi": [["Cenang Laundry", "Jalan Pantai Cenang", "Cenang Laundry Langkawi"], ["LaundCoins Laundry", "Jalan Pantai Cenang", "LaundCoins Laundry Langkawi"], ["Otras lavanderías en Cenang", "Búsqueda actualizada", "laundry Pantai Cenang Langkawi"]], "Melaka": [["Lavanderías cerca de Jonker Walk", "Búsqueda actualizada", "laundromat Jonker Street Melaka"], ["Autoservicio en Melaka centro", "Búsqueda actualizada", "self service laundry Melaka city centre"], ["Lavado por kilos en Melaka", "Búsqueda actualizada", "wash fold laundry Melaka"]], "Phi Phi": [["Lavanderías en Tonsai Village", "Búsqueda actualizada", "laundry service Tonsai Village Phi Phi"], ["Lavado exprés cerca de Ark Bar", "Confirmar disponibilidad", "express laundry Ark Bar Phi Phi"], ["Lavado por kilos cerca del muelle", "Búsqueda actualizada", "laundry near Tonsai Pier Phi Phi"]], "Koh Phangan": [["Sakthi Wash N Dry", "Lavado, secado y recogida", "Sakthi Wash N Dry Koh Phangan"], ["Bee Wash & Dry", "Ban Tai · autoservicio", "Bee Wash Dry Ban Tai Koh Phangan"], ["Lavanderías en Haad Rin", "Búsqueda actualizada", "laundry service Haad Rin Koh Phangan"]], "Koh Tao": [["Tao Hub Coworking Laundry", "Servicio de lavandería", "Tao Hub Coworking laundry Koh Tao"], ["Autoservicio cerca de Chumphon Fresh Mart", "Zona Mae Haad", "self service laundry Chumphon Fresh Mart Koh Tao"], ["Lavanderías de Sairee", "Búsqueda actualizada", "laundry service Sairee Beach Koh Tao"]], "Chiang Mai": [["Clean Pro Self-Service Laundry", "Autoservicio · comprobar sucursal", "Clean Pro Self Service Laundry Chiang Mai"], ["I Wash and Dry Kamphaeng Din", "Zona centro", "I Wash and Dry Kamphaeng Din Chiang Mai"], ["LaundryBar Sri Phum", "Zona casco antiguo", "LaundryBar Sri Phum Chiang Mai"]], "Chiang Rai": [["Cleanpro Ibu Sayang", "934/13 Phaholyothin Rd · 24 h", "Cleanpro Ibu Sayang Chiang Rai"], ["Lavanderías cerca de Clock Tower", "Búsqueda actualizada", "laundry Chiang Rai Clock Tower"], ["Autoservicio cerca del Night Bazaar", "Búsqueda actualizada", "self service laundry Chiang Rai Night Bazaar"]], "Bangkok": [["Spin Clean Thailand Sukhumvit 22", "Khlong Toei · 24 h", "Spin Clean Thailand Sukhumvit 22"], ["Otteri Wash & Dry", "Buscar sucursal más cercana", "Otteri Wash Dry Bangkok"], ["Lavanderías cerca de tu hotel", "Búsqueda actualizada", "laundromat central Bangkok"]], "Ayutthaya": [["Lavanderías del casco histórico", "Búsqueda actualizada", "laundry Ayutthaya historical park"], ["Autoservicio cerca de estación", "Búsqueda actualizada", "laundromat Ayutthaya railway station"], ["Lavado y secado en Ayutthaya", "Búsqueda actualizada", "wash dry laundry Phra Nakhon Si Ayutthaya"]]};
+const LAUNDRY_DATA={"Kuala Lumpur": [["CleinzStudio Xtra Laundry", "44 Jalan Berangan · Bukit Bintang", "CleinzStudio Xtra Laundry Kuala Lumpur"], ["SCG Laundromat 24 Hour", "Sun Complex · Bukit Bintang", "SCG LAUNDROMAT 24 HOUR Kuala Lumpur"], ["Lavanderías cercanas", "Buscar según tu hotel", "laundromat near Bukit Bintang Kuala Lumpur"]], "Cameron Highlands": [["Lavanderías en Tanah Rata", "Búsqueda actualizada", "laundry Tanah Rata Cameron Highlands"], ["Lavanderías en Brinchang", "Búsqueda actualizada", "self service laundry Brinchang"], ["Lavado en alojamiento", "Pregunta por recogida y entrega", "laundry service Cameron Highlands hotel"]], "Penang": [["Polar Bear Laundry", "Tropicana 218 Macalister · George Town", "Polar Bear Laundry Penang"], ["LaundryHub Penang", "731 Jalan Dato Keramat", "LaundryHub Penang Dato Keramat"], ["Lavanderías cerca de Armenian Street", "Búsqueda actualizada", "laundromat Armenian Street George Town Penang"]], "Langkawi": [["Cenang Laundry", "Jalan Pantai Cenang", "Cenang Laundry Langkawi"], ["LaundCoins Laundry", "Jalan Pantai Cenang", "LaundCoins Laundry Langkawi"], ["Otras lavanderías en Cenang", "Búsqueda actualizada", "laundry Pantai Cenang Langkawi"]], "Melaka": [["Lavanderías cerca de Jonker Walk", "Búsqueda actualizada", "laundromat Jonker Street Melaka"], ["Autoservicio en Melaka centro", "Búsqueda actualizada", "self service laundry Melaka city centre"], ["Lavado por kilos en Melaka", "Búsqueda actualizada", "wash fold laundry Melaka"]], "Phi Phi": [["Lavanderías en Tonsai Village", "Búsqueda actualizada", "laundry service Tonsai Village Phi Phi"], ["Lavado exprés cerca de Ark Bar", "Confirmar disponibilidad", "express laundry Ark Bar Phi Phi"], ["Lavado por kilos cerca del muelle", "Búsqueda actualizada", "laundry near Tonsai Pier Phi Phi"]], "Koh Phangan": [["Sakthi Wash N Dry", "Lavado, secado y recogida", "Sakthi Wash N Dry Koh Phangan"], ["Bee Wash & Dry", "Ban Tai · autoservicio", "Bee Wash Dry Ban Tai Koh Phangan"], ["Lavanderías en Haad Rin", "Búsqueda actualizada", "laundry service Haad Rin Koh Phangan"]], "Koh Tao": [["Tao Hub Coworking Laundry", "Servicio de lavandería", "Tao Hub Coworking laundry Koh Tao"], ["Autoservicio cerca de Chumphon Fresh Mart", "Zona Mae Haad", "self service laundry Chumphon Fresh Mart Koh Tao"], ["Lavanderías de Sairee", "Búsqueda actualizada", "laundry service Sairee Beach Koh Tao"]], "Chiang Mai": [["Clean Pro Self-Service Laundry", "Autoservicio · comprobar sucursal", "Clean Pro Self Service Laundry Chiang Mai"], ["I Wash and Dry Kamphaeng Din", "Zona centro", "I Wash and Dry Kamphaeng Din Chiang Mai"], ["LaundryBar Sri Phum", "Zona casco antiguo", "LaundryBar Sri Phum Chiang Mai"]], "Bangkok": [["Spin Clean Thailand Sukhumvit 22", "Khlong Toei · 24 h", "Spin Clean Thailand Sukhumvit 22"], ["Otteri Wash & Dry", "Buscar sucursal más cercana", "Otteri Wash Dry Bangkok"], ["Lavanderías cerca de tu hotel", "Búsqueda actualizada", "laundromat central Bangkok"]], "Ayutthaya": [["Lavanderías del casco histórico", "Búsqueda actualizada", "laundry Ayutthaya historical park"], ["Autoservicio cerca de estación", "Búsqueda actualizada", "laundromat Ayutthaya railway station"], ["Lavado y secado en Ayutthaya", "Búsqueda actualizada", "wash dry laundry Phra Nakhon Si Ayutthaya"]]};
 function laundry(el,city){
  if(!el||!LAUNDRY_DATA[city]||el.querySelector('.v56-laundry'))return;
  const cards=LAUNDRY_DATA[city].map(([name,note,query])=>'<div class="card info-rec" style="padding:13px;margin:8px 0"><b>'+name+'</b><p class="muted" style="margin:5px 0">'+note+'</p><a class="v11link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(query)+'">📍 Ver en Google Maps ↗</a></div>').join('');
@@ -1758,7 +1764,6 @@ const MYLEGS=[
 const PLACES=[
  ['th','Aeropuertos y puertos','Aeropuerto Suvarnabhumi (BKK)','สนามบินสุวรรณภูมิ'],
  ['th','Aeropuertos y puertos','Aeropuerto de Chiang Mai','สนามบินเชียงใหม่'],
- ['th','Aeropuertos y puertos','Estación de autobuses de Chiang Rai','สถานีขนส่งเชียงราย'],
  ['th','Aeropuertos y puertos','Muelle Ton Sai (Phi Phi)','ท่าเรือต้นไทร'],
  ['th','Aeropuertos y puertos','Muelle Thong Sala (Koh Phangan)','ท่าเรือทองศาลา'],
  ['th','Aeropuertos y puertos','Muelle Mae Haad (Koh Tao)','ท่าเรือแม่หาด'],
@@ -1797,15 +1802,44 @@ const TRAM=[
  {id:'seg',e:'🩺',n:'Seguro de viaje',t:'Guarda la póliza y el teléfono de asistencia. Tienes un hueco para anotarlos en Emergencias.'},
  {id:'req',e:'📋',n:'Requisitos oficiales',t:'Reconfirma en las webs oficiales de inmigración de Malasia y Tailandia antes de salir: las normas y los plazos pueden cambiar.'}
 ];
-const STAYS=[['Alanta Aonang Resort','Krabi','2026-11-21','2026-11-22'],['Uphill Cottage','Phi Phi','2026-11-22','2026-11-24'],['The Pier','Koh Phangan','2026-11-24','2026-11-26'],['Angkana Bungalows (adults only)','Koh Phangan','2026-11-26','2026-11-27'],['Koh Tao Royal Resort','Koh Tao','2026-11-27','2026-11-29'],['Big Fish Resort','Koh Tao','2026-11-29','2026-11-30']];
+const STAYS=[['Alanta Aonang Resort','Krabi','2026-11-21','2026-11-22'],['Uphill Cottage','Phi Phi','2026-11-22','2026-11-24'],['The Pier','Koh Phangan','2026-11-24','2026-11-26'],['Angkana Bungalows (adults only)','Koh Phangan','2026-11-26','2026-11-27'],['Koh Tao Royal Resort','Koh Tao','2026-11-27','2026-11-29'],['Big Fish Resort','Koh Tao','2026-11-29','2026-11-30'],['Manee Cool Mueang','Chiang Mai','2026-12-01','2026-12-05']];
 window.V57STAYS=STAYS;
+const _e=encodeURIComponent;
+const HQ={'Alanta Aonang Resort':'Alanta Aonang Resort Ao Nang Krabi','Uphill Cottage':'Uphill Cottage Koh Phi Phi Don','The Pier':'The Pier hotel Koh Phangan','Angkana Bungalows (adults only)':'Angkana Bungalows Koh Phangan','Koh Tao Royal Resort':'Koh Tao Royal Resort Koh Tao','Big Fish Resort':'Big Fish Resort Koh Tao','Manee Cool Mueang':'Manee Cool Mueang Chiang Mai'};
+const hq=s=>(HQ[s[0]]||(s[0]+' '+s[1]))+' Thailand';
+const FIRST={
+ '2026-11-22':['el muelle de Nopparat Thara (ferry a Phi Phi)','Nopparat Thara Pier Krabi'],
+ '2026-11-23':['Tonsai Pier (salida del longtail)','Tonsai Pier Phi Phi'],
+ '2026-11-24':['Tonsai Pier (ferry a Koh Phangan)','Tonsai Pier Phi Phi'],
+ '2026-11-25':['Haad Rin Beach','Haad Rin Beach Koh Phangan'],
+ '2026-11-27':['Thong Sala Pier (ferry a Koh Tao)','Thong Sala Pier Koh Phangan'],
+ '2026-11-29':['Sairee Beach (taxi boat a Koh Nang Yuan)','Sairee Beach Koh Tao'],
+ '2026-11-30':['Mae Haad Pier (ferry a Samui)','Mae Haad Pier Koh Tao'],
+ '2026-12-02':['Wat Phra That Doi Suthep','Wat Phra That Doi Suthep'],
+ '2026-12-04':['Nimman (cafés)','Nimmanhaemin Road Chiang Mai'],
+ '2026-12-05':['el aeropuerto de Chiang Mai (si vuelas a Bangkok)','Chiang Mai International Airport']
+};
+window.V64={
+ back:s=>'https://www.google.com/maps/dir/?api=1&destination='+_e(hq(s)),
+ from:(s,q)=>'https://www.google.com/maps/dir/?api=1&origin='+_e(hq(s))+'&destination='+_e(q),
+ night:t=>STAYS.find(x=>t>=x[2]&&t<x[3]),
+ morning:t=>STAYS.find(x=>x[2]<t&&t<=x[3]),
+ first:t=>FIRST[t]||null
+};
+function firstLine(t){
+  const m=V64.morning(t),f=V64.first(t);
+  if(!m||!f)return'';
+  return `<div class="v57-sub"><span class="ic">🧭</span><div><b>Primer destino · desde tu hotel</b>${esc(m[0])} → ${esc(f[0])}<div class="v57-links"><a class="v57-btn" target="_blank" rel="noopener" href="${esc(V64.from(m,f[1]))}">Cómo llegar · Google Maps</a></div></div></div>`;
+}
 function stayLine(t){
   const night=STAYS.find(x=>t>=x[2]&&t<x[3]),out=STAYS.find(x=>x[3]===t);
   if(!night&&!out)return'';
   let p=[];
   if(out)p.push('Dejas '+esc(out[0]));
+  if(t==='2026-11-30')p.push('esta noche en el <b>tren cama</b> a Chiang Mai');
   if(night)p.push('esta noche en <b>'+esc(night[0])+'</b> · '+esc(night[1]));
-  return `<div class="v57-sub"><span class="ic">🏨</span><div><b>Alojamiento</b>${p.join(' · ')}</div></div>`;
+  const bk=night?`<div class="v57-links"><a class="v57-btn pri" target="_blank" rel="noopener" href="${esc(V64.back(night))}">🧭 Volver al hotel desde donde estoy</a></div>`:'';
+  return `<div class="v57-sub"><span class="ic">🏨</span><div><b>Alojamiento</b>${p.join(' · ')}${bk}</div></div>`;
 }
 const winOpen=arr=>{const d=dd(arr);d.setDate(d.getDate()-3);return iso(d)};
 const tramDone=()=>jget(K.tram,{});
@@ -1860,6 +1894,7 @@ function renderHoy(){
       if(stage.t!==stage.n)h+=`<p class="muted" style="margin:0 0 6px">${esc(stage.n)}</p>`;
       h+=body;
       h+=stayLine(t);
+      h+=firstLine(t);
       h+=`<div class="v57-links"><a class="v57-btn" target="_blank" rel="noopener" href="${maps(stage.q)}">📍 Mapa</a><button class="v57-btn pri" onclick="openMore&&v57Go('taxi')">🚕 Enseñar al conductor</button></div>`;
     }
     const nx=allLegs().find(x=>x.d>=t);
@@ -1974,7 +2009,7 @@ function mount(){
   const hero=$('#ruta .hero');
   if(hero&&!$('#v57hoy')){const c=document.createElement('div');c.id='v57hoy';c.className='card v57-hoy';hero.insertAdjacentElement('afterend',c)}
   // Cabecera de versión
-  document.querySelectorAll('#ruta header .ey').forEach(e=>{e.textContent=e.textContent.replace(/V\d+/,'V62')});
+  document.querySelectorAll('#ruta header .ey').forEach(e=>{e.textContent=e.textContent.replace(/V\d+/,'V63')});
   // Mover las subpáginas nuevas dentro de «Más»
   const mas=$('#mas');
   ['more-tricount','more-taxi','more-tramites'].forEach(id=>{const e=document.getElementById(id);if(e&&mas&&e.parentNode!==mas)mas.appendChild(e)});
@@ -2289,11 +2324,17 @@ try{
 <style id="v62-style">
 .v62-stay{margin:10px 0 0;padding:9px 12px;border-radius:14px;background:#e6f3ee;color:#0f3b3f;font-size:13.5px;font-weight:700;line-height:1.35}
 .v62-stay small{display:block;font-weight:600;color:#486a68}
+.v62-stay .v64-back,.v64-first a,.v62-card .v64-back{display:inline-block;margin-top:8px;padding:8px 13px;border-radius:999px;background:#0b7775;color:#fff!important;font-size:13px;font-weight:800;text-decoration:none}
+.v64-first{margin:10px 0;padding:10px 12px;border-radius:14px;background:#fff3de;color:#5b3d0a;font-size:13.5px;font-weight:600;line-height:1.35}
+.v64-first b{display:block;font-weight:800}
+.bookrow.done .info{opacity:1!important}.bookrow.done .info>b,.bookrow.done .info>small{opacity:.55}
+.bookrow a.v64-mini{background:#0b7775!important;color:#fff!important;font-size:12px!important;padding:6px 11px!important;border-radius:999px!important}
+.v64-mini{display:block;width:max-content;margin:4px 0 0 0;padding:5px 10px;border-radius:999px;background:#0b7775;color:#fff!important;font-size:12px;font-weight:800;text-decoration:none;white-space:nowrap}
 </style>
 <script id="v62-thailand">
 (function(){
 'use strict';
-const S=window.V57STAYS||[];if(!S.length)return;
+const S=window.V57STAYS||[],V=window.V64;if(!S.length||!V)return;
 const MON={NOV:'11',DIC:'12'};
 const pad=n=>String(n).padStart(2,'0');
 const iso=l=>{const m=String(l).toUpperCase().match(/(\d+)\s+(NOV|DIC)/);return m?'2026-'+MON[m[2]]+'-'+pad(m[1]):null};
@@ -2304,26 +2345,46 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 const maps=(n,p)=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(n+' '+p+' Thailand');
 function days(){
  document.querySelectorAll('#days .day').forEach(c=>{
-  if(c.querySelector('.v62-stay'))return;
   const t=iso(c.querySelector('.ey')?.textContent||'');if(!t)return;
-  const night=S.find(x=>t>=x[2]&&t<x[3]),out=S.find(x=>x[3]===t);
-  if(!night&&!out)return;
-  let h='🏨 ';
-  if(night)h+='Esta noche: '+esc(night[0]);
-  if(out)h+=(night?'<small>':'')+'Check-out: '+esc(out[0])+(night?'</small>':'');
-  c.insertAdjacentHTML('beforeend','<div class="v62-stay">'+h+'</div>');
+  if(!c.querySelector('.v62-stay')){
+   const night=V.night(t),out=S.find(x=>x[3]===t);
+   if(night||out){
+    let h='🏨 ';
+    if(night)h+='Esta noche: '+esc(night[0]);
+    if(out)h+=(night?'<small>':'')+'Check-out: '+esc(out[0])+(night?'</small>':'');
+    if(t==='2026-11-30')h+='<small>🌙 Esta noche: tren cama a Chiang Mai</small>';
+    if(night)h+='<br><a class="v64-back" target="_blank" rel="noopener" href="'+esc(V.back(night))+'">🧭 Volver al hotel desde donde estoy</a>';
+    c.insertAdjacentHTML('beforeend','<div class="v62-stay">'+h+'</div>');
+   }
+  }
+  if(!c.querySelector('.v64-first')){
+   const m=V.morning(t),f=V.first(t);
+   if(m&&f){
+    const html='<div class="v64-first"><b>🏨 Desde tu hotel</b>'+esc(m[0])+' → '+esc(f[0])+'<br><a target="_blank" rel="noopener" href="'+esc(V.from(m,f[1]))+'">🧭 Cómo llegar · Google Maps</a></div>';
+    const anchor=c.querySelector('.logical-card')||c.querySelector('.transfer-card');
+    if(anchor)anchor.insertAdjacentHTML('beforebegin',html);else c.insertAdjacentHTML('beforeend',html);
+   }
+  }
  });
 }
 function dest(){
  const el=document.getElementById('destDetail');if(!el||el.classList.contains('hidden')||el.querySelector('.v62-card'))return;
  const name=(el.querySelector('h1')?.textContent||'').replace(/^[^A-Za-z]+/,'').trim();if(!name)return;
  const mine=S.filter(x=>x[1]===name);if(!mine.length)return;
- const rows=mine.map(x=>{const n=nights(x);return `<div class="v59-row"><i>🏨</i><div><b>${esc(x[0])}</b><span>${fmt(x[2])} – ${fmt(x[3])} · ${n} ${n===1?'noche':'noches'} · reserva confirmada</span><br><a target="_blank" rel="noopener" href="${maps(x[0],name)}">📍 Google Maps</a></div></div>`}).join('');
+ const rows=mine.map(x=>{const n=nights(x);return `<div class="v59-row"><i>🏨</i><div><b>${esc(x[0])}</b><span>${fmt(x[2])} – ${fmt(x[3])} · ${n} ${n===1?'noche':'noches'} · reserva confirmada</span><br><a target="_blank" rel="noopener" href="${maps(x[0],name)}">📍 Google Maps</a><br><a class="v64-back" target="_blank" rel="noopener" href="${esc(V.back(x))}">🧭 Volver al hotel desde donde estoy</a></div></div>`}).join('');
  const card=`<div class="v59-card v62-card"><h3>✅ Tu alojamiento</h3>${rows}</div>`;
  const grid=el.querySelector('.catgrid');
  if(grid)grid.insertAdjacentHTML('afterend',card);else el.querySelector('.dest-photo-hero')?.insertAdjacentHTML('afterend',card);
 }
-function run(){try{days();dest()}catch(e){}}
+function books(){
+ document.querySelectorAll('.bookrow').forEach(r=>{
+  if(r.querySelector('.v64-mini'))return;
+  const ti=(r.querySelector('.info b')?.textContent||'').trim();
+  const s=S.find(x=>ti.startsWith(x[0]));if(!s)return;
+  r.querySelector('.info')?.insertAdjacentHTML('beforeend','<a class="v64-mini" target="_blank" rel="noopener" onclick="event.stopPropagation()" href="'+esc(V.back(s))+'">🧭 Cómo llegar desde donde estoy</a>');
+ });
+}
+function run(){try{days();dest();books()}catch(e){}}
 document.addEventListener('DOMContentLoaded',()=>{setTimeout(run,500);new MutationObserver(()=>{clearTimeout(run.t);run.t=setTimeout(run,150)}).observe(document.body,{childList:true,subtree:true})});
 setTimeout(run,700);
 })();

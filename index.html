@@ -1823,12 +1823,20 @@ const FIRST={
  '2026-12-05':['el aeropuerto de Chiang Mai (vuelo 11:45)','Chiang Mai International Airport'],
  '2026-12-07':['Grand Palace','The Grand Palace Bangkok']
 };
+const TH={'Alanta Aonang Resort':'อ่าวนาง กระบี่','Uphill Cottage':'เกาะพีพีดอน กระบี่','The Pier':'เกาะพะงัน สุราษฎร์ธานี','Angkana Bungalows (adults only)':'เกาะพะงัน สุราษฎร์ธานี','Koh Tao Royal Resort':'เกาะเต่า สุราษฎร์ธานี','Big Fish Resort':'เกาะเต่า สุราษฎร์ธานี','Manee Cool Mueang':'เมืองเชียงใหม่ เชียงใหม่','Silom Serene A Boutique Hotel':'สีลม กรุงเทพฯ'};
+const BKDIRECT={'Alanta Aonang Resort':'alanta-aonang-resort','Uphill Cottage':'uphill-cottage','Angkana Bungalows (adults only)':'angkana-bungalow','Koh Tao Royal Resort':'koh-tao-royal-resort','Big Fish Resort':'big-fish-resort-koh-tao','Silom Serene A Boutique Hotel':'silom-serene-a-boutique'};
+const bookingUrl=s=>{
+  const d='checkin='+s[2]+'&checkout='+s[3]+'&group_adults=1&no_rooms=1';
+  return BKDIRECT[s[0]]?'https://www.booking.com/hotel/th/'+BKDIRECT[s[0]]+'.html?'+d:'https://www.booking.com/searchresults.html?ss='+_e((HQ[s[0]]||(s[0]+' '+s[1])))+'&'+d;
+};
 window.V64={
  back:s=>'https://www.google.com/maps/dir/?api=1&destination='+_e(hq(s)),
  from:(s,q)=>'https://www.google.com/maps/dir/?api=1&origin='+_e(hq(s))+'&destination='+_e(q),
  night:t=>STAYS.find(x=>t>=x[2]&&t<x[3]),
  morning:t=>STAYS.find(x=>x[2]<t&&t<=x[3]),
- first:t=>FIRST[t]||null
+ first:t=>FIRST[t]||null,
+ booking:bookingUrl,
+ btns:x=>`<div class="v64-btns"><a class="v64-btn pri" target="_blank" rel="noopener" onclick="event.stopPropagation()" href="${esc(V64.back(x))}">🧭 Volver al hotel</a><button type="button" class="v64-btn" onclick="event.stopPropagation();event.preventDefault();v57Show('s',${STAYS.indexOf(x)})">🚕 Taxista</button><a class="v64-btn" target="_blank" rel="noopener" onclick="event.stopPropagation()" href="${esc(bookingUrl(x))}">🅱️ Booking</a></div>`
 };
 function firstLine(t){
   const m=V64.morning(t),f=V64.first(t);
@@ -1842,7 +1850,7 @@ function stayLine(t){
   if(out)p.push('Dejas '+esc(out[0]));
   if(t==='2026-11-30')p.push('esta noche en el <b>tren cama</b> a Chiang Mai');
   if(night)p.push('esta noche en <b>'+esc(night[0])+'</b> · '+esc(night[1]));
-  const bk=night?`<div class="v57-links"><a class="v57-btn pri" target="_blank" rel="noopener" href="${esc(V64.back(night))}">🧭 Volver al hotel desde donde estoy</a></div>`:'';
+  const bk=night?V64.btns(night):'';
   return `<div class="v57-sub"><span class="ic">🏨</span><div><b>Alojamiento</b>${p.join(' · ')}${bk}</div></div>`;
 }
 const winOpen=arr=>{const d=dd(arr);d.setDate(d.getDate()-3);return iso(d)};
@@ -1951,11 +1959,11 @@ function renderTaxi(){
   box.innerHTML=h;
 }
 window.v57Show=function(k,i){
-  const p=k==='h'?jget(K.hot,[])[i]:{n:PLACES[i][2],l:PLACES[i][3],c:PLACES[i][0]};
+  const p=k==='h'?jget(K.hot,[])[i]:k==='s'?{n:'🏨 '+STAYS[i][0],l:STAYS[i][0]+' · '+(TH[STAYS[i][0]]||''),c:'th',m:V64.back(STAYS[i])}:{n:PLACES[i][2],l:PLACES[i][3],c:PLACES[i][0]};
   if(!p)return;
   const L=LANG[p.c];
   const o=document.createElement('div');o.className='v57show';
-  o.innerHTML=`<div class="es">${esc(p.n)}</div><div class="nat">${esc(p.l)}</div><div class="sen">${esc(L.go)}</div>${L.ph?`<div class="ph">${esc(L.ph)}</div>`:''}<div class="es">${esc(L.es)}</div><div class="sen" style="margin-top:14px">${esc(L.meter)}</div>${L.mph?`<div class="ph">${esc(L.mph)}</div>`:''}<div class="es">${esc(L.mes)}</div><button>Cerrar</button>`;
+  o.innerHTML=`<div class="es">${esc(p.n)}</div><div class="nat">${esc(p.l)}</div><div class="sen">${esc(L.go)}</div>${L.ph?`<div class="ph">${esc(L.ph)}</div>`:''}<div class="es">${esc(L.es)}</div><div class="sen" style="margin-top:14px">${esc(L.meter)}</div>${L.mph?`<div class="ph">${esc(L.mph)}</div>`:''}<div class="es">${esc(L.mes)}</div>${p.m?`<a href="${esc(p.m)}" target="_blank" rel="noopener" style="display:inline-block;margin-top:16px;padding:12px 20px;border-radius:999px;background:#0b7775;color:#fff;font-weight:800;text-decoration:none">📍 Ver el hotel en Google Maps</a>`:''}<button>Cerrar</button>`;
   o.querySelector('button').onclick=()=>o.remove();
   document.body.appendChild(o);
 };
@@ -2332,8 +2340,13 @@ try{
 .v64-first{margin:10px 0;padding:10px 12px;border-radius:14px;background:#fff3de;color:#5b3d0a;font-size:13.5px;font-weight:600;line-height:1.35}
 .v64-first b{display:block;font-weight:800}
 .bookrow.done .info{opacity:1!important}.bookrow.done .info>b,.bookrow.done .info>small{opacity:.55}
-.bookrow a.v64-mini{background:#0b7775!important;color:#fff!important;font-size:12px!important;padding:6px 11px!important;border-radius:999px!important}
-.v64-mini{display:block;width:max-content;margin:4px 0 0 0;padding:5px 10px;border-radius:999px;background:#0b7775;color:#fff!important;font-size:12px;font-weight:800;text-decoration:none;white-space:nowrap}
+
+.v64-btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.v64-btn{display:inline-block;border:0;cursor:pointer;padding:8px 12px;border-radius:999px;background:#e1f0eb;color:#075b5c!important;font:800 13px/1.2 inherit;font-family:inherit;text-decoration:none;white-space:nowrap}
+.v64-btn.pri{background:#0b7775;color:#fff!important}
+.bookrow .v64-btns a.v64-btn{background:#e1f0eb!important;color:#075b5c!important;font-size:12px!important;padding:7px 11px!important;border-radius:999px!important}
+.bookrow .v64-btns a.v64-btn.pri{background:#0b7775!important;color:#fff!important}
+.bookrow .v64-btn{font-size:12px;padding:7px 11px}
 </style>
 <script id="v62-thailand">
 (function(){
@@ -2357,7 +2370,7 @@ function days(){
     if(night)h+='Esta noche: '+esc(night[0]);
     if(out)h+=(night?'<small>':'')+'Check-out: '+esc(out[0])+(night?'</small>':'');
     if(t==='2026-11-30')h+='<small>🌙 Esta noche: tren cama a Chiang Mai</small>';
-    if(night)h+='<br><a class="v64-back" target="_blank" rel="noopener" href="'+esc(V.back(night))+'">🧭 Volver al hotel desde donde estoy</a>';
+    if(night)h+=V.btns(night);
     c.insertAdjacentHTML('beforeend','<div class="v62-stay">'+h+'</div>');
    }
   }
@@ -2375,7 +2388,7 @@ function dest(){
  const el=document.getElementById('destDetail');if(!el||el.classList.contains('hidden')||el.querySelector('.v62-card'))return;
  const name=(el.querySelector('h1')?.textContent||'').replace(/^[^A-Za-z]+/,'').trim();if(!name)return;
  const mine=S.filter(x=>x[1]===name);if(!mine.length)return;
- const rows=mine.map(x=>{const n=nights(x);return `<div class="v59-row"><i>🏨</i><div><b>${esc(x[0])}</b><span>${fmt(x[2])} – ${fmt(x[3])} · ${n} ${n===1?'noche':'noches'} · reserva confirmada</span><br><a target="_blank" rel="noopener" href="${maps(x[0],name)}">📍 Google Maps</a><br><a class="v64-back" target="_blank" rel="noopener" href="${esc(V.back(x))}">🧭 Volver al hotel desde donde estoy</a></div></div>`}).join('');
+ const rows=mine.map(x=>{const n=nights(x);return `<div class="v59-row"><i>🏨</i><div><b>${esc(x[0])}</b><span>${fmt(x[2])} – ${fmt(x[3])} · ${n} ${n===1?'noche':'noches'} · reserva confirmada</span><br><a target="_blank" rel="noopener" href="${maps(x[0],name)}">📍 Google Maps</a>${V.btns(x)}</div></div>`}).join('');
  const card=`<div class="v59-card v62-card"><h3>✅ Tu alojamiento</h3>${rows}</div>`;
  const grid=el.querySelector('.catgrid');
  if(grid)grid.insertAdjacentHTML('afterend',card);else el.querySelector('.dest-photo-hero')?.insertAdjacentHTML('afterend',card);
@@ -2385,7 +2398,7 @@ function books(){
   if(r.querySelector('.v64-mini'))return;
   const ti=(r.querySelector('.info b')?.textContent||'').trim();
   const s=S.find(x=>ti.startsWith(x[0]));if(!s)return;
-  r.querySelector('.info')?.insertAdjacentHTML('beforeend','<a class="v64-mini" target="_blank" rel="noopener" onclick="event.stopPropagation()" href="'+esc(V.back(s))+'">🧭 Cómo llegar desde donde estoy</a>');
+  r.querySelector('.info')?.insertAdjacentHTML('beforeend',V.btns(s).replace('class="v64-btns"','class="v64-btns v64-mini"'));
  });
 }
 function run(){try{days();dest();books()}catch(e){}}

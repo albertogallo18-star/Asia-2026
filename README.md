@@ -12,3 +12,5 @@ Sube estos 4 archivos al repo (reemplazan a los anteriores): index.html, v58-art
 Nuevo en esta versión: en cada hotel reservado, botón "Volver al hotel desde donde estoy" (Google Maps desde tu ubicación) y, en cada día con ruta, "Desde tu hotel → primer sitio".
 
 También: hotel de Bangkok (Silom Serene), vuelo Chiang Mai → Bangkok (11:45), excursión a Ayutthaya (6 dic, 8:30), punto de encuentro del tour de Chiang Rai (7:00, Burger King Thapae) y los 7 vuelos juntos en la primera página.
+
+Cada hotel tiene ahora 3 botones: Volver al hotel (Google Maps desde donde estés), Taxista (tarjeta en tailandés para enseñar al conductor) y Booking.

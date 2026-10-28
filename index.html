@@ -2933,3 +2933,29 @@ document.addEventListener('DOMContentLoaded',()=>{
 setTimeout(run,1200);
 })();
 </script>
+
+<style>
+.v66t-sw{display:flex;gap:7px;overflow-x:auto;margin:2px -4px 12px;padding:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.v66t-sw::-webkit-scrollbar{display:none}
+.v66t-sw button{flex:0 0 auto;border:1px solid #e1d5c3;background:#fffaf3;border-radius:999px;padding:8px 13px;font:inherit;font-size:13px;font-weight:700;color:#123e40;white-space:nowrap}
+.v66t-sw button.on{background:#123e40;color:#fff;border-color:#123e40}
+</style>
+<script>
+(function(){
+const EM={'Krabi':'🌴','Phi Phi':'🏝️','Koh Phangan':'🌕','Koh Tao':'🤿','Chiang Mai':'🛕','Chiang Rai':'⛩️','Bangkok':'🌆','Ayutthaya':'🏯'};
+let cur='';
+function keys(){try{return Object.keys(DEST)}catch(e){return[]}}
+function build(){
+  const d=document.getElementById('destDetail');if(!d||d.classList.contains('hidden')||!cur)return;
+  d.querySelectorAll('.v66t-sw').forEach(x=>x.remove());
+  const sw=document.createElement('div');sw.className='v66t-sw';
+  sw.innerHTML=keys().map(k=>'<button data-k="'+k.replace(/"/g,'&quot;')+'" class="'+(k===cur?'on':'')+'">'+(EM[k]||'📍')+' '+k+'</button>').join('');
+  sw.addEventListener('click',e=>{const b=e.target.closest('button');if(b&&b.dataset.k!==cur){window.openDest(b.dataset.k);window.scrollTo({top:0,behavior:'smooth'})}});
+  const first=d.firstElementChild;(first?first.insertAdjacentElement('afterend',sw):d.prepend(sw));
+  const on=sw.querySelector('.on');if(on)sw.scrollLeft=on.offsetLeft-sw.clientWidth/2+on.offsetWidth/2;
+}
+const _o=window.openDest;
+if(typeof _o==='function')window.openDest=function(k){cur=k;const r=_o.apply(this,arguments);try{build()}catch(e){}return r};
+document.addEventListener('click',e=>{if(e.target.closest&&e.target.closest('#destDetail .back,#destDetail [onclick*="closeDest"],#destDetail [onclick*="destList"]'))cur=''},true);
+})();
+</script>

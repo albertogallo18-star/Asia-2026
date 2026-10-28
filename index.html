@@ -1879,7 +1879,7 @@ function pendingBookings(t){
   }).slice(0,3);
 }
 function renderHoy(){
-  const host=$('#v57hoy');if(!host)return;
+  const hosts=document.querySelectorAll('.v57-hoy');if(!hosts.length)return;
   const t=today(), ov=jget(K.dov,'');
   let h='';
   const tr=tramDone();
@@ -1919,8 +1919,26 @@ function renderHoy(){
   const pb=pendingBookings(t);
   if(pb.length)h+=`<div class="v57-warn"><b>⬜ Reservas pendientes cercanas</b><br>${pb.map(i=>esc(i.title)+' · '+esc(i.date)).join('<br>')}</div>`;
   if(ov)h+=`<p class="muted" style="font-size:12px;margin:10px 0 0">Fecha simulada: ${fmt(ov)} · <a href="#" onclick="v57SetDate('');return false">volver a hoy</a></p>`;
-  host.innerHTML=h;
+  hosts.forEach(x=>{x.innerHTML=h});
+  try{renderCover()}catch(e){}
 }
+function renderCover(){
+  const c=document.querySelector('#countryGate .country-copy');if(!c)return;
+  let el=c.querySelector('.v66-pill');if(!el){el=document.createElement('div');el.className='v66-pill';c.appendChild(el)}
+  const t=today();let s='';
+  if(t<START){const n=diff(t,START);s=n===1?'⏳ Sales mañana':'⏳ Faltan '+n+' días'}
+  else if(t>=END)s='🎉 Viaje completado';
+  else{
+    const n=diff(START,t)+1,td=thaiDay(t),m=MY.find(x=>t>=x[0]&&t<x[1]);
+    let w='De camino a Kuala Lumpur';
+    if(t==='2026-11-30')w='Koh Tao → Chiang Mai';
+    else if(td)w='Estás en '+(td.place==='Ayutthaya'?'Bangkok':td.place);
+    else if(m)w='Estás en '+m[3];
+    s='📍 '+w+' · día '+n+' de 33';
+  }
+  el.textContent=s;
+}
+window.v57Render=renderHoy;
 function tramLines(t,tr){
   const items=TRAM.filter(x=>x.arr&&!tr[x.id]).map(x=>({x,o:winOpen(x.arr)})).filter(o=>diff(t,o.x.arr)>=0&&diff(t,o.o)<=7);
   if(!items.length)return'';
@@ -2872,7 +2890,7 @@ const SHORT=t=>t.replace('Kuala Lumpur + salida','KL · salida').replace('Camero
 const goTo=el=>{const m=my();if(!m||!el)return;if(el.classList&&el.classList.contains('v43-section')&&!el.classList.contains('open'))el.classList.add('open');const top=m.scrollTop+el.getBoundingClientRect().top-128;m.scrollTo({top:Math.max(0,top),behavior:'smooth'})};
 
 function wrap(bar){const w=document.createElement('div');w.className='v66-w';w.appendChild(bar);return w}
-function stick(){const m=my();if(!m||!m.classList.contains('on'))return;document.querySelectorAll('.v66-w').forEach(w=>{const b=w.firstChild;if(!b)return;if(!b.classList.contains('fix'))w.style.height=b.offsetHeight+'px';b.classList.toggle('fix',w.getBoundingClientRect().top<74)})}
+function stick(){const m=my();if(!m||!m.classList.contains('on'))return;document.querySelectorAll('.v66-w').forEach(w=>{const b=w.firstChild;if(!b)return;if(w.offsetParent===null){b.classList.remove('fix');return}if(!b.classList.contains('fix'))w.style.height=b.offsetHeight+'px';b.classList.toggle('fix',w.getBoundingClientRect().top<74)})}
 /* ---- Ruta: botonera de destinos ---- */
 function ruta(){
   const sec=document.querySelector('#my37 [data-my37="1"]');if(!sec)return;
@@ -2886,6 +2904,7 @@ function ruta(){
     return '<button data-i="'+i+'">'+(EM[keys[i]]||'📍')+' '+SHORT(nm)+'<small>'+sm.split(' · ')[0]+'</small></button>'}).join('');
   bar.addEventListener('click',e=>{const b=e.target.closest('button');if(b)goTo(st[+b.dataset.i])});
   const note=sec.querySelector('.my37-note');(note||sec.querySelector('h1')||sec.firstChild).insertAdjacentElement('afterend',wrap(bar));
+  if(!sec.querySelector('.v66-full'))bar.parentNode.insertAdjacentHTML('beforebegin','<a class="my37-btn v66-full" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Kuala+Lumpur/Cameron+Highlands/George+Town+Penang/Langkawi/Koh+Lipe/Melaka/Kuala+Lumpur">🗺️ Ver recorrido completo en Google Maps</a>');
   stick();markR();
 }
 function markR(){
@@ -2935,6 +2954,7 @@ setTimeout(run,1200);
 </script>
 
 <style>
+nav button[data-page="mapa"],.my37-bottom button:nth-child(3){display:none!important}
 .v66t-sw{display:flex;gap:7px;overflow-x:auto;margin:2px -4px 12px;padding:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .v66t-sw::-webkit-scrollbar{display:none}
 .v66t-sw button{flex:0 0 auto;border:1px solid #e1d5c3;background:#fffaf3;border-radius:999px;padding:8px 13px;font:inherit;font-size:13px;font-weight:700;color:#123e40;white-space:nowrap}
@@ -2942,6 +2962,8 @@ setTimeout(run,1200);
 </style>
 <script>
 (function(){
+function hideMap(){document.querySelectorAll('nav button[data-page="mapa"],.my37-bottom button:nth-child(3)').forEach(b=>b.style.setProperty('display','none','important'))}
+hideMap();document.addEventListener('DOMContentLoaded',()=>{hideMap();setTimeout(hideMap,800)});setTimeout(hideMap,1500);
 const EM={'Krabi':'🌴','Phi Phi':'🏝️','Koh Phangan':'🌕','Koh Tao':'🤿','Chiang Mai':'🛕','Chiang Rai':'⛩️','Bangkok':'🌆','Ayutthaya':'🏯'};
 let cur='';
 function keys(){try{return Object.keys(DEST)}catch(e){return[]}}
@@ -2957,5 +2979,75 @@ function build(){
 const _o=window.openDest;
 if(typeof _o==='function')window.openDest=function(k){cur=k;const r=_o.apply(this,arguments);try{build()}catch(e){}return r};
 document.addEventListener('click',e=>{if(e.target.closest&&e.target.closest('#destDetail .back,#destDetail [onclick*="closeDest"],#destDetail [onclick*="destList"]'))cur=''},true);
+})();
+</script>
+
+<style>
+.v66-pill{display:inline-block;margin-top:16px;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.2);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fff;font-weight:800;font-size:15px;border:1px solid rgba(255,255,255,.4)}
+.v66-quick{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin:12px 0}
+.v66-quick button{border:1px solid #e6dac9;background:#fffaf3;border-radius:16px;padding:12px 4px;font:inherit;font-size:11.5px;font-weight:800;color:#123e40;display:flex;flex-direction:column;align-items:center;gap:5px;line-height:1.15;text-align:center}
+.v66-quick button span{font-size:22px}
+.v66-fl{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:0 -4px;padding:2px 4px 10px;scrollbar-width:none}
+.v66-fl::-webkit-scrollbar{display:none}
+.v66-fl>*{flex:0 0 86%;scroll-snap-align:start;margin:0!important;box-sizing:border-box}
+.v66-h{font-size:12px;font-weight:800;letter-spacing:.5px;color:#5d6b68;margin:14px 4px 6px;text-transform:uppercase}
+#my37 .v66-hoyp>h1{margin-bottom:4px}
+#my37 .v66-fl>*{flex-basis:86%}
+</style>
+<script>
+(function(){
+const QUICK=[['💶','Gasto de hoy','gasto65'],['📄','Documentos','documentos'],['🚕','Enseñar al conductor','taxi'],['🚖','Transporte local','local65'],['🎫','Reservas','reservas'],['🆘','Emergencias','emergencias']];
+function go(name){
+  const my=document.getElementById('my37');
+  if(my&&my.classList.contains('on')){try{openSharedMore()}catch(e){}}
+  else{const n=document.querySelector('nav button[data-page="mas"]');if(n)n.click()}
+  setTimeout(()=>{try{openMore(name)}catch(e){}},40);
+}
+const quick=()=>{const d=document.createElement('div');d.className='v66-quick';
+  d.innerHTML=QUICK.map(q=>'<button type="button" data-g="'+q[2]+'"><span>'+q[0]+'</span>'+q[1]+'</button>').join('');
+  d.addEventListener('click',e=>{const b=e.target.closest('button');if(b)go(b.dataset.g)});return d};
+function relabel(){
+  document.querySelectorAll('nav button[data-page="ruta"], .my37-bottom button:first-child').forEach(b=>{
+    b.childNodes.forEach(n=>{if(n.nodeType===3&&/Viajazo/.test(n.textContent))n.textContent=n.textContent.replace('Viajazo','Hoy')})});
+}
+function flightsRow(src){
+  const cards=[...src.querySelectorAll('.card.flight')];if(!cards.length)return null;
+  const w=document.createElement('div');w.className='v66-fl';cards.forEach(c=>w.appendChild(c.cloneNode(true)));return w;
+}
+function thai(){
+  const p=document.getElementById('ruta');if(!p||p.dataset.v66)return;
+  const hoy=p.querySelector('.v57-hoy');if(!hoy)return;
+  p.dataset.v66=1;
+  // cabecera mínima: se conserva la línea de versión
+  const hd=p.querySelector('header');if(hd){hd.querySelectorAll('h1,.sub').forEach(x=>x.style.display='none')}
+  const hero=p.querySelector('.hero');if(hero)hero.style.display='none';
+  hoy.insertAdjacentElement('beforebegin',Object.assign(document.createElement('div'),{className:'v66-h',textContent:'Hoy en tu viaje'}));
+  hoy.insertAdjacentElement('afterend',quick());
+  // vuelos en una fila deslizable
+  const cards=[...p.querySelectorAll('.card.flight')];
+  if(cards.length){
+    const eyes=[...p.querySelectorAll('.ey')].find(e=>/VUELOS/.test(e.textContent));
+    const w=document.createElement('div');w.className='v66-fl';
+    cards[0].insertAdjacentElement('beforebegin',w);cards.forEach(c=>w.appendChild(c));
+    w.insertAdjacentElement('beforebegin',Object.assign(document.createElement('div'),{className:'v66-h',textContent:'✈️ Tus vuelos, en orden'}));
+    if(eyes)eyes.style.display='none';
+  }
+}
+function malaysia(){
+  const s=document.querySelector('#my37 [data-my37="0"]');if(!s||s.dataset.v66)return;
+  const th=document.getElementById('ruta');if(!th||!th.dataset.v66)return; // esperamos a tener los vuelos
+  s.dataset.v66=1;
+  [...s.children].forEach(c=>c.style.display='none');
+  const box=document.createElement('div');box.className='v66-hoyp';
+  box.innerHTML='<h1>Hoy</h1><div class="my37-card v57-hoy"></div>';
+  box.appendChild(quick());
+  const fl=flightsRow(th);
+  if(fl){const h=document.createElement('div');h.className='v66-h';h.textContent='✈️ Tus vuelos, en orden';box.appendChild(h);box.appendChild(fl)}
+  s.appendChild(box);
+  if(window.v57Render)window.v57Render();
+}
+function run(){try{relabel();thai();malaysia()}catch(e){console.error(e)}}
+document.addEventListener('DOMContentLoaded',()=>{setTimeout(run,700);setTimeout(run,1800);new MutationObserver(()=>{clearTimeout(run.t);run.t=setTimeout(run,400)}).observe(document.body,{childList:true,subtree:true})});
+setTimeout(run,1000);
 })();
 </script>

@@ -3051,3 +3051,120 @@ document.addEventListener('DOMContentLoaded',()=>{setTimeout(run,700);setTimeout
 setTimeout(run,1000);
 })();
 </script>
+
+<style>
+.v66m-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:4px}
+.v66m-top div{background:#f6efe2;border-radius:14px;padding:10px 8px;text-align:center;font-size:11px;color:#5d6b68;line-height:1.25}
+.v66m-top b{display:block;font-size:15px;color:#123e40;margin-bottom:2px}
+.v66m-split{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid #eadfcf;font-size:13.5px}.v66m-split:last-child{border:0}
+.v66m-split b{white-space:nowrap}
+.v66m-chk{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-bottom:1px solid #eadfcf;font-size:14px;line-height:1.35;width:100%;background:none;border-left:0;border-right:0;border-top:0;text-align:left;font-family:inherit;color:inherit}
+.v66m-chk:last-child{border-bottom:0}
+.v66m-chk i{flex:0 0 24px;height:24px;border-radius:8px;border:2px solid #b9a98f;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:900;color:#fff;font-size:15px}
+.v66m-chk.on i{background:#078e89;border-color:#078e89}.v66m-chk.on span{text-decoration:line-through;color:#7a847f}
+</style>
+<script>
+(function(){
+const KEY='asia66money';
+const CHK=['Revolut Premium activa y tarjeta física probada','Tarjeta añadida a Apple Pay','Segunda tarjeta bancaria preparada','500 € en efectivo repartidos','Límites de retirada y condiciones de Revolut revisados','Pagos internacionales habilitados','eSIM preparada para tener internet','Aplicación de Revolut accesible con Face ID','Documentos y reservas descargados para consultarlos sin conexión','Comprobar en Revolut si mi tarjeta es Visa o Mastercard','Segunda tarjeta de otra red (Visa/Mastercard) distinta a la de Revolut','Anotar cómo bloquear la tarjeta y el chat de ayuda de Revolut'];
+const st=()=>{try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){return{}}};
+const sv=o=>{try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}};
+const L=a=>'<ul>'+a.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+function html(){
+  const s=st(),done=CHK.filter((_,i)=>s[i]).length;
+  return `<div class="card"><b>💳 Dinero y pagos · Asia 2026</b><p class="v65-note">Malasia + Tailandia · 6 nov – 8 dic. Objetivo: comodidad, seguridad y evitar comisiones innecesarias.</p>
+  <div class="v66m-top" style="margin-top:10px"><div><b>500 €</b>en efectivo</div><div><b>Revolut</b>Premium + Apple Pay</div><div><b>2ª tarjeta</b>para emergencias</div></div>
+  <div class="v65-key warn" style="margin-top:10px">No cambiar dinero en España. Cambia o retira pequeñas cantidades al llegar a cada país, paga con Revolut siempre que puedas y guarda una parte de los euros como reserva.</div></div>
+
+  <div class="v65-cat"><span>🧳 Qué llevar desde España</span></div>
+  <div class="card" style="padding:2px 16px">
+   <details class="v65-d" open><summary>Lista</summary>${L(['<b>500 € en efectivo</b>, mejor en billetes de 50 € y 20 €, en buen estado.','<b>Tarjeta física Revolut Premium</b>, la principal para pagar y retirar efectivo.','<b>Revolut en Apple Pay</b>, como alternativa cómoda.','<b>Una segunda tarjeta bancaria</b>, guardada por separado, para emergencias.'])}<p>No hace falta cambiar los 500 € de golpe: son una reserva que vas usando según necesites.</p></details>
+   <details class="v65-d"><summary>Cómo repartir los 500 €</summary>
+    <div class="v66m-split"><span>Reserva para cambiar al llegar a Malasia</span><b>100 €</b></div>
+    <div class="v66m-split"><span>Para cambiar cuando haga falta en Tailandia</span><b>150 €</b></div>
+    <div class="v66m-split"><span>Fondo de emergencia, sin cambiar salvo necesidad</span><b>250 €</b></div>
+    <p>Son cantidades orientativas. No lleves todos los billetes juntos: repártelos entre dos lugares seguros y lleva encima solo lo necesario para el día.</p></details>
+  </div>
+
+  <div class="v65-cat"><span>🇲🇾 Malasia · 7–21 nov · ringgit (MYR)</span></div>
+  <div class="card" style="padding:2px 16px">
+   <details class="v65-d" open><summary>Al llegar a Kuala Lumpur</summary>${L(['Paga con Revolut siempre que sea posible.','Saca al principio el equivalente a <b>50–80 €</b> en ringgits, o cambia una pequeña cantidad de euros en una casa de cambio con buen tipo.','Evita cambiar grandes cantidades en el aeropuerto.','Compara el cambio que te ofrecen con el tipo de referencia de Revolut.'])}</details>
+   <details class="v65-d"><summary>Durante Malasia</summary>${L(['Revolut para hoteles, restaurantes, supermercados y Grab.','Lleva siempre algo de efectivo para mercados, comida callejera, pequeños comercios y zonas rurales.','En Cameron Highlands, Penang y Langkawi no dependas solo de la tarjeta.','Al ser cuatro amigos, usad Grab y repartid los gastos.'])}<p><b>Efectivo orientativo:</b> 120–200 € en ringgits durante toda la estancia, reponiendo según haga falta.</p></details>
+  </div>
+
+  <div class="v65-cat"><span>🇹🇭 Tailandia · 21 nov–8 dic · baht (THB)</span></div>
+  <div class="card" style="padding:2px 16px">
+   <details class="v65-d" open><summary>Al llegar a Krabi</summary>${L(['Saca o cambia al principio el equivalente a <b>80–120 €</b> en baht.','Lleva efectivo antes de ir a las islas.','No cuentes con encontrar un cajero económico en Phi Phi, Koh Phangan o Koh Tao.'])}</details>
+   <details class="v65-d"><summary>Durante Tailandia</summary>${L(['Revolut para hoteles, restaurantes y sitios que acepten tarjeta.','Efectivo en mercados, pequeños restaurantes, taxis locales, excursiones y algunos sitios de las islas.','Lleva billetes pequeños para transportes y compras cotidianas.','Repón efectivo en las ciudades grandes cuando haga falta.'])}<p><b>Efectivo orientativo:</b> 200–350 € en baht durante la estancia, retirados o cambiados poco a poco.</p></details>
+  </div>
+
+  <div class="v65-cat"><span>📆 Efectivo diario orientativo</span></div>
+  <div class="card" style="padding:4px 16px"><div class="v66m-split"><span>🇲🇾 Malasia</span><b>8–15 €</b></div><div class="v66m-split"><span>🇹🇭 Tailandia</span><b>12–20 €</b></div><p class="v65-note">Solo para gastos que piden efectivo, no el gasto total diario del viaje.</p></div>
+
+  <div class="v65-cat"><span>🔐 Cómo usar Revolut Premium</span></div>
+  <div class="card" style="padding:2px 16px">
+   <details class="v65-d" open><summary>Pagos con tarjeta</summary>${L(['Paga siempre en la moneda local: MYR en Malasia y THB en Tailandia.','Si el terminal ofrece cobrarte en euros, rechaza la conversión y elige moneda local.','Usa Revolut como tarjeta principal.','Mantén activadas las notificaciones de cada pago.'])}</details>
+   <details class="v65-d"><summary>Cajeros automáticos</summary>${L(['Busca cajeros de bancos conocidos.','Mira en Revolut el límite de retiradas gratuitas de tu plan Premium.','El banco dueño del cajero puede cobrar su propia comisión, aparte de Revolut.','Si el cajero te ofrece convertir el importe a euros, rechaza esa conversión.','Retira cantidades razonables para evitar comisiones repetidas.'])}</details>
+   <details class="v65-d"><summary>Seguridad</summary>${L(['Activa Face ID y las notificaciones de Revolut.','Lleva la tarjeta física separada del efectivo.','Mantén una segunda tarjeta como respaldo.','Si pierdes la tarjeta, bloquéala desde la aplicación.'])}</details>
+  </div>
+
+  <div class="v65-cat"><span>🏧 Cajeros que menos cobran</span></div>
+  <div class="card" style="padding:2px 16px">
+   <details class="v65-d" open><summary>Lo que cobra Revolut Premium</summary>${L(['<b>400 € al mes</b> de retiradas gratis en cajeros (periodo móvil de 30 días), sin límite de número de retiradas.','Pasado ese límite: <b>2 %</b> de lo retirado, mínimo 1 € por retirada.','El plan Premium no cobra comisión de cambio de divisa.','Esto es solo lo de Revolut: el banco del cajero cobra aparte (abajo).'])}<p>Las cifras salen de la tabla de comisiones de Revolut para España. Confírmalas en la app antes de salir.</p></details>
+   <details class="v65-d" open><summary>🇹🇭 Tailandia · todos cobran, elige bien</summary>
+    <p>No hay cajeros gratis para tarjetas extranjeras: cobran una cantidad fija <b>por retirada</b>, 250 baht (~6,50 €) es lo habitual. Algunos suben a 350 baht (~9 €) si tu tarjeta es Mastercard.</p>
+    <div class="v66m-split"><span>Krung Thai y ttb</span><b>220 THB*</b></div>
+    <div class="v66m-split"><span>Bangkok Bank</span><b>~250 THB</b></div>
+    <div class="v66m-split"><span>UOB</span><b>250 THB</b></div>
+    <div class="v66m-split"><span>Kasikorn, Krungsri, SCB y GSB (Visa)</span><b>250 THB</b></div>
+    <div class="v66m-split"><span>Kasikorn, Krungsri, SCB y GSB (Mastercard)</span><b>350 THB</b></div>
+    <p>*Las cifras de Krung Thai y ttb son de 2023–24 y pueden haber subido. AEON, que cobraba menos, cerró sus cajeros en 2024.</p>
+    ${L(['<b>El cajero te dice la comisión antes de confirmar.</b> Si es alta, cancela y busca otro de otro banco.','<b>Haz pocas retiradas y grandes.</b> El tope suele estar entre 20.000 y 30.000 baht por operación. Cuatro retiradas de 5.000 baht pagan 1.000 baht de comisiones; una de 20.000, solo 250.','Los más fiables de encontrar son <b>Bangkok Bank y Kasikorn</b>; SCB también tiene mucha cobertura.','Prefiere cajeros dentro de sucursales o de centros comerciales, no los sueltos en bares o calles solitarias.','Rechaza siempre que el cajero ofrezca «convertir a euros».'])}</details>
+   <details class="v65-d" open><summary>🇲🇾 Malasia · aquí es más barato</summary>
+    <p>Según las guías consultadas, <b>Maybank, CIMB, Public Bank, Hong Leong y RHB no cobran recargo</b> a tarjetas extranjeras (Maybank, el mayor, cobra 0 RM en la mayoría de sus máquinas). Solo pagas lo que cobre tu banco.</p>
+    ${L(['Elige <b>Maybank</b> o <b>CIMB</b> por cobertura y mira la pantalla antes de aceptar: la política puede cambiar.','Límite por operación: entre 1.000 y 3.000 RM. Como no hay recargo, aquí no pasa nada por sacar en dos veces.','Rechaza la conversión a euros (suele costar entre un 5 y un 10 % más).','Saca el efectivo en <b>Kuala Lumpur y Penang</b>: en Cameron Highlands y Langkawi hay menos cajeros y los alojamientos pequeños no siempre aceptan tarjeta.'])}</details>
+   <p class="v65-note" style="margin:8px 0 12px">Fuentes (oct. 2026): <a href="https://chiangmaijao.com/money/thailand-atm-fees-foreign-cards/" target="_blank" rel="noopener">tabla de comisiones por banco</a> · <a href="https://offpaththailand.com/best-atm-to-withdraw-money-in-thailand/" target="_blank" rel="noopener">mejores cajeros en Tailandia</a> · <a href="https://malaysiajourneys.com/using-atms-in-malaysia-fees-locations-best-banks-for-tourists/" target="_blank" rel="noopener">cajeros en Malasia</a> · <a href="https://www.revolut.com/en-ES/legal/premium-fees/" target="_blank" rel="noopener">comisiones Revolut Premium</a>. Son guías de terceros: lo que manda es la pantalla del cajero.</p>
+  </div>
+
+  <div class="v65-cat"><span>💡 Lo que yo añadiría</span></div>
+  <div class="card" style="padding:2px 16px">
+   <details class="v65-d" open><summary>1 · Mira si tu Revolut es Visa o Mastercard</summary><p>En Tailandia cambia el recargo: con Mastercard, varios bancos cobran 350 baht en vez de 250. Está en la app, en los datos de la tarjeta. Si es Mastercard, huye de Kasikorn, Krungsri y SCB y busca Bangkok Bank, UOB o Krung Thai.</p></details>
+   <details class="v65-d"><summary>2 · Una sola retirada grande al llegar a Krabi</summary><p>Con 250 baht por retirada, sacar 100 € cuesta casi un 6,5 % en comisión; sacar 8.000–10.000 baht (unos 210–265 €) de una vez lo deja en un 2,5 %. Te cubre las islas del 22 al 30 nov, donde los cajeros fallan. Tus 80–120 € iniciales quedan en cambio de euros.</p></details>
+   <details class="v65-d"><summary>3 · Cambia los euros en efectivo en casas de cambio, no en el aeropuerto</summary><p>Para cantidades pequeñas, cambiar euros en una casa de cambio suele salir mejor que pagar 250 baht por un cajero. Compara 2–3 sitios en Ao Nang, o busca <b>SuperRich</b> en Chiang Mai o Bangkok. Los mostradores del aeropuerto son los peores. Los billetes de 50 € y 20 € en buen estado se cambian mejor.</p></details>
+   <details class="v65-d"><summary>4 · Retira antes de las islas, y antes de la Full Moon</summary><p>Los cajeros de Koh Phangan se vacían con la Full Moon (25 nov) y los de Koh Tao también pueden quedarse sin efectivo. Ten el baht en el bolsillo al salir de Krabi y no esperes al último día. Para Koh Lipe (16–18 nov) lleva baht ya cambiados: suele haber pocos cajeros y no siempre funcionan.</p></details>
+   <details class="v65-d"><summary>5 · Cosas que pagarás en efectivo en tu ruta</summary>${L(['Tasa de entrada a Koh Tao: 20 THB por persona, no incluida en el billete del ferry.','Entradas a los templos del tour de Chiang Rai (3 dic): no están incluidas.','Mercados, songthaews, taxis de isla y tuk-tuks.','Propinas: no son obligatorias; en Tailandia se agradece redondear, y en Malasia no se espera.'])}</details>
+   <details class="v65-d"><summary>6 · Segunda tarjeta de otra red y en otro sitio</summary><p>Los cajeros tailandeses rechazan con frecuencia tarjetas extranjeras. Si tu Revolut es Visa, que la segunda sea Mastercard (o al revés). Guárdala separada de la principal.</p></details>
+   <details class="v65-d"><summary>7 · Antes de volver: gasta o cambia lo que sobre</summary><p>Gasta o cambia los ringgits antes del 21 nov (en Tailandia casi nadie los acepta a buen precio) y los baht antes de volar el 8 dic. No cambies nada en España.</p></details>
+   <details class="v65-d"><summary>8 · Repartir gastos entre los cuatro en Malasia</summary><p>Si los cuatro usáis Revolut, podéis pasaros dinero entre vosotros sin comisión y dividir cuentas desde la app. Si no, usad el Tricount de Más.</p></details>
+  </div>
+
+  <div class="v65-cat"><span>✅ Antes de salir</span><small>${done} de ${CHK.length}</small></div>
+  <div class="card" style="padding:2px 16px">${CHK.map((t,i)=>`<button type="button" class="v66m-chk ${s[i]?'on':''}" data-i="${i}"><i>${s[i]?'✓':''}</i><span>${t}</span></button>`).join('')}</div>
+  <div class="card" style="margin-top:12px"><p class="v65-note" style="margin:0">Para ver cuánto llevas gastado y cuánto queda, usa <b>Presupuesto Tailandia</b>.</p><a class="v65-link" href="#" data-go="gasto65">💶 Abrir presupuesto</a></div>`;
+}
+function render(){const b=document.getElementById('v66money');if(b)b.innerHTML=html()}
+function mount(){
+  const mas=document.getElementById('mas');if(!mas)return;
+  if(!document.getElementById('more-dinero66')){
+    const e=document.createElement('div');e.id='more-dinero66';e.className='subpage';
+    e.innerHTML='<div class="panel-head"><button class="back" onclick="closeMore()">←</button><h2>💳 Dinero y pagos</h2></div><div id="v66money"></div>';
+    e.addEventListener('click',ev=>{
+      const c=ev.target.closest('.v66m-chk');
+      if(c){const s=st();s[c.dataset.i]=!s[c.dataset.i];sv(s);render();return}
+      const g=ev.target.closest('[data-go]');if(g){ev.preventDefault();openMore(g.dataset.go)}
+    });
+    mas.appendChild(e);
+  }
+  if(!document.querySelector('#moreHome .menu[data-v66="dinero66"]')){
+    const anchor=document.querySelector('#moreHome .menu[data-v65="local65"]')||document.querySelector('#moreHome .menu[onclick*="reservas"]');
+    if(anchor){const d=document.createElement('div');d.className='menu';d.dataset.v66='dinero66';d.setAttribute('onclick',"openMore('dinero66')");
+      d.innerHTML='<span class="ico">💳</span><div><b>Dinero y pagos</b><small>Efectivo, Revolut, cajeros y cambio</small></div>';anchor.insertAdjacentElement('afterend',d)}
+  }
+}
+const _o=window.openMore;
+window.openMore=function(n){_o(n);if(n==='dinero66')render()};
+function run(){try{mount()}catch(e){console.error(e)}}
+document.addEventListener('DOMContentLoaded',()=>{setTimeout(run,900);new MutationObserver(()=>{clearTimeout(run.t);run.t=setTimeout(run,300)}).observe(document.body,{childList:true,subtree:true})});
+setTimeout(run,1200);
+})();
+</script>

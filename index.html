@@ -545,7 +545,7 @@ const D=[
 {date:"21 NOV",place:"Krabi",title:"Kuala Lumpur → Krabi",desc:"Vuelo directo a Krabi y noche en Ao Nang",am:"✈️ AirAsia KUL → KBV · 10:50–11:15",pm:"Ao Nang · check-in · playa o Railay",night:"Sunset y cena en Ao Nang",photos:[["Railay Beach Krabi Thailand","Railay Beach","⭐ Longtail desde Ao Nang"],["Ao Nang Beach Krabi Thailand","Ao Nang","🌅 Atardecer"]]},
 {date:"22 NOV",place:"Phi Phi",title:"Krabi → Phi Phi",desc:"Ferry desde Ao Nang y primera noche en Phi Phi",am:"⛴️ Ferry Ao Nang → Tonsai",pm:"Check-in · Tonsai · primer paseo",night:"Cena y ambiente",photos:[["Phi Phi Thailand","Phi Phi","Primer vistazo a las islas"]]},
 {date:"23 NOV",place:"Phi Phi",title:"Phi Phi a fondo",desc:"Día de mar y miradores",am:"⭐ Maya Bay · Pileh Lagoon · snorkel",pm:"Monkey Beach · Viking Cave · ⭐ Phi Phi Viewpoint",night:"Tonsai · cena · copas",photos:[["Maya Bay Thailand","Maya Bay","⭐ IMPRESCINDIBLE"],["Pileh Lagoon Thailand","Pileh Lagoon","⭐ IMPRESCINDIBLE"],["Phi Phi viewpoint Thailand","Phi Phi Viewpoint","📸 Atardecer"]]},
-{date:"24 NOV",place:"Koh Phangan",title:"Phi Phi → Koh Phangan",desc:"Traslado y primera noche en Koh Phangan",am:"Traslado",pm:"Llegada · playa · check-in",night:"Cena tranquila",photos:[["Koh Phangan beach Thailand","Koh Phangan","Playas y palmeras"]]},
+{date:"24 NOV",place:"Koh Phangan",title:"Phi Phi → Koh Phangan",desc:"Traslado y primera noche en Koh Phangan",am:"🚤 10:00 Lomprayah desde Tonsai Pier · llegada prevista 16:30",pm:"Thong Sala · check-in · primer paseo",night:"Cena tranquila",photos:[["Koh Phangan beach Thailand","Koh Phangan","Playas y palmeras"]]},
 {date:"25 NOV",place:"Koh Phangan",title:"Full Moon",desc:"Haad Rin · fecha/horario a reconfirmar",am:"Playa · descanso",pm:"Prepararse con calma",night:"🌕 Full Moon Party · Haad Rin",photos:[["Haad Rin Koh Phangan Thailand","Haad Rin","🌕 Noche de Full Moon"]]},
 {date:"26 NOV",place:"Koh Phangan",title:"Recovery day",desc:"Playas y relax",am:"Dormir · desayuno tardío",pm:"Thong Nai Pan / playa",night:"Cena relajada",photos:[["Thong Nai Pan Koh Phangan","Thong Nai Pan","🏝️ Playa"]]},
 {date:"27 NOV",place:"Koh Tao",title:"Koh Phangan → Koh Tao",desc:"Ferry y llegada",am:"Ferry",pm:"Sairee Beach · check-in",night:"Sunset y cena",photos:[["Sairee Beach Koh Tao","Sairee Beach","🌅 Sunset"]]},
@@ -643,9 +643,9 @@ function DPH(p){return p==='Chiang Rai'?CR_PHOTOS.slice():D.filter(x=>x.place===
 const TRANSFER={
 "21 NOV":{icon:"✈️🚐",title:"Kuala Lumpur → Krabi",summary:"Vuelo directo AirAsia KUL → KBV (10:50–11:15, hora local) y taxi/van al hotel en Ao Nang, unos 40 min. Reserva confirmada.",from:"KLIA2 · Kuala Lumpur",to:"Krabi Airport → Ao Nang",maps:"https://www.google.com/maps/dir/?api=1&origin=Krabi+International+Airport&destination=Ao+Nang+Krabi",buy:"https://www.airasia.com/",buyText:"Gestionar reserva · AirAsia"},
 "22 NOV":{icon:"⛴️",title:"Krabi → Phi Phi",summary:"Ferry desde Ao Nang (muelle de Nopparat Thara) a Tonsai Pier, de 1,5 a 2 h. Hay pocas salidas: confirma horario y compra con antelación.",from:"Ao Nang · Krabi",to:"Tonsai Pier · Phi Phi",maps:"https://www.google.com/maps/dir/?api=1&origin=Ao+Nang+Krabi&destination=Tonsai+Pier+Phi+Phi",buy:"https://12go.asia/es/travel/ao-nang/koh-phi-phi",buyText:"Buscar ferry"},
-"24 NOV":{icon:"🚤",title:"Phi Phi → Koh Phangan",summary:"Ferry + conexión terrestre/ferry; conviene reservarlo como traslado combinado.",from:"Tonsai Pier · Phi Phi",to:"Thong Sala Pier · Koh Phangan",maps:"https://www.google.com/maps/dir/?api=1&origin=Tonsai+Pier+Phi+Phi&destination=Thong+Sala+Pier+Koh+Phangan",buy:"https://12go.asia/es/travel/koh-phi-phi/koh-phangan",buyText:"Ver combinaciones y billetes"},
+"24 NOV":{icon:"🚤",title:"Phi Phi → Koh Phangan",summary:"Billete Lomprayah Express reservado y pagado (12go Q086235). Sale de Tonsai Pier a las 10:00 y llegada prevista a Thong Sala a las 16:30. Es un combinado: barco a Krabi (Krabi River Marina, ~11:00), minivan 11:30 hasta Don Sak (~14:30) y catamarán a las 15:00. Presentarse 60 min antes (9:00). Equipaje grande hasta 20 kg; más, 200 THB.",from:"Tonsai Pier · Phi Phi",to:"Thong Sala Pier · Koh Phangan",maps:"https://www.google.com/maps/dir/?api=1&origin=Tonsai+Pier+Phi+Phi&destination=Thong+Sala+Pier+Koh+Phangan",buy:"https://12go.asia/",buyText:"Mis billetes · 12go"},
 "27 NOV":{icon:"⛴️",title:"Koh Phangan → Koh Tao",summary:"Ferry rápido hacia Mae Haad.",from:"Thong Sala Pier · Koh Phangan",to:"Mae Haad Pier · Koh Tao",maps:"https://www.google.com/maps/dir/?api=1&origin=Thong+Sala+Pier+Koh+Phangan&destination=Mae+Haad+Pier+Koh+Tao",buy:"https://www.lomprayah.com/booking",buyText:"Comprar ferry · Lomprayah"},
-"30 NOV":{icon:"⛴️✈️🚆",title:"Koh Tao → Samui → Bangkok → Chiang Mai",summary:"Día largo. 09:15 ferry Mae Haad → Samui Airport (reservado) · 14:15–15:50 vuelo Bangkok Airways USM → BKK (reservado) · de Suvarnabhumi a la estación de Don Mueang en taxi/Grab (cuenta 1–1,5 h con tráfico) · 20:22 tren cama a Chiang Mai (en 12go consta pendiente de confirmación).",from:"Mae Haad Pier · Koh Tao",to:"Don Mueang → Chiang Mai",maps:"https://www.google.com/maps/dir/?api=1&origin=Mae+Haad+Pier+Koh+Tao&destination=Samui+International+Airport",buy:"https://12go.asia/",buy2:"https://www.bangkokair.com/",buy3:"https://www.google.com/maps/dir/?api=1&origin=Suvarnabhumi+Airport&destination=Don+Mueang+Railway+Station",buyText:"Mis billetes · 12go",buyText2:"Vuelo · Bangkok Airways",buyText3:"Suvarnabhumi → Don Mueang"},
+"30 NOV":{icon:"⛴️✈️🚆",title:"Koh Tao → Samui → Bangkok → Chiang Mai",summary:"Día largo. 09:15 ferry Mae Haad → Samui Airport (reservado) · 14:15–15:50 vuelo Bangkok Airways USM → BKK (reservado) · de Suvarnabhumi a la estación de Don Mueang en taxi/Grab (cuenta 1–1,5 h con tráfico) · 20:22 tren especial exprés nº 13 a Chiang Mai (coche 10, litera superior 5, llegada 08:45): billete confirmado; el tren exige llevarlo impreso, así que imprímelo antes de salir. Ferry: 12go T106900, check-in 60 min antes, llegada prevista 11:30.",from:"Mae Haad Pier · Koh Tao",to:"Don Mueang → Chiang Mai",maps:"https://www.google.com/maps/dir/?api=1&origin=Mae+Haad+Pier+Koh+Tao&destination=Samui+International+Airport",buy:"https://12go.asia/",buy2:"https://www.bangkokair.com/",buy3:"https://www.google.com/maps/dir/?api=1&origin=Suvarnabhumi+Airport&destination=Don+Mueang+Railway+Station",buyText:"Mis billetes · 12go",buyText2:"Vuelo · Bangkok Airways",buyText3:"Suvarnabhumi → Don Mueang"},
 "3 DIC":{icon:"🚐",title:"Chiang Mai → Chiang Rai (excursión)",summary:"Tour en inglés con guía y transporte con aire acondicionado. Sale a las 7:00 desde Burger King Thapae (Chiang Mai): llega unos 10–15 min antes. No incluye entradas a los templos, comida ni la aldea de las mujeres jirafa (300 THB). Día largo: lleva efectivo en baht.",from:"Burger King Thapae · Chiang Mai",to:"Chiang Rai · templos",maps:"https://www.google.com/maps/dir/?api=1&origin=Manee+Cool+Mueang+Chiang+Mai+Thailand&destination=Burger+King+Thapae+Chiang+Mai",mapsText:"Del hotel al punto de encuentro"},
 "5 DIC":{icon:"✈️",title:"Chiang Mai → Bangkok",summary:"Vuelo directo Thai AirAsia 11:45–12:55 (CNX → DMK), reservado. Aterrizas en Don Mueang: a Silom en taxi/Grab (cuenta 45–60 min) o tren + MRT.",from:"Chiang Mai Airport · CNX",to:"Don Mueang · DMK → Silom",maps:"https://www.google.com/maps/dir/?api=1&origin=Don+Mueang+International+Airport&destination=Silom+Serene+A+Boutique+Hotel+Bangkok",buy:"https://www.airasia.com/",buyText:"Gestionar reserva · AirAsia"},
 "6 DIC":{icon:"🚐",title:"Bangkok → Ayutthaya (excursión)",summary:"Tour de un día con recogida en el hotel a las 8:30, entradas y paseo en barco incluidos. Termina en Samyan Mitrtown, no en el hotel: de ahí a Silom en MRT (Sam Yan → Si Lom) o Grab.",from:"Silom · Bangkok",to:"Ayutthaya",maps:"https://www.google.com/maps/dir/?api=1&origin=Silom+Serene+A+Boutique+Hotel+Bangkok&destination=Ayutthaya+Historical+Park"}
@@ -730,10 +730,10 @@ const BOOKING_ITEMS=[
 {id:'f_cnxbkk',type:'✈️ Vuelos',title:'Chiang Mai → Bangkok',date:'5 dic',note:'Thai AirAsia · directo · 11:45–12:55 · CNX → DMK',confirmed:true},
 {id:'f_bkkmad',type:'✈️ Vuelos',title:'Bangkok → Madrid',date:'8 dic',note:'09:45–20:45 · Qatar Airways · 1 escala · 17 h · llegada MAD T4S · equipaje facturado 25 kg',confirmed:true},
 {id:'t_phiphi',type:'⛴️ Ferris y transportes',title:'Krabi (Ao Nang) → Phi Phi',date:'22 nov',note:'Ferry hasta Tonsai Pier',url:'https://12go.asia/es/travel/ao-nang/koh-phi-phi'},
-{id:'t_phangan',type:'⛴️ Ferris y transportes',title:'Phi Phi → Koh Phangan',date:'24 nov',note:'Traslado combinado hasta Thong Sala',url:'https://12go.asia/es/travel/koh-phi-phi/koh-phangan'},
+{id:'t_phangan',type:'⛴️ Ferris y transportes',title:'Phi Phi → Koh Phangan',date:'24 nov',note:'Lomprayah 10:00 → 16:30 · 12go Q086235 · presentarse 60 min antes',url:'https://12go.asia/',confirmed:true},
 {id:'t_tao',type:'⛴️ Ferris y transportes',title:'Koh Phangan → Koh Tao',date:'27 nov',note:'Thong Sala → Mae Haad',url:'https://www.lomprayah.com/booking'},
-{id:'t_samui',type:'⛴️ Ferris y transportes',title:'Koh Tao → Samui Airport',date:'30 nov',note:'Ferry 09:15 desde Mae Haad · reservado en 12go',url:'https://12go.asia/',confirmed:true},
-{id:'t_tren',type:'⛴️ Ferris y transportes',title:'Don Mueang → Chiang Mai · tren cama',date:'30 nov',note:'20:22 · en 12go figura pendiente de confirmación',url:'https://12go.asia/'},
+{id:'t_samui',type:'⛴️ Ferris y transportes',title:'Koh Tao → Samui Airport',date:'30 nov',note:'Lomprayah 09:15 → 11:30 · 12go T106900 · presentarse 60 min antes',url:'https://12go.asia/',confirmed:true},
+{id:'t_tren',type:'⛴️ Ferris y transportes',title:'Don Mueang → Chiang Mai · tren cama',date:'30 nov',note:'Tren 13 · 20:22 → 08:45 · coche 10, litera superior 5 · IMPRÍMELO',url:'https://dticket.railway.co.th/',confirmed:true},
 {id:'a_cr',type:'🎟️ Excursiones',title:'Excursión a Chiang Rai desde Chiang Mai',date:'3 dic',note:'7:00 · punto de encuentro Burger King Thapae · tour en inglés · sin entradas a templos, comida ni aldea jirafa (300 THB)',confirmed:true},
 {id:'a_ayut',type:'🎟️ Excursiones',title:'Excursión a Ayutthaya desde Bangkok',date:'6 dic',note:'8:30 · recogida en el hotel · entradas y paseo en barco incluidos · termina en Samyan Mitrtown',confirmed:true},
 {id:'h_mal',type:'🏨 Hoteles',title:'Malasia',date:'7–21 nov',note:'Ruta con amigos · alojamientos aún por definir'},
@@ -2021,7 +2021,7 @@ function mount(){
   const hero=$('#ruta .hero');
   if(hero&&!$('#v57hoy')){const c=document.createElement('div');c.id='v57hoy';c.className='card v57-hoy';hero.insertAdjacentElement('afterend',c)}
   // Cabecera de versión
-  document.querySelectorAll('#ruta header .ey').forEach(e=>{e.textContent=e.textContent.replace(/V\d+/,'V64')});
+  document.querySelectorAll('#ruta header .ey').forEach(e=>{e.textContent=e.textContent.replace(/V\d+/,'V65')});
   // Mover las subpáginas nuevas dentro de «Más»
   const mas=$('#mas');
   ['more-tricount','more-taxi','more-tramites'].forEach(id=>{const e=document.getElementById(id);if(e&&mas&&e.parentNode!==mas)mas.appendChild(e)});
@@ -2482,5 +2482,368 @@ function run(){try{build();mark()}catch(e){}}
 document.addEventListener('click',()=>setTimeout(()=>{try{mark()}catch(e){}},250));
 document.addEventListener('DOMContentLoaded',()=>{setTimeout(run,600);new MutationObserver(()=>{clearTimeout(run.t);run.t=setTimeout(run,200)}).observe(document.body,{childList:true,subtree:true})});
 setTimeout(run,800);
+})();
+</script>
+
+<style>
+.v65-note{font-size:13px;line-height:1.45;color:#5d6b68;margin:6px 0 0}
+.v65-hero{background:linear-gradient(135deg,#0b5558,#079894)!important;color:#fff!important;border:0!important}
+.v65-hero small{opacity:.82;font-size:12px;letter-spacing:.3px}
+.v65-hero strong{display:block;font-size:30px;line-height:1.1;margin:4px 0 10px;color:#fff}
+.v65-bar{height:9px;border-radius:9px;background:rgba(255,255,255,.22);overflow:hidden;display:flex}
+.v65-bar i{display:block;height:100%}.v65-bar .p{background:#ffb23f}.v65-bar .r{background:#fff;opacity:.75}
+.v65-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
+.v65-tile{background:rgba(255,255,255,.14);border-radius:14px;padding:10px 12px}
+.v65-tile small{display:block;opacity:.85;font-size:11px}.v65-tile b{display:block;font-size:16px;margin-top:2px;color:#fff}
+.v65-actions{display:flex;gap:9px;margin:12px 0}.v65-actions button{flex:1;border:0;border-radius:14px;padding:13px 8px;font:inherit;font-weight:700;font-size:14px;background:var(--teal,#078e89);color:#fff}
+.v65-actions button.alt{background:var(--paper,#fffaf3);color:var(--ink,#123e40);border:1px solid #e6dac9}
+.v65-form{display:none}.v65-form.on{display:block}
+.v65-form label{display:block;font-size:11px;font-weight:700;color:#5d6b68;margin:10px 0 4px;text-transform:uppercase;letter-spacing:.3px}
+.v65-form input,.v65-form select{width:100%;box-sizing:border-box;border:1px solid #e1d5c3;border-radius:12px;padding:12px;font:inherit;font-size:16px;background:#fff;color:var(--ink,#123e40)}
+.v65-two{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.v65-fbtn{display:flex;gap:9px;margin-top:14px}.v65-fbtn button{flex:1;border:0;border-radius:12px;padding:13px;font:inherit;font-weight:700;background:var(--teal,#078e89);color:#fff}
+.v65-fbtn .g{background:#efe6d8;color:var(--ink,#123e40)}.v65-fbtn .d{background:#fde4df;color:#b3402c;flex:0 0 auto}
+.v65-cat{display:flex;justify-content:space-between;align-items:baseline;margin:16px 4px 6px;font-weight:800;color:var(--ink,#123e40)}
+.v65-cat small{font-weight:600;color:#5d6b68}
+.v65-row{display:flex;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid #eadfcf}.v65-row:last-child{border:0}
+.v65-main{flex:1;min-width:0}.v65-main b{display:block;font-size:14.5px}.v65-main small{color:#6b7774;font-size:12px}
+.v65-amt{text-align:right;flex:0 0 auto}.v65-amt b{display:block;font-size:14.5px}
+.v65-amt .none{color:#c4503b}
+.v65-st{border:0;border-radius:999px;font:inherit;font-size:10.5px;font-weight:800;padding:4px 9px;margin-top:3px}
+.v65-st.pagado{background:#d9f1e3;color:#1e6b43}.v65-st.reservado{background:#dcebfb;color:#25578f}.v65-st.previsto{background:#fdecc8;color:#8a5a00}
+.v65-days details summary{font-weight:800;cursor:pointer}
+.v65-dayrow{display:flex;align-items:center;gap:10px;font-size:13px;margin-top:8px}.v65-dayrow span{flex:0 0 52px;color:#5d6b68}
+.v65-dayrow i{display:block;height:8px;border-radius:8px;background:var(--teal,#078e89)}.v65-dayrow b{margin-left:auto}
+.v65-slot{padding:13px 0;border-bottom:1px solid #eadfcf}.v65-slot:last-child{border:0}
+.v65-sh{display:flex;gap:8px;align-items:flex-start}.v65-sh>div{flex:1}.v65-sh b{display:block;font-size:14.5px}.v65-sh small{color:#6b7774;font-size:12px}
+.v65-badge{font-size:10.5px;font-weight:800;border-radius:999px;padding:4px 9px;white-space:nowrap}.v65-badge.ok{background:#d9f1e3;color:#1e6b43}.v65-badge.no{background:#f1ebe0;color:#7a756a}
+.v65-key{background:#f6efe2;border-radius:12px;padding:9px 11px;font-size:12.5px;line-height:1.45;margin-top:8px;color:#3b4a48}
+.v65-key.warn{background:#fde9e3;color:#8f3322}
+.v65-file{display:flex;gap:6px;align-items:center;margin-top:8px;background:#fff;border:1px solid #e6dac9;border-radius:12px;padding:7px 9px;font-size:12.5px}
+.v65-file span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.v65-file button{border:0;border-radius:9px;padding:7px 10px;font:inherit;font-size:12px;font-weight:700;background:var(--teal,#078e89);color:#fff}
+.v65-file button.g{background:#efe6d8;color:var(--ink,#123e40)}
+.v65-attach{margin-top:9px;width:100%;border:1.5px dashed #b9a98f;background:transparent;border-radius:12px;padding:11px;font:inherit;font-weight:700;color:var(--ink,#123e40)}
+.v65-link{display:block;text-align:center;margin-top:10px;padding:13px;border-radius:14px;background:#efe6d8;color:var(--ink,#123e40)!important;font-weight:700;text-decoration:none}
+.v65-lt{display:grid;grid-template-columns:1.25fr .55fr .55fr 1.6fr;gap:6px;font-size:12px;padding:9px 0;border-bottom:1px solid #eadfcf;align-items:start}
+.v65-lt.h{font-weight:800;color:#5d6b68;font-size:10.5px;text-transform:uppercase}.v65-lt b{font-size:13px}.v65-lt span{line-height:1.35}
+.v65-d{border-bottom:1px solid #eadfcf;padding:11px 0}.v65-d:last-child{border:0}.v65-d summary{font-weight:800;font-size:14.5px;cursor:pointer}.v65-d p{font-size:13px;line-height:1.5;margin:7px 0 0;color:#33403f}
+.v65-d ul{margin:7px 0 0;padding-left:18px;font-size:13px;line-height:1.5;color:#33403f}
+.v65-tag{display:inline-block;font-size:10.5px;font-weight:800;border-radius:999px;padding:3px 8px;background:#fdecc8;color:#8a5a00;margin-left:6px}
+</style>
+<script>
+(function(){
+const $=(s,r=document)=>r.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const LS=(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}};
+const SV=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}};
+function fmt(n){n=Math.round((+n||0)*100)/100;let s=Math.abs(n).toFixed(Number.isInteger(n)?0:2);let p=s.split('.');let i=p[0].replace(/\B(?=(\d{3})+(?!\d))/g,'.');return(n<0?'-':'')+i+(p[1]?','+p[1]:'')}
+const MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+const dlabel=iso=>{if(!iso)return'';const p=iso.split('-');return(+p[2])+' '+MES[+p[1]-1]};
+const isoLocal=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const today=()=>window.__V65_TODAY||isoLocal(new Date());
+const dnum=iso=>{const p=iso.split('-');return Date.UTC(+p[0],+p[1]-1,+p[2])/864e5};
+
+/* ============ PRESUPUESTO TAILANDIA ============ */
+const BK='asia65budget',TS='2026-11-21',TE='2026-12-08',TDAYS=18;
+const CATS={vuelos:'✈️ Vuelos',hoteles:'🏨 Hoteles',transporte:'⛴️ Transportes',excursiones:'🎟️ Excursiones',dia:'🍜 Día a día (comida, taxis, extras)',otros:'🛍️ Otros'};
+const ST={pagado:'Pagado',reservado:'Reservado',previsto:'Previsto'};
+const NEXT={previsto:'reservado',reservado:'pagado',pagado:'previsto'};
+function seed(){
+  let n=0;const S=(cat,name,date,a,st,b,note)=>({id:'s'+(n++),cat,name,date,a,b:b||null,st,note:note||''});
+  return[
+    S('vuelos','Madrid → Kuala Lumpur (Qatar, vía Doha)','2026-11-06',593,'pagado'),
+    S('vuelos','Kuala Lumpur → Krabi (AirAsia)','2026-11-21',105,'pagado',0,'importe aproximado'),
+    S('vuelos','Koh Samui → Bangkok (Bangkok Airways)','2026-11-30',127,'pagado'),
+    S('vuelos','Chiang Mai → Bangkok (AirAsia)','2026-12-05',84,'pagado'),
+    S('vuelos','Bangkok → Madrid (Qatar, vía Doha)','2026-12-08',372.41,'pagado'),
+    S('hoteles','Alanta Aonang Resort · Krabi','2026-11-21',39,'reservado'),
+    S('hoteles','Uphill Cottage · Phi Phi','2026-11-22',131,'reservado'),
+    S('hoteles','The Pier · Koh Phangan','2026-11-24',35,'reservado'),
+    S('hoteles','Angkana Bungalows · Koh Phangan','2026-11-26',55,'reservado'),
+    S('hoteles','Koh Tao Royal Resort','2026-11-27',47,'reservado'),
+    S('hoteles','Big Fish Resort · Koh Tao','2026-11-29',47,'reservado'),
+    S('hoteles','Manee Cool Mueang · Chiang Mai','2026-12-01',107,'reservado',0,'aprox. · 4 noches'),
+    S('hoteles','Silom Serene · Bangkok','2026-12-05',154,'reservado',0,'aprox. · US$ 178,50 · 3 noches'),
+    S('transporte','Phi Phi → Koh Phangan (Lomprayah combinado)','2026-11-24',46.30,'pagado'),
+    S('transporte','Koh Tao → aeropuerto de Samui (Lomprayah)','2026-11-30',23.86,'pagado'),
+    S('transporte','Tren nocturno Bangkok → Chiang Mai','2026-11-30',22.94,'pagado'),
+    S('excursiones','Full Moon Party','2026-11-25',5,'previsto',10),
+    S('excursiones','Snorkel / Koh Nang Yuan','2026-11-28',20,'previsto',40),
+    S('excursiones','Doi Inthanon + elefantes','2026-12-02',65,'previsto',80,'pendiente de decidir'),
+    S('excursiones','Chiang Rai · templos y visitas (excursión reservada)','2026-12-03',0,'reservado',0,'pon el importe cuando lo tengas'),
+    S('excursiones','Doi Suthep y Wat Pha Lat','2026-12-04',10,'previsto',20),
+    S('excursiones','Ayutthaya con paseo en barco','2026-12-06',32.58,'previsto',0,'reserva por confirmar'),
+    S('excursiones','Templos y visitas de Bangkok','2026-12-07',15,'previsto',30),
+    Object.assign(S('dia','Bolsa: comida, transporte local y extras','',513,'previsto',948,'Lo que apuntes como «Pagado» en Día a día se descuenta de esta bolsa.'),{bag:true})
+  ];
+}
+let items=null;
+function load(){const s=LS(BK,null);items=(s&&Array.isArray(s.items))?s.items:seed();if(!s)save()}
+function save(){SV(BK,{v:1,items})}
+function rate(){try{return(typeof rates!=='undefined'&&rates.THB)||37}catch(e){return 37}}
+function calc(){
+  let pag=0,res=0,prA=0,prB=0,dayPaid=0,bagA=0,bagB=0;
+  items.forEach(x=>{const a=+x.a||0,b=(x.b!=null&&+x.b>=a)?+x.b:a;
+    if(x.st==='pagado'){pag+=a;if(x.cat==='dia')dayPaid+=a}
+    else if(x.st==='reservado')res+=a;
+    else if(x.bag){bagA+=a;bagB+=b}
+    else{prA+=a;prB+=b}});
+  const remA=Math.max(0,bagA-dayPaid),remB=Math.max(0,bagB-dayPaid);
+  return{pag,res,prA:prA+remA,prB:prB+remB,remA,remB,dayPaid,totA:pag+res+prA+remA,totB:pag+res+prB+remB};
+}
+const rngI=(a,b)=>Math.round(a)===Math.round(b)||b==null?fmt(Math.round(a))+' €':fmt(Math.round(a))+'–'+fmt(Math.round(b))+' €';
+const rng=(a,b)=>Math.round(a)===Math.round(b)||b==null?fmt(a)+' €':fmt(a)+'–'+fmt(b)+' €';
+function tripDays(){
+  const t=today(),el=t<TS?0:Math.min(TDAYS,dnum(t)-dnum(TS)+1);
+  const left=t<TS?TDAYS:Math.max(0,dnum(TE)-dnum(t)+1);
+  return{el,left};
+}
+let editing=null,delArm=false;
+function renderBud(){
+  const box=$('#v65bud');if(!box)return;
+  if(!items)load();
+  const c=calc(),td=tripDays();
+  const pw=c.totB?Math.min(100,c.pag/c.totB*100):0,rw=c.totB?Math.min(100-pw,c.res/c.totB*100):0;
+  const avg=td.el>0?fmt(c.dayPaid/td.el)+' €':'—';
+  const margin=td.left>0?(Math.round(c.remA/td.left)===Math.round(c.remB/td.left)?fmt(c.remA/td.left):fmt(c.remA/td.left)+'–'+fmt(c.remB/td.left))+' €':'—';
+  let h=`<div class="card v65-hero"><small>PRESUPUESTO PREVISTO · TAILANDIA</small><strong>${rngI(c.totA,c.totB)}</strong>
+  <div class="v65-bar"><i class="p" style="width:${pw}%"></i><i class="r" style="width:${rw}%"></i></div>
+  <small>Ya comprometido: ${fmt(c.pag+c.res)} €</small>
+  <div class="v65-grid">
+   <div class="v65-tile"><small>✅ Pagado</small><b>${fmt(c.pag)} €</b></div>
+   <div class="v65-tile"><small>📌 Reservado</small><b>${fmt(c.res)} €</b></div>
+   <div class="v65-tile"><small>🧾 Por gastar</small><b>${rngI(c.prA,c.prB)}</b></div>
+   <div class="v65-tile"><small>🍜 Queda en la bolsa</small><b>${rngI(c.remA,c.remB)}</b></div>
+   <div class="v65-tile"><small>📆 Media real por día${td.el?' ('+td.el+' d)':''}</small><b>${avg}</b></div>
+   <div class="v65-tile"><small>🎯 Margen por día restante</small><b>${margin}</b></div>
+  </div></div>
+  <div class="v65-actions"><button id="v65-add-today">＋ Gasto de hoy</button><button class="alt" id="v65-add-other">＋ Reserva o pago</button></div>
+  <div class="card v65-form" id="v65form"></div>`;
+  const order=['vuelos','hoteles','transporte','excursiones','dia','otros'];
+  order.forEach(k=>{
+    const L=items.filter(x=>x.cat===k).sort((a,b)=>(a.date||'9')<(b.date||'9')?-1:1);
+    if(!L.length)return;
+    let sa=0,sb=0;L.forEach(x=>{const a=+x.a||0;sa+=a;sb+=(x.b!=null&&+x.b>=a)?+x.b:a});
+    h+=`<div class="v65-cat"><span>${CATS[k]}</span><small>${rngI(sa,sb)}</small></div><div class="card" style="padding:4px 16px">`;
+    L.forEach(x=>{
+      const a=+x.a||0,has=a>0||(x.b&&+x.b>0);
+      const amt=has?rng(a,(x.b!=null&&+x.b>a)?+x.b:null):'<span class="none">Sin importe</span>';
+      const sub=[dlabel(x.date),x.o?('≈ '+fmt(x.o.v)+' '+(x.o.c==='THB'?'฿':x.o.c)):'',x.note].filter(Boolean).join(' · ');
+      h+=`<div class="v65-row" data-id="${esc(x.id)}"><div class="v65-main" data-edit="${esc(x.id)}"><b>${esc(x.name)}</b><small>${esc(sub)}</small></div><div class="v65-amt"><b data-edit="${esc(x.id)}">${amt}</b><button class="v65-st ${x.st}" data-cycle="${esc(x.id)}">${ST[x.st]}</button></div></div>`;
+    });
+    h+='</div>';
+  });
+  // por días
+  const byDay={};items.filter(x=>x.cat==='dia'&&x.st==='pagado'&&x.date).forEach(x=>{byDay[x.date]=(byDay[x.date]||0)+(+x.a||0)});
+  const ds=Object.keys(byDay).sort();
+  if(ds.length){const mx=Math.max.apply(null,ds.map(d=>byDay[d]));
+    h+=`<div class="v65-cat"><span>📆 Gasto real por día</span></div><div class="card v65-days"><details open><summary>${ds.length} día${ds.length>1?'s':''} con gastos</summary>`+
+      ds.map(d=>`<div class="v65-dayrow"><span>${dlabel(d)}</span><i style="width:${Math.max(4,byDay[d]/mx*55)}%"></i><b>${fmt(byDay[d])} €</b></div>`).join('')+'</details></div>';
+  }
+  h+=`<div class="card" style="margin-top:14px"><p class="v65-note" style="margin:0">Toca cualquier línea para <b>editarla</b>. Toca la etiqueta de color para pasar de <b>Previsto → Reservado → Pagado</b>. Los importes con rango (ej. 65–80 €) cuentan en el mínimo y el máximo del total. Se guarda en este móvil.</p>
+   <div class="v65-actions" style="margin-bottom:0"><button class="alt" id="v65-copy">📋 Copiar resumen</button><button class="alt" id="v65-reset">Restaurar inicial</button></div></div>`;
+  box.innerHTML=h;
+  if(editing)openForm(editing);
+}
+function openForm(id,preset){
+  const f=$('#v65form');if(!f)return;editing=id||null;delArm=false;
+  const x=id&&id!=='new'?items.find(i=>i.id===id):null;
+  const v=x||Object.assign({cat:'dia',name:'',date:today()<TS?TS:(today()>TE?TE:today()),a:'',b:null,st:'pagado',note:''},preset||{});
+  f.innerHTML=`<b>${x?'Editar':'Nuevo'} ${x?'':'apunte'}</b>
+  <label>Concepto</label><input id="v65f-name" value="${esc(v.name)}" placeholder="Cena en Haad Rin">
+  <div class="v65-two"><div><label>Importe</label><input id="v65f-a" inputmode="decimal" value="${v.a===''?'':esc(v.a)}" placeholder="12,50"></div>
+  <div><label>Hasta (opcional)</label><input id="v65f-b" inputmode="decimal" value="${v.b?esc(v.b):''}" placeholder="rango"></div></div>
+  <div class="v65-two"><div><label>Moneda</label><select id="v65f-cur"><option value="EUR">€ Euros</option><option value="THB" ${preset&&preset.cur==='THB'?'selected':''}>฿ Baht</option></select></div>
+  <div><label>Fecha</label><input id="v65f-date" type="date" value="${esc(v.date||'')}"></div></div>
+  <div class="v65-two"><div><label>Categoría</label><select id="v65f-cat">${Object.keys(CATS).map(k=>`<option value="${k}" ${v.cat===k?'selected':''}>${CATS[k].split(' (')[0]}</option>`).join('')}</select></div>
+  <div><label>Estado</label><select id="v65f-st">${Object.keys(ST).map(k=>`<option value="${k}" ${v.st===k?'selected':''}>${ST[k]}</option>`).join('')}</select></div></div>
+  <label>Nota</label><input id="v65f-note" value="${esc(v.note||'')}" placeholder="opcional">
+  <p class="v65-note" id="v65f-conv"></p>
+  <div class="v65-fbtn"><button id="v65f-save">Guardar</button><button class="g" id="v65f-cancel">Cancelar</button>${x?'<button class="d" id="v65f-del">Borrar</button>':''}</div>`;
+  f.classList.add('on');
+  const upd=()=>{const cur=$('#v65f-cur').value,a=num($('#v65f-a').value);$('#v65f-conv').textContent=cur==='THB'&&a?('≈ '+fmt(a/rate())+' € (1 € = '+rate().toFixed(1)+' ฿)'):''};
+  $('#v65f-cur').onchange=upd;$('#v65f-a').oninput=upd;upd();
+  f.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function num(s){s=String(s||'').trim().replace(/\s/g,'');if(!s)return 0;if(s.indexOf(',')>-1)s=s.replace(/\./g,'').replace(',','.');const n=parseFloat(s);return isFinite(n)?n:0}
+function saveForm(){
+  const name=$('#v65f-name').value.trim();if(!name){$('#v65f-name').focus();return}
+  const cur=$('#v65f-cur').value,k=cur==='THB'?1/rate():1;
+  const av=num($('#v65f-a').value),bv=num($('#v65f-b').value);
+  const rec={name,a:Math.round(av*k*100)/100,b:bv>av?Math.round(bv*k*100)/100:null,date:$('#v65f-date').value||'',cat:$('#v65f-cat').value,st:$('#v65f-st').value,note:$('#v65f-note').value.trim()};
+  if(cur==='THB'&&av)rec.o={c:'THB',v:av};
+  if(editing&&editing!=='new'){const x=items.find(i=>i.id===editing);if(x){const keep={bag:x.bag};Object.keys(x).forEach(p=>{if(!(p in rec)&&p!=='o')rec[p]=x[p]});if(!rec.o)delete rec.o;items[items.indexOf(x)]=Object.assign({id:x.id},rec)}}
+  else items.push(Object.assign({id:'u'+Date.now().toString(36)+Math.random().toString(36).slice(2,5)},rec));
+  editing=null;save();renderBud();
+}
+function budClick(e){
+  const t=e.target.closest('button,[data-edit]');if(!t)return;
+  if(t.dataset.cycle){const x=items.find(i=>i.id===t.dataset.cycle);if(x){x.st=NEXT[x.st];save();renderBud()}return}
+  if(t.dataset.edit){openForm(t.dataset.edit);return}
+  switch(t.id){
+    case'v65-add-today':openForm('new',{cat:'dia',st:'pagado',cur:'THB'});break;
+    case'v65-add-other':openForm('new',{cat:'otros',st:'reservado',date:''});break;
+    case'v65f-save':saveForm();break;
+    case'v65f-cancel':editing=null;$('#v65form').classList.remove('on');break;
+    case'v65f-del':if(!delArm){delArm=true;t.textContent='¿Seguro?';setTimeout(()=>{delArm=false;if(t.isConnected)t.textContent='Borrar'},3000)}else{items=items.filter(i=>i.id!==editing);editing=null;save();renderBud()}break;
+    case'v65-reset':if(!t.dataset.arm){t.dataset.arm=1;t.textContent='Pulsa otra vez: se pierden tus cambios';setTimeout(()=>{delete t.dataset.arm;if(t.isConnected)t.textContent='Restaurar inicial'},3500)}else{items=seed();editing=null;save();renderBud()}break;
+    case'v65-copy':{const c=calc();const txt='Presupuesto Tailandia\nPrevisto: '+rng(c.totA,c.totB)+'\nPagado: '+fmt(c.pag)+' €\nReservado: '+fmt(c.res)+' €\nPor gastar: '+rng(c.prA,c.prB);try{navigator.clipboard.writeText(txt);t.textContent='✅ Copiado'}catch(er){t.textContent='No se pudo copiar'}setTimeout(()=>{if(t.isConnected)t.textContent='📋 Copiar resumen'},1800);break}
+  }
+}
+
+/* ============ DOCUMENTOS ============ */
+const DOCS=[
+ ['🪪 Identidad y trámites',[
+  ['pas','🛂 Pasaporte','Copia de la página de datos'],
+  ['seg','🩺 Seguro de viaje','Póliza y teléfono de asistencia 24 h'],
+  ['tdac','📋 TDAC (Tailandia)','Justificante de la tarjeta de llegada digital'],
+  ['mdac','📋 MDAC (Malasia)','Justificante de entrada']]],
+ ['✈️ Vuelos',[
+  ['f1','Madrid → Kuala Lumpur · 6 nov','Qatar Airways vía Doha'],
+  ['f2','Kuala Lumpur → Krabi · 21 nov','AirAsia · 10:50–11:15'],
+  ['f3','Koh Samui → Bangkok · 30 nov','Bangkok Airways · 14:15–15:50'],
+  ['f4','Chiang Mai → Bangkok · 5 dic','Thai AirAsia · 11:45–12:55 (llega a Don Mueang)'],
+  ['f5','Bangkok → Madrid · 8 dic','Qatar Airways vía Doha']]],
+ ['⛴️ Ferris y tren',[
+  ['t1','Phi Phi → Koh Phangan · 24 nov','Lomprayah Express · 10:00 → 16:30 (est.)','12go Q086235 · Presentarse a las 9:00 en Tonsai Pier · minivan en Krabi 11:30 · catamarán 15:00 desde Don Sak.'],
+  ['t2','Koh Tao → Samui Airport · 30 nov','Lomprayah Express · 09:15 → 11:30 (est.)','12go T106900 · Check-in 60 min antes (8:15) · 20 THB de tasa de Koh Tao no incluida · equipaje grande hasta 20 kg.'],
+  ['t3','Tren Bangkok → Chiang Mai · 30 nov','Tren especial exprés nº 13 · Don Mueang 20:22 → 08:45','Coche 10 · litera SUPERIOR · asiento 5. Embarque en la estación de Don Mueang.','warn:El billete del tren exige llevarlo IMPRESO para enseñarlo al revisor. Imprímelo antes de salir.']]],
+ ['🏨 Hoteles',[
+  ['h1','Alanta Aonang Resort · Krabi','21–22 nov'],['h2','Uphill Cottage · Phi Phi','22–24 nov'],['h3','The Pier · Koh Phangan','24–26 nov'],['h4','Angkana Bungalows · Koh Phangan','26–27 nov'],
+  ['h5','Koh Tao Royal Resort','27–29 nov'],['h6','Big Fish Resort · Koh Tao','29–30 nov'],['h7','Manee Cool Mueang · Chiang Mai','1–5 dic'],['h8','Silom Serene · Bangkok','5–8 dic']]],
+ ['🎟️ Excursiones',[
+  ['e1','Chiang Rai · 3 dic','Sale a las 7:00 de Burger King Thapae'],['e2','Ayutthaya · 6 dic','Recogida en el hotel a las 8:30']]],
+ ['🗂️ Otros',[['x','Otros documentos','Malasia, seguros, entradas, reservas sueltas…']]]
+];
+const TOTAL_SLOTS=DOCS.reduce((s,g)=>s+g[1].length,0);
+let db=null,cache=new Map(),pendingSlot=null,dbErr='';
+function idb(){return new Promise((res,rej)=>{if(db)return res(db);if(!window.indexedDB)return rej(new Error('sin IndexedDB'));let r;try{r=indexedDB.open('asia65',1)}catch(e){return rej(e)}r.onupgradeneeded=()=>{r.result.createObjectStore('docs',{keyPath:'id'})};r.onsuccess=()=>{db=r.result;res(db)};r.onerror=()=>rej(r.error)})}
+function tx(mode,fn){return idb().then(d=>new Promise((res,rej)=>{const t=d.transaction('docs',mode),st=t.objectStore('docs'),rq=fn(st);t.oncomplete=()=>res(rq&&rq.result);t.onerror=()=>rej(t.error);t.onabort=()=>rej(t.error)}))}
+function loadDocs(){return tx('readonly',s=>s.getAll()).then(a=>{cache=new Map((a||[]).map(r=>[r.id,r]));dbErr=''}).catch(e=>{dbErr=String(e&&e.message||e)})}
+const sz=n=>n>1048576?(n/1048576).toFixed(1)+' MB':Math.max(1,Math.round(n/1024))+' KB';
+function renderDocs(){
+  const box=$('#v65docs');if(!box)return;
+  const have=new Set([...cache.values()].map(r=>r.slot));
+  let done=0;DOCS.forEach(g=>g[1].forEach(s=>{if(have.has(s[0]))done++}));
+  let h=`<div class="card"><b>📄 Tus billetes y reservas, siempre a mano</b><p class="v65-note">Adjunta cada PDF o captura desde el iPhone (Archivos, Fotos o Correo). Se guardan <b>solo en este móvil</b>, funcionan <b>sin conexión</b> y no se suben a ninguna web. Conserva también una copia en la app Archivos.</p>
+  <p class="v65-note"><b>${done}</b> de ${TOTAL_SLOTS} apartados con documento.</p>
+  ${dbErr?`<div class="v65-key warn">Este navegador no deja guardar archivos aquí (${esc(dbErr)}). Instala la app en la pantalla de inicio e inténtalo de nuevo.</div>`:''}
+  <a class="v65-link" href="shareddocuments://">📂 Abrir la app Archivos del iPhone</a>
+  <a class="v65-link" href="#" data-go="tramites">📋 Trámites de entrada (TDAC · MDAC)</a></div>`;
+  DOCS.forEach(g=>{
+    h+=`<div class="v65-cat"><span>${g[0]}</span></div><div class="card" style="padding:4px 16px">`;
+    g[1].forEach(s=>{
+      const fl=[...cache.values()].filter(r=>r.slot===s[0]).sort((a,b)=>a.added-b.added);
+      h+=`<div class="v65-slot"><div class="v65-sh"><div><b>${esc(s[1])}</b><small>${esc(s[2]||'')}</small></div><span class="v65-badge ${fl.length?'ok':'no'}">${fl.length?'📎 '+fl.length:'Sin adjuntar'}</span></div>`;
+      if(s[3])h+=`<div class="v65-key">${esc(s[3])}</div>`;
+      if(s[4])h+=`<div class="v65-key warn">${esc(s[4].replace(/^warn:/,''))}</div>`;
+      fl.forEach(r=>{h+=`<div class="v65-file"><span>${r.type==='application/pdf'?'📄':'🖼️'} ${esc(r.name)} · ${sz(r.size||0)}</span><button data-open="${esc(r.id)}">Abrir</button><button class="g" data-share="${esc(r.id)}">↗</button><button class="g" data-del="${esc(r.id)}">✕</button></div>`});
+      h+=`<button class="v65-attach" data-attach="${esc(s[0])}">＋ Adjuntar PDF o foto</button></div>`;
+    });
+    h+='</div>';
+  });
+  h+='<input type="file" id="v65file" accept="application/pdf,image/*" multiple style="display:none">';
+  box.innerHTML=h;
+  const fi=$('#v65file');if(fi)fi.onchange=onFiles;
+}
+function onFiles(e){
+  const files=[...e.target.files];e.target.value='';if(!files.length||!pendingSlot)return;
+  try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(er){}
+  const slot=pendingSlot;
+  Promise.all(files.map(f=>{const rec={id:'d'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),slot,name:f.name,type:f.type||'application/octet-stream',size:f.size,blob:f,added:Date.now()};return tx('readwrite',s=>s.put(rec)).then(()=>cache.set(rec.id,rec))}))
+   .then(renderDocs).catch(er=>{dbErr=String(er&&er.message||er);renderDocs()});
+}
+function docsClick(e){
+  const t=e.target.closest('button,a');if(!t)return;
+  if(t.dataset.go){e.preventDefault();openMore(t.dataset.go);return}
+  if(t.dataset.attach){pendingSlot=t.dataset.attach;const fi=$('#v65file');if(fi)fi.click();return}
+  if(t.dataset.open){const r=cache.get(t.dataset.open);if(!r)return;const u=URL.createObjectURL(r.blob);const w=window.open(u,'_blank');if(!w)location.href=u;setTimeout(()=>URL.revokeObjectURL(u),120000);return}
+  if(t.dataset.share){const r=cache.get(t.dataset.share);if(!r)return;const f=r.blob instanceof File?r.blob:new File([r.blob],r.name,{type:r.type});
+    if(navigator.canShare&&navigator.canShare({files:[f]}))navigator.share({files:[f]}).catch(()=>{});else{t.textContent='No disponible';setTimeout(()=>{t.textContent='↗'},1500)}return}
+  if(t.dataset.del){if(!t.dataset.arm){t.dataset.arm=1;t.textContent='¿Borrar?';setTimeout(()=>{delete t.dataset.arm;if(t.isConnected)t.textContent='✕'},2500);return}
+    const id=t.dataset.del;tx('readwrite',s=>s.delete(id)).then(()=>{cache.delete(id);renderDocs()}).catch(()=>{})}
+}
+
+/* ============ TRANSPORTE LOCAL ============ */
+const LOCAL_HTML=`
+<div class="card"><b>🚕 Cómo moverte en cada sitio</b><p class="v65-note">La cobertura de las apps cambia: si abres Grab o Bolt y no te sale ningún coche cerca, ahí no hay servicio. Descarga las dos antes de salir y añade una tarjeta (o paga en efectivo).</p></div>
+<div class="v65-cat"><span>🇹🇭 Tailandia</span></div>
+<div class="card" style="padding:4px 16px">
+<div class="v65-lt h"><span>Sitio</span><span>Grab</span><span>Bolt</span><span>Mejor opción</span></div>
+<div class="v65-lt"><b>Bangkok</b><span>✅</span><span>✅</span><span>Grab/Bolt, taxi con taxímetro, BTS/MRT</span></div>
+<div class="v65-lt"><b>Chiang Mai</b><span>✅</span><span>✅</span><span>Grab/Bolt · songthaew rojo (precio antes)</span></div>
+<div class="v65-lt"><b>Krabi · Ao Nang</b><span>⚠️</span><span>❌</span><span>Songthaew, taxi con precio de cartel, longtail a Railay</span></div>
+<div class="v65-lt"><b>Phi Phi</b><span>❌</span><span>❌</span><span>A pie. Sin coches ni motos. Longtail para playas</span></div>
+<div class="v65-lt"><b>Koh Phangan</b><span>❌</span><span>❌</span><span>Songthaew/taxi pickup con precio de lista, moto de alquiler</span></div>
+<div class="v65-lt"><b>Koh Tao</b><span>❌</span><span>❌</span><span>Songthaew/taxi pickup, barco-taxi entre playas</span></div>
+<div class="v65-lt"><b>Koh Samui</b><span>⚠️</span><span>❌</span><span>Solo pasas por el aeropuerto: taxi oficial</span></div>
+</div>
+<div class="v65-cat"><span>🇲🇾 Malasia (con tus amigos)</span></div>
+<div class="card" style="padding:4px 16px">
+<div class="v65-lt h"><span>Sitio</span><span>Grab</span><span>Bolt</span><span>Mejor opción</span></div>
+<div class="v65-lt"><b>Kuala Lumpur</b><span>✅</span><span>—</span><span>Grab (en grupo sale barato), LRT/MRT/Monorraíl</span></div>
+<div class="v65-lt"><b>Penang</b><span>✅</span><span>—</span><span>Grab, bus CAT gratis en George Town</span></div>
+<div class="v65-lt"><b>Melaka</b><span>✅</span><span>—</span><span>A pie por el centro; Grab para lo demás</span></div>
+<div class="v65-lt"><b>Langkawi</b><span>⚠️</span><span>—</span><span>Taxi con precio fijo de mostrador o coche de alquiler</span></div>
+<div class="v65-lt"><b>Cameron</b><span>⚠️</span><span>—</span><span>Taxi/Land Rover tours desde Tanah Rata</span></div>
+<div class="v65-lt"><b>Koh Lipe</b><span>❌</span><span>❌</span><span>A pie (la isla es pequeña) y longtail</span></div>
+</div>
+<p class="v65-note" style="margin:6px 6px 0">⚠️ = cobertura limitada o variable · ❌ = no funciona o no hay vehículos · — = no es la app habitual allí. Cobertura de Grab/Bolt según <a href="https://jonesyinthailand.com/transport/grab-taxi-vs-bolt/" target="_blank" rel="noopener">Jonesy in Thailand</a> (guía de 2022); de las islas, es lo habitual, no una garantía.</p>
+
+<div class="v65-cat"><span>🏝️ En las islas, sin apps</span></div>
+<div class="card" style="padding:2px 16px">
+<details class="v65-d"><summary>🌴 Phi Phi <span class="v65-tag">sin vehículos</span></summary><p>No hay coches ni motos: todo es a pie desde Tonsai Pier. En el muelle hay porteadores con carro para las maletas (pacta el precio antes). Maya Bay, Monkey Beach y Pileh se hacen en longtail o excursión desde el muelle. Uphill Cottage está en cuesta: sal con tiempo y con poco peso.</p></details>
+<details class="v65-d"><summary>🌕 Koh Phangan</summary><ul><li><b>Songthaew / taxi pickup:</b> los esperan en Thong Sala. Hay precios de lista por zona; pregunta antes de subir.</li><li><b>Moto de alquiler:</b> hace falta carnet internacional de conducción; sin él el seguro no cubre nada, y las carreteras son empinadas y con arena. Casco siempre.</li><li><b>Full Moon (25 nov):</b> a Haad Rin se va en songthaew o barco-taxi. Pacta la vuelta de madrugada antes de ir: es lo más difícil de conseguir.</li></ul></details>
+<details class="v65-d"><summary>🤿 Koh Tao</summary><ul><li>Desde Mae Haad, songthaew/taxi pickup a Sairee, Chalok y Shark Bay (precios por persona y zona).</li><li>Barcos-taxi entre playas cuando no hay carretera.</li><li>Las motos son frecuentes en accidentes por las cuestas: mejor songthaew o taxi.</li></ul></details>
+<details class="v65-d"><summary>🐚 Koh Lipe</summary><p>Todo se hace a pie por Walking Street y las playas. Para Ko Adang y los arrecifes, longtail o tour de snorkel desde la playa.</p></details>
+<details class="v65-d"><summary>🌅 Ao Nang (Krabi)</summary><p>Songthaew por la carretera principal y taxi con tarifas de cartel. Para Railay, longtail desde la playa de Ao Nang (sale cuando se llena).</p></details>
+</div>
+
+<div class="v65-cat"><span>📍 Tus trayectos clave</span></div>
+<div class="card" style="padding:2px 16px">
+<details class="v65-d"><summary>21 nov · Aeropuerto de Krabi → Ao Nang</summary><p>Unos 40 min. Taxi/van de mostrador con precio fijo, o Grab si te sale. Enséñale la tarjeta del hotel (botón 🚕 en tu alojamiento).</p></details>
+<details class="v65-d"><summary>24 nov · Thong Sala → hotel (llegas ~16:30)</summary><p>Songthaew o taxi desde el muelle. Pregunta a The Pier si te recogen; si no, enseña la tarjeta del taxista.</p></details>
+<details class="v65-d"><summary>30 nov · Día largo Koh Tao → Chiang Mai</summary><ul><li>Ferry 9:15 (check-in 8:15) → Samui Airport 11:30.</li><li>Vuelo 14:15 → Bangkok (Suvarnabhumi) 15:50.</li><li>De Suvarnabhumi a la estación de Don Mueang: Grab/taxi con taxímetro, 45–75 min según tráfico, más peajes. El bus A1 es más barato pero más lento. Sal del aeropuerto antes de las 17:30.</li><li>Tren 13 a las 20:22, coche 10, litera superior 5. Billete impreso.</li></ul></details>
+<details class="v65-d"><summary>1 dic · Estación de Chiang Mai → hotel (llegas 8:45)</summary><p>Grab/Bolt o songthaew rojo. Es el modo más fácil de llegar al casco antiguo; pacta el precio antes de subir si es songthaew.</p></details>
+<details class="v65-d"><summary>5 dic · Don Mueang → Silom (llegas 12:55)</summary><p>Taxi con taxímetro (cola oficial) o Grab: 45–60 min. Silom queda cerca del BTS Sala Daeng / Chong Nonsi y del MRT Si Lom.</p></details>
+<details class="v65-d"><summary>6 dic · Ayutthaya</summary><p>Te recogen en el hotel a las 8:30 y acaba en Samyan Mitrtown (MRT Sam Yan, línea azul). Desde ahí, MRT o Grab hasta Silom.</p></details>
+<details class="v65-d"><summary>8 dic · Silom → aeropuerto</summary><p>Grab/taxi con margen amplio por el tráfico (45–60 min fuera de hora punta). Reserva el coche la noche antes si el vuelo es temprano.</p></details>
+</div>
+
+<div class="v65-cat"><span>🧠 Trucos que evitan problemas</span></div>
+<div class="card" style="padding:2px 16px">
+<details class="v65-d" open><summary>Taxis y tuk-tuks</summary><ul><li>En Bangkok y Chiang Mai: «taxímetro, por favor» (<b>มิเตอร์ครับ</b>). Si se niega, bájate.</li><li>Tuk-tuk y songthaew: pacta el precio <b>antes</b> de subir.</li><li>En el aeropuerto, solo la cola oficial de taxis; los peajes y los 50 THB de recargo del aeropuerto se pagan aparte.</li><li>Desconfía de quien te dice que tu hotel está cerrado o te ofrece una «visita gratis».</li></ul></details>
+<details class="v65-d"><summary>Grab y Bolt</summary><ul><li>Comprueba matrícula y nombre antes de subir.</li><li>Elige bien el punto de recogida: calles pequeñas o con obras dificultan el encuentro. Escribe al conductor desde la app.</li><li>Si cancela, no pasa nada: pide otro. Compara los dos precios en Bangkok.</li></ul></details>
+<details class="v65-d"><summary>Si te pierdes</summary><p>En cada alojamiento tienes tres botones: <b>🧭 Volver al hotel</b> (te lleva desde donde estés), <b>🚕 Taxista</b> (tarjeta con la dirección en tailandés para enseñar) y <b>🅱️ Booking</b>. Ve a Más → Enseñar al conductor para más frases.</p></details>
+</div>`;
+
+/* ============ Montaje ============ */
+function mount(){
+  const mas=$('#mas');if(!mas)return;
+  // Documentos: reutiliza la subpágina existente
+  const doc=$('#more-documentos');
+  if(doc&&!doc.dataset.v65){doc.dataset.v65=1;doc.innerHTML='<div class="panel-head"><button class="back" onclick="closeMore()">←</button><h2>Documentos</h2></div><div id="v65docs"></div>';doc.addEventListener('click',docsClick)}
+  const mk=(id,title,body)=>{let e=document.getElementById(id);if(!e){e=document.createElement('div');e.id=id;e.className='subpage';e.innerHTML='<div class="panel-head"><button class="back" onclick="closeMore()">←</button><h2>'+title+'</h2></div>'+body;mas.appendChild(e);return true}return false};
+  if(mk('more-local65','🚕 Transporte local','<div id="v65local">'+LOCAL_HTML+'</div>')){}
+  if(mk('more-gasto65','💶 Presupuesto Tailandia','<div id="v65bud"></div>')){$('#v65bud').addEventListener('click',budClick)}
+  // Entradas de menú
+  const dm=$('#moreHome .menu[onclick*="documentos"]');
+  if(dm&&!dm.dataset.v65){dm.dataset.v65=1;dm.innerHTML='<span class="ico">📄</span><div><b>Documentos</b><small>Billetes y reservas guardados en tu móvil</small></div>'}
+  const anchor=$('#moreHome .menu[onclick*="reservas"]');
+  const mkm=(k,i,t,s)=>{const d=document.createElement('div');d.className='menu';d.dataset.v65=k;d.setAttribute('onclick',"openMore('"+k+"')");d.innerHTML='<span class="ico">'+i+'</span><div><b>'+t+'</b><small>'+s+'</small></div>';return d};
+  if(anchor&&!$('#moreHome .menu[data-v65="gasto65"]')){
+    const a=mkm('gasto65','💶','Presupuesto Tailandia','Pagado · reservado · por gastar · día a día');
+    const b=mkm('local65','🚕','Transporte local','Grab, Bolt y cómo moverte en las islas');
+    const dd=$('#moreHome .menu[data-v65="1"]');
+    anchor.insertAdjacentElement('afterend',a);a.insertAdjacentElement('afterend',b);
+  }
+}
+const _open=window.openMore;
+window.openMore=function(n){_open(n);if(n==='documentos'){renderDocs();loadDocs().then(renderDocs)}if(n==='gasto65')renderBud();};
+window.V65={renderBud,calc:()=>{if(!items)load();return calc()},items:()=>items,reset:()=>{items=seed();save();renderBud()}};
+function run(){try{mount()}catch(e){console.error(e)}}
+document.addEventListener('DOMContentLoaded',()=>{run();setTimeout(run,700);new MutationObserver(()=>{clearTimeout(run.t);run.t=setTimeout(run,300)}).observe(document.body,{childList:true,subtree:true})});
+setTimeout(run,900);
 })();
 </script>

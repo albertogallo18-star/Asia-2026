@@ -1,4 +1,11 @@
-Asia 2026 · V64 DESTINOS, HOTELES Y RESERVAS
+Asia 2026 · V65 DOCUMENTOS, TRANSPORTE LOCAL Y PRESUPUESTO
+
+Qué cambia respecto a V64:
+- Más → Documentos: adjunta PDF o fotos de billetes y reservas desde el iPhone; se guardan solo en el móvil (sin conexión).
+- Más → Presupuesto Tailandia: editable (añadir, editar, borrar), precargado con vuelos, hoteles, transportes y excursiones.
+- Más → Transporte local: Grab, Bolt e islas, y trayectos clave.
+- Ferris Phi Phi→Phangan, Koh Tao→Samui y tren cama con datos reales de los billetes.
+- Caché nueva (v65): abre la app con ?v=65 tras subirla.
 
 Qué cambia respecto a V62:
 - Chiang Rai ya no es una parada: se visita en la excursión reservada del 3 dic desde Chiang Mai. Sigue en Descubre.

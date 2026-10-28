@@ -1,4 +1,4 @@
-Asia 2026 · V63 CHIANG MAI Y TREN CAMA
+Asia 2026 · V64 DESTINOS, HOTELES Y RESERVAS
 
 Qué cambia respecto a V62:
 - Chiang Rai ya no es una parada: se visita en la excursión reservada del 3 dic desde Chiang Mai. Sigue en Descubre.
@@ -14,3 +14,5 @@ Nuevo en esta versión: en cada hotel reservado, botón "Volver al hotel desde d
 También: hotel de Bangkok (Silom Serene), vuelo Chiang Mai → Bangkok (11:45), excursión a Ayutthaya (6 dic, 8:30), punto de encuentro del tour de Chiang Rai (7:00, Burger King Thapae) y los 7 vuelos juntos en la primera página.
 
 Cada hotel tiene ahora 3 botones: Volver al hotel (Google Maps desde donde estés), Taxista (tarjeta en tailandés para enseñar al conductor) y Booking.
+
+V64: botonera de destinos arriba en Ruta (salta a cada destino), chips Dormir/Comer/Ver/Hacer de cada destino funcionan, versión de caché nueva.

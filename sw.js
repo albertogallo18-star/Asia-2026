@@ -2,7 +2,7 @@
    - La app (HTML, iconos, foto local) se guarda al instalar y funciona sin conexión.
    - Fotos externas (Unsplash, Wikimedia): se guardan al verlas y se reutilizan offline.
    - Cambio de moneda y API de Wikimedia: red primero, y si no hay conexión, lo último guardado. */
-const VERSION = 'v63';
+const VERSION = 'v64';
 const SHELL = 'asia26-shell-' + VERSION;
 const IMGS = 'asia26-img-' + VERSION;
 const DATA = 'asia26-data-' + VERSION;

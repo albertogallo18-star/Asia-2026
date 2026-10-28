@@ -2811,7 +2811,7 @@ const LOCAL_HTML=`
 <div class="v65-lt"><b>Cameron</b><span>⚠️</span><span>—</span><span>Taxi/Land Rover tours desde Tanah Rata</span></div>
 <div class="v65-lt"><b>Koh Lipe</b><span>❌</span><span>❌</span><span>A pie (la isla es pequeña) y longtail</span></div>
 </div>
-<p class="v65-note" style="margin:6px 6px 0">⚠️ = cobertura limitada o variable · ❌ = no funciona o no hay vehículos · — = no es la app habitual allí. Cobertura de Grab/Bolt según <a href="https://jonesyinthailand.com/transport/grab-taxi-vs-bolt/" target="_blank" rel="noopener">Jonesy in Thailand</a> (guía de 2022); de las islas, es lo habitual, no una garantía.</p>
+<p class="v65-note out" style="margin:6px 6px 0">⚠️ = cobertura limitada o variable · ❌ = no funciona o no hay vehículos · — = no es la app habitual allí. Cobertura de Grab/Bolt según <a href="https://jonesyinthailand.com/transport/grab-taxi-vs-bolt/" target="_blank" rel="noopener">Jonesy in Thailand</a> (guía de 2022); de las islas, es lo habitual, no una garantía.</p>
 
 <div class="v65-cat"><span>🏝️ En las islas, sin apps</span></div>
 <div class="card" style="padding:2px 16px">
@@ -3165,6 +3165,82 @@ const _o=window.openMore;
 window.openMore=function(n){_o(n);if(n==='dinero66')render()};
 function run(){try{mount()}catch(e){console.error(e)}}
 document.addEventListener('DOMContentLoaded',()=>{setTimeout(run,900);new MutationObserver(()=>{clearTimeout(run.t);run.t=setTimeout(run,300)}).observe(document.body,{childList:true,subtree:true})});
+setTimeout(run,1200);
+})();
+</script>
+
+<style id="v66-bg-style">
+/* ---- Verde racing ---- */
+html[data-bg="verde"],html[data-bg="verde"] body{background:#0a3d2b!important}
+html[data-bg="verde"] body{background:radial-gradient(900px 620px at 100% -8%,rgba(70,150,108,.32),transparent 62%),radial-gradient(800px 600px at -10% 90%,rgba(233,180,76,.10),transparent 60%),linear-gradient(180deg,#0e4b36 0%,#0a3d2b 55%,#06291d 100%) fixed!important}
+html[data-bg="verde"] body:before{display:none!important}
+html[data-bg="verde"] #my37{background:linear-gradient(180deg,#0e4b36 0%,#0a3d2b 55%,#06291d 100%)!important}
+html[data-bg="verde"] .my37-top{background:rgba(8,52,37,.94)!important}
+/* ---- Mezcla: verde + foto ---- */
+html[data-bg="mix"],html[data-bg="mix"] body{background:#0a3d2b!important}
+html[data-bg="mix"] body:before{display:block!important;content:"";position:fixed;inset:0;z-index:0;opacity:1!important;pointer-events:none;
+  background-image:linear-gradient(rgba(6,41,29,.70),rgba(6,41,29,.86)),var(--v66-photo,none)!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
+html[data-bg="mix"] #my37{background-image:linear-gradient(rgba(6,41,29,.70),rgba(6,41,29,.86)),var(--v66-photo,none)!important;background-color:#0a3d2b!important;background-size:cover!important;background-position:center!important}
+html[data-bg="mix"] .my37-top{background:rgba(8,52,37,.94)!important}
+/* las páginas tenían fondos propios de versiones antiguas */
+html[data-bg] #ruta,html[data-bg] #itinerario,html[data-bg] #mapa,html[data-bg] #recomendaciones,html[data-bg] #mas,html[data-bg] #inicio,html[data-bg] .page{background:none!important}
+/* texto claro sobre fondo oscuro (lo que no está dentro de tarjetas) */
+html[data-dark] .page>header h1,html[data-dark] .page>header .sub,html[data-dark] .page>h1,html[data-dark] .section,html[data-dark] .panel-head h2,html[data-dark] .v65-cat,html[data-dark] .v65-cat small,html[data-dark] .v66-h,html[data-dark] .v59-h,html[data-dark] .v43-wrap>h3,html[data-dark] .v43-wrap>p,html[data-dark] .v43-note,html[data-dark] .my39-intro,html[data-dark] .my38-sub,html[data-dark] #my37>section>h1,html[data-dark] #my37 .my37-page>h1,html[data-dark] #my38DiscoverHome>h1,html[data-dark] #destDetail header h1,html[data-dark] #destDetail header .sub,html[data-dark] .zone-head h2,html[data-dark] .zone-head span,html[data-dark] #my37 .my37-section,html[data-dark] .v65-note.out{color:#f3eee2!important}
+html[data-dark] .v65-cat span,html[data-dark] .v65-cat small{color:#f3eee2!important}
+html[data-dark] header h1,html[data-dark] header .sub,html[data-dark] header .ey,html[data-dark] .v57-group,html[data-dark] #v57taxi>.muted,html[data-dark] #v57tram>p.muted,html[data-dark] #v57tram>p,html[data-dark] .v53-cultural-heading,html[data-dark] .v66-hoyp>h1,html[data-dark] .v65-note.out,html[data-dark] #smartDashboard>p{color:#f3eee2!important}
+html[data-dark] .v65-note.out a{color:#ffd88a!important}
+html[data-dark] .card,html[data-dark] .glass{background:rgba(255,252,246,.95)!important}
+html[data-dark] .section:after{background:linear-gradient(90deg,#e9b44c,#ff9d4d)}
+/* ---- Foto traslúcida ---- */
+html[data-bg="foto"],html[data-bg="foto"] body{background:#f7f0e4!important}
+html[data-bg="foto"] body{background:#f7f0e4!important}
+html[data-bg="foto"] body:before{display:block!important;content:"";position:fixed;inset:0;z-index:0;opacity:1!important;pointer-events:none;
+  background-image:linear-gradient(rgba(247,240,228,.78),rgba(247,240,228,.90)),var(--v66-photo,none)!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
+html[data-bg="foto"] #my37{background-image:linear-gradient(rgba(247,240,228,.78),rgba(247,240,228,.90)),var(--v66-photo,none)!important;background-color:#f7f0e4!important;background-size:cover!important;background-position:center!important}
+/* selector de aspecto */
+.v66b-opt{display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:2px solid transparent;border-radius:18px;padding:12px;margin:10px 0;background:#fffaf3;font:inherit;color:#123e40}
+.v66b-opt.on{border-color:#078e89}
+.v66b-sw{flex:0 0 64px;height:64px;border-radius:14px;border:1px solid rgba(0,0,0,.1)}
+.v66b-opt b{display:block;font-size:15px}.v66b-opt small{color:#5d6b68;font-size:12.5px;line-height:1.35}
+</style>
+<script>
+(function(){
+const KEY='asia66bg',MODES={mix:['Verde + foto','Verde racing con la foto del país asomando por detrás. La mezcla de las dos.','linear-gradient(135deg,rgba(6,41,29,.75),rgba(6,41,29,.9)),linear-gradient(135deg,#d9c9a8,#8fb7a8)'],verde:['Verde racing','Fondo verde oscuro, como un coche de carreras británico. Las tarjetas siguen en crema.','linear-gradient(135deg,#0e4b36,#06291d)'],foto:['Foto traslúcida','Una foto del país (Tailandia o Malasia) que se intuye detrás, sin molestar.','linear-gradient(135deg,#d9c9a8,#8fb7a8)'],pastel:['Original','El fondo claro de colores que tenías hasta ahora.','linear-gradient(135deg,#fff3e2,#bfe6e0)']};
+const get=()=>{try{const v=localStorage.getItem(KEY);return MODES[v]?v:'mix'}catch(e){return'mix'}};
+const set=v=>{try{localStorage.setItem(KEY,v)}catch(e){}};
+const PHOTO={Thailand:'url("koh-tao-sairee.jpg")',Malaysia:'url("https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1100&q=70")'};
+function apply(){
+  const r=document.documentElement,m=get();
+  if(m==='pastel')r.removeAttribute('data-bg');else r.dataset.bg=m;
+  if(m==='verde'||m==='mix')r.dataset.dark='1';else r.removeAttribute('data-dark');
+  const c=(document.body&&document.body.dataset.country)||(localStorage.getItem('asiaCountry'))||'Thailand';
+  let p=PHOTO[c==='Malaysia'?'Malaysia':'Thailand'];
+  if(c==='Malaysia'&&window.V58ART){const a=V58ART.url('kl');if(a)p+=',url("'+a+'")'}
+  r.style.setProperty('--v66-photo',p);
+  document.querySelectorAll('.v66b-opt').forEach(b=>b.classList.toggle('on',b.dataset.m===m));
+}
+apply();
+function renderOpts(){
+  const box=document.getElementById('v66aspect');if(!box)return;
+  box.innerHTML='<div class="card"><b>🎨 Aspecto de la app</b><p class="v65-note">Elige el fondo. Se guarda en este móvil.</p>'+Object.keys(MODES).map(k=>'<button type="button" class="v66b-opt" data-m="'+k+'"><span class="v66b-sw" style="background:'+MODES[k][2]+'"></span><span><b>'+MODES[k][0]+'</b><small>'+MODES[k][1]+'</small></span></button>').join('')+'</div>';
+  apply();
+}
+function mount(){
+  const mas=document.getElementById('mas');if(!mas)return;
+  if(!document.getElementById('more-aspecto66')){
+    const e=document.createElement('div');e.id='more-aspecto66';e.className='subpage';
+    e.innerHTML='<div class="panel-head"><button class="back" onclick="closeMore()">←</button><h2>🎨 Aspecto</h2></div><div id="v66aspect"></div>';
+    e.addEventListener('click',ev=>{const b=ev.target.closest('.v66b-opt');if(b){set(b.dataset.m);apply()}});
+    mas.appendChild(e);
+  }
+  if(!document.querySelector('#moreHome .menu[data-v66="aspecto66"]')){
+    const a=document.querySelector('#moreHome .menu[data-v66="dinero66"]')||document.querySelector('#moreHome .menu[onclick*="reservas"]');
+    if(a){const d=document.createElement('div');d.className='menu';d.dataset.v66='aspecto66';d.setAttribute('onclick',"openMore('aspecto66')");d.innerHTML='<span class="ico">🎨</span><div><b>Aspecto</b><small>Fondo: verde, foto, mezcla u original</small></div>';a.insertAdjacentElement('afterend',d)}
+  }
+}
+const _o=window.openMore;window.openMore=function(n){_o(n);if(n==='aspecto66')renderOpts()};
+function run(){try{mount();apply()}catch(e){}}
+document.addEventListener('DOMContentLoaded',()=>{run();setTimeout(run,900);new MutationObserver(()=>{clearTimeout(run.t);run.t=setTimeout(run,300)}).observe(document.body,{childList:true,attributes:true,attributeFilter:['data-country','class'],subtree:false})});
 setTimeout(run,1200);
 })();
 </script>

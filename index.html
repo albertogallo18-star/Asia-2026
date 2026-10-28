@@ -546,7 +546,7 @@ const D=[
 {date:"22 NOV",place:"Phi Phi",title:"Krabi → Phi Phi",desc:"Ferry desde Ao Nang y primera noche en Phi Phi",am:"⛴️ Ferry Ao Nang → Tonsai",pm:"Check-in · Tonsai · primer paseo",night:"Cena y ambiente",photos:[["Phi Phi Thailand","Phi Phi","Primer vistazo a las islas"]]},
 {date:"23 NOV",place:"Phi Phi",title:"Phi Phi a fondo",desc:"Día de mar y miradores",am:"⭐ Maya Bay · Pileh Lagoon · snorkel",pm:"Monkey Beach · Viking Cave · ⭐ Phi Phi Viewpoint",night:"Tonsai · cena · copas",photos:[["Maya Bay Thailand","Maya Bay","⭐ IMPRESCINDIBLE"],["Pileh Lagoon Thailand","Pileh Lagoon","⭐ IMPRESCINDIBLE"],["Phi Phi viewpoint Thailand","Phi Phi Viewpoint","📸 Atardecer"]]},
 {date:"24 NOV",place:"Koh Phangan",title:"Phi Phi → Koh Phangan",desc:"Traslado y primera noche en Koh Phangan",am:"🚤 10:00 Lomprayah desde Tonsai Pier · llegada prevista 16:30",pm:"Thong Sala · check-in · primer paseo",night:"Cena tranquila",photos:[["Koh Phangan beach Thailand","Koh Phangan","Playas y palmeras"]]},
-{date:"25 NOV",place:"Koh Phangan",title:"Full Moon",desc:"Haad Rin · fecha/horario a reconfirmar",am:"Playa · descanso",pm:"Prepararse con calma",night:"🌕 Full Moon Party · Haad Rin",photos:[["Haad Rin Koh Phangan Thailand","Haad Rin","🌕 Noche de Full Moon"]]},
+{date:"25 NOV",place:"Koh Phangan",title:"Full Moon",desc:"Haad Rin · la fecha puede ser el 24 o el 25 (confírmala)",am:"Playa · descanso",pm:"Prepararse con calma",night:"🌕 Full Moon Party · Haad Rin (comprueba si es esta noche o la del 24)",photos:[["Haad Rin Koh Phangan Thailand","Haad Rin","🌕 Noche de Full Moon"]]},
 {date:"26 NOV",place:"Koh Phangan",title:"Recovery day",desc:"Playas y relax",am:"Dormir · desayuno tardío",pm:"Thong Nai Pan / playa",night:"Cena relajada",photos:[["Thong Nai Pan Koh Phangan","Thong Nai Pan","🏝️ Playa"]]},
 {date:"27 NOV",place:"Koh Tao",title:"Koh Phangan → Koh Tao",desc:"Ferry y llegada",am:"Ferry",pm:"Sairee Beach · check-in",night:"Sunset y cena",photos:[["Sairee Beach Koh Tao","Sairee Beach","🌅 Sunset"]]},
 {date:"28 NOV",place:"Koh Tao",title:"Mar de Koh Tao",desc:"Snorkel / buceo recreativo",am:"🤿 Buceo o snorkel",pm:"Calas · playa",night:"Sairee",photos:[["Koh Tao snorkeling Thailand","Koh Tao","🤿 Fondo marino"]]},
@@ -1977,12 +1977,15 @@ function renderTaxi(){
   box.innerHTML=h;
 }
 window.v57Show=function(k,i){
-  const p=k==='h'?jget(K.hot,[])[i]:k==='s'?{n:'🏨 '+STAYS[i][0],l:STAYS[i][0]+' · '+(TH[STAYS[i][0]]||''),c:'th',m:V64.back(STAYS[i])}:{n:PLACES[i][2],l:PLACES[i][3],c:PLACES[i][0]};
+  const p=k==='h'?jget(K.hot,[])[i]:k==='s'?{n:'🏨 '+STAYS[i][0],l:(function(){let t='';try{t=localStorage.getItem('asia66thname'+i)||''}catch(e){}return STAYS[i][0]+' · '+(t||TH[STAYS[i][0]]||'')})(),c:'th',m:V64.back(STAYS[i])}:{n:PLACES[i][2],l:PLACES[i][3],c:PLACES[i][0]};
   if(!p)return;
   const L=LANG[p.c];
   const o=document.createElement('div');o.className='v57show';
   o.innerHTML=`<div class="es">${esc(p.n)}</div><div class="nat">${esc(p.l)}</div><div class="sen">${esc(L.go)}</div>${L.ph?`<div class="ph">${esc(L.ph)}</div>`:''}<div class="es">${esc(L.es)}</div><div class="sen" style="margin-top:14px">${esc(L.meter)}</div>${L.mph?`<div class="ph">${esc(L.mph)}</div>`:''}<div class="es">${esc(L.mes)}</div>${p.m?`<a href="${esc(p.m)}" target="_blank" rel="noopener" style="display:inline-block;margin-top:16px;padding:12px 20px;border-radius:999px;background:#0b7775;color:#fff;font-weight:800;text-decoration:none">📍 Ver el hotel en Google Maps</a>`:''}<button>Cerrar</button>`;
   o.querySelector('button').onclick=()=>o.remove();
+  if(k==='s'){const eb=document.createElement('button');eb.type='button';eb.textContent='✏️ Poner el nombre del hotel en tailandés';eb.style.cssText='margin-top:14px;background:transparent;border:1px solid rgba(255,255,255,.5);color:inherit;border-radius:14px;padding:10px 14px;font:inherit;width:100%';
+    eb.onclick=()=>{const v=prompt('Pega el nombre/dirección en tailandés (lo tienes en Booking o Google Maps, en la ficha del hotel)');if(v===null)return;try{if(v.trim())localStorage.setItem('asia66thname'+i,v.trim());else localStorage.removeItem('asia66thname'+i)}catch(e){}o.remove();window.v57Show('s',i)};
+    o.appendChild(eb)}
   document.body.appendChild(o);
 };
 window.v57AddHotel=function(){
@@ -3190,6 +3193,8 @@ html[data-dark] .v65-cat span,html[data-dark] .v65-cat small{color:#f3eee2!impor
 html[data-dark] header h1,html[data-dark] header .sub,html[data-dark] header .ey,html[data-dark] .v57-group,html[data-dark] #v57taxi>.muted,html[data-dark] #v57tram>p.muted,html[data-dark] #v57tram>p,html[data-dark] .v53-cultural-heading,html[data-dark] .v66-hoyp>h1,html[data-dark] .v65-note.out,html[data-dark] #smartDashboard>p{color:#f3eee2!important}
 html[data-dark] .v65-note.out a{color:#ffd88a!important}
 html[data-dark] .card,html[data-dark] .glass{background:rgba(255,252,246,.95)!important}
+html[data-dark] .card.v65-hero{background:linear-gradient(135deg,#0b5558,#079894)!important;color:#fff!important}
+html[data-dark] .card.v65-hero small,html[data-dark] .card.v65-hero strong,html[data-dark] .card.v65-hero span,html[data-dark] .card.v65-hero div{color:#fff!important}
 html[data-dark] .section:after{background:linear-gradient(90deg,#e9b44c,#ff9d4d)}
 /* ---- Foto traslúcida ---- */
 html[data-bg="foto"],html[data-bg="foto"] body{background:#f7f0e4!important}
@@ -3241,6 +3246,162 @@ function mount(){
 const _o=window.openMore;window.openMore=function(n){_o(n);if(n==='aspecto66')renderOpts()};
 function run(){try{mount();apply()}catch(e){}}
 document.addEventListener('DOMContentLoaded',()=>{run();setTimeout(run,900);new MutationObserver(()=>{clearTimeout(run.t);run.t=setTimeout(run,300)}).observe(document.body,{childList:true,attributes:true,attributeFilter:['data-country','class'],subtree:false})});
+setTimeout(run,1200);
+})();
+</script>
+
+<style>
+.v66p-btn{display:block;width:100%;margin:8px 0 0;padding:12px 14px;border:0;border-radius:14px;background:#078e89;color:#fff;font:inherit;font-weight:700;text-align:center}
+.v66p-btn.alt{background:#f1e6d3;color:#123e40}
+.v66p-msg{background:#f6efe2;border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.4;margin:8px 0;color:#123e40;white-space:pre-wrap}
+.v66p-warn{background:#fff1d6;border-left:4px solid #e9a93b;border-radius:10px;padding:10px 12px;font-size:13.5px;line-height:1.4;color:#5a3d00;margin:8px 0}
+.v66p-card ul{margin:6px 0 0;padding-left:18px;font-size:13.5px;line-height:1.45;color:#123e40}
+.v66p-card p{font-size:13.5px;line-height:1.45;color:#123e40;margin:6px 0}
+.v66p-card summary{font-weight:700;color:#123e40;padding:8px 0;cursor:pointer}
+.v66p-card textarea{width:100%;min-height:80px;border-radius:12px;border:1px solid #d9c9a8;padding:10px;font:inherit;font-size:12px;box-sizing:border-box;background:#fffaf3;color:#123e40}
+</style>
+<script>
+(function(){
+const OFF='asia66off';
+const OFFL=['Descargar en Google Maps el mapa sin conexión de: Krabi/Ao Nang, Phi Phi, Koh Phangan, Koh Tao, Chiang Mai y Bangkok (Maps → tu foto → Mapas sin conexión)','Abrir esta app con wifi y comprobar que carga también en modo avión','Guardar PDF de vuelos, ferris (12go/Lomprayah), tren y hoteles en Documentos y también en Archivos del móvil','Captura de pantalla de los códigos QR y localizadores','Tener la eSIM instalada y probada antes de salir de España','Descargar Google Translate con tailandés sin conexión','Poner en el móvil un contacto de emergencia y los datos del seguro','Cargar powerbank y llevar cable corto en la mochila de mano'];
+const LS=(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}};
+const SV=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const MSG1=`Hello! I have a reservation under my name. I arrive in Ao Nang around 12:00 on 21 Nov, earlier than check-in time. Could you please keep my luggage until my room is ready? Thank you very much!`;
+const MSG2=`Hello! I have a reservation from 1 Dec. I arrive in Chiang Mai around 8:45 in the morning. Could I leave my luggage and, if the room is ready earlier, check in early? Thank you very much!`;
+const RAIN={
+ 'Phi Phi':'Con mar picado se cancelan excursiones en barco: pasa la actividad a un día soleado, haz el viewpoint a primera hora o cambia a playa/relax. Pregunta siempre el día antes.',
+ 'Koh Tao':'Si no se puede bucear o hacer snorkel: spa, clase de cocina, café con vistas o moto con cuidado. Pregunta a la escuela de buceo si cambian de día sin coste.',
+ 'Koh Phangan':'Lluvia: masaje, yoga, cafés de Thong Sala o cine de Haad Rin. Con mar fuerte, evita taxi-barco y usa carretera.',
+ 'Koh Lipe':'Si hay temporal puede no salir el ferry. Deja margen antes de volar o de otra reserva fija.',
+ 'Krabi / Ao Nang':'Si llueve: Tiger Cave Temple cuando abra el cielo, spa o mercado de noche. Si el mar está malo, deja las islas para otro día.',
+ 'Chiang Mai':'Lluvia: templos cubiertos, museos, cafés de Nimman, masaje o clase de cocina. En noviembre llueve poco.',
+ 'Bangkok':'Calor o chubasco: centros comerciales con aire (Siam, MBK), museos, Jim Thompson House o masaje.',
+ 'Ayutthaya':'Si llueve, mira un tramo corto bajo cobertura o cambia la visita a otro día; lleva chubasquero fino y calzado cerrado.'
+};
+const ICS_EV=[
+['2026-11-06T07:05:00Z','2026-11-06T13:40:00Z','✈️ Madrid → Doha (IB6192)','Salida 08:05 hora local de Madrid'],
+['2026-11-06T23:20:00Z','2026-11-07T06:40:00Z','✈️ Doha → Kuala Lumpur (IB6349)','Salida 02:20 hora de Doha'],
+['2026-11-21T02:50:00Z','2026-11-21T04:15:00Z','✈️ Kuala Lumpur → Krabi (AirAsia)','10:50 hora Malasia · comprueba terminal en KLIA2'],
+['2026-11-24T03:00:00Z','2026-11-24T09:30:00Z','🚤 Phi Phi → Koh Phangan (Lomprayah, 12go Q086235)','Salida 10:00 Tonsai Pier · llegada prevista 16:30'],
+['2026-11-30T02:15:00Z','2026-11-30T04:30:00Z','⛴️ Koh Tao → Samui (ferry 09:15)','Ve con margen al puerto'],
+['2026-11-30T07:15:00Z','2026-11-30T08:50:00Z','✈️ Koh Samui → Bangkok (Bangkok Airways)','Salida 14:15'],
+['2026-11-30T13:22:00Z','2026-12-01T01:45:00Z','🚆 Tren cama Bangkok (Don Mueang) → Chiang Mai','Salida 20:22 · coche 13 · litera superior 5 · lleva el billete impreso'],
+['2026-12-05T04:45:00Z','2026-12-05T05:55:00Z','✈️ Chiang Mai → Bangkok DMK (Thai AirAsia)','Salida 11:45'],
+['2026-12-08T02:45:00Z','2026-12-08T10:00:00Z','✈️ Bangkok → Doha (QR839)','Salida 09:45'],
+['2026-12-08T12:15:00Z','2026-12-08T19:45:00Z','✈️ Doha → Madrid (QR151)','Salida 15:15 · llegada Madrid T4S']
+];
+const ICS_DAYS=[
+['2026-11-04','📝 Hacer el MDAC de Malasia (llegada el 7)','Se rellena online dentro de los 3 días antes de entrar'],
+['2026-11-18','📝 Hacer el TDAC de Tailandia (llegada el 21)','Se rellena online hasta 3 días antes de entrar'],
+['2026-11-21','🏨 Alanta Aonang Resort · check-in','Llegas ~11:15, antes de la hora: pide guardar maletas'],
+['2026-11-22','🏨 Uphill Cottage · check-in','Phi Phi'],
+['2026-11-24','🏨 The Pier · check-in','Koh Phangan'],
+['2026-11-26','🏨 Angkana Bungalows · check-in','Koh Phangan'],
+['2026-11-27','🏨 Koh Tao Royal Resort · check-in','Koh Tao'],
+['2026-11-29','🏨 Big Fish Resort · check-in','Koh Tao'],
+['2026-12-01','🏨 Manee Cool Mueang · check-in','Llegas ~8:45, pide guardar maletas'],
+['2026-12-05','🏨 Silom Serene · check-in','Bangkok']
+];
+const pad=n=>String(n).padStart(2,'0');
+function stamp(){const d=new Date();return d.getUTCFullYear()+pad(d.getUTCMonth()+1)+pad(d.getUTCDate())+'T'+pad(d.getUTCHours())+pad(d.getUTCMinutes())+'00Z'}
+function z(t){return t.replace(/[-:]/g,'')}
+function nextDay(d){const x=new Date(d+'T00:00:00Z');x.setUTCDate(x.getUTCDate()+1);return x.getUTCFullYear()+pad(x.getUTCMonth()+1)+pad(x.getUTCDate())}
+function ics(){
+  const L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Asia 2026//ES','CALSCALE:GREGORIAN','METHOD:PUBLISH'];
+  const alarm=(m,t)=>['BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+t,'TRIGGER:'+(m<0?'PT'+(-m)+'M':'-PT'+m+'M'),'END:VALARM'];
+  ICS_EV.forEach((e,i)=>{L.push('BEGIN:VEVENT','UID:asia26-ev'+i+'@asia2026','DTSTAMP:'+stamp(),'DTSTART:'+z(e[0]),'DTEND:'+z(e[1]),'SUMMARY:'+e[2],'DESCRIPTION:'+e[3],...alarm(1440,'Mañana: '+e[2]),...alarm(180,'En 3 horas: '+e[2]),'END:VEVENT')});
+  ICS_DAYS.forEach((e,i)=>{const d=e[0].replace(/-/g,'');L.push('BEGIN:VEVENT','UID:asia26-d'+i+'@asia2026','DTSTAMP:'+stamp(),'DTSTART;VALUE=DATE:'+d,'DTEND;VALUE=DATE:'+nextDay(e[0]),'SUMMARY:'+e[1],'DESCRIPTION:'+e[2],...alarm(-540,e[1]),'END:VEVENT')});
+  L.push('END:VCALENDAR');return L.join('\r\n');
+}
+async function share(){
+  const t=ics();
+  try{
+    const f=new File([t],'asia2026.ics',{type:'text/calendar'});
+    if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:'Asia 2026'});return}
+  }catch(e){if(e&&e.name==='AbortError')return}
+  const a=document.createElement('a');a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(t);a.download='asia2026.ics';document.body.appendChild(a);a.click();a.remove();
+}
+function copy(t,btn){
+  const ok=()=>{if(btn){const o=btn.textContent;btn.textContent='✓ Copiado';setTimeout(()=>btn.textContent=o,1600)}};
+  try{navigator.clipboard.writeText(t).then(ok,()=>fb())}catch(e){fb()}
+  function fb(){const x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');ok()}catch(e){}x.remove()}
+}
+function html(){
+  const off=LS(OFF,{}),done=OFFL.filter((_,i)=>off[i]).length;
+  return `
+<div class="v66p-card card"><b>🌕 Full Moon · ojo con la fecha</b>
+ <div class="v66p-warn">La app tenía la fiesta el 25 nov, pero según al menos un calendario de noviembre 2026 podría ser el <b>24</b>, justo el día que llegas a Koh Phangan (~16:30). Puede variar un día. Confírmala en la web oficial o en el hostal antes de reservar nada para esa noche.</div>
+ <p>Si es el 24: llegas, dejas las cosas y vas con calma; si es el 25: el 24 queda libre para descansar. En ambos casos <b>reserva el regreso</b> y retira efectivo antes.</p></div>
+
+<div class="v66p-card card"><b>⛴️ Plan B · día 30 nov</b>
+ <p class="muted">Cadena: ferry 09:15 → vuelo 14:15 → tren cama 20:22 (Don Mueang). Orientativo: verifica horarios al reservar.</p>
+ <details><summary>Si el ferry se retrasa o se cancela</summary><ul><li>Contacta cuanto antes con Lomprayah y con 12go (tienes el localizador en Documentos).</li><li>Pregunta por un barco posterior o por otro pier; en noviembre el mar puede estar movido.</li><li>Dos horas y 45 de margen entre ferry y vuelo es justo: Lomprayah recomienda bastante más.</li></ul></details>
+ <details><summary>Si pierdes el vuelo</summary><ul><li>Pide a Bangkok Airways cambio al siguiente vuelo; si no hay, busca Surat Thani o Samui → Bangkok.</li><li>El tren cama sale 20:22: si no llegas, hay otros trenes, buses nocturnos y vuelos Bangkok → Chiang Mai casi cada día.</li><li>Avisa al hotel de Chiang Mai de que llegarás más tarde.</li></ul></details>
+ <details><summary>Si pierdes el tren</summary><ul><li>Pregunta en la estación por el siguiente tren a Chiang Mai o mira vuelos/bus esa noche.</li><li>Guarda tickets y justificantes por si el seguro cubre el retraso.</li></ul></details>
+ <p class="muted">Seguro de viaje: revisa si cubre retrasos y cancelaciones antes de salir.</p></div>
+
+<div class="v66p-card card"><b>🧳 Maletas y check-in anticipado</b>
+ <p><b>21 nov · Alanta Aonang.</b> Aterrizas en Krabi ~11:15, antes de la hora normal de entrada.</p><div class="v66p-msg">${esc(MSG1)}</div><button class="v66p-btn alt" data-copy="1">📋 Copiar mensaje en inglés</button>
+ <p style="margin-top:14px"><b>1 dic · Manee Cool Mueang.</b> Llegas a Chiang Mai ~8:45 con el tren.</p><div class="v66p-msg">${esc(MSG2)}</div><button class="v66p-btn alt" data-copy="2">📋 Copiar mensaje en inglés</button></div>
+
+<div class="v66p-card card"><b>📴 Preparación sin conexión</b><p class="muted">${done} de ${OFFL.length}</p>
+ ${OFFL.map((t,i)=>`<button type="button" class="v66m-chk ${off[i]?'on':''}" data-off="${i}"><i>${off[i]?'✓':''}</i><span>${esc(t)}</span></button>`).join('')}</div>
+
+<div class="v66p-card card"><b>🌧️ Si llueve o el mar está malo</b>
+ ${Object.keys(RAIN).map(k=>`<details><summary>${esc(k)}</summary><p>${esc(RAIN[k])}</p></details>`).join('')}</div>
+
+<div class="v66p-card card"><b>📅 Calendario con alarmas</b>
+ <p>Vuelos, ferris, tren, check-ins y recordatorios del MDAC/TDAC con aviso un día antes y 3 horas antes. Se importa en el calendario del móvil.</p>
+ <button class="v66p-btn" id="v66p-ics">📅 Descargar / compartir calendario</button>
+ <p class="muted" style="font-size:12px">Revisa los horarios importados con tus billetes originales.</p></div>
+
+<div class="v66p-card card"><b>💾 Copia del presupuesto</b>
+ <p>Copia tus gastos por si cambias de móvil o borras datos. Para restaurar, pega el texto y pulsa Restaurar.</p>
+ <button class="v66p-btn alt" id="v66p-bk">📋 Copiar mi presupuesto</button>
+ <textarea id="v66p-ta" placeholder="Pega aquí la copia para restaurar"></textarea>
+ <button class="v66p-btn alt" id="v66p-rs">♻️ Restaurar desde el texto</button><div id="v66p-st" class="muted" style="font-size:12.5px;margin-top:6px"></div></div>`;
+}
+function render(){const b=document.getElementById('v66plan');if(b)b.innerHTML=html()}
+function mount(){
+  const mas=document.getElementById('mas');if(!mas)return;
+  if(!document.getElementById('more-plan66')){
+    const e=document.createElement('div');e.id='more-plan66';e.className='subpage';
+    e.innerHTML='<div class="panel-head"><button class="back" onclick="closeMore()">←</button><h2>🧭 Plan B y preparación</h2></div><div id="v66plan"></div>';
+    e.addEventListener('click',ev=>{
+      const t=ev.target;
+      const c=t.closest('[data-copy]');if(c){copy(c.dataset.copy==='1'?MSG1:MSG2,c);return}
+      const o=t.closest('[data-off]');if(o){const s=LS(OFF,{});s[o.dataset.off]=!s[o.dataset.off];SV(OFF,s);render();return}
+      if(t.closest('#v66p-ics')){share();return}
+      if(t.closest('#v66p-bk')){let raw='';try{raw=localStorage.getItem('asia65budget')||''}catch(x){}
+        const st=document.getElementById('v66p-st');if(!raw){st.textContent='Aún no hay presupuesto guardado.';return}
+        document.getElementById('v66p-ta').value=raw;copy(raw,t.closest('#v66p-bk'));st.textContent='Copiado. Pégalo en Notas para guardarlo.';return}
+      if(t.closest('#v66p-rs')){const st=document.getElementById('v66p-st');
+        try{const j=JSON.parse(document.getElementById('v66p-ta').value.trim());
+          if(!j||!Array.isArray(j.items))throw 0;
+          localStorage.setItem('asia65budget',JSON.stringify(j));
+          if(window.V65&&V65.renderBud)V65.renderBud();
+          st.textContent='✓ Presupuesto restaurado ('+j.items.length+' elementos).'}
+        catch(x){st.textContent='Ese texto no parece una copia válida.'}}
+    });
+    mas.appendChild(e);
+  }
+  if(!document.querySelector('#moreHome .menu[data-v66="plan66"]')){
+    const anchor=document.querySelector('#moreHome .menu[data-v66="dinero66"]')||document.querySelector('#moreHome .menu[data-v65="local65"]');
+    if(anchor){const d=document.createElement('div');d.className='menu';d.dataset.v66='plan66';d.setAttribute('onclick',"openMore('plan66')");
+      d.innerHTML='<span class="ico">🧭</span><div><b>Plan B y preparación</b><small>Full Moon, 30 nov, calendario, offline</small></div>';anchor.insertAdjacentElement('afterend',d)}
+  }
+  const em=document.getElementById('more-emergencias');
+  if(em&&!document.getElementById('v66-embajada')){
+    const c=document.createElement('div');c.className='card';c.id='v66-embajada';
+    c.innerHTML='<b>🇪🇸 Asistencia consular española</b><div class="inforow"><b>Tailandia (urgencia consular)</b><span>+66 818 687507</span></div><div class="inforow"><b>Embajada Bangkok</b><span>+66 2 661 8285</span></div><div class="inforow"><b>Malasia (Embajada)</b><span>+60 12 389 37 44</span></div><p class="muted">Solo para españoles. Datos de exteriores.gob.es; si no responden, búscalos allí.</p>';
+    const last=em.querySelector('.card');last?last.insertAdjacentElement('afterend',c):em.appendChild(c);
+  }
+}
+const _o=window.openMore;
+window.openMore=function(n){_o(n);if(n==='plan66')render()};
+function run(){try{mount()}catch(e){console.error(e)}}
+document.addEventListener('DOMContentLoaded',()=>{setTimeout(run,900);new MutationObserver(()=>{clearTimeout(run.t);run.t=setTimeout(run,300)}).observe(document.body,{childList:true,subtree:true})});
 setTimeout(run,1200);
 })();
 </script>

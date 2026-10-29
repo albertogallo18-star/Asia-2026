@@ -3207,11 +3207,16 @@ html[data-bg="foto"] #my37{background-image:linear-gradient(rgba(247,240,228,.78
 .v66b-opt.on{border-color:#078e89}
 .v66b-sw{flex:0 0 64px;height:64px;border-radius:14px;border:1px solid rgba(0,0,0,.1)}
 .v66b-opt b{display:block;font-size:15px}.v66b-opt small{color:#5d6b68;font-size:12.5px;line-height:1.35}
+/* barra superior de Malasia: respeta la zona segura del iPhone y se ve como la de Tailandia */
+#my37{padding-top:calc(92px + env(safe-area-inset-top,0px))!important}
+.my37-top{height:auto!important;min-height:76px;padding:calc(env(safe-area-inset-top,0px) + 12px) 14px 12px!important;align-items:center}
+html[data-bg="mix"] .my37-top,html[data-bg="verde"] .my37-top{background:linear-gradient(rgba(6,41,29,.92) 70%,rgba(6,41,29,0))!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.my37-pill{border:1px solid rgba(255,255,255,.35)!important;background:rgba(5,63,66,.86)!important;color:#fff!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding:11px 16px!important;font-size:14px!important}
 </style>
 <script>
 (function(){
 const KEY='asia66bg',MODES={mix:['Verde + foto','Verde racing con la foto del país asomando por detrás. La mezcla de las dos.','linear-gradient(135deg,rgba(6,41,29,.75),rgba(6,41,29,.9)),linear-gradient(135deg,#d9c9a8,#8fb7a8)'],verde:['Verde racing','Fondo verde oscuro, como un coche de carreras británico. Las tarjetas siguen en crema.','linear-gradient(135deg,#0e4b36,#06291d)'],foto:['Foto traslúcida','Una foto del país (Tailandia o Malasia) que se intuye detrás, sin molestar.','linear-gradient(135deg,#d9c9a8,#8fb7a8)'],pastel:['Original','El fondo claro de colores que tenías hasta ahora.','linear-gradient(135deg,#fff3e2,#bfe6e0)']};
-const get=()=>{try{const v=localStorage.getItem(KEY);return MODES[v]?v:'mix'}catch(e){return'mix'}};
+const get=()=>'mix';
 const set=v=>{try{localStorage.setItem(KEY,v)}catch(e){}};
 const PHOTO={Thailand:'url("koh-tao-sairee.jpg")',Malaysia:'url("https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1100&q=70")'};
 function apply(){
@@ -3220,7 +3225,7 @@ function apply(){
   if(m==='verde'||m==='mix')r.dataset.dark='1';else r.removeAttribute('data-dark');
   const c=(document.body&&document.body.dataset.country)||(localStorage.getItem('asiaCountry'))||'Thailand';
   let p=PHOTO[c==='Malaysia'?'Malaysia':'Thailand'];
-  if(c==='Malaysia'&&window.V58ART){const a=V58ART.url('kl');if(a)p+=',url("'+a+'")'}
+  if(c==='Malaysia'&&window.V58ART){const a=V58ART.url('kl');if(a)p+=','+a}
   r.style.setProperty('--v66-photo',p);
   document.querySelectorAll('.v66b-opt').forEach(b=>b.classList.toggle('on',b.dataset.m===m));
 }
@@ -3244,7 +3249,7 @@ function mount(){
   }
 }
 const _o=window.openMore;window.openMore=function(n){_o(n);if(n==='aspecto66')renderOpts()};
-function run(){try{mount();apply()}catch(e){}}
+function run(){try{apply();document.querySelectorAll('#moreHome .menu[data-v66="aspecto66"],#more-aspecto66').forEach(x=>x.remove())}catch(e){}}
 document.addEventListener('DOMContentLoaded',()=>{run();setTimeout(run,900);new MutationObserver(()=>{clearTimeout(run.t);run.t=setTimeout(run,300)}).observe(document.body,{childList:true,attributes:true,attributeFilter:['data-country','class'],subtree:false})});
 setTimeout(run,1200);
 })();

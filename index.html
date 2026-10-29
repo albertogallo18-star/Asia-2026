@@ -1805,7 +1805,7 @@ const TRAM=[
  {id:'req',e:'📋',n:'Requisitos oficiales',t:'Reconfirma en las webs oficiales de inmigración de Malasia y Tailandia antes de salir: las normas y los plazos pueden cambiar.'}
 ];
 const STAYS=[['Alanta Aonang Resort','Krabi','2026-11-21','2026-11-22'],['Uphill Cottage','Phi Phi','2026-11-22','2026-11-24'],['The Pier','Koh Phangan','2026-11-24','2026-11-26'],['Angkana Bungalows (adults only)','Koh Phangan','2026-11-26','2026-11-27'],['Koh Tao Royal Resort','Koh Tao','2026-11-27','2026-11-29'],['Big Fish Resort','Koh Tao','2026-11-29','2026-11-30'],['Manee Cool Mueang','Chiang Mai','2026-12-01','2026-12-05'],['Silom Serene A Boutique Hotel','Bangkok','2026-12-05','2026-12-08']];
-window.V57STAYS=STAYS;
+window.V57STAYS=STAYS;window.V57TODAY=today;
 const _e=encodeURIComponent;
 const HQ={'Alanta Aonang Resort':'Alanta Aonang Resort Ao Nang Krabi','Uphill Cottage':'Uphill Cottage Koh Phi Phi Don','The Pier':'The Pier hotel Koh Phangan','Angkana Bungalows (adults only)':'Angkana Bungalows Koh Phangan','Koh Tao Royal Resort':'Koh Tao Royal Resort Koh Tao','Big Fish Resort':'Big Fish Resort Koh Tao','Manee Cool Mueang':'Manee Cool Mueang Chiang Mai','Silom Serene A Boutique Hotel':'Silom Serene A Boutique Hotel Bangkok'};
 const hq=s=>(HQ[s[0]]||(s[0]+' '+s[1]))+' Thailand';
@@ -2999,7 +2999,7 @@ document.addEventListener('click',e=>{if(e.target.closest&&e.target.closest('#de
 </style>
 <script>
 (function(){
-const QUICK=[['💶','Gasto de hoy','gasto65'],['📄','Documentos','documentos'],['🚕','Enseñar al conductor','taxi'],['🚖','Transporte local','local65'],['🎫','Reservas','reservas'],['🆘','Emergencias','emergencias']];
+const QUICK=[['💶','Gasto de hoy','gasto65'],['📄','Documentos','documentos'],['🚕','Enseñar al conductor','taxi'],['🚖','Transporte local','local65'],['🎫','Billetes','billetes67'],['🆘','Emergencias','emergencias']];
 function go(name){
   const my=document.getElementById('my37');
   if(my&&my.classList.contains('on')){try{openSharedMore()}catch(e){}}
@@ -3403,5 +3403,317 @@ window.openMore=function(n){_o(n);if(n==='plan66')render()};
 function run(){try{mount()}catch(e){console.error(e)}}
 document.addEventListener('DOMContentLoaded',()=>{setTimeout(run,900);new MutationObserver(()=>{clearTimeout(run.t);run.t=setTimeout(run,300)}).observe(document.body,{childList:true,subtree:true})});
 setTimeout(run,1200);
+})();
+</script>
+
+<style>
+/* ---- reloj en portada ---- */
+.v67-clock{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.v67-clock span{padding:7px 11px;border-radius:999px;background:rgba(0,0,0,.28);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;font-size:12.5px;font-weight:800;border:1px solid rgba(255,255,255,.3);font-variant-numeric:tabular-nums}
+/* ---- atardecer ---- */
+.v67-sun{margin:12px 0;padding:14px 16px;border-radius:20px;background:linear-gradient(135deg,#ff9d4d,#e9604c 60%,#8a3a6b)!important;color:#fff!important;box-shadow:0 10px 24px rgba(138,58,107,.25)}
+.v67-sun *{color:#fff!important}
+.v67-sun small{opacity:.9;font-size:11.5px;letter-spacing:.6px;font-weight:800;text-transform:uppercase}
+.v67-sun b.t{display:block;font-size:30px;line-height:1.1;margin:3px 0 4px;font-family:Georgia,serif;font-weight:500}
+.v67-sun p{margin:4px 0 0;font-size:13px;line-height:1.35;opacity:.95}
+/* ---- billetes ---- */
+.v67-tk{background:#fffaf3;border-radius:20px;margin:14px 0;overflow:hidden;box-shadow:0 6px 18px rgba(18,62,64,.12);border:1px solid #eadfcf;color:#123e40}
+.v67-tk .top{background:linear-gradient(135deg,#0b5558,#079894);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-weight:800;letter-spacing:.6px}
+.v67-tk .top *{color:#fff}
+.v67-tk .rt{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 4px}
+.v67-tk .rt b{font:700 30px Georgia,serif;letter-spacing:1px}
+.v67-tk .rt i{flex:1;margin:0 10px;border-top:2px dashed #b9a98f;position:relative;top:0}
+.v67-tk .rt em{font-style:normal;font-size:20px}
+.v67-tk .nm{padding:0 16px;font-size:12.5px;color:#5d6b68;display:flex;justify-content:space-between}
+.v67-tk .tm{display:flex;justify-content:space-between;padding:6px 16px 2px;font-size:15px;font-weight:800}
+.v67-tk .nt{padding:6px 16px 0;font-size:12.5px;color:#5d6b68;line-height:1.35}
+.v67-tk .fld{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;padding:10px 16px 0}
+.v67-tk .fld label{font-size:10px;letter-spacing:.5px;font-weight:800;color:#5d6b68}
+.v67-tk .fld input{width:100%;box-sizing:border-box;border:0;border-bottom:1.5px solid #d9c9a8;background:transparent;font:700 14px inherit;color:#123e40;padding:3px 0;border-radius:0}
+.v67-tk .cut{border-top:2px dashed #d9c9a8;margin:14px 0 0;position:relative}
+.v67-tk .cut:before,.v67-tk .cut:after{content:"";position:absolute;top:-9px;width:16px;height:16px;border-radius:50%;background:#f3eadc}
+.v67-tk .cut:before{left:-8px}.v67-tk .cut:after{right:-8px}
+.v67-tk .act{padding:12px 16px 16px;display:flex;gap:8px;flex-wrap:wrap}
+.v67-tk .act button,.v67-b{border:0;border-radius:14px;padding:12px 14px;font:inherit;font-weight:800;font-size:14px;background:#078e89;color:#fff;flex:1 1 auto}
+.v67-tk .act button.alt,.v67-b.alt{background:#f1e6d3;color:#123e40}
+.v67-tk .thumb{width:100%;max-height:120px;object-fit:contain;background:#fff;border-radius:12px;border:1px solid #eadfcf;margin:10px 0 0}
+.v67-scan{position:fixed;inset:0;z-index:100000;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;box-sizing:border-box;color:#000}
+.v67-scan img{max-width:100%;max-height:68vh;object-fit:contain}
+.v67-scan h3{margin:0 0 4px;font:700 20px Georgia,serif;color:#000}.v67-scan p{margin:0 0 14px;font-size:14px;color:#333;text-align:center}
+.v67-scan button{margin-top:18px;border:0;border-radius:16px;background:#123e40;color:#fff;padding:14px 28px;font:inherit;font-weight:800;font-size:16px}
+/* ---- diario ---- */
+.v67-pg{background:#fffaf3;border:1px solid #eadfcf;border-radius:20px;padding:14px;margin:12px 0;color:#123e40}
+.v67-pg.done{border-color:#078e89}
+.v67-pg .hd{display:flex;gap:12px;align-items:center}
+.v67-stamp{flex:0 0 74px;height:74px;border-radius:50%;border:3px double #b9a98f;color:#b9a98f;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:9px;font-weight:900;letter-spacing:.4px;line-height:1.15;padding:6px;box-sizing:border-box;transform:rotate(-8deg);text-transform:uppercase}
+.v67-stamp span{font-size:20px}
+.v67-pg.done .v67-stamp{border-color:#b3394b;color:#b3394b;background:rgba(179,57,75,.06)}
+.v67-pg .hd b{font-size:16px}.v67-pg .hd small{display:block;color:#5d6b68;font-size:12px;margin-top:2px}
+.v67-pg textarea,.v67-pg input.nt{width:100%;box-sizing:border-box;margin-top:10px;border:1px solid #d9c9a8;border-radius:12px;padding:10px;font:inherit;font-size:14px;background:#fff;color:#123e40}
+.v67-pg textarea{min-height:64px;resize:vertical}
+.v67-ph{display:flex;gap:8px;overflow-x:auto;margin-top:10px;padding-bottom:2px}
+.v67-ph img{height:88px;width:88px;object-fit:cover;border-radius:12px;flex:0 0 auto}
+.v67-ph button{height:88px;width:88px;flex:0 0 auto;border:2px dashed #b9a98f;border-radius:12px;background:transparent;font-size:24px;color:#5d6b68}
+.v67-row{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.v67-row select{border:1px solid #d9c9a8;border-radius:10px;padding:8px;font:inherit;background:#fff;color:#123e40}
+.v67-row label{font-size:13.5px;font-weight:700;display:flex;gap:6px;align-items:center}
+</style>
+<script>
+(function(){
+const LS=(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}};
+const SV=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pad=n=>String(n).padStart(2,'0');
+const toast_=m=>{try{toast(m)}catch(e){}};
+
+/* ================= 1 · RELOJ EN PORTADA ================= */
+const CLK=[['🇪🇸','Casa','Europe/Madrid'],['🇲🇾','Malasia','Asia/Kuala_Lumpur'],['🇹🇭','Tailandia','Asia/Bangkok']];
+function clockTxt(tz){try{return new Intl.DateTimeFormat('es-ES',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:tz}).format(new Date())}catch(e){return'--:--'}}
+function clocks(){
+  const c=document.querySelector('#countryGate .country-copy');if(!c)return;
+  let el=c.querySelector('.v67-clock');
+  if(!el){el=document.createElement('div');el.className='v67-clock';c.appendChild(el)}
+  const h=CLK.map(x=>'<span>'+x[0]+' '+x[1]+' '+clockTxt(x[2])+'</span>').join('');
+  if(el.dataset.s!==h){el.dataset.s=h;el.innerHTML=h}
+}
+
+/* ================= 2 · ATARDECER ================= */
+function sunTimes(lat,lon,y,m,d,tz){
+  const R=Math.PI/180,n=Math.round((Date.UTC(y,m-1,d)-Date.UTC(y,0,0))/864e5);
+  const g=2*Math.PI/365*(n-1);
+  const eq=229.18*(0.000075+0.001868*Math.cos(g)-0.032077*Math.sin(g)-0.014615*Math.cos(2*g)-0.040849*Math.sin(2*g));
+  const de=0.006918-0.399912*Math.cos(g)+0.070257*Math.sin(g)-0.006758*Math.cos(2*g)+0.000907*Math.sin(2*g)-0.002697*Math.cos(3*g)+0.00148*Math.sin(3*g);
+  const at=(zen)=>{const c=(Math.cos(zen*R)/(Math.cos(lat*R)*Math.cos(de)))-Math.tan(lat*R)*Math.tan(de);if(c>1||c<-1)return null;return Math.acos(c)/R};
+  const mm=(ha)=>720-4*(lon-ha)-eq+tz*60;
+  const hs=at(90.833),hg=at(84);
+  if(hs==null)return null;
+  const s=mm(hs),gd=hg==null?s-50:mm(hg);
+  const F=x=>{x=Math.round(((x%1440)+1440)%1440);return pad(Math.floor(x/60)%24)+':'+pad(x%60)};
+  return {sun:F(s),gold:F(gd)};
+}
+const SUN={
+ th:{
+  'Krabi':[8.03,98.819,7,'2026-11-21','Ao Nang mira al oeste: la playa es buen sitio para verlo con los islotes de fondo.'],
+  'Phi Phi':[7.7407,98.7784,7,'2026-11-22','El mirador de Phi Phi (Viewpoint) es el plan clásico; sube con tiempo, hay escaleras y suele llenarse.'],
+  'Koh Phangan':[9.7319,100.0136,7,'2026-11-24','La costa oeste (Haad Salad, Haad Yao) mira al poniente; Haad Rin da al este.'],
+  'Koh Tao':[10.0956,99.8404,7,'2026-11-27','Sairee Beach está en la costa oeste: los bares de la playa son buen sitio para el sunset.'],
+  'Chiang Mai':[18.7883,98.9853,7,'2026-12-01','Desde una colina al oeste (Doi Suthep) o desde un rooftop. Ojo con la bruma de la época.'],
+  'Chiang Rai':[19.9105,99.8406,7,'2026-12-03','Busca un sitio abierto al oeste; con bruma el cielo se ve menos nítido.'],
+  'Bangkok':[13.7563,100.5018,7,'2026-12-05','Un rooftop o el río Chao Phraya con Wat Arun al otro lado son los clásicos.'],
+  'Ayutthaya':[14.3532,100.5689,7,'2026-12-06','Los templos al atardecer son un clásico, pero tu tour recoge a su hora: confirma si llegas a verlo.']
+ },
+ my:{
+  kl:[3.139,101.687,8,'2026-11-07','Parque KLCC con las Torres Petronas encendiéndose es la foto típica.'],
+  cam:[4.471,101.377,8,'2026-11-09','Tarde de niebla frecuente en las plantaciones; si abre el cielo, las colinas se ven muy bien.'],
+  pen:[5.4141,100.3288,8,'2026-11-11','Playa de Batu Ferringhi o Gurney Drive, mirando al oeste.'],
+  lan:[6.35,99.8,8,'2026-11-13','Pantai Cenang y la costa oeste de la isla son los puntos clásicos.'],
+  lip:[6.4897,99.3045,7,'2026-11-16','Sunset Beach, en la costa oeste de la isla. Ojo: Koh Lipe va con hora de Tailandia (1 h menos que Malasia).'],
+  mel:[2.1896,102.2501,8,'2026-11-18','Mezquita del Estrecho (Masjid Selat) o el paseo del río a la hora dorada.']
+ }
+};
+const MON=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+function sunDate(def){
+  let t='';try{t=(window.V57TODAY&&window.V57TODAY())||''}catch(e){}
+  if(!t){const d=new Date();t=d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+  return t>=def?{d:t,now:true}:{d:def,now:false};
+}
+function sunCard(kind,key){
+  const e=SUN[kind][key];if(!e)return null;
+  const sd=sunDate(e[3]),p=sd.d.split('-').map(Number);
+  const r=sunTimes(e[0],e[1],p[0],p[1],p[2],e[2]);if(!r)return null;
+  const c=document.createElement('div');c.className='v67-sun';
+  c.innerHTML='<small>🌅 Atardecer · '+(sd.now?'hoy':'el '+p[2]+' '+MON[p[1]-1])+'</small><b class="t">'+r.sun+'</b><p>Hora dorada desde las ~'+r.gold+'. Llega 30 min antes. Hora local aproximada.</p><p>'+esc(e[4])+'</p>';
+  return c;
+}
+let thCur='',myCur='';
+function injectTh(){
+  const d=document.getElementById('destDetail');if(!d||d.classList.contains('hidden')||!thCur)return;
+  d.querySelectorAll('.v67-sun').forEach(x=>x.remove());
+  const c=sunCard('th',thCur);if(!c)return;
+  const sw=d.querySelector('.v66t-sw');(sw?sw.insertAdjacentElement('afterend',c):(d.firstElementChild?d.firstElementChild.insertAdjacentElement('afterend',c):d.prepend(c)));
+}
+function injectMy(){
+  const d=document.getElementById('my38DiscoverDetail');if(!d||getComputedStyle(d).display==='none'||!myCur)return;
+  d.querySelectorAll('.v67-sun').forEach(x=>x.remove());
+  const c=sunCard('my',myCur);if(!c)return;
+  const a=d.querySelector('.v66-w')||d.querySelector('.my39-intro')||d.querySelector('.my39-detailhero')||d.firstElementChild;
+  if(a)a.insertAdjacentElement('afterend',c);else d.prepend(c);
+}
+function wrapDest(){
+  if(window.openDest&&!window.openDest.__v67){const o=window.openDest;window.openDest=function(k){thCur=k;const r=o.apply(this,arguments);[300,900,1800].forEach(ms=>setTimeout(()=>{try{injectTh()}catch(e){}},ms));return r};window.openDest.__v67=1}
+  if(window.my38Dest&&!window.my38Dest.__v67){const o=window.my38Dest;window.my38Dest=function(k){myCur=k;const r=o.apply(this,arguments);[500,1200,2200].forEach(ms=>setTimeout(()=>{try{injectMy()}catch(e){}},ms));return r};window.my38Dest.__v67=1}
+}
+window.V67sun=sunTimes;
+
+/* ================= almacén de imágenes (IndexedDB) ================= */
+let dbp=null;
+function db(){
+  if(dbp)return dbp;
+  dbp=new Promise((res,rej)=>{
+    try{const r=indexedDB.open('asia67',1);
+      r.onupgradeneeded=()=>{r.result.createObjectStore('img')};
+      r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)}catch(e){rej(e)}
+  });
+  return dbp;
+}
+const idb=(mode,fn)=>db().then(d=>new Promise((res,rej)=>{const t=d.transaction('img',mode),r=fn(t.objectStore('img'));t.oncomplete=()=>res(r&&r.result);t.onerror=()=>rej(t.error)}));
+const imgGet=k=>idb('readonly',s=>s.get(k));
+const imgPut=(k,v)=>idb('readwrite',s=>s.put(v,k));
+const imgDel=k=>idb('readwrite',s=>s.delete(k));
+function shrink(file,max,q){
+  return new Promise((res,rej)=>{
+    const u=URL.createObjectURL(file),im=new Image();
+    im.onload=()=>{
+      const k=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement('canvas');
+      c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);
+      const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);
+      URL.revokeObjectURL(u);res(c.toDataURL('image/jpeg',q))};
+    im.onerror=()=>{URL.revokeObjectURL(u);rej(new Error('img'))};im.src=u;
+  });
+}
+function pick(cb){
+  const i=document.createElement('input');i.type='file';i.accept='image/*';i.style.display='none';
+  i.onchange=()=>{const f=i.files&&i.files[0];i.remove();if(f)cb(f)};
+  document.body.appendChild(i);i.click();
+}
+
+/* ================= 3 · BILLETES ================= */
+const TK=[
+ ['f1','✈️','VIE 6 NOV','Madrid','Doha','MAD','DOH','08:05','16:40','IB6192 · operado por Qatar Airways'],
+ ['f2','✈️','SÁB 7 NOV','Doha','Kuala Lumpur','DOH','KUL','02:20','14:40','IB6349 · operado por Qatar Airways'],
+ ['f3','✈️','SÁB 21 NOV','Kuala Lumpur','Krabi','KUL','KBV','10:50','11:15','AirAsia · terminal KLIA2 (confírmala)'],
+ ['t4','🚤','MAR 24 NOV','Phi Phi','Koh Phangan','PHI','PHA','10:00','16:30','Lomprayah · 12go Q086235 · minivan 11:30 · catamarán 15:00'],
+ ['t5','⛴️','LUN 30 NOV','Koh Tao','Koh Samui','TAO','USM','09:15','11:30','Ferry · referencia T106900'],
+ ['f6','✈️','LUN 30 NOV','Koh Samui','Bangkok','USM','BKK','14:15','15:50','Bangkok Airways'],
+ ['t7','🚆','LUN 30 NOV','Bangkok (Don Mueang)','Chiang Mai','DMK','CNX','20:22','08:45','Tren cama · coche 13 · litera superior 5 · imprime el billete'],
+ ['f8','✈️','SÁB 5 DIC','Chiang Mai','Bangkok','CNX','DMK','11:45','12:55','Thai AirAsia · llegas a Don Mueang'],
+ ['f9','✈️','MAR 8 DIC','Bangkok','Doha','BKK','DOH','09:45','13:00','Qatar Airways QR839'],
+ ['f10','✈️','MAR 8 DIC','Doha','Madrid','DOH','MAD','15:15','20:45','Qatar Airways QR151 · llegada Madrid T4S']
+];
+const FK='asia67tk';
+let lock=null;
+async function showScan(id){
+  const t=TK.find(x=>x[0]===id);let u=null;
+  try{u=await imgGet('tk:'+id)}catch(e){}
+  if(!u){toast_('Aún no has guardado el código de este billete');return}
+  const o=document.createElement('div');o.className='v67-scan';
+  o.innerHTML='<h3>'+esc(t[3])+' → '+esc(t[4])+'</h3><p>'+esc(t[2])+' · '+esc(t[7])+'. Sube el brillo del móvil al máximo.</p><img alt="Código"><button type="button">Cerrar</button>';
+  o.querySelector('img').src=u;
+  o.querySelector('button').onclick=()=>{try{lock&&lock.release()}catch(e){}lock=null;o.remove()};
+  document.body.appendChild(o);
+  try{if(navigator.wakeLock)navigator.wakeLock.request('screen').then(l=>{lock=l}).catch(()=>{})}catch(e){}
+}
+async function ticketsHtml(){
+  const f=LS(FK,{}),has={};
+  for(const t of TK){try{has[t[0]]=await imgGet('tk:'+t[0])}catch(e){has[t[0]]=null}}
+  return '<div class="card"><b>🎫 Tus billetes</b><p class="muted" style="font-size:13.5px;line-height:1.4">Guarda una captura del <b>QR o código de barras</b> de cada tarjeta de embarque que te dé la aerolínea (cuando hagas el check-in online) y aquí se muestra a pantalla completa para escanear, aunque no tengas conexión. Los datos de abajo los puedes rellenar tú.</p></div>'+
+  TK.map(t=>{const v=f[t[0]]||{};return `<div class="v67-tk" data-id="${t[0]}">
+   <div class="top"><span>${t[1]} ${esc(t[2])}</span><span>${esc(t[9].split(' · ')[0])}</span></div>
+   <div class="rt"><b>${t[5]}</b><i></i><em>${t[1]}</em><i></i><b>${t[6]}</b></div>
+   <div class="nm"><span>${esc(t[3])}</span><span>${esc(t[4])}</span></div>
+   <div class="tm"><span>${esc(t[7])}</span><span>${esc(t[8])}</span></div>
+   <div class="nt">${esc(t[9])}</div>
+   <div class="fld"><div><label>LOCALIZADOR</label><input data-f="loc" value="${esc(v.loc)}" placeholder="—"></div><div><label>ASIENTO</label><input data-f="seat" value="${esc(v.seat)}" placeholder="—"></div><div><label>PUERTA</label><input data-f="gate" value="${esc(v.gate)}" placeholder="—"></div></div>
+   ${has[t[0]]?`<img class="thumb" src="${has[t[0]]}" alt="">`:''}
+   <div class="cut"></div>
+   <div class="act"><button type="button" data-a="scan">${has[t[0]]?'📱 Enseñar para escanear':'📱 Sin código aún'}</button><button type="button" class="alt" data-a="add">${has[t[0]]?'🔄 Cambiar':'＋ Añadir captura del código'}</button>${has[t[0]]?'<button type="button" class="alt" data-a="del">🗑️</button>':''}</div>
+  </div>`}).join('');
+}
+async function renderTk(){const b=document.getElementById('v67tk');if(b)b.innerHTML=await ticketsHtml()}
+
+/* ================= 4 · DIARIO MEJORADO ================= */
+const FLAG={'Kuala Lumpur':'🇲🇾','Cameron Highlands':'🇲🇾','Penang':'🇲🇾','Langkawi':'🇲🇾','Koh Lipe':'🇹🇭','Melaka':'🇲🇾'};
+function dmon(d){const p=d.split('-');return +p[2]+' '+MON[+p[1]-1]+' '+p[0]}
+function todayStr(){let t='';try{t=(window.V57TODAY&&window.V57TODAY())||''}catch(e){}if(!t){const d=new Date();t=d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}return t}
+function placesList(){try{return PASSPORT_PLACES}catch(e){return[]}}
+function dsave(){try{localStorage.setItem('asia26diary',JSON.stringify(window.tripDiary||tripDiary))}catch(e){}}
+async function pgHtml(box){
+  const P=placesList(),D=(typeof tripDiary!=='undefined'?tripDiary:{});
+  let out='';
+  for(let i=0;i<P.length;i++){
+    const p=P[i],d=D[p]||{},n=+d.nph||0;let imgs='';
+    for(let k=0;k<n;k++){let u=null;try{u=await imgGet('pg:'+p+':'+k)}catch(e){}if(u)imgs+=`<img src="${u}" alt="" data-ph="${i}:${k}">`}
+    out+=`<div class="v67-pg ${d.done?'done':''}" data-i="${i}">
+      <div class="hd"><div class="v67-stamp"><span>${d.done?'✓':(FLAG[p]||'🇹🇭')}</span>${esc(p)}<br>${d.done&&d.date?esc(dmon(d.date)):'por visitar'}</div>
+      <div style="flex:1"><b>${esc(p)}</b><small>${d.done?'Visitado'+(d.date?' · '+esc(dmon(d.date)):''):'Pendiente'}</small></div></div>
+      <div class="v67-row"><label><input type="checkbox" data-a="done" ${d.done?'checked':''}> Ya estuve aquí</label>
+      <select data-a="score"><option value="">Nota</option>${[10,9,8,7,6,5].map(x=>`<option ${String(d.score)===String(x)?'selected':''}>${x}</option>`).join('')}</select></div>
+      <input class="nt" data-a="note" value="${esc(d.note)}" placeholder="Una frase del día…">
+      <textarea data-a="long" placeholder="Lo mejor, lo que comimos, lo que repetirías…">${esc(d.long)}</textarea>
+      <div class="v67-ph">${imgs}<button type="button" data-a="photo" aria-label="Añadir foto">＋</button></div>
+    </div>`;
+  }
+  out+='<button type="button" class="v67-b" data-a="share" style="width:100%;margin-top:6px">📤 Compartir mi diario como texto</button>';
+  box.innerHTML=out;
+}
+async function diaryText(){
+  const P=placesList(),D=tripDiary,L=['MI DIARIO · ASIA 2026',''];
+  P.forEach(p=>{const d=D[p];if(!d||(!d.done&&!d.note&&!d.long))return;
+    L.push((d.done?'✅ ':'')+p+(d.date?' · '+dmon(d.date):'')+(d.score?' · '+d.score+'/10':''));
+    if(d.note)L.push('“'+d.note+'”');if(d.long)L.push(d.long);L.push('')});
+  return L.join('\n');
+}
+function patchPassport(){
+  if(typeof renderPassport!=='function'||renderPassport.__v67)return;
+  const o=renderPassport;
+  window.renderPassport=function(){
+    o.apply(this,arguments);
+    const box=document.getElementById('tripPassport');if(!box)return;
+    pgHtml(box).catch(e=>console.error(e));
+  };
+  window.renderPassport.__v67=1;
+}
+function bindDiary(){
+  const box=document.getElementById('tripPassport');if(!box||box.__v67)return;box.__v67=1;
+  const get=el=>{const w=el.closest('.v67-pg');return w?+w.dataset.i:-1};
+  const setD=(i,k,v)=>{const p=placesList()[i];tripDiary[p]=tripDiary[p]||{};tripDiary[p][k]=v;dsave()};
+  box.addEventListener('change',e=>{
+    const t=e.target,a=t.dataset.a,i=get(t);if(i<0||!a)return;
+    if(a==='done'){setD(i,'done',t.checked);setD(i,'date',t.checked?todayStr():'');renderPassport()}
+    else if(a==='score'){setD(i,'score',t.value);const w=t.closest('.v67-pg');renderPassport.__skip=1}
+    else if(a==='note'||a==='long'){setD(i,a,t.value)}
+  });
+  box.addEventListener('click',async e=>{
+    const t=e.target.closest('[data-a="photo"],[data-a="share"],img[data-ph]');if(!t)return;
+    if(t.dataset.a==='share'){const txt=await diaryText();try{if(navigator.share){await navigator.share({title:'Diario Asia 2026',text:txt});return}}catch(x){if(x&&x.name==='AbortError')return}
+      try{await navigator.clipboard.writeText(txt);toast_('Diario copiado')}catch(x){toast_('No se pudo copiar')}return}
+    if(t.dataset.a==='photo'){const i=get(t);pick(async f=>{try{const u=await shrink(f,1000,.72),p=placesList()[i],n=+((tripDiary[p]||{}).nph||0);
+      await imgPut('pg:'+p+':'+n,u);setD(i,'nph',n+1);renderPassport()}catch(x){toast_('No se pudo guardar la foto')}});return}
+    if(t.tagName==='IMG'){const [i,k]=t.dataset.ph.split(':').map(Number),p=placesList()[i];
+      if(confirm('¿Borrar esta foto del diario?')){
+        const n=+((tripDiary[p]||{}).nph||0);
+        try{for(let j=k;j<n-1;j++){const nx=await imgGet('pg:'+p+':'+(j+1));await imgPut('pg:'+p+':'+j,nx)}await imgDel('pg:'+p+':'+(n-1))}catch(x){}
+        setD(i,'nph',Math.max(0,n-1));renderPassport()}}
+  });
+}
+
+/* ================= montaje ================= */
+function mount(){
+  clocks();wrapDest();patchPassport();bindDiary();
+  const mas=document.getElementById('mas');if(!mas)return;
+  if(!document.getElementById('more-billetes67')){
+    const e=document.createElement('div');e.id='more-billetes67';e.className='subpage';
+    e.innerHTML='<div class="panel-head"><button class="back" onclick="closeMore()">←</button><h2>🎫 Billetes</h2></div><div id="v67tk"></div>';
+    e.addEventListener('input',ev=>{const t=ev.target;if(t.dataset.f){const w=t.closest('.v67-tk'),f=LS(FK,{});f[w.dataset.id]=f[w.dataset.id]||{};f[w.dataset.id][t.dataset.f]=t.value;SV(FK,f)}});
+    e.addEventListener('click',ev=>{
+      const b=ev.target.closest('button[data-a]');if(!b)return;const id=b.closest('.v67-tk').dataset.id,a=b.dataset.a;
+      if(a==='scan')showScan(id);
+      else if(a==='add')pick(async f=>{try{const u=await shrink(f,1600,.85);await imgPut('tk:'+id,u);renderTk();toast_('Código guardado')}catch(x){toast_('No se pudo guardar la imagen')}});
+      else if(a==='del'&&confirm('¿Borrar el código de este billete?'))imgDel('tk:'+id).then(renderTk);
+    });
+    mas.appendChild(e);
+  }
+  if(!document.querySelector('#moreHome .menu[data-v67="billetes67"]')){
+    const anchor=document.querySelector('#moreHome .menu[data-v66="plan66"]')||document.querySelector('#moreHome .menu[data-v66="dinero66"]')||document.querySelector('#moreHome .menu[data-v65="local65"]');
+    if(anchor){const d=document.createElement('div');d.className='menu';d.dataset.v67='billetes67';d.setAttribute('onclick',"openMore('billetes67')");
+      d.innerHTML='<span class="ico">🎫</span><div><b>Billetes</b><small>Tarjetas de embarque y códigos para escanear</small></div>';anchor.insertAdjacentElement('afterend',d)}
+  }
+}
+const _o=window.openMore;
+window.openMore=function(n){_o(n);if(n==='billetes67')renderTk();if(n==='diario'){patchPassport();bindDiary();try{renderPassport()}catch(e){}}};
+function run(){try{mount()}catch(e){console.error(e)}}
+document.addEventListener('DOMContentLoaded',()=>{setTimeout(run,700);new MutationObserver(()=>{clearTimeout(run.t);run.t=setTimeout(run,300)}).observe(document.body,{childList:true,subtree:true})});
+setTimeout(run,1000);
+setInterval(()=>{try{clocks()}catch(e){}},20000);
 })();
 </script>

@@ -9,6 +9,7 @@ Novedades:
 - La pestaña Mapa desaparece (Tailandia y Malasia); Malasia gana un botón de recorrido completo en Ruta.
 - Tailandia: en Descubre, cada destino tiene una fila para saltar a otro destino.
 - La versión pasa a llamarse V10.
+- Más → Billetes: tarjetas de embarque con captura del QR para enseñar a pantalla completa. Diario con sellos y fotos. Reloj de casa/Malasia/Tailandia en portada. Hora del atardecer en cada destino de Descubre.
 - Presupuesto: arreglados los colores de la tarjeta superior.
 - Más → Plan B y preparación: Full Moon (fecha por confirmar), plan B del 30 nov, maletas, offline, lluvia/mar malo, calendario .ics con alarmas y copia del presupuesto.
 - Emergencias: asistencia consular española. Hotel en tailandés editable en la tarjeta de taxi.
